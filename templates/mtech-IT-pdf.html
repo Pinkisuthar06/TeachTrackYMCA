@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>B.Tech ECE (2018 Batch) - Syllabus up to 8th Sem</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+   .ece-syllabus-page {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+.ece-syllabus-page header {
+  background-color:#0a3c5f;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.ece-syllabus-page .ece-syllabus-container {
+  max-width: 1140px;
+  margin: 40px auto;
+  padding: 30px 20px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.ece-syllabus-page .ece-syllabus-container h2,
+.ece-syllabus-page .ece-syllabus-container h3 {
+  text-align: center;
+  color: #004080;
+  margin-bottom: 20px;
+}
+
+.ece-syllabus-page .ece-info-box {
+  background: #bfdcff;
+  border-left: 5px solid #007bff;
+  color: black;
+  padding: 15px 25px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.ece-syllabus-page .ece-info-box p {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+.ece-syllabus-page .semester-title {
+  background-color: #c0c7d1;
+  padding: 10px;
+  font-weight: 600;
+  margin: 20px 0 10px;
+  border-left: 5px solid #004080;
+  text-align: center;
+}
+
+.ece-syllabus-page .table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 90%;
+}
+
+@media (min-width: 768px) {
+  .ece-syllabus-page .table-responsive {
+    width: 80%;
+  }
+}
+@media (min-width: 992px) {
+  .ece-syllabus-page .table-responsive {
+    width: 70%;
+  }
+}
+
+.ece-syllabus-page table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  min-width: 600px;
+}
+
+.ece-syllabus-page th,
+.ece-syllabus-page td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+  font-size: 0.95rem;
+  word-wrap: break-word;
+}
+
+.ece-syllabus-page th {
+  background-color: #007bff;
+  color: white;
+}
+
+.ece-syllabus-page tr:nth-child(even) {
+  background-color: #c0c7d1;
+}
+
+.ece-syllabus-page .pdf-container {
+  position: relative;
+  padding-top: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.ece-syllabus-page .pdf-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.ece-syllabus-page .ece-last-updated {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.ece-syllabus-page .back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ece-syllabus-page .back-to-top:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .ece-syllabus-page body {
+    font-size: 14px;
+  }
+
+  .ece-syllabus-page header {
+    font-size: 1.3rem;
+    padding: 15px;
+  }
+
+  .ece-syllabus-page .ece-syllabus-container {
+    padding: 20px 10px;
+    margin: 20px auto;
+  }
+
+  .ece-syllabus-page th,
+  .ece-syllabus-page td {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .ece-syllabus-page .ece-info-box {
+    padding: 10px 15px;
+  }
+
+  .ece-syllabus-page .ece-syllabus-container h2,
+  .ece-syllabus-page .ece-syllabus-container h3 {
+    font-size: 1.2rem;
+  }
+
+  .ece-syllabus-page .semester-title {
+    font-size: 1rem;
+  }
+
+  .ece-syllabus-page .ece-info-box p {
+    font-size: 0.9rem;
+  }
+
+  .ece-syllabus-page .pdf-container {
+    height: 300px;
+  }
+  .ece-syllabus-container .pdf-container{
+    height: 500px;
+  }
+}
+.maindiv{
+  margin-top: 80px;
+}
+.text{
+    text-align: center;
+   } 
+    
+  </style>
+</head>
+<body>  
+{% include 'header.html' %}
+<div class="ece-syllabus-page maindiv">
+<header class="ece-syllabus-header ece-margin-top">
+  J.C. Bose University of Science and Technology, YMCA - Faridabad
+</header>
+
+<div class="ece-syllabus-container">
+  <h2>M.TECH (IT) - Syllabus up to 4th Semester</h2>
+
+  <div class="ece-info-box">
+    <p><strong>Department:</strong> Information Technology (IT)</p>
+    <p><strong>Batch:</strong> 2018</p>
+    <p><strong>Document Type:</strong> Complete Syllabus (Semester 1 to 4)</p>
+  </div>
+ <h3>📄 View Official Syllabus PDF</h3>
+  <div class="pdf-container">
+    <iframe src="https://jcboseust.ac.in/assets/uploads/media/mtech_it_scheme_syllabus_2018_03102018.pdf"></iframe>
+  </div>
+
+  
+
+  <div class="ece-last-updated">
+    🔄 Last Updated: 14 August 2018
+  </div>
+</div>
+
+  <h3 class="text">📘 Semester-wise Subject Details</h3>
+
+  <!-- SEMESTER-WISE DATA FROM 1 TO 4 -->
+  <!-- Replace this line with your full 1 to 8 semester table blocks -->
+  <!-- Make sure each table is wrapped inside <div class="table-responsive"> ... </div> -->
+
+<!-- M.Tech Information Technology (2018) - Semester-wise Table -->
+
+<!-- Semester 1 -->
+<div class="semester-title">Semester 1</div>
+<div class="table-responsive">
+<table>
+<tr><th>Course Code</th><th>Course Title</th><th>L-T-P</th><th>Credits</th><th>Type</th></tr>
+<tr><td>MCS-18-101</td><td>Mathematical Foundations of Computer Science</td><td>3-0-0</td><td>3</td><td>Core</td></tr>
+<tr><td>MCS-18-102</td><td>Advanced Data Structures</td><td>3-0-0</td><td>3</td><td>Core</td></tr>
+<tr><td>Elective I</td><td>Machine Learning / Intelligent Systems / Web Analytics / Info. Theory</td><td>3-0-0</td><td>3</td><td>Elective</td></tr>
+<tr><td>Elective II</td><td>Web Search / Distributed Systems / Cluster Computing / DDBMS</td><td>3-0-0</td><td>3</td><td>Elective</td></tr>
+<tr><td>RMI-101</td><td>Research Methodology and IPR</td><td>2-0-0</td><td>2</td><td>Core</td></tr>
+<tr><td>AUD-01A</td><td>Audit Course I</td><td>2-0-0</td><td>0</td><td>Audit</td></tr>
+<tr><td>MCS-18-104</td><td>Advanced Data Structures Lab</td><td>0-0-4</td><td>2</td><td>Lab</td></tr>
+<tr><td>Lab (Electives)</td><td>Labs based on Electives I & II</td><td>0-0-4</td><td>2</td><td>Lab</td></tr>
+</table>
+</div>
+
+<!-- Semester 2 -->
+<div class="semester-title">Semester 2</div>
+<div class="table-responsive">
+<table>
+<tr><th>Course Code</th><th>Course Title</th><th>L-T-P</th><th>Credits</th><th>Type</th></tr>
+<tr><td>MCS-18-201</td><td>Advanced Algorithms</td><td>3-0-0</td><td>3</td><td>Core</td></tr>
+<tr><td>MCS-18-202</td><td>Soft Computing</td><td>3-0-0</td><td>3</td><td>Core</td></tr>
+<tr><td>Elective III</td><td>Big Data / Data Security / Cryptography / Software Testing</td><td>3-0-0</td><td>3</td><td>Elective</td></tr>
+<tr><td>Elective IV</td><td>WSN / Adv. Wireless Networks / Optical Networks / HPN</td><td>3-0-0</td><td>3</td><td>Elective</td></tr>
+<tr><td>MCS-18-203</td><td>Mini Project with Seminar</td><td>0-2-0</td><td>1</td><td>Project</td></tr>
+<tr><td>AUD-02A</td><td>Audit Course II</td><td>2-0-0</td><td>0</td><td>Audit</td></tr>
+<tr><td>Lab (Core)</td><td>Advanced Algorithms Lab / Soft Computing Lab</td><td>0-0-4</td><td>2</td><td>Lab</td></tr>
+<tr><td>Lab (Electives)</td><td>Labs based on Electives III & IV</td><td>0-0-4</td><td>2</td><td>Lab</td></tr>
+</table>
+</div>
+
+<!-- Semester 3 -->
+<div class="semester-title">Semester 3</div>
+<div class="table-responsive">
+<table>
+<tr><th>Course Code</th><th>Course Title</th><th>L-T-P</th><th>Credits</th><th>Type</th></tr>
+<tr><td>Elective V</td><td>IoT Applications / Smart Sensors / Optimization / Cloud Computing</td><td>3-0-0</td><td>3</td><td>Elective</td></tr>
+<tr><td>Open Elective</td><td>Business Analytics / OR / Safety / Energy etc.</td><td>3-0-0</td><td>3</td><td>Open Elective</td></tr>
+<tr><td>MCS-18-301</td><td>Dissertation / Industrial Project Phase I</td><td>0-0-20</td><td>10</td><td>Project</td></tr>
+</table>
+</div>
+
+<!-- Semester 4 -->
+<div class="semester-title">Semester 4</div>
+<div class="table-responsive">
+<table>
+<tr><th>Course Code</th><th>Course Title</th><th>L-T-P</th><th>Credits</th><th>Type</th></tr>
+<tr><td>MCS-18-401</td><td>Dissertation Phase II</td><td>0-0-32</td><td>16</td><td>Project</td></tr>
+</table>
+</div>
+
+
+</div>
+  <!-- 🧠 Paste your Semester 3 to Semester 8 table blocks here (already provided in your original message) -->
+  <!-- Make sure each table is wrapped inside <div class="table-responsive"> ... </div> -->
+
+  <!-- 👇 Continue with rest of semester blocks here (3 to 8)... -->
+  <!-- If you'd like me to insert all of them here again, just say “continue with semester 3 to 8 now” -->
+
+  <!-- PDF Section -->
+ {% include 'footer.html' %}
+
+
+
+</body>
+</html>

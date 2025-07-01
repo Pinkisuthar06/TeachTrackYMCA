@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YMCA Faridabad Placement 2014–2015</title>
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: 'Varela Round', sans-serif; background: #f8f9fa; color: #333; }
+    h1, h3 { color: #ff0000; }
+    .section-card { background: #fff; border-radius:10px; padding:20px; margin-bottom:30px;
+                    box-shadow:0 2px 8px rgba(0,0,0,0.08); }
+    .stats-box { text-align:center; padding:20px; border-radius:8px; background:#f1f1f1;
+                 box-shadow:0 2px 6px rgba(0,0,0,0.1); margin-bottom:20px; }
+    .table thead { background:#0a3c5f; color:#fff; }
+    .maindiv { margin-top:100px; }
+  </style>
+</head>
+<body>
+  {% include 'header.html' %}
+  <div class="maindiv container">
+
+    <div class="text-center mb-4">
+      <h1>Placement Record 2014–2015</h1>
+      <p>J.C. BOSE YMCA</p>
+    </div>
+
+    <div class="section-card">
+      <h3 class="text-center">Overall Placement Statistics</h3>
+      <div class="row text-center">
+        <div class="col-md-4 col-6">
+          <div class="stats-box">
+            <h4 class="text-primary">639</h4><p>Total Students</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-6">
+          <div class="stats-box">
+            <h4 class="text-success">482</h4><p>Eligible</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-12">
+          <div class="stats-box">
+            <h4 class="text-warning">331</h4><p>No. of Placed Students</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-6">
+          <div class="stats-box">
+            <h4 class="text-info">49</h4><p>Company Visits</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-6">
+          <div class="stats-box">
+            <h4 class="text-secondary">68.67%</h4><p>Overall Placement %</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-12">
+          <div class="stats-box">
+            <h4 class="text-danger">₹7.8 LPA</h4><p>Highest Package</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h3 class="text-center">Branch-wise Placement Statistics</h3>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Branch</th><th>Total</th><th>Eligible</th><th>Placed</th><th>Visited</th><th>Placement %</th><th>Min (LPA)</th><th>Max (LPA)</th><th>Avg (LPA)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>B.Tech CE</td><td>76</td><td>68</td><td>65</td><td>24</td><td>95.58</td><td>1.8</td><td>7.8</td><td>4.46</td></tr>
+            <tr><td>B.Tech IT</td><td>72</td><td>49</td><td>43</td><td>19</td><td>87.75</td><td>1.8</td><td>7.75</td><td>3.74</td></tr>
+            <tr><td>B.Tech ECE</td><td>72</td><td>58</td><td>41</td><td>10</td><td>70.68</td><td>2.75</td><td>6.23</td><td>4.43</td></tr>
+            <tr><td>B.Tech EIC</td><td>70</td><td>46</td><td>31</td><td>9</td><td>67.39</td><td>2.75</td><td>4.7</td><td>3.34</td></tr>
+            <tr><td>B.Tech EL</td><td>71</td><td>54</td><td>36</td><td>11</td><td>66.66</td><td>1.8</td><td>3.17</td><td>4.7</td></tr>
+            <tr><td>B.Tech Mech.</td><td>141</td><td>100</td><td>74</td><td>26</td><td>74.00</td><td>1.8</td><td>5.5</td><td>3.57</td></tr>
+            <tr><td>MCA</td><td>37</td><td>18</td><td>8</td><td>6</td><td>44.44</td><td>1.8</td><td>3.75</td><td>2.9</td></tr>
+            <tr><td>M.Tech</td><td>97</td><td>89</td><td>33</td><td>6</td><td>37.07</td><td>1.8</td><td>3.47</td><td>3.06</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="section-card text-center">
+          <h5>Placement % (B.Tech only)</h5>
+          <canvas id="placementChart"></canvas>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="section-card text-center">
+          <h5>Package Comparison (B.Tech Max vs Avg)</h5>
+          <canvas id="packageComparison"></canvas>
+        </div>
+      </div>
+    </div>
+ {% include 'logo1.html' %}
+  </div>
+  {% include 'footer.html' %}
+
+  <script>
+    const placementData = {
+      labels: ['CE','IT','ECE','EIC','EL','Mech.'],
+      datasets:[{
+        label:'Placement %',
+        data:[95.58,87.75,70.68,67.39,66.66,74],
+        backgroundColor:['#007bff','#28a745','#ffc107','#dc3545','#17a2b8','#6610f2']
+      }]
+    };
+    new Chart(document.getElementById('placementChart'),{type:'pie',data:placementData,options:{responsive:true,plugins:{legend:{position:'bottom'}}}});
+
+    const packageData = {
+      labels:['CE','IT','ECE','EIC','EL','Mech.'],
+      datasets:[
+        {label:'Max (LPA)',data:[7.8,7.75,6.23,4.7,3.17,5.5],backgroundColor:'#007bff'},
+        {label:'Avg (LPA)',data:[4.46,3.74,4.43,3.34,4.7,3.57],backgroundColor:'#ffc107'}
+      ]
+    };
+    new Chart(document.getElementById('packageComparison'),{type:'bar',data:packageData,options:{responsive:true,scales:{y:{beginAtZero:true,title:{display:true,text:'Package (LPA)'}}},plugins:{legend:{position:'bottom'}}}});
+  </script>
+</body>
+</html>

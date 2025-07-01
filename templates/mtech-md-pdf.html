@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>B.Tech ECE (2018 Batch) - Syllabus up to 8th Sem</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+   .ece-syllabus-page {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+.ece-syllabus-page header {
+  background-color:#0a3c5f;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.ece-syllabus-page .ece-syllabus-container {
+  max-width: 1140px;
+  margin: 40px auto;
+  padding: 30px 20px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.ece-syllabus-page .ece-syllabus-container h2,
+.ece-syllabus-page .ece-syllabus-container h3 {
+  text-align: center;
+  color: #004080;
+  margin-bottom: 20px;
+}
+
+.ece-syllabus-page .ece-info-box {
+  background: #bfdcff;
+  border-left: 5px solid #007bff;
+  color: black;
+  padding: 15px 25px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.ece-syllabus-page .ece-info-box p {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+.ece-syllabus-page .semester-title {
+  background-color: #c0c7d1;
+  padding: 10px;
+  font-weight: 600;
+  margin: 20px 0 10px;
+  border-left: 5px solid #004080;
+  text-align: center;
+}
+
+.ece-syllabus-page .table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 90%;
+}
+
+@media (min-width: 768px) {
+  .ece-syllabus-page .table-responsive {
+    width: 80%;
+  }
+}
+@media (min-width: 992px) {
+  .ece-syllabus-page .table-responsive {
+    width: 70%;
+  }
+}
+
+.ece-syllabus-page table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  min-width: 600px;
+}
+
+.ece-syllabus-page th,
+.ece-syllabus-page td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+  font-size: 0.95rem;
+  word-wrap: break-word;
+}
+
+.ece-syllabus-page th {
+  background-color: #007bff;
+  color: white;
+}
+
+.ece-syllabus-page tr:nth-child(even) {
+  background-color: #c0c7d1;
+}
+
+.ece-syllabus-page .pdf-container {
+  position: relative;
+  padding-top: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.ece-syllabus-page .pdf-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.ece-syllabus-page .ece-last-updated {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.ece-syllabus-page .back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ece-syllabus-page .back-to-top:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .ece-syllabus-page body {
+    font-size: 14px;
+  }
+
+  .ece-syllabus-page header {
+    font-size: 1.3rem;
+    padding: 15px;
+  }
+
+  .ece-syllabus-page .ece-syllabus-container {
+    padding: 20px 10px;
+    margin: 20px auto;
+  }
+
+  .ece-syllabus-page th,
+  .ece-syllabus-page td {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .ece-syllabus-page .ece-info-box {
+    padding: 10px 15px;
+  }
+
+  .ece-syllabus-page .ece-syllabus-container h2,
+  .ece-syllabus-page .ece-syllabus-container h3 {
+    font-size: 1.2rem;
+  }
+
+  .ece-syllabus-page .semester-title {
+    font-size: 1rem;
+  }
+
+  .ece-syllabus-page .ece-info-box p {
+    font-size: 0.9rem;
+  }
+
+  .ece-syllabus-page .pdf-container {
+    height: 300px;
+  }
+  .ece-syllabus-container .pdf-container{
+    height: 500px;
+  }
+}
+.maindiv{
+  margin-top: 80px;
+}
+
+    .text{
+    text-align: center;
+   } 
+  </style>
+</head>
+<body>  
+{% include 'header.html' %}
+<div class="ece-syllabus-page maindiv">
+<header class="ece-syllabus-header ece-margin-top">
+  J.C. Bose University of Science and Technology, YMCA - Faridabad
+</header>
+
+<div class="ece-syllabus-container">
+  <h2>M.TECH (MD) - Syllabus up to 4th Semester</h2>
+
+  <div class="ece-info-box">
+    <p><strong>Department:</strong> Machine Design (MD) </p>
+    <p><strong>Batch:</strong> 2018</p>
+    <p><strong>Document Type:</strong> Complete Syllabus (Semester 1 to 4)</p>
+  </div>
+ <h3>📄 View Official Syllabus PDF</h3>
+  <div class="pdf-container">
+    <iframe src="https://jcboseust.ac.in/assets/uploads/media/mtech_syllabus_md_2018-19.pdf"></iframe>
+  </div>
+
+  
+
+  <div class="ece-last-updated">
+    🔄 Last Updated: 14 August 2018
+  </div>
+</div>
+
+  <h3 class="text">📘 Semester-wise Subject Details</h3>
+
+  <!-- SEMESTER-WISE DATA FROM 1 TO 8 -->
+  <!-- Replace this line with your full 1 to 8 semester table blocks -->
+  <!-- Make sure each table is wrapped inside <div class="table-responsive"> ... </div> -->
+
+  <!-- 🎓 Semester 1 -->
+<div class="semester-title">Semester 1 (M.Tech - Machine Design)</div>
+<div class="table-responsive">
+  <table>
+    <tr><th>Subject Code</th><th>Subject Name</th><th>L‑T‑P</th><th>Credits</th><th>Marks (I‑E)</th><th>Type</th></tr>
+    <tr><td>MMD-101A</td><td>Advanced Stress Analysis</td><td>3‑0‑0</td><td>3</td><td>25‑75</td><td>Core-I</td></tr>
+    <tr><td>MMD-102A</td><td>Advanced Vibrations and Acoustics</td><td>3‑0‑0</td><td>3</td><td>25‑75</td><td>Core-II</td></tr>
+    <tr><td>MMD-103A</td><td>Discipline Elective-I</td><td>3‑0‑0</td><td>3</td><td>25‑75</td><td>Elective-I</td></tr>
+    <tr><td>MMD-104A</td><td>Discipline Elective-II</td><td>3‑0‑0</td><td>3</td><td>25‑75</td><td>Elective-II</td></tr>
+    <tr><td>MMD-105A</td><td>Design Lab-I</td><td>0‑0‑4</td><td>2</td><td>15‑35</td><td>Lab</td></tr>
+    <tr><td>MMD-106A</td><td>Design Lab-II</td><td>0‑0‑4</td><td>2</td><td>15‑35</td><td>Lab</td></tr>
+    <tr><td>RMI-101</td><td>Research Methodology and IPR</td><td>2‑0‑0</td><td>2</td><td>25‑75</td><td>Core</td></tr>
+    <tr><td>AUD</td><td>Audit Course 1</td><td>2‑0‑0</td><td>0</td><td>–</td><td>Audit</td></tr>
+  </table>
+</div>
+
+<!-- 🧪 Semester 2 -->
+<div class="semester-title">Semester 2 (M.Tech - Machine Design)</div>
+<div class="table-responsive">
+  <table>
+    <tr><th>Subject Code</th><th>Subject Name</th><th>L‑T‑P</th><th>Credits</th><th>Marks (I‑E)</th><th>Type</th></tr>
+    <tr><td>MMD-201A</td><td>Finite Element Method</td><td>3‑0‑0</td><td>3</td><td>25‑75</td><td>Core-III</td></tr>
+    <tr><td>MMD-202A</td><td>Computer Aided Design</td><td>3‑0‑0</td><td>3</td><td>25‑75</td><td>Core-IV</td></tr>
+    <tr><td>MMD-203A</td><td>Discipline Elective-III</td><td>3‑0‑0</td><td>3</td><td>25‑75</td><td>Elective-III</td></tr>
+    <tr><td>MMD-204A</td><td>Discipline Elective-IV</td><td>3‑0‑0</td><td>3</td><td>25‑75</td><td>Elective-IV</td></tr>
+    <tr><td>MMD-205A</td><td>Design Lab-III</td><td>0‑0‑4</td><td>2</td><td>15‑35</td><td>Lab</td></tr>
+    <tr><td>MMD-206A</td><td>Design Lab-IV</td><td>0‑0‑4</td><td>2</td><td>15‑35</td><td>Lab</td></tr>
+    <tr><td>AUD</td><td>Audit Course 2</td><td>2‑0‑0</td><td>0</td><td>–</td><td>Audit</td></tr>
+    <tr><td>MMD-207A</td><td>Mini Project</td><td>0‑0‑4</td><td>2</td><td>25‑75</td><td>Project</td></tr>
+  </table>
+</div>
+
+<!-- 📘 Semester 3 -->
+<div class="semester-title">Semester 3 (M.Tech - Machine Design)</div>
+<div class="table-responsive">
+  <table>
+    <tr><th>Subject Code</th><th>Subject Name</th><th>L‑T‑P</th><th>Credits</th><th>Marks (I‑E)</th><th>Type</th></tr>
+    <tr><td>MMD-301A</td><td>Discipline Elective-V</td><td>3‑0‑0</td><td>3</td><td>25‑75</td><td>Elective-V</td></tr>
+    <tr><td>OEC</td><td>Open Elective</td><td>3‑0‑0</td><td>3</td><td>25‑75</td><td>Open Elective</td></tr>
+    <tr><td>MMD-302A</td><td>Dissertation Phase-I</td><td>0‑0‑20</td><td>10</td><td>50‑150</td><td>Project</td></tr>
+  </table>
+</div>
+
+<!-- 📗 Semester 4 -->
+<div class="semester-title">Semester 4 (M.Tech - Machine Design)</div>
+<div class="table-responsive">
+  <table>
+    <tr><th>Subject Code</th><th>Subject Name</th><th>L‑T‑P</th><th>Credits</th><th>Marks (I‑E)</th><th>Type</th></tr>
+    <tr><td>MMD-401A</td><td>Dissertation Phase-II</td><td>0‑0‑32</td><td>16</td><td>125‑375</td><td>Project</td></tr>
+  </table>
+</div>
+
+
+  </div>
+</div>
+  <!-- 🧠 Paste your Semester 3 to Semester 8 table blocks here (already provided in your original message) -->
+  <!-- Make sure each table is wrapped inside <div class="table-responsive"> ... </div> -->
+
+  <!-- 👇 Continue with rest of semester blocks here (3 to 8)... -->
+  <!-- If you'd like me to insert all of them here again, just say “continue with semester 3 to 8 now” -->
+
+  <!-- PDF Section -->
+ {% include 'footer.html' %}
+
+
+
+</body>
+</html>

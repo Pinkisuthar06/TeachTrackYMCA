@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mechnext Club - YMCA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+   :root {
+  --primary: #004aad;
+  --card-bg: rgba(255, 255, 255, 0.2);
+  --dark-blue: #001c55;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background: linear-gradient(to bottom right, #eef6ff, #cce0ff);
+  color: #333;
+  margin: 0;
+}
+
+.header {
+  background: linear-gradient(to right, var(--primary), var(--dark-blue));
+  color: white;
+  text-align: center;
+  padding: 4rem 1rem 2rem;
+  position: relative;
+}
+
+.header img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid white;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.header h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  margin-top: 1.5rem;
+}
+
+.section-title {
+  font-weight: bold;
+  color: var(--primary);
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+.alumni-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid var(--primary);
+  object-fit: cover;
+}
+
+.linkedin-btn {
+  color: #0a66c2;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.linkedin-btn:hover {
+  text-decoration: underline;
+}
+
+.btn-primary-custom {
+  background-color: var(--primary);
+  color: white;
+  border-radius: 50%;
+  padding: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+  background-color: #003580;
+}
+
+.btn-primary-custom i {
+  font-size: 1.5rem;
+}
+
+.cta-banner {
+  background: linear-gradient(90deg, var(--primary), #004aaddd);
+  color: white;
+  border-radius: 15px;
+  padding: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.gallery img {
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+}
+
+.maindiv {
+  margin-top: 90px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .header img {
+    width: 70px;
+    height: 70px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .header h1 {
+    font-size: 1.75rem;
+    margin-top: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .glass-card {
+    padding: 1.2rem;
+  }
+
+  .gallery img {
+    height: 180px;
+  }
+
+  .btn-primary-custom {
+    width: 42px;
+    height: 42px;
+  }
+
+  .btn-primary-custom i {
+    font-size: 1.2rem;
+  }
+
+  .cta-banner h4 {
+    font-size: 1.25rem;
+  }
+
+  .cta-banner p {
+    font-size: 1rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+{% include 'header.html' %}
+  <div class="header maindiv">
+    <img src="https://media.licdn.com/dms/image/v2/C4E03AQG3jvmGINR35A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1597210084522?e=1756339200&v=beta&t=L00_g0-FZY0Ss4oToXG_ZFC-ztFfT0K5QYajCiBKX6Y" alt="Club Logo">
+    <h1>Team Mechnext</h1>
+    <p>Core Mechanical Engineering Club, J.C. Bose University of Science and Technology, YMCA</p>
+  </div>
+
+  <div class="container py-4">
+    <h3 class="section-title">About Us</h3>
+    <p>
+      Established in January 2008, <strong>Team Mechnext</strong> is one of the six prominent technical clubs of YMCA Faridabad.
+      It is dedicated to promoting practical knowledge in mechanical engineering and encouraging innovation, creativity,
+      and interdisciplinary collaboration among students.
+    </p>
+    <p>
+      We are also proudly recognized as the <strong>Mechatronics Society</strong> of J.C. Bose University, YMCA. For over a decade,
+      we've been driving innovation through impactful projects like <strong>Quadcopters</strong>, <strong>RC Planes</strong>, and
+      <strong>custom-designed Robots</strong> — especially for thrilling <strong>Robowars competitions</strong>. Each year, we grow in technology and teamwork.
+    </p>
+    <div class="d-flex justify-content-center gap-3 mt-3">
+  <a href="https://www.instagram.com/_mechnext_/" target="_blank" class="btn btn-primary-custom" title="Instagram">
+    <i class="fab fa-instagram fa-lg"></i>
+  </a>
+  <a href="https://www.linkedin.com/company/mechnext-club/?originalSubdomain=in" target="_blank" class="btn btn-primary-custom" title="LinkedIn">
+    <i class="fab fa-linkedin fa-lg"></i>
+  </a>
+</div>
+  </div>
+
+  <div class="container py-5">
+    <h3 class="section-title">Our Team</h3>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="glass-card p-4 text-center">
+          <h5>Coordinators</h5>
+          <p>Mr. Sanjay Kumar<br>Sh. Surender Singh</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="glass-card p-4 text-center">
+          <h5>Secretaries</h5>
+          <p>Sonvir Singh<br>Rahul Yadav<br>Shubham Sharma<br>Yogendar Chauhan</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="glass-card p-4 text-center">
+          <h5>Joint Secretaries</h5>
+          <p>Kshitiz<br>Sachin</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <div class="container py-5">
+    <h3 class="section-title">Gallery</h3>
+    <div class="row gallery g-4">
+      <div class="col-md-4">
+        <img src="https://jcboseust.ac.in/dsw/assets/uploads/media/mechnext_1.jpg" alt="Mechnext 1">
+      </div>
+      <div class="col-md-4">
+        <img src="https://jcboseust.ac.in/dsw/assets/uploads/media/mechnext_2.jpg" alt="Mechnext 2">
+      </div>
+      <div class="col-md-4">
+        <img src="https://jcboseust.ac.in/dsw/assets/uploads/media/mechnext_3.jpg" alt="Mechnext 3">
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <div class="cta-banner">
+      <h4>🚀 Want to be a part of the future of innovation?</h4>
+      <p>Join Team Mechnext today and shape your mechanical journey with creativity, machines, and a lot of learning!</p>
+      <a href="{{ url_for('process') }}" class="btn btn-light">Join the Club</a>
+    </div>
+  </div>
+
+  
+{% include 'footer.html' %}
+</body>
+</html>

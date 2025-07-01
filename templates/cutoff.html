@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>YMCA Cutoff Portal - Verified Data (2023 & 2024)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Rubik', sans-serif;
+      background: linear-gradient(to right, #e3f2fd, #ffffff);
+      color: #333;
+    }
+
+    .cutoff-header {
+      height: 100vh;
+      background: linear-gradient(135deg, #0d47a1, #1976d2);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .cutoff-header h1 {
+      font-size: 2.8em;
+      margin-bottom: 20px;
+    }
+
+    .cutoff-header p {
+      font-size: 1.2em;
+      max-width: 700px;
+      line-height: 1.6;
+    }
+
+    .cutoff-arrow {
+      margin-top: 40px;
+      font-size: 2em;
+      animation: cutoff-bounce 2s infinite;
+      color: #bbdefb;
+    }
+
+    @keyframes cutoff-bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
+    .cutoff-section {
+      padding: 60px 20px 40px;
+      text-align: center;
+      background-color: #f5faff;
+    }
+
+    .cutoff-section h2 {
+      font-size: 2em;
+      margin-bottom: 15px;
+      color: #0d47a1;
+    }
+
+    .cutoff-section p {
+      max-width: 750px;
+      margin: auto;
+      font-size: 1em;
+      color: #555;
+    }
+
+    .cutoff-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 40px;
+      gap: 30px;
+    }
+
+    .cutoff-card {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      width: 280px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .cutoff-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .cutoff-card h3 {
+      color: #1565c0;
+      margin-bottom: 10px;
+      font-size: 1.3em;
+    }
+
+    .cutoff-card p {
+      color: #444;
+      font-size: 0.95em;
+      margin-bottom: 20px;
+    }
+
+    .cutoff-card a {
+      background: #1565c0;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+    }
+
+    .cutoff-card a:hover {
+      background: #0d47a1;
+    }
+
+    .cutoff-trust {
+      background: #e1f5fe;
+      padding: 40px 20px;
+      margin-top: 60px;
+      text-align: center;
+    }
+
+    .cutoff-trust p {
+      font-size: 1.1em;
+      color: #0277bd;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    @media (max-width: 600px) {
+      .cutoff-header h1 {
+        font-size: 2em;
+      }
+
+      .cutoff-card {
+        width: 90%;
+      }
+
+      .cutoff-arrow {
+        font-size: 1.5em;
+      }
+    }
+
+    .cutoff-main-wrapper {
+      margin-top: 80px;
+    }
+  </style>
+</head>
+<body>
+  {% include 'header.html' %}
+
+  <header class="cutoff-header cutoff-main-wrapper">
+    <h1>YMCA Cutoff Portal</h1>
+    <p>Access real, branch-wise, category-wise cutoff ranks of YMCA Faridabad. This data is 100% verified from actual students for both 2023 and 2024.</p>
+    <div class="cutoff-arrow">&#x2193;</div>
+  </header>
+
+  <section class="cutoff-section">
+    <h2>Explore Verified Cutoff & Opening–Closing Ranks</h2>
+    <p>Select your desired year and type of data — category-wise cutoffs or opening & closing rank comparisons for each branch.</p>
+
+    <div class="cutoff-cards">
+      <div class="cutoff-card">
+        <h3>Cutoff – 2023</h3>
+        <p>Check category & gender wise cutoff rank data for 2023.</p>
+        <a href="{{ url_for('cutoff2023') }}">View 2023 Cutoff</a>
+      </div>
+
+      <div class="cutoff-card">
+        <h3>Opening & Closing – 2023</h3>
+        <p>Branch-wise opening and closing rank chart with category filters.</p>
+        <a href="{{ url_for('opcp2023') }}">View 2023 O/C Ranks</a>
+      </div>
+
+      <div class="cutoff-card">
+        <h3>Cutoff – 2024</h3>
+        <p>Latest cutoff data from 2024 HSTES counselling rounds.</p>
+        <a href="{{ url_for('cutoff2024') }}">View 2024 Cutoff</a>
+      </div>
+
+      <div class="cutoff-card">
+        <h3>Opening & Closing – 2024</h3>
+        <p>Up-to-date opening and closing rank information for 2024.</p>
+        <a href="{{ url_for('opcp2024') }}">View 2024 O/C Ranks</a>
+      </div>
+    </div>
+  </section>                 
+
+  <section class="cutoff-trust">
+    <p>✅ Built by YMCA students — this portal contains real admission data gathered from actual counselling records. Trust it with full confidence.</p>
+  </section>
+
+  {% include 'footer.html' %}
+</body>
+</html>

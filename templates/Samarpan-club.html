@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Samarpan Club - YMCA</title>
+
+  <!-- Fonts and CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #007bff;
+      --card-bg: rgba(255, 255, 255, 0.2);
+      --dark-blue: #004080;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Ubuntu', sans-serif;
+      background: linear-gradient(to bottom right, #e7f1ff, #d0e2ff);
+      color: #333;
+      margin: 0;
+    }
+
+    .header {
+      background: linear-gradient(to right, var(--primary), var(--dark-blue));
+      color: white;
+      text-align: center;
+      padding: 6rem 1rem 2rem;
+      position: relative;
+    }
+
+  .header img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid white;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+
+    .header h1 {
+      font-weight: 700;
+      font-size: 3rem;
+      margin-top: 1.5rem;
+    }
+
+    .section-title {
+      font-weight: bold;
+      color: var(--primary);
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+
+    .glass-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    }
+
+    .btn-primary-custom {
+      background-color: var(--primary);
+      color: white;
+      border-radius: 10px;
+      padding: 0.6rem 1.2rem;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+
+    .btn-primary-custom:hover {
+      background-color: #0056b3;
+    }
+
+    .btn-primary-custom i {
+      font-size: 1.5rem;
+    }
+
+    .btn-primary-custom {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      border-radius: 50%;
+    }
+
+    .cta-banner {
+      background: linear-gradient(90deg, var(--primary), #3399ff);
+      color: white;
+      border-radius: 15px;
+      padding: 2rem;
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+.gallery img {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+    @media (max-width: 768px) {
+  .header img {
+    width: 70px;
+    height: 70px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+    .header h1 {
+      font-size: 1.75rem;
+      margin-top: 2.5rem;
+    }
+    }
+
+    .maindiv {
+      margin-top: 90px;
+    }
+  </style>
+</head>
+<body>
+  {% include 'header.html' %}
+  <div class="header maindiv">
+    <img src="https://media.licdn.com/dms/image/v2/C4D0BAQFuh17MZhrtgw/company-logo_200_200/company-logo_200_200/0/1630532197149?e=1756339200&v=beta&t=3f1bOdBqCGc-IbTXvxv7wPGzM70PgBt8dGZ8_gimE4c" alt="Club Logo">
+    <h1>SAMARPAN</h1>
+    <p>The Association of Budding Electronics and Electrical Engineers at J.C. Bose University of Science and Technology, YMCA</p>
+  </div>
+
+  <div class="container py-4">
+    <h3 class="section-title">About Us</h3>
+    <p><strong>SAMARPAN</strong> was established by a passionate group of electronics and electrical engineering students at YMCAUST with a shared interest in learning and showcasing technological innovation. True to its name, the club is committed to the spirit of dedication and contribution toward technical excellence.</p>
+    <p>All members are united by a devotion to learning and innovation, aiming to go beyond traditional ideas and techniques to build futuristic solutions.</p>
+    <div class="d-flex justify-content-center gap-3 mt-3">
+      <a href="#" target="_blank" class="btn btn-primary-custom" title="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+      <a href="#" target="_blank" class="btn btn-primary-custom" title="LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <h3 class="section-title">Our Team</h3>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="glass-card p-4 text-center">
+          <h5>Coordinators</h5>
+          <p>Ms. Rachna Dhir<br>Ms. Manju</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="glass-card p-4 text-center">
+          <h5>Secretaries</h5>
+          <p>Nitin Bindal<br>Vaibhav<br>Sahil<br>Swati<br>Yashika<br>Shagun</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="glass-card p-4 text-center">
+          <h5>Joint Secretaries</h5>
+          <p>Saurabh<br>Wriddha<br>Amarpreet<br>Sahil</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container py-5">
+  <h3 class="section-title">Our Alumni</h3>
+  <div class="row justify-content-center g-4">
+
+    <!-- Alumni Card -->
+    <div class="col-md-4 col-sm-6">
+      <div class="card shadow border-0 h-100 text-center">
+        <div class="card-body p-4">
+          <img src="https://media.licdn.com/dms/image/v2/D4D03AQFIblBPNZvaiQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1727980154074?e=1756339200&v=beta&t=Hvw608EOzr2murb1IWXR06QQpqDqtz8APuYRYppyfPo" alt="Alumni Photo" class="rounded-circle mb-3" style="width: 120px; height: 120px; object-fit: cover;">
+          <h5 class="card-title mb-1">Parul Banbaniya</h5>
+          <p class="text-muted mb-1">B.Tech IOT | 2018-2022</p>
+          <p class="mb-2"><strong>Company:</strong> Amazon</p>
+          <a href="https://www.linkedin.com/in/parul-banbaniya-3941351a1/" target="_blank" class="btn btn-sm btn-outline-primary">
+            <i class="fab fa-linkedin me-1"></i> View LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Repeat card structure for more alumni -->
+    <div class="col-md-4 col-sm-6">
+      <div class="card shadow border-0 h-100 text-center">
+        <div class="card-body p-4">
+          <img src="https://media.licdn.com/dms/image/v2/D5603AQH_kZ3yr0BRew/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1714368861378?e=1756339200&v=beta&t=m5cGjo9Wzu5bdxn0qGUZJJQgyVITlwwE2rg54jyD_RA" alt="Alumni Photo" class="rounded-circle mb-3" style="width: 120px; height: 120px; object-fit: cover;">
+          <h5 class="card-title mb-1">Anshika Dubey</h5>
+          <p class="text-muted mb-1">B.Tech ENC | 2020-2024</p>
+          <p class="mb-2"><strong>Company:</strong> Synergy Systems and Solutions</p>
+          <a href="https://linkedin.com/in/swativerma" target="_blank" class="btn btn-sm btn-outline-primary">
+            <i class="fab fa-linkedin me-1"></i> View LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+
+     <div class="col-md-4 col-sm-6">
+      <div class="card shadow border-0 h-100 text-center">
+        <div class="card-body p-4">
+          <img src="https://media.licdn.com/dms/image/v2/D5635AQErhmiLoIjEGg/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1722849720683?e=1751443200&v=beta&t=nQ9t6tMdaeyrdaUnOBUJpplwr8vAdmDb49igTfLqIKY" alt="Alumni Photo" class="rounded-circle mb-3" style="width: 120px; height: 120px; object-fit: cover;">
+          <h5 class="card-title mb-1">Preeti Yadav</h5>
+          <p class="text-muted mb-1">B.Tech IOT | 2018-2022</p>
+          <p class="mb-2"><strong>Company:</strong> Nagarro</p>
+          <a href="https://www.linkedin.com/in/preeti-yadav-370b4b208/" target="_blank" class="btn btn-sm btn-outline-primary">
+            <i class="fab fa-linkedin me-1"></i> View LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+
+      <div class="col-md-4 col-sm-6">
+      <div class="card shadow border-0 h-100 text-center">
+        <div class="card-body p-4">
+          <img src="https://media.licdn.com/dms/image/v2/D5603AQEmhr3qsr7uBQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1710349124956?e=1756339200&v=beta&t=j9quaaY0xB1WMh4sqXIhw2lzW8FMRHFoNRw8-ap0-1E" alt="Alumni Photo" class="rounded-circle mb-3" style="width: 120px; height: 120px; object-fit: cover;">
+          <h5 class="card-title mb-1">Aditya Pal</h5>
+          <p class="text-muted mb-1">B.Tech ECE | 2020-2024</p>
+          <p class="mb-2"><strong>Company:</strong> MV Electrosystems Limited</p>
+          <a href="https://www.linkedin.com/in/aditya-pal05/" target="_blank" class="btn btn-sm btn-outline-primary">
+            <i class="fab fa-linkedin me-1"></i> View LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+    <!-- Academic Year 2017 -->
+<div class="container py-5">
+  <h3 class="section-title">Our Achievements</h3>
+  <div class="accordion" id="achievementsAccordion">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="heading2017">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2017" aria-expanded="false" aria-controls="collapse2017">
+          📗 Academic Year - 2017
+        </button>
+      </h2>
+      <div id="collapse2017" class="accordion-collapse collapse" aria-labelledby="heading2017" data-bs-parent="#achievementsAccordion">
+        <div class="accordion-body">
+          <ul>
+            <li><strong>Summer Sessions:</strong> Conducted by 3rd years for 2nd years on Arduino, Photoshop, Vixen, Proteus.</li>
+            <li><strong>Projects Developed:</strong>
+              <ul>
+                <li>Gesture Controlled Robot</li>
+                <li>Frequency Controlled LEDs</li>
+                <li>LED Cube</li>
+                <li>Obstacle Avoiding Robot</li>
+                <li>Home Automation System</li>
+                <li>IoT Smart Button</li>
+              </ul>
+            </li>
+            <li><strong>Tree Plantation Drive:</strong> Aug 4 – Club members actively participated.</li>
+            <li><strong>Session by Senior:</strong> Aug 10 – Moksh Sir shared job and industry preparation tips.</li>
+            <li><strong>Wireless Robot Workshop:</strong> Aug 19–20 – 75+ students participated. Covered PCB, Arduino, Bluetooth modules.</li>
+            <li><strong>Reizo’17 AIR DRUM:</strong> Sep 16 – MIDI + Arduino-based interactive drum system with synchronized lights.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container py-5">
+  <h3 class="section-title">Gallery</h3>
+  <div class="row g-4 gallery">
+    <div class="col-md-4">
+      <img src="https://jcboseust.ac.in/dsw/assets/uploads/media/sm_1.jpg" alt="Srijan Art 1">
+    </div>
+    <div class="col-md-4">
+      <img src="https://jcboseust.ac.in/dsw/assets/uploads/media/sm_2.jpg" alt="Srijan Art 2">
+    </div>
+    <div class="col-md-4">
+      <img src="https://jcboseust.ac.in/dsw/assets/uploads/media/sm_3.jpg" alt="Srijan Art 3">
+    </div>
+  </div>
+</div>
+
+
+  <div class="container py-5">
+    <div class="cta-banner">
+      <h4>🚀 Are you passionate about technology and innovation?</h4>
+      <p>Join SAMARPAN and be part of YMCA’s most vibrant technical community. Together we innovate, learn, and grow!</p>
+      <a href="{{ url_for('process') }}" class="btn btn-light">Join the Club</a>
+    </div>
+  </div>
+
+  {% include 'footer.html' %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

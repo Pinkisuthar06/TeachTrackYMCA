@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cutoff Comparison (2023 vs 2024)</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+  body {
+    background: linear-gradient(to right, #e0f7fa, #f1f8e9);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+  }
+
+  h1 {
+    text-align: center;
+    margin: 40px 0;
+    font-weight: 700;
+    color: #0d47a1;
+    text-shadow: 1px 1px 2px #ccc;
+  }
+
+  .nav-tabs .nav-link {
+    font-weight: 600;
+    color: #0d47a1;
+    background-color: #e3f2fd;
+    border: 1px solid #bbdefb;
+    border-radius: 0.25rem 0.25rem 0 0;
+    margin-right: 4px;
+  }
+
+  .nav-tabs .nav-link.active {
+    background-color: #1976d2;
+    color: white;
+    border-color: #1976d2;
+  }
+
+  .tab-pane {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 0 0 0.5rem 0.5rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  }
+
+  h3.text-center {
+    color: #004d40;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+
+  table {
+    margin-top: 20px;
+    border-collapse: collapse;
+  }
+
+  table thead th {
+    background-color: #00796b !important;
+    color: #fff;
+    font-size: 0.95rem;
+  }
+
+  table th, table td {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 0.92rem;
+  }
+
+  .increase::after {
+    content: " \2191";
+    color: green;
+    font-weight: bold;
+  }
+
+  .decrease::after {
+    content: " \2193";
+    color: red;
+    font-weight: bold;
+  }
+
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9fbe7;
+  }
+
+  .table-striped tbody tr:hover {
+    background-color: #c8e6c9;
+    transition: background-color 0.3s;
+  }
+  .maindiv{
+    margin-top: 80px;
+  }
+</style>
+
+</head>
+<body>
+  {% include 'header.html' %}
+  <div class="container maindiv">
+    <h1>Cutoff Comparison (2023 vs 2024)</h1>
+
+  
+    <!-- Tabs -->
+    <ul class="nav nav-tabs" id="branchTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="cse-tab" data-bs-toggle="tab" data-bs-target="#cse" type="button" role="tab">CE</button>
+      </li>
+      <li class="nav-item">
+  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#cs-ds" type="button">CE (Data Science)</button>
+</li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link " id="it-tab" data-bs-toggle="tab" data-bs-target="#it" type="button" role="tab">IT</button>
+      </li>
+    
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="ece-tab" data-bs-toggle="tab" data-bs-target="#ece" type="button" role="tab">ECE</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="enc-tab" data-bs-toggle="tab" data-bs-target="#enc" type="button" role="tab">ENC</button>
+      </li>
+         <li class="nav-item" role="presentation">
+        <button class="nav-link" id="electrical-tab" data-bs-toggle="tab" data-bs-target="#ee" type="button" role="tab">EE</button>
+      </li>
+     <li class="nav-item">
+  <button class="nav-link" id="iot-tab" data-bs-toggle="tab" data-bs-target="#iot" type="button" role="tab">IOT</button>
+</li>
+<li class="nav-item">
+  <button class="nav-link" id="rai-tab" data-bs-toggle="tab" data-bs-target="#rai" type="button" role="tab">RAI</button>
+</li>
+<li class="nav-item">
+  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#cse-hindi" type="button">CE (Hindi)</button>
+</li>
+
+<li class="nav-item">
+  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#me" type="button">ME</button>
+</li>
+<li class="nav-item">
+  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#me-hindi" type="button">ME (Hindi)</button>
+</li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="civil-tab" data-bs-toggle="tab" data-bs-target="#civil" type="button" role="tab">CIVIL</button>
+      </li>
+   
+
+
+<li class="nav-item">
+  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#env" type="button">ENV</button>
+</li>
+
+    </ul>
+
+
+    <!-- Tab content -->
+    <div class="tab-content mt-4" id="branchTabsContent">
+      <div class="tab-pane fade " id="it" role="tabpanel">
+        <h3 class="text-center">Information Technology (IT)</h3>
+        <table class="table table-bordered table-striped">
+          <thead class="table-primary">
+            <tr>
+              <th rowspan="2" class="align-middle">Category</th>
+              <th colspan="2">Opening Rank</th>
+              <th colspan="2">Closing Rank</th>
+            </tr>
+            <tr>
+              <th>2023</th>
+              <th>2024</th>
+              <th>2023</th>
+              <th>2024</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>ALL HOGC</td><td>43959</td><td class="decrease">30000</td><td>59350</td><td class="increase">70505</td></tr>
+            <tr><td>M HOGC</td><td>43959</td><td class="decrease">30000</td><td>59280</td><td class="increase">70505</td></tr>
+            <tr><td>F HOGC</td><td>52174</td><td class="increase">65157</td><td>59350</td><td class="increase">70252</td></tr>
+            <tr><td>ALL BC-A</td><td>64719</td><td class="decrease">63837</td><td>105418</td><td class="decrease">91358</td></tr>
+            <tr><td>M BC-A</td><td>64719</td><td class="decrease">63837</td><td>70708</td><td class="decrease">69802</td></tr>
+            <tr><td>F BC-A</td><td>105418</td><td class="decrease">87729</td><td>105418</td><td class="decrease">91358</td></tr>
+            <tr><td>ALL BC-B</td><td>61351</td><td class="decrease">50448</td><td>86508</td><td class="decrease">79972</td></tr>
+            <tr><td>M BC-B</td><td>61351</td><td class="decrease">50448</td><td>66843</td><td class="increase">79972</td></tr>
+            <tr><td>F BC-B</td><td>86508</td><td class="decrease">79359</td><td>86508</td><td class="decrease">79359</td></tr>
+            <tr><td>ALL EWS</td><td>54003</td><td class="increase">56201</td><td>63208</td><td class="decrease">56583</td></tr>
+            <tr><td>M EWS</td><td>54003</td><td class="increase">56201</td><td>63208</td><td class="decrease">56583</td></tr>
+            <tr><td>ALL SC</td><td>63403</td><td class="increase">143653</td><td>294235</td><td class="increase">690948</td></tr>
+            <tr><td>M SC</td><td>63403</td><td class="increase">143653</td><td>230793</td><td class="increase">270186</td></tr>
+            <tr><td>F SC</td><td>294235</td><td class="decrease">241607</td><td>294235</td><td class="increase">690948</td></tr>
+            <tr><td>ALL ROHC</td><td>43357</td><td class="increase">60622</td><td>74318</td><td class="increase">89188</td></tr>
+            <tr><td>M ROHC</td><td>43357</td><td class="increase">60622</td><td>59391</td><td class="increase">68382</td></tr>
+            <tr><td>F ROHC</td><td>72689</td><td class="increase">77957</td><td>74318</td><td class="increase">89188</td></tr>
+            <tr><td>ALL TFW</td><td>53869</td><td class="decrease">45591</td><td>626442</td><td class="decrease">51498</td></tr>
+            <tr><td>M TFW</td><td>53869</td><td class="decrease">45591</td><td>626442</td><td class="decrease">51498</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+          <!-- CSE Placeholder -->
+      <div class="tab-pane fade show active" id="cse" role="tabpanel">
+        <h3 class="text-center">Computer Science Engineering (CSE)</h3>
+        <p class="text-center">CSE cutoff data will appear here.</p>
+        <table class="table table-bordered table-striped">
+          <thead class="table-primary">
+            <tr>
+              <th rowspan="2" class="align-middle">Category</th>
+              <th colspan="2">Opening Rank</th>
+              <th colspan="2">Closing Rank</th>
+            </tr>
+            <tr>
+              <th>2023</th>
+              <th>2024</th>
+              <th>2023</th>
+              <th>2024</th>
+            </tr>
+          </thead>
+          <tbody>
+             <tr><td>ALL HOGC</td><td>19316</td><td class="decrease">6002</td><td>50743</td><td class="increase">57627</td></tr>
+      <tr><td>M HOGC</td><td>19316</td><td class="decrease">6002</td><td>43632</td><td class="increase">57627</td></tr>
+      <tr><td>F HOGC</td><td>34812</td><td class="increase">40104</td><td>50743</td><td class="increase">53675</td></tr>
+      <tr><td>ALL BC-A</td><td>47273</td><td class="decrease">26703</td><td>78270</td><td class="increase">85086</td></tr>
+      <tr><td>ALL EWS</td><td>42076</td><td class="decrease">26085</td><td>52773</td><td class="decrease">46401</td></tr>
+      <tr><td>ALL SC</td><td>108038</td><td class="decrease">41492</td><td>200436</td><td class="increase">508667</td></tr>
+      <tr><td>ALL ROHC</td><td>18688</td><td class="increase">22634</td><td>66186</td><td class="increase">73880</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ECE Tab -->
+      <div class="tab-pane fade" id="ece" role="tabpanel">
+        <h3 class="text-center">Electronics & Communication Engineering (ECE)</h3>
+        <table class="table table-bordered table-striped">
+          <thead class="table-primary">
+            <tr>
+              <th rowspan="2" class="align-middle">Category</th>
+              <th colspan="2">Opening Rank</th>
+              <th colspan="2">Closing Rank</th>
+            </tr>
+            <tr>
+              <th>2023</th>
+              <th>2024</th>
+              <th>2023</th>
+              <th>2024</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>ALL HOGC</td><td>59569</td><td class="decrease">44242</td><td>80216</td><td class="increase">111748</td></tr>
+            <tr><td>M HOGC</td><td>59569</td><td class="decrease">44242</td><td>80216</td><td class="increase">111748</td></tr>
+            <tr><td>F HOGC</td><td>70944</td><td class="increase">75224</td><td>74238</td><td class="increase">103314</td></tr>
+            <tr><td>ALL BC-A</td><td>66717</td><td class="decrease">65307</td><td>122441</td><td class="increase">161906</td></tr>
+            <tr><td>M BC-A</td><td>91654</td><td class="decrease">65307</td><td>103217</td><td class="increase">114480</td></tr>
+            <tr><td>F BC-A</td><td>66717</td><td class="increase">123961</td><td>122441</td><td class="increase">161906</td></tr>
+            <tr><td>ALL BC-B</td><td>64719</td><td class="increase">76276</td><td>98626</td><td class="increase">116989</td></tr>
+            <tr><td>M BC-B</td><td>64719</td><td class="increase">76276</td><td>76263</td><td class="increase">116989</td></tr>
+            <tr><td>F BC-B</td><td>88811</td><td class="decrease">88811</td><td>98626</td><td class="increase">98626</td></tr>
+            <tr><td>ALL EWS</td><td>68835</td><td class="increase">70944</td><td>72147</td><td class="increase">70944</td></tr>
+            <tr><td>M EWS</td><td>68835</td><td class="increase">70944</td><td>72147</td><td class="increase">70944</td></tr>
+            <tr><td>ALL SC</td><td>74353</td><td class="increase">212315</td><td>375920</td><td class="increase">463366</td></tr>
+            <tr><td>M SC</td><td>74353</td><td class="increase">212315</td><td>333879</td><td class="increase">459346</td></tr>
+            <tr><td>F SC</td><td>247799</td><td class="increase">403971</td><td>375920</td><td class="increase">463366</td></tr>
+            <tr><td>ALL ROHC</td><td>54361</td><td class="increase">76059</td><td>89231</td><td class="increase">132853</td></tr>
+            <tr><td>M ROHC</td><td>54361</td><td class="increase">76059</td><td>67887</td><td class="increase">91963</td></tr>
+            <tr><td>F ROHC</td><td>85215</td><td class="increase">85360</td><td>89231</td><td class="increase">132853</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ENC Placeholder -->
+      <div class="tab-pane fade" id="enc" role="tabpanel">
+        <h3 class="text-center">Electronics & Computer (ENC)</h3>
+        <p class="text-center">ENC cutoff data will appear here.</p>
+         <table class="table table-bordered table-striped">
+          <thead class="table-primary">
+            <tr>
+              <th rowspan="2" class="align-middle">Category</th>
+              <th colspan="2">Opening Rank</th>
+              <th colspan="2">Closing Rank</th>
+            </tr>
+            <tr>
+              <th>2023</th>
+              <th>2024</th>
+              <th>2023</th>
+              <th>2024</th>
+            </tr>
+          </thead>
+          <tbody>
+             <tr><td>ALL HOGC</td><td>63815</td><td class="decrease">56727</td><td>82600</td><td class="increase">103840</td></tr>
+            <tr><td>M HOGC</td><td>63815</td><td class="decrease">56727</td><td>82600</td><td class="increase">103840</td></tr>
+            <tr><td>F HOGC</td><td>63815</td><td class="increase">78692</td><td>82600</td><td class="increase">101432</td></tr>
+            <tr><td>ALL BC-A</td><td>82600</td><td class="increase">100180</td><td>130219</td><td class="increase">137256</td></tr>
+            <tr><td>M BC-A</td><td>82600</td><td class="increase">100180</td><td>130219</td><td class="increase">137256</td></tr>
+            <tr><td>F BC-A</td><td>82600</td><td class="increase">111067</td><td>130219</td><td class="increase">137256</td></tr>
+            <tr><td>ALL EWS</td><td>63815</td><td class="increase">66291</td><td>79071</td><td class="increase">85066</td></tr>
+            <tr><td>M EWS</td><td>63815</td><td class="increase">66291</td><td>79071</td><td class="increase">85066</td></tr>
+            <tr><td>ALL SC</td><td>111097</td><td class="increase">175746</td><td>399011</td><td class="increase">489853</td></tr>
+            <tr><td>M SC</td><td>111097</td><td class="increase">175746</td><td>399011</td><td class="increase">489853</td></tr>
+            <tr><td>ALL ROHC</td><td>63379</td><td class="increase">69097</td><td>92514</td><td class="increase">115193</td></tr>
+            <tr><td>M ROHC</td><td>63379</td><td class="increase">69097</td><td>92514</td><td class="increase">115193</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- CIVIL Placeholder -->
+      <div class="tab-pane fade" id="civil" role="tabpanel">
+        <h3 class="text-center">Civil Engineering</h3>
+        <p class="text-center">Civil cutoff data will appear here.</p>
+         <table class="table table-bordered table-striped">
+          <thead class="table-primary">
+            <tr>
+              <th rowspan="2" class="align-middle">Category</th>
+              <th colspan="2">Opening Rank</th>
+              <th colspan="2">Closing Rank</th>
+            </tr>
+            <tr>
+              <th>2023</th>
+              <th>2024</th>
+              <th>2023</th>
+              <th>2024</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>ALL HOGC</td><td>92477</td><td class="decrease">92474</td><td>135440</td><td class="increase">147795</td></tr>
+            <tr><td>M HOGC</td><td>92477</td><td class="decrease">92474</td><td>135440</td><td class="increase">147795</td></tr>
+            <tr><td>F HOGC</td><td>135440</td><td class="decrease">120099</td><td>135440</td><td class="increase">147795</td></tr>
+            <tr><td>ALL BC-A</td><td>123849</td><td class="decrease">117631</td><td>190124</td><td class="increase">224280</td></tr>
+            <tr><td>ALL EWS</td><td>101474</td><td class="decrease">101474</td><td>131431</td><td class="increase">137748</td></tr>
+            <tr><td>M EWS</td><td>101474</td><td class="decrease">101474</td><td>131431</td><td class="increase">137748</td></tr>
+            <tr><td>ALL SC</td><td>138574</td><td class="increase">225078</td><td>396743</td><td class="increase">605600</td></tr>
+            <tr><td>M SC</td><td>138574</td><td class="increase">225078</td><td>396743</td><td class="increase">605600</td></tr>
+            <tr><td>ALL ROHC</td><td>87711</td><td class="increase">117771</td><td>151803</td><td class="increase">177745</td></tr>
+            <tr><td>M ROHC</td><td>87711</td><td class="increase">117771</td><td>151803</td><td class="increase">177745</td></tr>
+          </tbody>
+        </table>
+      </div>
+     <div class="tab-pane fade " id="ee" role="tabpanel">
+  <h3 class="text-center">Electrical Engineering (EE)</h3>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="table-primary">
+        <tr>
+          <th rowspan="2" class="align-middle">Category</th>
+          <th colspan="2">Opening Rank</th>
+          <th colspan="2">Closing Rank</th>
+        </tr>
+        <tr>
+          <th>2023</th>
+          <th>2024</th>
+          <th>2023</th>
+          <th>2024</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>ALL HOGC</td><td>80785</td><td class="decrease">72390</td><td>108252</td><td class="increase">127746</td></tr>
+        <tr><td>M HOGC</td><td>80785</td><td class="decrease">72390</td><td>108252</td><td class="increase">127746</td></tr>
+        <tr><td>F HOGC</td><td>108252</td><td class="decrease">88057</td><td>108252</td><td class="increase">127746</td></tr>
+        <tr><td>ALL BC-A</td><td>99382</td><td class="increase">105862</td><td>157208</td><td class="increase">174708</td></tr>
+        <tr><td>ALL EWS</td><td>88057</td><td class="increase">89186</td><td>108252</td><td class="increase">118512</td></tr>
+        <tr><td>M EWS</td><td>88057</td><td class="increase">89186</td><td>108252</td><td class="increase">118512</td></tr>
+        <tr><td>ALL SC</td><td>100029</td><td class="increase">201261</td><td>312487</td><td class="increase">546990</td></tr>
+        <tr><td>M SC</td><td>100029</td><td class="increase">201261</td><td>312487</td><td class="increase">546990</td></tr>
+        <tr><td>ALL ROHC</td><td>77940</td><td class="increase">92439</td><td>130084</td><td class="increase">157229</td></tr>
+        <tr><td>M ROHC</td><td>77940</td><td class="increase">92439</td><td>130084</td><td class="increase">157229</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+     <div class="tab-pane fade" id="iot" role="tabpanel">
+  <h3 class="text-center">Internet of Things (IOT)</h3>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="table-primary">
+        <tr>
+          <th rowspan="2" class="align-middle">Category</th>
+          <th colspan="2">Opening Rank</th>
+          <th colspan="2">Closing Rank</th>
+        </tr>
+        <tr>
+          <th>2023</th>
+          <th>2024</th>
+          <th>2023</th>
+          <th>2024</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>ALL HOGC</td><td>76393</td><td class="decrease">65093</td><td>102519</td><td class="increase">122795</td></tr>
+        <tr><td>M HOGC</td><td>76393</td><td class="decrease">65093</td><td>102519</td><td class="increase">122795</td></tr>
+        <tr><td>F HOGC</td><td>76393</td><td class="increase">94414</td><td>102519</td><td class="increase">122795</td></tr>
+        <tr><td>ALL ROHC</td><td>74837</td><td class="increase">82723</td><td>119180</td><td class="increase">136252</td></tr>
+        <tr><td>M ROHC</td><td>74837</td><td class="increase">82723</td><td>119180</td><td class="increase">136252</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="tab-pane fade" id="rai" role="tabpanel">
+  <h3 class="text-center">Robotics and Artificial Intelligence (RAI)</h3>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="table-primary">
+        <tr>
+          <th rowspan="2" class="align-middle">Category</th>
+          <th colspan="2">Opening Rank</th>
+          <th colspan="2">Closing Rank</th>
+        </tr>
+        <tr>
+          <th>2023</th>
+          <th>2024</th>
+          <th>2023</th>
+          <th>2024</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>ALL HOGC</td><td>63541</td><td class="decrease">63127</td><td>84774</td><td class="increase">123387</td></tr>
+        <tr><td>M HOGC</td><td>63541</td><td class="decrease">63127</td><td>84774</td><td class="increase">123387</td></tr>
+        <tr><td>F HOGC</td><td>63541</td><td class="increase">68882</td><td>84774</td><td class="increase">112057</td></tr>
+        <tr><td>ALL ROHC</td><td>66045</td><td class="increase">68577</td><td>116709</td><td class="increase">137929</td></tr>
+        <tr><td>M ROHC</td><td>66045</td><td class="increase">68577</td><td>116709</td><td class="increase">137929</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+ <div class="tab-pane fade" id="me" role="tabpanel">
+  <h3 class="text-center">Mechanical Engineering (ME)</h3>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="table-primary">
+        <tr>
+          <th rowspan="2" class="align-middle">Category</th>
+          <th colspan="2">Opening Rank</th>
+          <th colspan="2">Closing Rank</th>
+        </tr>
+        <tr>
+          <th>2023</th>
+          <th>2024</th>
+          <th>2023</th>
+          <th>2024</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>ALL HOGC</td><td>87938</td><td class="increase">88223</td><td>130790</td><td class="increase">136679</td></tr>
+        <tr><td>M HOGC</td><td>87938</td><td class="increase">88223</td><td>130790</td><td class="increase">136679</td></tr>
+        <tr><td>ALL ROHC</td><td>86339</td><td class="increase">94555</td><td>140621</td><td class="increase">158059</td></tr>
+        <tr><td>M ROHC</td><td>86339</td><td class="increase">94555</td><td>140621</td><td class="increase">158059</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="tab-pane fade" id="me-hindi" role="tabpanel">
+  <h3 class="text-center">Mechanical Engineering (Hindi)</h3>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="table-primary">
+        <tr>
+          <th rowspan="2" class="align-middle">Category</th>
+          <th colspan="2">Opening Rank</th>
+          <th colspan="2">Closing Rank</th>
+        </tr>
+        <tr>
+          <th>2023</th>
+          <th>2024</th>
+          <th>2023</th>
+          <th>2024</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>ALL HOGC</td><td>121618</td><td class="decrease">116393</td><td>170406</td><td class="increase">174292</td></tr>
+        <tr><td>M HOGC</td><td>121618</td><td class="decrease">116393</td><td>170406</td><td class="increase">174292</td></tr>
+        <tr><td>ALL ROHC</td><td>121618</td><td class="increase">124453</td><td>170406</td><td class="increase">186223</td></tr>
+        <tr><td>M ROHC</td><td>121618</td><td class="increase">124453</td><td>170406</td><td class="increase">186223</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="tab-pane fade" id="cse-hindi" role="tabpanel">
+  <h3 class="text-center">Computer Science Engineering (Hindi)</h3>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="table-primary">
+        <tr>
+          <th rowspan="2" class="align-middle">Category</th>
+          <th colspan="2">Opening Rank</th>
+          <th colspan="2">Closing Rank</th>
+        </tr>
+        <tr>
+          <th>2023</th>
+          <th>2024</th>
+          <th>2023</th>
+          <th>2024</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>ALL HOGC</td><td>41233</td><td class="decrease">31687</td><td>61556</td><td class="increase">65537</td></tr>
+        <tr><td>M HOGC</td><td>41233</td><td class="decrease">31687</td><td>61556</td><td class="increase">65537</td></tr>
+        <tr><td>F HOGC</td><td>41233</td><td class="increase">50117</td><td>61556</td><td class="increase">65537</td></tr>
+        <tr><td>ALL ROHC</td><td>37398</td><td class="increase">38317</td><td>68363</td><td class="increase">71025</td></tr>
+        <tr><td>M ROHC</td><td>37398</td><td class="increase">38317</td><td>68363</td><td class="increase">71025</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="tab-pane fade" id="cs-ds" role="tabpanel">
+  <h3 class="text-center">Computer Science & Data Science Specialization</h3>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="table-primary">
+        <tr>
+          <th rowspan="2" class="align-middle">Category</th>
+          <th colspan="2">Opening Rank</th>
+          <th colspan="2">Closing Rank</th>
+        </tr>
+        <tr>
+          <th>2023</th>
+          <th>2024</th>
+          <th>2023</th>
+          <th>2024</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>ALL HOGC</td><td>27696</td><td class="decrease">19541</td><td>54811</td><td class="increase">59479</td></tr>
+        <tr><td>M HOGC</td><td>27696</td><td class="decrease">19541</td><td>54811</td><td class="increase">59479</td></tr>
+        <tr><td>F HOGC</td><td>34723</td><td class="increase">39887</td><td>54811</td><td class="increase">59479</td></tr>
+        <tr><td>ALL ROHC</td><td>23553</td><td class="increase">24327</td><td>65917</td><td class="increase">69412</td></tr>
+        <tr><td>M ROHC</td><td>23553</td><td class="increase">24327</td><td>65917</td><td class="increase">69412</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="tab-pane fade" id="env" role="tabpanel">
+  <h3 class="text-center">Environmental Engineering (ENV)</h3>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="table-primary">
+        <tr>
+          <th rowspan="2" class="align-middle">Category</th>
+          <th colspan="2">Opening Rank</th>
+          <th colspan="2">Closing Rank</th>
+        </tr>
+        <tr>
+          <th>2023</th>
+          <th>2024</th>
+          <th>2023</th>
+          <th>2024</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>ALL HOGC</td><td>121692</td><td class="decrease">113199</td><td>177064</td><td class="increase">186117</td></tr>
+        <tr><td>M HOGC</td><td>121692</td><td class="decrease">113199</td><td>177064</td><td class="increase">186117</td></tr>
+        <tr><td>ALL ROHC</td><td>116637</td><td class="increase">121045</td><td>184233</td><td class="increase">192752</td></tr>
+        <tr><td>M ROHC</td><td>116637</td><td class="increase">121045</td><td>184233</td><td class="increase">192752</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+    </div>
+    
+  </div>
+{% include 'footer.html' %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>B.Tech ECE (2018 Batch) - Syllabus up to 8th Sem</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+   .ece-syllabus-page {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+.ece-syllabus-page header {
+  background-color:#0a3c5f;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.ece-syllabus-page .ece-syllabus-container {
+  max-width: 1140px;
+  margin: 40px auto;
+  padding: 30px 20px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.ece-syllabus-page .ece-syllabus-container h2,
+.ece-syllabus-page .ece-syllabus-container h3 {
+  text-align: center;
+  color: #004080;
+  margin-bottom: 20px;
+}
+
+.ece-syllabus-page .ece-info-box {
+  background: #bfdcff;
+  border-left: 5px solid #007bff;
+  color: black;
+  padding: 15px 25px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.ece-syllabus-page .ece-info-box p {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+.ece-syllabus-page .semester-title {
+  background-color: #c0c7d1;
+  padding: 10px;
+  font-weight: 600;
+  margin: 20px 0 10px;
+  border-left: 5px solid #004080;
+  text-align: center;
+}
+
+.ece-syllabus-page .table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 90%;
+}
+
+@media (min-width: 768px) {
+  .ece-syllabus-page .table-responsive {
+    width: 80%;
+  }
+}
+@media (min-width: 992px) {
+  .ece-syllabus-page .table-responsive {
+    width: 70%;
+  }
+}
+
+.ece-syllabus-page table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  min-width: 600px;
+}
+
+.ece-syllabus-page th,
+.ece-syllabus-page td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+  font-size: 0.95rem;
+  word-wrap: break-word;
+}
+
+.ece-syllabus-page th {
+  background-color: #007bff;
+  color: white;
+}
+
+.ece-syllabus-page tr:nth-child(even) {
+  background-color: #c0c7d1;
+}
+
+.ece-syllabus-page .pdf-container {
+  position: relative;
+  padding-top: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.ece-syllabus-page .pdf-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.ece-syllabus-page .ece-last-updated {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.ece-syllabus-page .back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ece-syllabus-page .back-to-top:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .ece-syllabus-page body {
+    font-size: 14px;
+  }
+
+  .ece-syllabus-page header {
+    font-size: 1.3rem;
+    padding: 15px;
+  }
+
+  .ece-syllabus-page .ece-syllabus-container {
+    padding: 20px 10px;
+    margin: 20px auto;
+  }
+
+  .ece-syllabus-page th,
+  .ece-syllabus-page td {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .ece-syllabus-page .ece-info-box {
+    padding: 10px 15px;
+  }
+
+  .ece-syllabus-page .ece-syllabus-container h2,
+  .ece-syllabus-page .ece-syllabus-container h3 {
+    font-size: 1.2rem;
+  }
+
+  .ece-syllabus-page .semester-title {
+    font-size: 1rem;
+  }
+
+  .ece-syllabus-page .ece-info-box p {
+    font-size: 0.9rem;
+  }
+
+  .ece-syllabus-page .pdf-container {
+    height: 300px;
+  }
+  .ece-syllabus-container .pdf-container{
+    height: 500px;
+  }
+}
+.maindiv{
+  margin-top: 80px;
+}
+
+   .text{
+    text-align: center;
+   }  
+  </style>
+</head>
+<body>  
+{% include 'header.html' %}
+<div class="ece-syllabus-page maindiv">
+  <header class="ece-syllabus-header ece-margin-top">
+    J.C. Bose University of Science and Technology, YMCA - Faridabad
+  </header>
+
+  <div class="ece-syllabus-container">
+    <h2>B.Tech Computer Engineering (Hindi Medium) - Syllabus up to 8th Semester</h2>
+
+    <div class="ece-info-box">
+      <p><strong>Department:</strong> Computer Engineering (Regional - Hindi Medium)</p>
+      <p><strong>Batch:</strong> 2018</p>
+      <p><strong>Document Type:</strong> Complete Syllabus (Semester 1 to 8)</p>
+    </div>
+
+    <h3>📄 View Official Syllabus PDF</h3>
+    <div class="pdf-container">
+      <iframe src="https://jcboseust.ac.in/assets/uploads/media/52d9b342e952ea0dea0e84aa89274a6e.pdf"></iframe>
+    </div>
+
+    <div class="ece-last-updated">
+      🔄 Last Updated: 11 March 2019
+    </div>
+  </div>
+
+  <h3 class="text">📘 Semester-wise Subject Details</h3>
+
+  <!-- SEMESTER-WISE DATA FROM 1 TO 8 -->
+  <!-- Replace this line with your full 1 to 8 semester table blocks -->
+  <!-- Make sure each table is wrapped inside <div class="table-responsive"> ... </div> -->
+
+  <!-- 🎓 Semester 1 -->
+  <div class="semester-title">Semester 1</div>
+<div class="table-responsive">
+<table>
+<tr><th>Subject Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+<tr><td>Physics</td><td>Physics (Theory + Lab)</td><td>Core</td><td>5.5</td></tr>
+<tr><td>Mathematics-I</td><td>Calculus & Linear Algebra</td><td>Core</td><td>4</td></tr>
+<tr><td>ESC-101</td><td>Basic Electrical Engineering</td><td>Theory + Lab</td><td>5</td></tr>
+<tr><td>ESC-102</td><td>Engineering Graphics & Design</td><td>Lab</td><td>2</td></tr>
+<tr><td>ESC-103</td><td>Programming for Problem Solving</td><td>Theory + Lab</td><td>5</td></tr>
+<tr><td>ESC-104</td><td>Workshop-I</td><td>Lab</td><td>2</td></tr>
+<tr><td>HSMC-101</td><td>English (Theory + Lab)</td><td>Core</td><td>3</td></tr>
+</table>
+</div>
+
+
+  <!-- 🧪 Semester 2 -->
+ <div class="semester-title">Semester 2</div>
+<div class="table-responsive">
+<table>
+<tr><th>Subject Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+<tr><td>Chemistry</td><td>Chemistry (Theory + Lab)</td><td>Core</td><td>5.5</td></tr>
+<tr><td>Mathematics-II</td><td>Probability & Statistics</td><td>Core</td><td>4</td></tr>
+<tr><td>ESC-106</td><td>Workshop-II</td><td>Lab</td><td>2</td></tr>
+<tr><td>MC-101</td><td>Environmental Science</td><td>Mandatory</td><td>0</td></tr>
+</table>
+</div>
+
+<<div class="semester-title">Semester 3</div>
+<div class="table-responsive">
+<table>
+<tr><th>Subject Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+<tr><td>ESC-301</td><td>Analog Electronic Circuits</td><td>Theory</td><td>3</td></tr>
+<tr><td>PCC-CS-301</td><td>Data Structures & Algorithms</td><td>Theory</td><td>3</td></tr>
+<tr><td>ESC-302</td><td>Digital Electronics</td><td>Theory</td><td>3</td></tr>
+<tr><td>BSC-301</td><td>Mathematics-III (Calculus and ODE)</td><td>Theory</td><td>3</td></tr>
+<tr><td>HSMC-01</td><td>Effective Technical Communication</td><td>Theory</td><td>3</td></tr>
+<tr><td>PROJ-CS-301</td><td>Project-I</td><td>Project</td><td>2</td></tr>
+<tr><td>PCC-CS-302</td><td>IT Workshop (MATLAB)</td><td>Lab</td><td>2</td></tr>
+<tr><td>ESC-303</td><td>Analog Electronics Lab</td><td>Lab</td><td>2</td></tr>
+<tr><td>ESC-304</td><td>Digital Electronics Lab</td><td>Lab</td><td>2</td></tr>
+<tr><td>PCC-CS-303</td><td>Data Structures & Algorithms Lab</td><td>Lab</td><td>2</td></tr>
+</table>
+</div>
+
+<div class="semester-title">Semester 4</div>
+<div class="table-responsive">
+<table>
+<tr><th>Subject Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+<tr><td>PCC-CS-401</td><td>Discrete Mathematics</td><td>Theory</td><td>4</td></tr>
+<tr><td>PCC-CS-402</td><td>Computer Organization and Architecture</td><td>Theory</td><td>3</td></tr>
+<tr><td>PCC-CS-403</td><td>Operating Systems</td><td>Theory</td><td>3</td></tr>
+<tr><td>PCC-CS-404</td><td>Design and Analysis of Algorithms</td><td>Theory</td><td>3</td></tr>
+<tr><td>HSMC-02</td><td>Economics for Engineers</td><td>Theory</td><td>3</td></tr>
+<tr><td>MC-03</td><td>Environmental Science</td><td>Mandatory</td><td>0</td></tr>
+<tr><td>PROJ-CS-401</td><td>Project-II</td><td>Project</td><td>2</td></tr>
+<tr><td>PCC-CS-405</td><td>Computer Organization Lab</td><td>Lab</td><td>2</td></tr>
+<tr><td>PCC-CS-406</td><td>Operating Systems Lab</td><td>Lab</td><td>2</td></tr>
+<tr><td>PCC-CS-407</td><td>Design & Analysis of Algorithms Lab</td><td>Lab</td><td>2</td></tr>
+</table>
+</div>
+
+<div class="semester-title">Semester 5</div>
+<div class="table-responsive">
+<table>
+<tr><th>Subject Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+<tr><td>ESC-501</td><td>Signals and Systems</td><td>Theory</td><td>3</td></tr>
+<tr><td>PCC-CS-501</td><td>Database Management Systems</td><td>Theory</td><td>3</td></tr>
+<tr><td>PCC-CS-502</td><td>Formal Languages, Automata & Compiler Design</td><td>Theory</td><td>3</td></tr>
+<tr><td>PCC-CS-503</td><td>Object Oriented Programming</td><td>Theory</td><td>3</td></tr>
+<tr><td>BSC-01</td><td>Biology</td><td>Theory</td><td>3</td></tr>
+<tr><td>PEC-CS-501</td><td>Professional Elective-I</td><td>Elective</td><td>3</td></tr>
+<tr><td>MC-01</td><td>Indian Constitution</td><td>Mandatory</td><td>0</td></tr>
+<tr><td>H-102</td><td>Universal Human Values 2: Understanding Harmony</td><td>Value Added</td><td>0</td></tr>
+<tr><td>PROJ-CS-501</td><td>Project-III</td><td>Project</td><td>2</td></tr>
+<tr><td>PCC-CS-504</td><td>Database Lab</td><td>Lab</td><td>2</td></tr>
+<tr><td>PCC-CS-505</td><td>Object Oriented Programming Lab</td><td>Lab</td><td>2</td></tr>
+</table>
+</div>
+
+<div class="semester-title">Semester 6</div>
+<div class="table-responsive">
+<table>
+<tr><th>Subject Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+<tr><td>PCC-CS-601</td><td>Software Engineering</td><td>Theory</td><td>3</td></tr>
+<tr><td>PCC-CS-602</td><td>Computer Networks</td><td>Theory</td><td>3</td></tr>
+<tr><td>PCC-CS-603</td><td>Artificial Intelligence</td><td>Theory</td><td>3</td></tr>
+<tr><td>PEC-CS-601</td><td>Professional Elective-II</td><td>Elective</td><td>3</td></tr>
+<tr><td>OEC-CS-601</td><td>Open Elective-I</td><td>Elective</td><td>3</td></tr>
+<tr><td>PROJ-CS-601</td><td>Project-IV</td><td>Project</td><td>2</td></tr>
+<tr><td>PCC-CS-604</td><td>Computer Networks Lab</td><td>Lab</td><td>2</td></tr>
+<tr><td>PCC-CS-605</td><td>AI Lab</td><td>Lab</td><td>2</td></tr>
+<tr><td>PCC-CS-606</td><td>Software Engineering Lab</td><td>Lab</td><td>2</td></tr>
+</table>
+</div>
+
+
+<div class="semester-title">Semester 7</div>
+<div class="table-responsive">
+<table>
+<tr><th>Subject Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+<tr><td>PEC-CS-701</td><td>Professional Elective-III</td><td>Elective</td><td>3</td></tr>
+<tr><td>PEC-CS-702</td><td>Professional Elective-IV</td><td>Elective</td><td>3</td></tr>
+<tr><td>OEC-CS-701</td><td>Open Elective-II</td><td>Elective</td><td>3</td></tr>
+<tr><td>PROJ-CS-701</td><td>Project-V (Minor Project)</td><td>Project</td><td>3</td></tr>
+<tr><td>INT-CS-701</td><td>Industrial Internship</td><td>Internship</td><td>2</td></tr>
+</table>
+</div>
+
+
+
+<div class="semester-title">Semester 8</div>
+<div class="table-responsive">
+<table>
+<tr><th>Subject Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+<tr><td>PEC-CS-801</td><td>Professional Elective-V</td><td>Elective</td><td>3</td></tr>
+<tr><td>OEC-CS-801</td><td>Open Elective-III</td><td>Elective</td><td>3</td></tr>
+<tr><td>PROJ-CS-801</td><td>Major Project (Phase-II)</td><td>Project</td><td>6</td></tr>
+</table>
+</div>
+
+</div>
+  <!-- 🧠 Paste your Semester 3 to Semester 8 table blocks here (already provided in your original message) -->
+  <!-- Make sure each table is wrapped inside <div class="table-responsive"> ... </div> -->
+
+  <!-- 👇 Continue with rest of semester blocks here (3 to 8)... -->
+  <!-- If you'd like me to insert all of them here again, just say “continue with semester 3 to 8 now” -->
+
+  <!-- PDF Section -->
+ {% include 'footer.html' %}
+
+
+
+</body>
+</html>

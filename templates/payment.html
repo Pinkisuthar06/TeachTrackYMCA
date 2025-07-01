@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YMCA Faridabad – Payment Instructions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --primary: #004080;
+      --accent: #00bcd4;
+      --text: #1e293b;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+
+    .header {
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      margin-bottom: 30px;
+    }
+
+    .card h2 {
+      color: var(--primary);
+      margin-top: 0;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .highlight {
+      background-color: #e0f7fa;
+      padding: 15px 20px;
+      border-left: 5px solid var(--accent);
+      margin-top: 20px;
+      font-style: italic;
+    }
+
+    @media (max-width: 600px) {
+      .header h1 {
+        font-size: 1.8rem;
+      }
+      .card {
+        padding: 20px;
+      }
+    }
+    .maindiv{
+        margin-top: 80px;
+    }
+  </style>
+</head>
+<body>
+{% include 'header.html' %}
+  <div class="header maindiv">
+    <h1>Fee Payment Instructions</h1>
+    <p>J.C. Bose University of Science and Technology, YMCA, Faridabad</p>
+  </div>
+
+  <div class="container">
+
+    <div class="card">
+      <h2>🧾 Overview</h2>
+      <p>Students of YMCA Faridabad can pay all types of university fees online through the official ERP portal. This includes:</p>
+      <ul>
+        <li>Revolution (Semester) Fee</li>
+        <li>Re-Evaluation Fee</li>
+        <li>Re-Exam Fee</li>
+      </ul>
+      <div class="highlight">A unique ERP ID and password is issued to every student during their first year of admission. Keep this secure for all academic transactions.</div>
+    </div>
+
+    <div class="card">
+      <h2>🖥️ Step-by-Step Payment Process</h2>
+      <ul>
+        <li>Visit the official ERP portal: <a href="https://jcboseustymca.co.in/" target="_blank">https://erp.jcboseust.ac.in</a></li>
+        <li>Log in using your <strong>Student ID</strong> and <strong>ERP password</strong></li>
+        <li>Navigate to the <strong>“Fee Payment”</strong> section from the dashboard</li>
+        <li>Select the appropriate fee category:
+          <ul>
+            <li><em>Semester Fee</em> (for regular academic term)</li>
+            <li><em>Re-Evaluation Fee</em> (after result declaration)</li>
+            <li><em>Re-Exam Fee</em> (for supplementary exams)</li>
+          </ul>
+        </li>
+        <li>Check the amount auto-filled in the form</li>
+        <li>Choose payment method (Credit/Debit card, UPI, Net Banking, etc.)</li>
+        <li>Complete the transaction and save the receipt for future reference</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>🔐 Forgot Your ERP Password?</h2>
+      <ul>
+        <li>Use the <strong>“Forgot Password”</strong> link on the ERP login page</li>
+        <li>Reset using your registered email or contact the university ERP support</li>
+        <li>If you still face issues, contact your departmental admin or academic section</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>📌 Important Notes</h2>
+      <ul>
+        <li>Always pay fees before the deadline to avoid late fines</li>
+        <li>Print and keep a digital copy of your payment receipt</li>
+        <li>Check regularly for fee notifications on the official university website</li>
+      </ul>
+    </div>
+
+  </div>
+{% include 'footer.html' %}
+</body>
+</html>

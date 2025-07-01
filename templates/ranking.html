@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YMCA Faridabad Rankings</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    #ymca-rankings {
+      --primary: #0056b3;
+      --secondary: #f1f5f9;
+      --text: #333;
+      --accent: #00bcd4;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8fafc;
+      color: var(--text);
+    }
+
+    #ymca-rankings .ranking-header {
+      background-color: var(--primary);
+      color: #fff;
+      padding: 30px 20px;
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    #ymca-rankings .ranking-header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    #ymca-rankings .ranking-container {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    #ymca-rankings .ranking-section {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    #ymca-rankings .ranking-section h2 {
+      margin-top: 0;
+      color: var(--primary);
+    }
+
+    #ymca-rankings table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    #ymca-rankings th,
+    #ymca-rankings td {
+      padding: 12px 15px;
+      border-bottom: 1px solid #e0e0e0;
+      text-align: center;
+    }
+
+    #ymca-rankings th {
+      background-color: var(--secondary);
+      color: #000;
+    }
+
+    #ymca-rankings ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    #ymca-rankings ul li::before {
+      content: '✅';
+      margin-right: 8px;
+      color: var(--accent);
+    }
+
+    #ymca-rankings .highlight-box {
+      background-color: #e3f2fd;
+      padding: 12px;
+      border-left: 4px solid var(--primary);
+      margin-top: 15px;
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      #ymca-rankings .ranking-header h1 {
+        font-size: 2rem;
+      }
+
+      #ymca-rankings th,
+      #ymca-rankings td {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+{% include 'header.html' %}
+<div id="ymca-rankings">
+  <div class="ranking-header">
+    <h1>🏅 YMCA Faridabad Rankings Overview</h1>
+    <p>All national and international rankings in one place</p>
+  </div>
+
+  <div class="ranking-container">
+    <div class="ranking-section">
+      <h2>NIRF Rankings (Engineering)</h2>
+      <table>
+        <thead>
+          <tr><th>Year</th><th>Category</th><th>Rank/Band</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2024</td><td>Engineering</td><td>151–200</td></tr>
+          <tr><td>2023</td><td>Engineering</td><td>101–150</td></tr>
+          <tr><td>2022</td><td>Engineering</td><td>101–150</td></tr>
+          <tr><td>2021</td><td>Engineering</td><td>127</td></tr>
+        </tbody>
+      </table>
+      <div class="highlight-box">YMCA Faridabad has shown consistent performance in the NIRF Engineering category over the years.</div>
+    </div>
+
+    <div class="ranking-section">
+      <h2>EduRank – Global & National Academic Rankings (2025)</h2>
+      <ul>
+        <li>India: 341 of 876 universities</li>
+        <li>Asia: 2,250 of 5,830</li>
+        <li>World: 6,084 of ~14,000</li>
+        <li>Haryana: 32 of 64</li>
+        <li>Faridabad: 2 of 5</li>
+      </ul>
+      <div class="highlight-box">YMCA performs well in both national and regional contexts with growing global recognition.</div>
+    </div>
+
+    <div class="ranking-section">
+      <h2>EduRank Subject-wise Rankings</h2>
+      <table>
+        <thead><tr><th>Field</th><th>India Rank</th><th>Global Rank</th></tr></thead>
+        <tbody>
+          <tr><td>Engineering</td><td>251 of 492</td><td>3132 of 6782</td></tr>
+          <tr><td>Computer Science</td><td>192 of 490</td><td>2757 of 6845</td></tr>
+          <tr><td>Physics</td><td>276 of 487</td><td>3499 of 6713</td></tr>
+          <tr><td>Chemistry</td><td>357 of 485</td><td>4068 of 6545</td></tr>
+          <tr><td>Environmental Science</td><td>338 of 494</td><td>4255 of 6876</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ranking-section">
+      <h2>Summary & Highlights</h2>
+      <ul>
+        <li>Strong in Computer Science & Engineering</li>
+        <li>Solid NIRF placement within top 200</li>
+        <li>Good regional reputation (2nd in Faridabad)</li>
+        <li>Room to grow in sciences and interdisciplinary subjects</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% include 'footer.html' %}
+</body>
+</html>

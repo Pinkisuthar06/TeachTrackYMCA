@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admission Process – J.C. Bose UST</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    .admission-wrapper * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    .admission-wrapper {
+      font-family: 'Inter', sans-serif;
+      background: #f4f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .admission-wrapper .admission-header {
+      background: linear-gradient(to right, #003366, #0059b3);
+      color: white;
+      padding: 60px 20px 40px;
+      text-align: center;
+    }
+
+    .admission-wrapper .admission-header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: white !important;
+    }
+
+    .admission-wrapper .admission-header p {
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #f0f0f0 !important;
+    }
+
+    .admission-wrapper .admission-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .admission-wrapper .admission-card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .admission-wrapper .admission-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .admission-wrapper .admission-card h3 {
+      color: #003366 !important;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .admission-wrapper .admission-card p {
+      font-size: 0.95rem;
+      color: #555 !important;
+    }
+
+    .admission-wrapper .admission-footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      background-color: #f0f0f0;
+      padding: 20px 15px;
+    }
+
+    .admission-wrapper .admission-footer a {
+      color: #003366;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .admission-wrapper .admission-header h1 {
+        font-size: 2.1rem;
+      }
+      .admission-wrapper .admission-header p {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .admission-wrapper .admission-header {
+        padding: 40px 15px 30px;
+      }
+      .admission-wrapper .admission-card {
+        padding: 20px;
+      }
+    }
+
+    .admission-wrapper .admission-main-wrapper {
+      margin-top: 80px;
+    }
+  </style>
+</head>
+<body>
+  {% include 'header.html' %}
+
+  <div class="admission-wrapper">
+    <div class="admission-main-wrapper">
+
+      <header class="admission-header">
+        <h1>J.C. Bose University of Science & Technology, YMCA</h1>
+        <p>Your Step-by-Step Guide to the Admission Process</p>
+      </header>
+
+      <main class="admission-container">
+        <div class="admission-card">
+          <h3>1. Check Eligibility</h3>
+          <p>Ensure you meet academic and entrance exam requirements for your desired program (UG/PG/PhD).</p>
+        </div>
+
+        <div class="admission-card">
+          <h3>2. Entrance Exam</h3>
+          <p>Appear in the required entrance exams like JEE (B.Tech), GATE (M.Tech), or university-level tests.</p>
+        </div>
+
+        <div class="admission-card">
+          <h3>3. Online Registration</h3>
+          <p>Register on the official admission portal and fill out the application form with accurate details.</p>
+        </div>
+
+        <div class="admission-card">
+          <h3>4. Upload Documents</h3>
+          <p>Upload scanned certificates, mark sheets, entrance scorecards, photos, and valid ID proof.</p>
+        </div>
+
+        <div class="admission-card">
+          <h3>5. Pay Application Fee</h3>
+          <p>Submit the application fee online using net banking, debit/credit card, or UPI.</p>
+        </div>
+
+        <div class="admission-card">
+          <h3>6. Merit/Counselling</h3>
+          <p>Participate in merit-based selection or counselling rounds (like HSTES for B.Tech).</p>
+        </div>
+
+        <div class="admission-card">
+          <h3>7. Document Verification</h3>
+          <p>Attend the verification process either online or on-campus to confirm eligibility.</p>
+        </div>
+
+        <div class="admission-card">
+          <h3>8. Final Admission</h3>
+          <p>Pay the first semester fee and receive confirmation of seat allotment and roll number.</p>
+        </div>
+      </main>
+
+      <footer class="admission-footer">
+        <p>Visit the official website for full details: 
+          <a href="https://jcboseust.ac.in" target="_blank">jcboseust.ac.in</a>
+        </p>
+       
+      </footer>
+
+       {% include 'footer.html' %}
+    </div>
+  </div>
+</body>
+</html>

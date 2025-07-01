@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vividha Club - YMCA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+  :root {
+    --primary: #8e24aa;
+    --card-bg: rgba(255, 255, 255, 0.2);
+    --dark-purple: #6a1b9a;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Ubuntu', sans-serif;
+    background: linear-gradient(to bottom right, #f3e5f5, #e1bee7);
+    color: #333;
+    margin: 0;
+  }
+
+  .header {
+    background: linear-gradient(to right, var(--primary), var(--dark-purple));
+    color: white;
+    text-align: center;
+    padding: 5rem 1rem 2rem;
+    position: relative;
+  }
+
+  .header img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid white;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .header h1 {
+    font-weight: 700;
+    font-size: 3rem;
+    margin-top: 2rem;
+  }
+
+  .header p {
+    max-width: 700px;
+    margin: 1rem auto 0;
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 768px) {
+    .header {
+      padding: 4.5rem 1rem 2rem;
+    }
+    .header img {
+      position: static;
+      display: block;
+      margin: 0 auto 1rem;
+      width: 90px;
+      height: 90px;
+    }
+    .header h1 {
+      font-size: 2rem;
+      margin-top: 0.5rem;
+    }
+    .header p {
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
+  }
+
+  .section-title {
+    font-weight: bold;
+    color: var(--primary);
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .glass-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .glass-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  }
+
+  .btn-primary-custom {
+    background-color: var(--primary);
+    color: white;
+    border-radius: 10px;
+    padding: 0.6rem 1.2rem;
+    font-weight: 500;
+    transition: background 0.3s ease;
+  }
+
+  .btn-primary-custom:hover {
+    background-color: #4a148c;
+  }
+
+  .cta-banner {
+    background: linear-gradient(90deg, var(--primary), #ba68c8);
+    color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+
+  .maindiv {
+    margin-top: 90px;
+  }
+
+@media (max-width: 768px) {
+    .header {
+      padding: 4rem 1rem 2rem;
+    }
+
+  .header img {
+    width: 100px;
+    height: 100px;
+    top: 10px;
+    left: 50%;
+
+  }
+
+    .header h1 {
+      font-size: 1.75rem;
+      margin-top: 2.5rem;
+    }
+
+    .header p {
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
+
+    .gallery img {
+      height: 180px;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+    }
+
+    .cta-banner h4 {
+      font-size: 1.2rem;
+    }
+
+    .cta-banner p {
+      font-size: 1rem;
+    }
+
+    table th, table td {
+      font-size: 0.8rem;
+      padding: 0.5rem;
+    }
+  }
+
+
+  @media (max-width: 576px) {
+    .gallery img {
+      max-height: 200px;
+    }
+    .section-title {
+      font-size: 1.5rem;
+    }
+    .cta-banner h4 {
+      font-size: 1.2rem;
+    }
+  }
+</style>
+
+</head>
+<body>
+{% include 'header.html' %}
+  <div class="header maindiv">
+    <img src="https://media.licdn.com/dms/image/v2/D560BAQFSxHPf-aPgdQ/img-crop_100/img-crop_100/0/1723101388743?e=1756944000&v=beta&t=xHQYnFCJ9mMtjz7cOUcvVA4kC_AYrifJoYRWWmIjQoA" alt="Vividha Logo">
+    <h1>VIVIDHA</h1>
+    <p>The Storytelling & Performing Arts Society of J.C. Bose University of Science and Technology, YMCA</p>
+  </div>
+
+  <div class="container py-4">
+    <h3 class="section-title">About Us</h3>
+    <p>
+      In today's world, everyone is living under the arms of demons of stress, depression, monotony, and anxiety. Our brains are clamped in the chains of only work and our heart has forgotten to fly.
+    </p>
+    <p>
+      People have become so engrossed in their studies and work-life that they have forgotten to embrace the small beauties of the world — the warmth of sunshine, the melodious chirping of birds, the changing colors of leaves in different seasons, and the coldness of the moon.
+    </p>
+    <p>
+      Everyone is so eager to win the rat race that they choke off their hobbies and interests, leaving hidden talents undiscovered. The only solution to make people feel alive once again is to trigger their imagination through <strong>art</strong> — and one of the most effective ways is <strong>storytelling</strong>.
+    </p>
+    <div class="text-center mt-3">
+      <div class="d-flex justify-content-center gap-3 mt-3">
+  <a href="https://www.instagram.com/vividhathedramatics/?hl=en" target="_blank" class="btn btn-primary-custom" title="Instagram">
+    <i class="fab fa-instagram fa-lg"></i>
+  </a>
+ 
+</div>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <h3 class="section-title">Our Team</h3>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="glass-card p-4 text-center">
+          <h5>Coordinators</h5>
+          <p>Ms. Sangeeta Dhall<br>Ms. Lavita Vermani</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="glass-card p-4 text-center">
+          <h5>Secretaries</h5>
+          <p>Sandeep<br>Janisar<br>Deesha<br>Jatin</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="glass-card p-4 text-center">
+          <h5>Joint Secretaries</h5>
+          <p>Harsh Sharma<br>Shevam Nagar<br>Sristi Pandey<br>Hitika Singha</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <h3 class="section-title">Gallery</h3>
+    <div class="row gallery g-4">
+      <div class="col-md-4">
+        <img src="https://jcboseust.ac.in/dsw/assets/uploads/media/vivdha_1.jpg" alt="Vividha 1">
+      </div>
+      <div class="col-md-4">
+        <img src="https://jcboseust.ac.in/dsw/assets/uploads/media/vivdha_2.jpg" alt="Vividha 2">
+      </div>
+      <div class="col-md-4">
+        <img src="https://jcboseust.ac.in/dsw/assets/uploads/media/vivdha_3.jpg" alt="Vividha 3">
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <div class="cta-banner">
+      <h4>🎭 Love to Tell Stories or Perform?</h4>
+      <p>Vividha is your stage. Join us in celebrating the beauty of expression, imagination, and performance.</p>
+      <a href="{{ url_for('process') }}" class="btn btn-light">Join Vividha</a>
+    </div>
+  </div>
+
+{% include 'footer.html' %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

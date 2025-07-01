@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Electrical Engineering - YMCA Faridabad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #003366;
+      --accent: #00aaff;
+      --light-bg: #f0f6fc;
+      --card-bg: #ffffff;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--light-bg);
+      color: #222;
+    }
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      padding: 3rem 1rem 2rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .section {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 1.8rem 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      border-left: 6px solid var(--accent);
+    }
+    .section h2 {
+      margin-top: 0;
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .section ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+    .section p, .section li {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .section h2 {
+        font-size: 1.3rem;
+      }
+    }
+    .maindiv {
+      margin-top: 80px;
+    }
+  </style>
+</head>
+<body>
+{% include 'header.html' %}
+  <header class="maindiv">
+    <h1>Electrical Engineering</h1>
+    <p>B.Tech in Electrical Engineering - YMCA Faridabad</p>
+  </header>
+
+  <div class="container">
+
+    <div class="section">
+      <h2>About the Department</h2>
+      <p>The Department of Electrical Engineering at J.C. Bose University of Science and Technology, YMCA Faridabad offers a curriculum focusing on power systems, electrical machines, high voltage, control, and renewable energy systems with advanced simulations and industrial exposure.</p>
+    </div>
+
+    <div class="section">
+      <h2>What You Will Learn</h2>
+      <ul>
+        <li>Electrical Machines</li>
+        <li>Power Systems & Protection</li>
+        <li>Control Systems</li>
+        <li>Switchgear and High Voltage Engineering</li>
+        <li>Renewable Energy & Power Electronics</li>
+        <li>MATLAB, PSCAD, and SCADA Systems</li>
+        <li>Electrical Measurements & Instrumentation</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Laboratories and Facilities</h2>
+      <ul>
+        <li>Electrical Machines Lab</li>
+        <li>Power System Simulation Lab</li>
+        <li>High Voltage Lab</li>
+        <li>Electrical Measurement Lab</li>
+        <li>Control and Relay Labs</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Career Opportunities</h2>
+      <ul>
+        <li>Power sector companies: NTPC, PowerGrid, NHPC</li>
+        <li>Electrical utilities & smart grid projects</li>
+        <li>Core PSU jobs through GATE & IES</li>
+        <li>Industrial automation and energy auditing</li>
+        <li>Research in renewable and power systems</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Student Highlights</h2>
+      <ul>
+        <li>Internships at power plants and sub-stations</li>
+        <li>Workshops on SCADA, PSCAD, and AutoCAD Electrical</li>
+        <li>Industrial visits to HVPNL, NTPC, BHEL</li>
+      </ul>
+    </div>
+
+  </div>
+
+  {% include 'footer.html' %}
+
+</body>
+</html>

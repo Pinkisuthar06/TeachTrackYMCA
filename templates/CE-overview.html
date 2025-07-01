@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Computer Engineering - YMCA Faridabad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #003366;
+      --accent: #00aaff;
+      --light-bg: #f0f6fc;
+      --card-bg: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--light-bg);
+      color: #222;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      padding: 3rem 1rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .section {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 1.8rem 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      border-left: 6px solid var(--accent);
+    }
+
+    .section h2 {
+      margin-top: 0;
+      color: var(--primary);
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .section ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    .section p, .section li {
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .section h2 {
+        font-size: 1.3rem;
+      }
+    }
+    .maindiv{
+      margin-top: 80px;
+    }
+  </style>
+</head>
+<body>
+{% include 'header.html' %}
+  <header Class="maindiv">
+    <h1>Computer Engineering</h1>
+    <p>B.Tech in Computer Engineering - YMCA Faridabad</p>
+  </header>
+
+  <div class="container">
+
+    <div class="section">
+      <h2>About the Department</h2>
+      <p>
+        The Department of Computer Engineering at J.C. Bose University of Science and Technology, YMCA, is dedicated to developing skilled professionals in the field of computing. The department offers a comprehensive B.Tech program covering core areas of software and hardware, emerging technologies, and industry-relevant tools and practices.
+      </p>
+      <p>
+        It has a strong emphasis on project-based learning, internships, and research opportunities. Students are trained in real-world applications of programming, software development, AI, and cloud computing through advanced labs and collaborations with industries and research institutions.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>What You Will Learn</h2>
+      <ul>
+        <li>Foundational Programming (C, C++, Java, Python)</li>
+        <li>Data Structures, Algorithms, and Problem Solving</li>
+        <li>Operating Systems, DBMS, Computer Networks</li>
+        <li>Web Technologies, Mobile App Development</li>
+        <li>Cloud Computing (AWS, GCP), DevOps Fundamentals</li>
+        <li>Machine Learning, Artificial Intelligence, and Data Science</li>
+        <li>Software Engineering, Testing & Agile Methodologies</li>
+        <li>Cybersecurity, Blockchain, and IoT basics</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Laboratories and Resources</h2>
+      <ul>
+        <li>Programming & Data Structure Labs</li>
+        <li>Cloud and DevOps Simulation Environment</li>
+        <li>Machine Learning & AI Lab (with GPU-enabled systems)</li>
+        <li>Web & Mobile App Development Lab</li>
+        <li>Open Source Software and Cybersecurity Lab</li>
+        <li>High-Speed Internet, Projectors, Smart Boards, Git Integration</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Industrial Exposure</h2>
+      <ul>
+        <li>Industrial Visits to IT Parks, DRDO, NIC, and STPI Centers</li>
+        <li>Internships at TCS, Infosys, Wipro, DRDO, Microsoft, etc.</li>
+        <li>Workshops in collaboration with NASSCOM, IBM, AWS Academy</li>
+        <li>Guest lectures by IIT professors and tech entrepreneurs</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Career Opportunities</h2>
+      <ul>
+        <li>Software Developer / Full Stack Web Developer</li>
+        <li>Data Analyst / Machine Learning Engineer</li>
+        <li>Cybersecurity Analyst / Ethical Hacker</li>
+        <li>DevOps Engineer / Cloud Architect</li>
+        <li>Mobile App Developer (Android/iOS)</li>
+        <li>System Administrator / Network Engineer</li>
+        <li>Product Manager / Technical Consultant</li>
+        <li>Higher Studies: M.Tech, MS, MBA, or Ph.D.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Student Achievements</h2>
+      <ul>
+        <li>Winners in national hackathons: SIH, HackHarayana, CodeFun</li>
+        <li>GSoC (Google Summer of Code) selections</li>
+        <li>Placements in Google, Microsoft, Deloitte, Amazon, Capgemini</li>
+        <li>Student-led startups in edtech, e-commerce, and SaaS domains</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Clubs and Activities</h2>
+      <ul>
+        <li>CodeChef YMCA Chapter and Google Developer Student Club (GDSC)</li>
+        <li>ACM, IEEE Student Branch</li>
+        <li>Open Source, Robotics & AI Clubs</li>
+        <li>Annual tech fest: “CONVERGENCE” & inter-university coding events</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Admission and Eligibility</h2>
+      <ul>
+        <li>Through JEE Main counseling (HSTES)</li>
+        <li>Minimum 75% in PCM (as per AICTE/JEE norms)</li>
+        <li>No subject backlog at the time of admission</li>
+        <li>Strong preference to students with programming/coding background</li>
+      </ul>
+    </div>
+
+  </div>
+{% include 'footer.html' %}
+  
+
+</body>
+</html>

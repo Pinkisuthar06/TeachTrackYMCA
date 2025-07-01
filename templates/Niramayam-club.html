@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Niramayam - YMCA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+  :root {
+    --primary: #388e3c;
+    --card-bg: rgba(255, 255, 255, 0.2);
+    --dark-green: #1b5e20;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Ubuntu', sans-serif;
+    background: linear-gradient(to bottom right, #e8f5e9, #a5d6a7);
+    color: #333;
+    margin: 0;
+  }
+
+  .header {
+    background: linear-gradient(to right, var(--primary), var(--dark-green));
+    color: white;
+    text-align: center;
+    padding: 5rem 1rem 2rem;
+    position: relative;
+  }
+
+  .header img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid white;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .header h1 {
+    font-weight: 700;
+    font-size: 3rem;
+    margin-top: 1.5rem;
+  }
+
+  .header p {
+    max-width: 700px;
+    margin: 1rem auto 0;
+    font-size: 1.2rem;
+  }
+
+  .section-title {
+    font-weight: bold;
+    color: var(--primary);
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .glass-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .glass-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+  }
+
+  .btn-primary-custom {
+    background-color: var(--primary);
+    color: white;
+    border-radius: 10px;
+    padding: 0.6rem 1.2rem;
+    font-weight: 500;
+    transition: background 0.3s ease;
+  }
+
+  .btn-primary-custom:hover {
+    background-color: #2e7d32;
+  }
+
+  .btn-primary-custom i {
+    font-size: 1.5rem;
+  }
+
+  .btn-primary-custom {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  .footer {
+    background-color: var(--dark-green);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 3rem;
+  }
+
+  .cta-banner {
+    background: linear-gradient(90deg, var(--primary), #66bb6a);
+    color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+
+  .maindiv {
+    margin-top: 90px;
+  }
+
+  @media (max-width: 768px) {
+  .header img {
+    width: 70px;
+    height: 70px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+    .header h1 {
+      font-size: 1.75rem;
+      margin-top: 2.5rem;
+    }
+
+    .header p {
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+    }
+
+    .gallery img {
+      height: 180px;
+    }
+
+    .cta-banner h4 {
+      font-size: 1.2rem;
+    }
+
+    .cta-banner p {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .glass-card {
+      padding: 1rem;
+    }
+
+    .gallery img {
+      height: 160px;
+    }
+  }
+</style>
+
+</head>
+<body>
+{% include 'header.html' %}
+  <div class="header maindiv">
+    <img src="https://ugc.production.linktr.ee/Mo83EizvQaqI3JCKsGjs_s7rK4I34LOPp5cQI?io=true&size=avatar-v3_0" alt="Niramayam Logo">
+    <h1>NIRAMAYAM</h1>
+    <p>The Yoga Club of J.C. Bose University of Science and Technology, YMCA</p>
+  </div>
+
+  <div class="container py-4">
+    <h3 class="section-title">About Us</h3>
+    <p>
+      Niramayam is a student group of Yoga enthusiasts formed in February 2018 with the objective of spreading awareness among the students regarding the importance of physical as well as mental health, providing complete knowledge on how to be fit and healthy in today's hectic life.
+    </p>
+    <p>
+      Regular yoga practice creates mental clarity and calmness, increases body awareness, relieves chronic stress patterns; relaxes the mind, centers attention, and sharpens concentration which is the most essential part of a student's life.
+    </p>
+    <p>
+      Our aim is to make people self-aware and self-motivated towards their body and health. For this, we organise practice sessions open to all and practise regularly in the college premises.
+    </p>
+    <div class="text-center mt-3">
+  <div class="d-flex justify-content-center gap-3 mt-3">
+    <a href="https://www.instagram.com/niramayam/" target="_blank" class="btn btn-primary-custom" title="Instagram">
+      <i class="fab fa-instagram fa-lg"></i>
+    </a>
+  </div>
+</div>
+
+  </div>
+
+  <div class="container py-5">
+    <h3 class="section-title">Our Team</h3>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="glass-card p-4 text-center">
+          <h5>Coordinators</h5>
+          <p>Mr. Sachin Gupta<br>Ms. Jyoti Mor</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="glass-card p-4 text-center">
+          <h5>Secretaries</h5>
+          <p>Divya<br>Anshuman</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="glass-card p-4 text-center">
+          <h5>Joint Secretaries</h5>
+          <p>Anshika<br>Latika<br>Sarika<br>Chirag</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <h3 class="section-title">Gallery</h3>
+    <div class="row gallery g-4">
+      <div class="col-md-4">
+        <img src="https://jcboseust.ac.in/dsw/assets/uploads/media/nm_1.jpg" alt="Yoga Session 1">
+      </div>
+      <div class="col-md-4">
+        <img src="https://jcboseust.ac.in/dsw/assets/uploads/media/nm_2.jpg" alt="Yoga Session 2">
+      </div>
+      <div class="col-md-4">
+        <img src="https://jcboseust.ac.in/dsw/assets/uploads/media/nm_3.jpg" alt="Yoga Session 3">
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <div class="cta-banner">
+      <h4>🧘‍♀️ Interested in Physical and Mental Wellness?</h4>
+      <p>Join Niramayam to learn and practice yoga for a balanced and healthier student life!</p>
+      <a href="{{ url_for('process') }}" class="btn btn-light">Join Niramayam</a>
+    </div>
+  </div>
+
+{% include 'footer.html' %}
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

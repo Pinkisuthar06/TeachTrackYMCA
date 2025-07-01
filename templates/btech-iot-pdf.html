@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>B.Tech ECE (2018 Batch) - Syllabus up to 8th Sem</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+ <style>
+   .ece-syllabus-page {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+.ece-syllabus-page header {
+  background-color:#0a3c5f;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.ece-syllabus-page .ece-syllabus-container {
+  max-width: 1140px;
+  margin: 40px auto;
+  padding: 30px 20px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.ece-syllabus-page .ece-syllabus-container h2,
+.ece-syllabus-page .ece-syllabus-container h3 {
+  text-align: center;
+  color: #004080;
+  margin-bottom: 20px;
+}
+
+.ece-syllabus-page .ece-info-box {
+  background: #bfdcff;
+  border-left: 5px solid #007bff;
+  color: black;
+  padding: 15px 25px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.ece-syllabus-page .ece-info-box p {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+.ece-syllabus-page .semester-title {
+  background-color: #c0c7d1;
+  padding: 10px;
+  font-weight: 600;
+  margin: 20px 0 10px;
+  border-left: 5px solid #004080;
+  text-align: center;
+}
+
+.ece-syllabus-page .table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 90%;
+}
+
+@media (min-width: 768px) {
+  .ece-syllabus-page .table-responsive {
+    width: 80%;
+  }
+}
+@media (min-width: 992px) {
+  .ece-syllabus-page .table-responsive {
+    width: 70%;
+  }
+}
+
+.ece-syllabus-page table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  min-width: 600px;
+}
+
+.ece-syllabus-page th,
+.ece-syllabus-page td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+  font-size: 0.95rem;
+  word-wrap: break-word;
+}
+
+.ece-syllabus-page th {
+  background-color: #007bff;
+  color: white;
+}
+
+.ece-syllabus-page tr:nth-child(even) {
+  background-color: #c0c7d1;
+}
+
+.ece-syllabus-page .pdf-container {
+  position: relative;
+  padding-top: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.ece-syllabus-page .pdf-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.ece-syllabus-page .ece-last-updated {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.ece-syllabus-page .back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ece-syllabus-page .back-to-top:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .ece-syllabus-page body {
+    font-size: 14px;
+  }
+
+  .ece-syllabus-page header {
+    font-size: 1.3rem;
+    padding: 15px;
+  }
+
+  .ece-syllabus-page .ece-syllabus-container {
+    padding: 20px 10px;
+    margin: 20px auto;
+  }
+
+  .ece-syllabus-page th,
+  .ece-syllabus-page td {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .ece-syllabus-page .ece-info-box {
+    padding: 10px 15px;
+  }
+
+  .ece-syllabus-page .ece-syllabus-container h2,
+  .ece-syllabus-page .ece-syllabus-container h3 {
+    font-size: 1.2rem;
+  }
+
+  .ece-syllabus-page .semester-title {
+    font-size: 1rem;
+  }
+
+  .ece-syllabus-page .ece-info-box p {
+    font-size: 0.9rem;
+  }
+
+  .ece-syllabus-page .pdf-container {
+    height: 300px;
+  }
+  .ece-syllabus-container .pdf-container{
+    height: 500px;
+  }
+}
+.maindiv{
+  margin-top: 80px;
+}
+.text{
+    text-align: center;
+   } 
+    
+  </style>
+</head>
+<body>
+{% include 'header.html' %}
+<div class="ece-syllabus-page maindiv">
+    <header>…<strong>B.Tech Electronics Instrumentation & Control (2018 Batch)</strong></header>
+
+    <div class="ece-syllabus-container">
+      <h2>B.Tech EIC (2018 Batch) – Syllabus up to 8th Semester</h2>
+      <div class="ece-info-box">
+        <p><strong>Department:</strong> Electronics Instrumentation & Control Engineering</p>
+        <p><strong>Batch:</strong> 2018</p>
+        <p><strong>Document Type:</strong> Revised Scheme (up to 4th Sem, as of 14 Aug 2018)</p>
+      </div>
+
+      <h3>📄 Official Syllabus PDF</h3>
+      <div class="pdf-container">
+        <iframe src="https://jcboseust.ac.in/assets/uploads/media/btech_eic_2018-upto4sem_14082018.pdf"></iframe>
+      </div>
+      <div class="ece-last-updated">🔄 Last Updated: 14 August 2018</div>
+    </div>
+
+    <h3 class="text">📘 Semester-wise Subject Details (Sem 1–8)</h3>
+
+    <div class="semester-title">Semester 1</div>
+<div class="table-responsive">
+  <table>
+    <tr><th>Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+    <tr><td>BTAM-101-18</td><td>Mathematics-I</td><td>Theory</td><td>4</td></tr>
+    <tr><td>BTPH-101-18</td><td>Physics</td><td>Theory</td><td>4</td></tr>
+    <tr><td>BTCS-101-18</td><td>Programming for Problem Solving</td><td>Theory</td><td>3</td></tr>
+    <tr><td>BTHU-101-18</td><td>English</td><td>Theory</td><td>2</td></tr>
+    <tr><td>BTES-101-18</td><td>Engineering Graphics & Design</td><td>Lab</td><td>2</td></tr>
+    <tr><td>BTPH-102-18</td><td>Physics Lab</td><td>Lab</td><td>1</td></tr>
+    <tr><td>BTCS-102-18</td><td>Programming Lab</td><td>Lab</td><td>1</td></tr>
+    <tr><td>BTMP-101-18</td><td>Workshop-I</td><td>Lab</td><td>2</td></tr>
+  </table>
+</div>
+
+  <!-- Semester 2 -->
+  <div class="semester-title">Semester 2</div>
+<div class="table-responsive">
+  <table>
+    <tr><th>Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+    <tr><td>BTAM-102-18</td><td>Engineering Mathematics-II</td><td>Theory</td><td>4</td></tr>
+    <tr><td>BTCH-101-18</td><td>Engineering Chemistry</td><td>Theory</td><td>4</td></tr>
+    <tr><td>BTEC-101-18</td><td>Basic Electronics</td><td>Theory</td><td>3</td></tr>
+    <tr><td>BTME-101-18</td><td>Fundamentals of Mechanical Engineering</td><td>Theory</td><td>2</td></tr>
+    <tr><td>BTCE-101-18</td><td>Basics of Civil & Environmental Engineering</td><td>Theory</td><td>2</td></tr>
+    <tr><td>BTCH-102-18</td><td>Chemistry Lab</td><td>Lab</td><td>1</td></tr>
+    <tr><td>BTEC-102-18</td><td>Electronics Lab</td><td>Lab</td><td>1</td></tr>
+    <tr><td>BTMP-101-18</td><td>Workshop Practice</td><td>Lab</td><td>2</td></tr>
+  </table>
+</div>
+
+
+  <!-- Example: Semester 3 -->
+  <div class="semester-title">Semester 3</div>
+<div class="table-responsive">
+  <table>
+    <tr><th>Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+    <tr><td>BEIC-301-18</td><td>Network Theory</td><td>Theory</td><td>4</td></tr>
+    <tr><td>BEIC-302-18</td><td>Electronic Measurement & Instrumentation</td><td>Theory</td><td>3</td></tr>
+    <tr><td>BEIC-303-18</td><td>Analog Electronics</td><td>Theory</td><td>4</td></tr>
+    <tr><td>BEIC-304-18</td><td>Digital Electronics</td><td>Theory</td><td>4</td></tr>
+    <tr><td>BEIC-305-18</td><td>Instrumentation Lab-I</td><td>Lab</td><td>1</td></tr>
+    <tr><td>BEIC-306-18</td><td>Analog Electronics Lab</td><td>Lab</td><td>1</td></tr>
+    <tr><td>MC-301</td><td>Environmental Studies</td><td>Mandatory</td><td>0</td></tr>
+  </table>
+</div>
+
+  <!-- Semester 4 -->
+ <div class="semester-title">Semester 4</div>
+<div class="table-responsive">
+  <table>
+    <tr><th>Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+    <tr><td>BEIC-401-18</td><td>Control System Engineering</td><td>Theory</td><td>4</td></tr>
+    <tr><td>BEIC-402-18</td><td>Microprocessor & Microcontroller</td><td>Theory</td><td>4</td></tr>
+    <tr><td>BEIC-403-18</td><td>Communication Engineering</td><td>Theory</td><td>4</td></tr>
+    <tr><td>BEIC-404-18</td><td>Instrumentation Lab-II</td><td>Lab</td><td>1</td></tr>
+    <tr><td>BEIC-405-18</td><td>Control System Lab</td><td>Lab</td><td>1</td></tr>
+    <tr><td>BEIC-406-18</td><td>Microprocessor Lab</td><td>Lab</td><td>1</td></tr>
+    <tr><td>MC-401</td><td>Professional Communication</td><td>Mandatory</td><td>0</td></tr>
+  </table>
+</div>
+
+ <div class="semester-title">Semester 5</div>
+<div class="table-responsive">
+  <table>
+    <tr><th>Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+    <tr><td>BEIC-501-18</td><td>Industrial Instrumentation</td><td>Theory</td><td>4</td></tr>
+    <tr><td>BEIC-502-18</td><td>Digital Signal Processing</td><td>Theory</td><td>3</td></tr>
+    <tr><td>BEIC-503-18</td><td>Elective-I</td><td>Theory</td><td>3</td></tr>
+    <tr><td>BEIC-504-18</td><td>DSP Lab</td><td>Lab</td><td>1</td></tr>
+    <tr><td>BEIC-505-18</td><td>Instrumentation Lab-III</td><td>Lab</td><td>1</td></tr>
+    <tr><td>BEIC-506-18</td><td>Mini Project</td><td>Project</td><td>2</td></tr>
+  </table>
+</div>
+<div class="semester-title">Semester 6</div>
+<div class="table-responsive">
+  <table>
+    <tr><th>Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+    <tr><td>BEIC-601-18</td><td>Process Control</td><td>Theory</td><td>4</td></tr>
+    <tr><td>BEIC-602-18</td><td>Bio-Medical Instrumentation</td><td>Theory</td><td>3</td></tr>
+    <tr><td>BEIC-603-18</td><td>Elective-III</td><td>Theory</td><td>3</td></tr>
+    <tr><td>BEIC-604-18</td><td>Elective-IV</td><td>Theory</td><td>3</td></tr>
+    <tr><td>BEIC-605-18</td><td>Process Control Lab</td><td>Lab</td><td>1</td></tr>
+    <tr><td>BEIC-606-18</td><td>Bio-Medical Instrumentation Lab</td><td>Lab</td><td>1</td></tr>
+    <tr><td>BEIC-607-18</td><td>Project Phase-I</td><td>Project</td><td>2</td></tr>
+    <tr><td>MC-601</td><td>Indian Constitution</td><td>Mandatory</td><td>0</td></tr>
+  </table>
+</div>
+
+
+  <!-- Semester 7 -->
+  <div class="semester-title">Semester 7</div>
+<div class="table-responsive">
+  <table>
+    <tr><th>Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+    <tr><td>BEIC-701-18</td><td>Industrial Automation</td><td>Theory</td><td>3</td></tr>
+    <tr><td>BEIC-702-18</td><td>Elective-V</td><td>Theory</td><td>3</td></tr>
+    <tr><td>BEIC-703-18</td><td>Elective-VI</td><td>Theory</td><td>3</td></tr>
+    <tr><td>BEIC-704-18</td><td>Industrial Automation Lab</td><td>Lab</td><td>1</td></tr>
+    <tr><td>BEIC-705-18</td><td>Seminar</td><td>Project</td><td>1</td></tr>
+    <tr><td>BEIC-706-18</td><td>Project Phase-II</td><td>Project</td><td>3</td></tr>
+    <tr><td>MC-701</td><td>Essence of Indian Knowledge Tradition</td><td>Mandatory</td><td>0</td></tr>
+  </table>
+</div>
+
+
+  <!-- Semester 8 -->
+ <div class="semester-title">Semester 8</div>
+<div class="table-responsive">
+  <table>
+    <tr><th>Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+    <tr><td>BEIC-801-18</td><td>Elective-VII</td><td>Theory</td><td>3</td></tr>
+    <tr><td>BEIC-802-18</td><td>Elective-VIII</td><td>Theory</td><td>3</td></tr>
+    <tr><td>BEIC-803-18</td><td>Comprehensive Viva-Voce / Personality Development</td><td>Theory</td><td>2</td></tr>
+    <tr><td>BEIC-804-18</td><td>Project Phase-III</td><td>Project</td><td>6</td></tr>
+    <tr><td>BEIC-805-18</td><td>Internship / Industrial Training</td><td>Seminar</td><td>2</td></tr>
+  </table>
+</div>
+
+
+  
+
+  
+
+  <!-- PDF Section -->
+ {% include 'footer.html' %}
+
+
+
+</body>
+</html>

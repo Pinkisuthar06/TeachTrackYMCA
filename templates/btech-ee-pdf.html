@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>B.Tech ECE (2018 Batch) - Syllabus up to 8th Sem</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+   .ece-syllabus-page {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+.ece-syllabus-page header {
+  background-color:#0a3c5f;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.ece-syllabus-page .ece-syllabus-container {
+  max-width: 1140px;
+  margin: 40px auto;
+  padding: 30px 20px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.ece-syllabus-page .ece-syllabus-container h2,
+.ece-syllabus-page .ece-syllabus-container h3 {
+  text-align: center;
+  color: #004080;
+  margin-bottom: 20px;
+}
+
+.ece-syllabus-page .ece-info-box {
+  background: #bfdcff;
+  border-left: 5px solid #007bff;
+  color: black;
+  padding: 15px 25px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.ece-syllabus-page .ece-info-box p {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+.ece-syllabus-page .semester-title {
+  background-color: #c0c7d1;
+  padding: 10px;
+  font-weight: 600;
+  margin: 20px 0 10px;
+  border-left: 5px solid #004080;
+  text-align: center;
+}
+
+.ece-syllabus-page .table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 90%;
+}
+
+@media (min-width: 768px) {
+  .ece-syllabus-page .table-responsive {
+    width: 80%;
+  }
+}
+@media (min-width: 992px) {
+  .ece-syllabus-page .table-responsive {
+    width: 70%;
+  }
+}
+
+.ece-syllabus-page table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  min-width: 600px;
+}
+
+.ece-syllabus-page th,
+.ece-syllabus-page td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+  font-size: 0.95rem;
+  word-wrap: break-word;
+}
+
+.ece-syllabus-page th {
+  background-color: #007bff;
+  color: white;
+}
+
+.ece-syllabus-page tr:nth-child(even) {
+  background-color: #c0c7d1;
+}
+
+.ece-syllabus-page .pdf-container {
+  position: relative;
+  padding-top: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.ece-syllabus-page .pdf-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.ece-syllabus-page .ece-last-updated {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.ece-syllabus-page .back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ece-syllabus-page .back-to-top:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .ece-syllabus-page body {
+    font-size: 14px;
+  }
+
+  .ece-syllabus-page header {
+    font-size: 1.3rem;
+    padding: 15px;
+  }
+
+  .ece-syllabus-page .ece-syllabus-container {
+    padding: 20px 10px;
+    margin: 20px auto;
+  }
+
+  .ece-syllabus-page th,
+  .ece-syllabus-page td {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .ece-syllabus-page .ece-info-box {
+    padding: 10px 15px;
+  }
+
+  .ece-syllabus-page .ece-syllabus-container h2,
+  .ece-syllabus-page .ece-syllabus-container h3 {
+    font-size: 1.2rem;
+  }
+
+  .ece-syllabus-page .semester-title {
+    font-size: 1rem;
+  }
+
+  .ece-syllabus-page .ece-info-box p {
+    font-size: 0.9rem;
+  }
+
+  .ece-syllabus-page .pdf-container {
+    height: 300px;
+  }
+  .ece-syllabus-container .pdf-container{
+    height: 500px;
+  }
+}
+.maindiv{
+  margin-top: 80px;
+}
+.text{
+    text-align: center;
+   } 
+    
+  </style>
+</head>
+<body>  
+{% include 'header.html' %}
+<div class="ece-syllabus-page maindiv">
+  <header class="ece-syllabus-header ece-margin-top">
+    J.C. Bose University of Science and Technology, YMCA - Faridabad
+  </header>
+
+  <div class="ece-syllabus-container">
+    <h2>B.Tech Electronics Engineering (2018 Batch) - Syllabus up to 8th Semester</h2>
+
+    <div class="ece-info-box">
+      <p><strong>Department:</strong> Electronics Engineering</p>
+      <p><strong>Batch:</strong> 2018</p>
+      <p><strong>Document Type:</strong> Complete Syllabus (Semesters 1 to 8)</p>
+    </div>
+
+   <h3>📄 View Official Syllabus PDF</h3>
+<div class="pdf-container">
+  <iframe src="https://jcboseust.ac.in/assets/electronics/images/sy/2019/btech_ee_2020_4th_sem_2.pdf" title="Electronics Engineering Syllabus PDF"></iframe>
+</div>
+
+    <div class="ece-last-updated">
+      🔄 Last Updated: 2021–2022 Academic Session
+    </div>
+  </div>
+
+  <h3 class="text">📘 Semester-wise Subject Details</h3>
+
+  <!-- 🎓 Semester 1 -->
+  <!-- 🎓 Semester 1 – Electronics Engineering -->
+<div class="semester-title">Semester 1</div>
+<div class="table-responsive">
+  <table>
+    <tr><th>Subject Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+    <tr><td>BSC101C</td><td>Physics (Waves and Optics)</td><td>Theory</td><td>4</td></tr>
+    <tr><td>BSC103D</td><td>Mathematics-I (Calculus and Linear Algebra)</td><td>Theory</td><td>4</td></tr>
+    <tr><td>ESC102</td><td>Engineering Graphics & Design</td><td>Lab</td><td>2</td></tr>
+    <tr><td>ESC103</td><td>Programming for Problem Solving</td><td>Theory</td><td>3</td></tr>
+    <tr><td>ESC104</td><td>Workshop-I</td><td>Lab</td><td>2</td></tr>
+    <tr><td>BSC104C</td><td>Physics Lab (Waves and Optics)</td><td>Lab</td><td>1.5</td></tr>
+    <tr><td>ESC105</td><td>Programming Lab</td><td>Lab</td><td>2</td></tr>
+  </table>
+</div>
+
+<!-- 🎓 Semester 2 – Electronics Engineering -->
+<div class="semester-title">Semester 2</div>
+<div class="table-responsive">
+  <table>
+    <tr><th>Subject Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+    <tr><td>BSC106D</td><td>Mathematics-II (Calculus, ODE & Complex Variable)</td><td>Theory</td><td>4</td></tr>
+    <tr><td>ESC101</td><td>Basic Electrical Engineering</td><td>Theory</td><td>4</td></tr>
+    <tr><td>BSC102</td><td>Chemistry</td><td>Theory</td><td>4</td></tr>
+    <tr><td>ESC106</td><td>Workshop-II</td><td>Lab</td><td>2</td></tr>
+    <tr><td>HSMC101</td><td>English</td><td>Theory</td><td>2</td></tr>
+    <tr><td>ESC107</td><td>Basic Electrical Engineering Lab</td><td>Lab</td><td>1</td></tr>
+    <tr><td>BSC105</td><td>Chemistry Lab</td><td>Lab</td><td>1.5</td></tr>
+    <tr><td>HSMC102</td><td>English Lab</td><td>Lab</td><td>1</td></tr>
+  </table>
+</div>
+
+
+<!-- 🎓 Semester 3 -->
+<!-- 🎓 Semester 3 -->
+<div class="semester-title">Semester 3</div>
+<div class="table-responsive">
+  <table>
+    <tr><th>Subject Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+    <tr><td>PCC-EE-301</td><td>Environmental Chemistry & Microbiology</td><td>Theory</td><td>3</td></tr>
+    <tr><td>PCC-EE-303</td><td>Fluid Mechanics</td><td>Theory</td><td>3</td></tr>
+    <tr><td>PCC-EE-305</td><td>Surveying and Geomatics</td><td>Theory</td><td>3</td></tr>
+    <tr><td>PCC-EE-307</td><td>Solid Waste Management</td><td>Theory</td><td>3</td></tr>
+    <tr><td>LC-EE-309</td><td>Environmental Chemistry Lab</td><td>Lab</td><td>1</td></tr>
+    <tr><td>LC-EE-311</td><td>Surveying Lab</td><td>Lab</td><td>1</td></tr>
+    <tr><td>MC-EE-301</td><td>Universal Human Values</td><td>Mandatory</td><td>0</td></tr>
+  </table>
+</div>
+
+<!-- 🎓 Semester 4 -->
+<div class="semester-title">Semester 4</div>
+<div class="table-responsive">
+  <table>
+    <tr><th>Subject Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+    <tr><td>PCC-EE-302</td><td>Environmental Hydraulics</td><td>Theory</td><td>3</td></tr>
+    <tr><td>PCC-EE-304</td><td>Water Supply Engineering</td><td>Theory</td><td>3</td></tr>
+    <tr><td>PCC-EE-306</td><td>Environmental Instrumentation</td><td>Theory</td><td>3</td></tr>
+    <tr><td>OEC-EE-001</td><td>Open Elective - I</td><td>Elective</td><td>3</td></tr>
+    <tr><td>LC-EE-308</td><td>Water Engineering Lab</td><td>Lab</td><td>1</td></tr>
+    <tr><td>LC-EE-310</td><td>Environmental Instrumentation Lab</td><td>Lab</td><td>1</td></tr>
+  </table>
+</div>
+
+<!-- 🎓 Semester 5 -->
+<div class="semester-title">Semester 5</div>
+<div class="table-responsive">
+  <table>
+    <tr><th>Subject Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+    <tr><td>PCC-EE-401</td><td>Wastewater Engineering</td><td>Theory</td><td>3</td></tr>
+    <tr><td>PCC-EE-403</td><td>Air Pollution Control</td><td>Theory</td><td>3</td></tr>
+    <tr><td>PEC-EE-405</td><td>Professional Elective - I</td><td>Elective</td><td>3</td></tr>
+    <tr><td>OEC-EE-003</td><td>Open Elective - II</td><td>Elective</td><td>3</td></tr>
+    <tr><td>LC-EE-407</td><td>Wastewater Lab</td><td>Lab</td><td>1</td></tr>
+    <tr><td>LC-EE-409</td><td>Air Quality Lab</td><td>Lab</td><td>1</td></tr>
+    <tr><td>MC-EE-401</td><td>Environmental Legislation</td><td>Mandatory</td><td>0</td></tr>
+  </table>
+</div>
+
+<!-- 🎓 Semester 6 -->
+<div class="semester-title">Semester 6</div>
+<div class="table-responsive">
+  <table>
+    <tr><th>Subject Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+    <tr><td>PCC-EE-402</td><td>Design of Environmental Systems</td><td>Theory</td><td>3</td></tr>
+    <tr><td>PEC-EE-404</td><td>Professional Elective - II</td><td>Elective</td><td>3</td></tr>
+    <tr><td>PEC-EE-406</td><td>Professional Elective - III</td><td>Elective</td><td>3</td></tr>
+    <tr><td>LC-EE-408</td><td>Design Project Lab</td><td>Project</td><td>2</td></tr>
+    <tr><td>LC-EE-410</td><td>Remote Sensing & GIS Lab</td><td>Lab</td><td>1</td></tr>
+  </table>
+</div>
+
+<!-- 🎓 Semester 7 -->
+<div class="semester-title">Semester 7</div>
+<div class="table-responsive">
+  <table>
+    <tr><th>Subject Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+    <tr><td>PEC-EE-501</td><td>Professional Elective - IV</td><td>Elective</td><td>3</td></tr>
+    <tr><td>OEC-EE-005</td><td>Open Elective - III</td><td>Elective</td><td>3</td></tr>
+    <tr><td>PCC-EE-503</td><td>Industrial Waste Treatment</td><td>Theory</td><td>3</td></tr>
+    <tr><td>PROJ-EE-501</td><td>Project Phase I</td><td>Project</td><td>3</td></tr>
+    <tr><td>LC-EE-505</td><td>Field Work / Training</td><td>Practical</td><td>2</td></tr>
+  </table>
+</div>
+
+<!-- 🎓 Semester 8 -->
+<div class="semester-title">Semester 8</div>
+<div class="table-responsive">
+  <table>
+    <tr><th>Subject Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+    <tr><td>PEC-EE-502</td><td>Professional Elective - V</td><td>Elective</td><td>3</td></tr>
+    <tr><td>PCC-EE-504</td><td>Environmental Impact Assessment</td><td>Theory</td><td>3</td></tr>
+    <tr><td>PROJ-EE-502</td><td>Major Project / Dissertation</td><td>Project</td><td>6</td></tr>
+    <tr><td>MC-EE-501</td><td>Ethics & Professional Practices</td><td>Mandatory</td><td>0</td></tr>
+  </table>
+</div>
+
+
+</div>
+  <!-- 🧠 Paste your Semester 3 to Semester 8 table blocks here (already provided in your original message) -->
+  <!-- Make sure each table is wrapped inside <div class="table-responsive"> ... </div> -->
+
+  <!-- 👇 Continue with rest of semester blocks here (3 to 8)... -->
+  <!-- If you'd like me to insert all of them here again, just say “continue with semester 3 to 8 now” -->
+
+  <!-- PDF Section -->
+ {% include 'footer.html' %}
+
+
+
+</body>
+</html>

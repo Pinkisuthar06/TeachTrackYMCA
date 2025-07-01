@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YMCA Choice Filling - HSTES</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+   
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #004d40;
+      margin-bottom: 5px;
+    }
+    h3 {
+      text-align: center;
+      font-weight: 400;
+      color: #555;
+      margin-bottom: 30px;
+    }
+    .table-container {
+      max-width: 1100px;
+      margin: auto;
+      overflow-x: auto;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+    th, td {
+      padding: 14px 16px;
+      text-align: left;
+    }
+    th {
+      background-color: #00796b;
+      color: #ffffff;
+      font-weight: 600;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    tr:hover {
+      background-color: #e0f2f1;
+    }
+    .note, .category-box {
+      max-width: 1100px;
+      margin: 30px auto;
+      background: #fffde7;
+      padding: 20px;
+      border-left: 6px solid #ffc107;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    ul {
+      padding-left: 20px;
+    }
+    @media (max-width: 768px) {
+      h1 { font-size: 1.6rem; }
+      table, th, td { font-size: 0.85rem; }
+    }
+    .maindiv{
+      margin-top: 100px;
+    }
+  </style>
+</head>
+<body>
+{% include 'header.html' %}
+  <h1 class="maindiv">JC Bose UST (YMCA) - Perfect Choice Filling</h1>
+  <h3>HSTES Counselling 2025 · Top 13 Branches in Recommended Order</h3>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Preference</th>
+          <th>Branch Name</th>
+          <th>Code</th>
+          <th>Remarks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Computer Engineering (CE)</td><td>531</td><td>Top placements; most preferred</td></tr>
+        <tr><td>2</td><td>Computer Data Science</td><td>553</td><td>New-age specialization</td></tr>
+        <tr><td>3</td><td>Information Technology (IT)</td><td>532</td><td>Strong tech job market</td></tr>
+        <tr><td>4</td><td>Electronics and Communication Engg. (ECE)</td><td>533</td><td>Core + software crossover</td></tr>
+        <tr><td>5</td><td>Electronics and Computer Engg. (ENC)</td><td>552</td><td>ECE + CSE combined</td></tr>
+        <tr><td>6</td><td>Electronics (IOT)</td><td>557</td><td>Internet of Things tech branch</td></tr>
+        <tr><td>7</td><td>Robotic and Artificial Intelligence (RAI)</td><td>558</td><td>AI + Robotics specialization</td></tr>
+        <tr><td>8</td><td>Electrical Engineering (EE)</td><td>534</td><td>Core + PSU opportunities</td></tr>
+        <tr><td>9</td><td>Computer Engineering (Hindi)</td><td>554</td><td>Hindi medium; limited seats</td></tr>
+        <tr><td>10</td><td>Mechanical Engineering (ME)</td><td>535</td><td>Stable core jobs; GATE viable</td></tr>
+        <tr><td>11</td><td>Mechanical Engineering (Hindi)</td><td>555</td><td>Hindi stream; core focus</td></tr>
+        <tr><td>12</td><td>Civil Engineering</td><td>536</td><td>Best for government jobs</td></tr>
+        <tr><td>13</td><td>Environmental Engineering (ENV)</td><td>556</td><td>Sustainability-driven field</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>Note:</strong>
+    <ul>
+      <li>This order is based on placements, trends, and future scope.</li>
+      <li>RAI (Code 558) is Robotic and AI – a growing branch for future tech.</li>
+      <li>Adjust the order as per personal interest, category, and language preference.</li>
+    </ul>
+  </div>
+
+  <div class="category-box">
+    <strong>Category & Quota Short Codes:</strong>
+    <ul>
+      <li><strong>RAI</strong>: Rest of India (15% All India quota)</li>
+      <li><strong>ROHC</strong>: Rest of Haryana Category</li>
+      <li><strong>HOGC</strong>: Haryana Open General Category</li>
+      <li><strong>TFW</strong>: Tuition Fee Waiver Scheme</li>
+      <li><strong>KM</strong>: Kashmiri Migrants</li>
+    </ul>
+  </div>
+{% include 'footer.html' %}
+</body>
+</html>

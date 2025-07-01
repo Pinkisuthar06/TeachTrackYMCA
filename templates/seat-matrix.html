@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YMCA Seat Matrix 2025</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+  <style>
+    body {
+      background-color: #f3f3f3;
+      font-family: 'Georgia', serif;
+    }
+    .page-title {
+      background-color: #002147;
+      color: white;
+      padding: 30px;
+      border-radius: 0 0 10px 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .page-title h1 {
+      font-size: 2.5rem;
+    }
+    th {
+      background-color: #2c3e50;
+      color: white;
+    }
+    .level-UG {
+      background-color: #d6eaf8 !important;
+    }
+    .level-PG {
+      background-color: #d5f5e3 !important;
+    }
+    .level-Dip, .level-Cert {
+      background-color: #fcf3cf !important;
+    }
+    .level-PGD {
+      background-color: #f5eef8 !important;
+    }
+    .form-label {
+      font-weight: bold;
+      font-size: 1.05rem;
+    }
+    .form-select, .form-control {
+      font-family: 'Georgia', serif;
+    }
+    .table td, .table th {
+      vertical-align: middle;
+    }
+    .maindiv{
+      margin-top:80px;
+    }
+  </style>
+</head>
+<body>
+{% include 'header.html' %}
+<div class="maindiv container-fluid page-title text-center">
+  <h1>YMCA University</h1>
+  <p class="lead">Seat Matrix - Academic Year 2025</p>
+</div>
+
+<div class="container my-5">
+  <!-- Filter Section -->
+  <div class="row mb-4">
+    <div class="col-md-4">
+      <label for="departmentFilter" class="form-label">Filter by Department</label>
+      <select id="departmentFilter" class="form-select">
+        <option value="">Show All Departments</option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <label for="levelFilter" class="form-label">Filter by Program Level</label>
+      <select id="levelFilter" class="form-select">
+        <option value="">Show All Levels</option>
+        <option value="UG">Undergraduate (UG)</option>
+        <option value="PG">Postgraduate (PG)</option>
+        <option value="PGD">PG Diploma</option>
+        <option value="Dip">Diploma</option>
+        <option value="Cert.">Certificate</option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <label for="searchBox" class="form-label">Smart Search</label>
+      <input type="text" id="searchBox" class="form-control" placeholder="e.g. B.Tech, PGD, 2 years, Mechanical">
+    </div>
+  </div>
+
+  <!-- Seat Matrix Table -->
+  <div class="table-responsive">
+    <table id="seatMatrix" class="table table-bordered table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Department</th>
+          <th>Course/Program</th>
+          <th>Level</th>
+          <th>Duration (Years)</th>
+          <th>Intake (1st Sem.)</th>
+        </tr>
+      </thead>
+      <tbody>
+      <!-- Existing Rows -->
+      <tr><td>Community College of Skill Development</td><td>Diploma - Web Designing</td><td>Dip</td><td>2</td><td>50</td></tr>
+      <tr><td>Community College of Skill Development</td><td>Diploma - Yoga and Naturopathy</td><td>Dip</td><td>2</td><td>50</td></tr>
+      <tr><td>Community College of Skill Development</td><td>PG Diploma - Data Science and Analytics</td><td>PGD</td><td>1</td><td>20</td></tr>
+      <tr><td>Community College of Skill Development</td><td>PG Diploma - Yoga Science and Naturopathy</td><td>PGD</td><td>1</td><td>50</td></tr>
+      <tr><td>Community College of Skill Development</td><td>PG Diploma - Anti Drone & Autonomous Technology</td><td>PGD</td><td>1</td><td>30</td></tr>
+      <tr><td>Community College of Skill Development</td><td>PG Diploma - Philosophy of Communal Harmony</td><td>PGD</td><td>1</td><td>40</td></tr>
+      <tr><td>Community College of Skill Development</td><td>Certificate of Vocation (C.Voc) in Low Cost Automation</td><td>Cert.</td><td>1</td><td>30</td></tr>
+      <tr><td>Mechanical Engineering</td><td>UG Certificate in Applied Mechanics</td><td>Cert.</td><td>1</td><td>20</td></tr>
+      <tr><td>Life Sciences</td><td>M.Sc. - Biotechnology</td><td>PG</td><td>2</td><td>20</td></tr>
+      <tr><td>Life Sciences</td><td>M.Sc. - Botany</td><td>PG</td><td>2</td><td>20</td></tr>
+      <tr><td>Life Sciences</td><td>M.Sc. - Zoology</td><td>PG</td><td>2</td><td>20</td></tr>
+      <tr><td>Life Sciences</td><td>M.Sc. - Microbiology</td><td>PG</td><td>2</td><td>20</td></tr>
+      <tr><td>Communication and Media Technology</td><td>M.A. - Journalism & Mass Communication</td><td>PG</td><td>2</td><td>25</td></tr>
+      <tr><td>Communication and Media Technology</td><td>Master of Social Work</td><td>PG</td><td>2</td><td>20</td></tr>
+      <tr><td>Literature and Languages</td><td>M.A - English</td><td>PG</td><td>2</td><td>35</td></tr>
+      <tr><td>Mechanical Engineering</td><td>M.Tech - Mechanical Engineering (Manufacturing & Automation)</td><td>PG</td><td>2</td><td>18</td></tr>
+      <tr><td>Electrical Engineering</td><td>M.Tech - Power Electronics & Drives</td><td>PG</td><td>2</td><td>18</td></tr>
+      <tr><td>Computer Engineering</td><td>M.Tech - Computer Engineering</td><td>PG</td><td>2</td><td>18</td></tr>
+      <tr><td>Computer Engineering</td><td>M.Tech - Computer Science & Engineering</td><td>PG</td><td>2</td><td>18</td></tr>
+      <tr><td>Electronics Engineering</td><td>M.Tech - Electronics & Communication Engineering</td><td>PG</td><td>2</td><td>18</td></tr>
+      <tr><td>Electronics Engineering</td><td>M.Tech - VLSI Design</td><td>PG</td><td>2</td><td>18</td></tr>
+      <tr><td>Centre for Energy Studies</td><td>M.Tech - Energy and Environmental Engineering</td><td>PG</td><td>2</td><td>18</td></tr>
+      <tr><td>Management Studies</td><td>MBA</td><td>PG</td><td>2</td><td>120</td></tr>
+      <tr><td>Management Studies</td><td>MBA (Weekend Program)</td><td>PG</td><td>2</td><td>60</td></tr>
+      <tr><td>Computer Applications</td><td>MCA</td><td>PG</td><td>2</td><td>60</td></tr>
+      <tr><td>Physics</td><td>M.Sc. - Animation & Multimedia</td><td>PG</td><td>2</td><td>20</td></tr>
+      <tr><td>Physics</td><td>M.Sc. - Physics</td><td>PG</td><td>2</td><td>60</td></tr>
+      <tr><td>Mathematics</td><td>M.Sc. - Mathematics</td><td>PG</td><td>2</td><td>60</td></tr>
+      <tr><td>Chemistry</td><td>M.Sc. - Chemistry</td><td>PG</td><td>2</td><td>60</td></tr>
+      <tr><td>Environmental Sciences</td><td>M.Sc. - Environmental Sciences</td><td>PG</td><td>2</td><td>35</td></tr>
+      <tr><td>Environmental Sciences</td><td>PG Diploma in Waste Management</td><td>PGD</td><td>1</td><td>20</td></tr>
+      <tr><td>Community College of Skill Development</td><td>B.Voc in Mechanical Engg. (Manufacturing Engg.)</td><td>UG</td><td>3</td><td>60</td></tr>
+      <tr><td>Community College of Skill Development</td><td>B.Voc - Banking Financial Services and Insurance</td><td>UG</td><td>3</td><td>60</td></tr>
+      <tr><td>Community College of Skill Development</td><td>B.Voc - Manufacturing</td><td>UG</td><td>3</td><td>60</td></tr>
+      <tr><td>Community College of Skill Development</td><td>B.Voc - Automobile</td><td>UG</td><td>3</td><td>60</td></tr>
+      <tr><td>Community College of Skill Development</td><td>B.Voc - Electrical</td><td>UG</td><td>3</td><td>60</td></tr>
+      <tr><td>Community College of Skill Development</td><td>B.Voc - Web Development</td><td>UG</td><td>3</td><td>60</td></tr>
+      <tr><td>Computer Applications</td><td>BCA</td><td>UG</td><td>3/4</td><td>60</td></tr>
+      <tr><td>Physics</td><td>B.Sc. - Animation & Multimedia</td><td>UG</td><td>3/4</td><td>35</td></tr>
+      <tr><td>Physics</td><td>B.Sc. - Physics</td><td>UG</td><td>3/4</td><td>60</td></tr>
+      <tr><td>Mathematics</td><td>B.Sc. - Mathematics</td><td>UG</td><td>3/4</td><td>60</td></tr>
+      <tr><td>Mathematics</td><td>B.Sc. - Mathematics and Computing</td><td>UG</td><td>3/4</td><td>10</td></tr>
+      <tr><td>Chemistry</td><td>B.Sc. - Chemistry</td><td>UG</td><td>3/4</td><td>60</td></tr>
+      <tr><td>Life Sciences</td><td>B.Sc. - Life Sciences</td><td>UG</td><td>3/4</td><td>60</td></tr>
+      <tr><td>Communication and Media Technology</td><td>B.Sc. - Visual Communication & Multimedia Tech</td><td>UG</td><td>3/4</td><td>30</td></tr>
+      <tr><td>Communication and Media Technology</td><td>B.A. - Journalism & Mass Communication</td><td>UG</td><td>3/4</td><td>45</td></tr>
+      <tr><td>Communication and Media Technology</td><td>Bachelor of Social Work</td><td>UG</td><td>3/4</td><td>30</td></tr>
+      <tr><td>Management Studies</td><td>BBA</td><td>UG</td><td>3/4</td><td>60</td></tr>
+      <tr><td>Business Studies</td><td>B.Com</td><td>UG</td><td>3/4</td><td>60</td></tr>
+      <tr><td>Computer Engineering</td><td>B.Tech - Computer Engineering</td><td>UG</td><td>4</td><td>120</td></tr>
+      <tr><td>Computer Engineering</td><td>B.Tech - Computer Engineering (Data Science)</td><td>UG</td><td>4</td><td>60</td></tr>
+      <tr><td>Computer Engineering</td><td>B.Tech - Information Technology</td><td>UG</td><td>4</td><td>60</td></tr>
+      <tr><td>Computer Engineering</td><td>B.Tech (Hindi) - Computer Engineering</td><td>UG</td><td>4</td><td>30</td></tr>
+      <tr><td>Electrical Engineering</td><td>B.Tech - Electrical Engineering</td><td>UG</td><td>4</td><td>60</td></tr>
+      <tr><td>Electronics Engineering</td><td>B.Tech - Electronics Engineering (IoT)</td><td>UG</td><td>4</td><td>60</td></tr>
+      <tr><td>Electronics Engineering</td><td>B.Tech - Electronics & Communication Engineering</td><td>UG</td><td>4</td><td>60</td></tr>
+      <tr><td>Electronics Engineering</td><td>B.Tech - Electronics & Computer Engineering</td><td>UG</td><td>4</td><td>60</td></tr>
+      <tr><td>Civil Engineering</td><td>B.Tech - Civil Engineering</td><td>UG</td><td>4</td><td>60</td></tr>
+      <tr><td>Civil Engineering</td><td>B.Tech - Environmental Engineering</td><td>UG</td><td>4</td><td>30</td></tr>
+      <tr><td>Mechanical Engineering</td><td>B.Tech - Mechanical Engineering</td><td>UG</td><td>4</td><td>120</td></tr>
+      <tr><td>Mechanical Engineering</td><td>B.Tech - Robotics & AI</td><td>UG</td><td>4</td><td>60</td></tr>
+      <tr><td>Mechanical Engineering</td><td>B.Tech (Hindi) - Mechanical Engineering</td><td>UG</td><td>4</td><td>30</td></tr>
+    </tbody>
+    </table>
+  </div>
+</div>
+{% include 'footer.html' %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+
+<script>
+  $(document).ready(function () {
+    const table = $('#seatMatrix').DataTable({
+      dom: 'Bfrtip',
+      buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
+      pageLength: 25,
+      initComplete: function () {
+        const departmentIndex = 0;
+        const uniqueDepartments = new Set();
+
+        // Collect unique departments
+        this.api().column(departmentIndex).data().each(function (d) {
+          uniqueDepartments.add(d);
+        });
+
+        // Sort and add department options
+        [...uniqueDepartments].sort().forEach(function (dept) {
+          $('#departmentFilter').append(`<option value="${dept}">${dept}</option>`);
+        });
+      }
+    });
+
+    // Filter by Department
+    $('#departmentFilter').on('change', function () {
+      const value = this.value;
+      table.column(0).search(value).draw();
+    });
+
+    // Filter by Program Level
+    $('#levelFilter').on('change', function () {
+      const value = this.value;
+      table.column(2).search(value).draw();
+    });
+
+    // Smart search
+    $('#searchBox').on('keyup', function () {
+      table.search(this.value).draw();
+    });
+
+    // Highlight rows based on Level
+    $('#seatMatrix tbody tr').each(function () {
+      const level = $(this).find('td').eq(2).text().trim();
+      if (level === 'UG') $(this).addClass('level-UG');
+      else if (level === 'PG') $(this).addClass('level-PG');
+      else if (level === 'PGD') $(this).addClass('level-PGD');
+      else if (level === 'Dip' || level === 'Cert.') $(this).addClass('level-Dip');
+    });
+  });
+</script>

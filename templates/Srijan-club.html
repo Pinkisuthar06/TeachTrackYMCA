@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Srijan Club - YMCA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+  :root {
+    --primary: #8e44ad;
+    --card-bg: rgba(255, 255, 255, 0.2);
+    --dark-purple: #4a235a;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Ubuntu', sans-serif;
+    background: linear-gradient(to bottom right, #f8f0fc, #e5ccff);
+    color: #333;
+    margin: 0;
+  }
+
+  .header {
+    background: linear-gradient(to right, var(--primary), var(--dark-purple));
+    color: white;
+    text-align: center;
+    padding: 5rem 1rem 2rem;
+    position: relative;
+  }
+
+  .header img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid white;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .header h1 {
+    font-weight: 700;
+    font-size: 3rem;
+    margin-top: 1.5rem;
+  }
+
+  .header p {
+    max-width: 700px;
+    margin: 1rem auto 0;
+    font-size: 1.2rem;
+  }
+
+  .section-title {
+    font-weight: bold;
+    color: var(--primary);
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .glass-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .glass-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-primary-custom {
+    background-color: var(--primary);
+    color: white;
+    border-radius: 10px;
+    padding: 0.6rem 1.2rem;
+    font-weight: 500;
+    transition: background 0.3s ease;
+  }
+
+  .btn-primary-custom:hover {
+    background-color: #6c3483;
+  }
+
+  .btn-primary-custom i {
+    font-size: 1.5rem;
+  }
+
+  .btn-primary-custom {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  .cta-banner {
+    background: linear-gradient(90deg, var(--primary), #a569bd);
+    color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .gallery img {
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .gallery img:hover {
+    transform: scale(1.03);
+  }
+
+  .maindiv {
+    margin-top: 90px;
+  }
+
+  table th, table td {
+    vertical-align: middle !important;
+  }
+
+  @media (max-width: 768px) {
+    .header {
+      padding: 4rem 1rem 2rem;
+    }
+
+  .header img {
+    width: 70px;
+    height: 70px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+    .header h1 {
+      font-size: 1.75rem;
+      margin-top: 2.5rem;
+    }
+
+    .header p {
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
+
+    .gallery img {
+      height: 180px;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+    }
+
+    .cta-banner h4 {
+      font-size: 1.2rem;
+    }
+
+    .cta-banner p {
+      font-size: 1rem;
+    }
+
+    table th, table td {
+      font-size: 0.8rem;
+      padding: 0.5rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .glass-card {
+      padding: 1rem;
+    }
+    .gallery img {
+      height: 160px;
+    }
+  }
+</style>
+
+</head>
+<body>
+{% include 'header.html' %}
+  <div class="header maindiv">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuxA47TjIUzWHtLsPEJSUkrQ1ILZPXCIgjYw&s" alt="Club Logo">
+    <h1>Srijan Club</h1>
+    <p>The Official Fine-Arts Society of J.C. Bose University of Science and Technology, YMCA</p>
+  </div>
+
+  <div class="container py-4">
+    <h3 class="section-title">About Us</h3>
+    <p>
+      Founded in 2003, <strong>Srijan</strong> is the one and only fine-arts society at JC Bose University, YMCA.
+      For over two decades, Srijan has nurtured artistic talent and creativity among students, maintaining its legacy and integrity.
+    </p>
+    <p>
+      Every year, we host <strong>3-day auditions</strong> in September or October, including a PI round, to induct passionate and talented students.
+      Guided by our beloved faculty mentor <strong>Dr. Preeti Sethi</strong>, we operate as a family, where every member is equally valued and celebrated.
+    </p>
+ <div class="d-flex justify-content-center gap-3 mt-3">
+  <a href="https://www.instagram.com/srijanf9arts/?hl=ena" target="_blank" class="btn btn-primary-custom" title="Instagram">
+    <i class="fab fa-instagram fa-lg"></i>
+  </a>
+  
+</div>
+
+  </div>
+
+  <div class="container py-5">
+    <h3 class="section-title">Our Team</h3>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="glass-card p-4 text-center">
+          <h5>Coordinators</h5>
+          <p>Dr. Preeti Sethi<br>Ms. Shilpi</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="glass-card p-4 text-center">
+          <h5>Secretaries</h5>
+          <p>Dipali<br>Maninder<br>Sachin</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="glass-card p-4 text-center">
+          <h5>Joint Secretaries</h5>
+          <p>Hemant<br>Yash<br>Amit<br>Komal</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <h3 class="section-title">Gallery</h3>
+    <div class="row gallery g-4">
+      <div class="col-md-4">
+        <img src="https://jcboseust.ac.in/dsw/assets/uploads/media/sr_1.jpg" alt="Srijan Art 1">
+      </div>
+      <div class="col-md-4">
+        <img src="https://jcboseust.ac.in/dsw/assets/uploads/media/sr_2.jpg" alt="Srijan Art 2">
+      </div>
+      <div class="col-md-4">
+        <img src="https://jcboseust.ac.in/dsw/assets/uploads/media/sr_3.jpg" alt="Srijan Art 3">
+      </div>
+    </div>
+  </div>
+<div class="container py-5">
+  <h3 class="section-title">Club Achievements</h3>
+  <p class="text-center mb-4">
+    The achievements of the club have been phenomenal in recent years. Our students have participated in top universities across the country and won prizes and recognition for their creativity and talent.
+  </p>
+  <div class="table-responsive glass-card p-3">
+    <table class="table table-bordered table-hover align-middle mb-0">
+      <thead class="table-light text-center">
+        <tr>
+          <th>S.No.</th>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Event</th>
+          <th>Venue</th>
+          <th>Prize</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr><td>1</td><td>Simran Kataria</td><td>Second</td><td>Canvas Painting</td><td>Manav Rachna University</td><td>Cash prize and certificate</td></tr>
+        <tr><td>2</td><td>Ayushi, Swati, Sonia</td><td>Third</td><td>Paintara</td><td>IIT-Delhi</td><td>Cash prize and certificate</td></tr>
+        <tr><td>3</td><td>Rajat Chopra</td><td>First</td><td>2-shades</td><td>IIT-Delhi</td><td>Goodies and certificate</td></tr>
+        <tr><td>4</td><td>Sanubhav Khokhar, Yash Arora</td><td>Second</td><td>Brush off Brush</td><td>IIT-Delhi</td><td>Goodies and certificate</td></tr>
+        <tr><td>5</td><td>Kumar Divendu</td><td>Second</td><td>—</td><td>YMCAUST</td><td>Cash prize and certificate</td></tr>
+        <tr><td>6</td><td>Rajat Chopra, Yash Arora, Nishtha Sethi</td><td>Second</td><td>Doodle your shirt</td><td>IIT-Delhi</td><td>Cash prize and certificate</td></tr>
+        <tr><td>7</td><td>Prerna Rathee, Sushant Sharma</td><td>Third + Best Story</td><td>Graphic-o-rama</td><td>IIT-Delhi</td><td>Trophy and certificate</td></tr>
+        <tr><td>8</td><td>Deepansha Gupta</td><td>Second</td><td>Doodling the logo</td><td>IIT-Delhi</td><td>Goodies and certificate</td></tr>
+        <tr><td>9</td><td>Priya Sharma, Sachin Arya</td><td>First</td><td>Brush off Brush</td><td>IIT-Delhi</td><td>Cash prize and certificate</td></tr>
+        <tr><td>10</td><td>Vaishali</td><td>First</td><td>Poster making (Women's Day)</td><td>YMCAUST</td><td>Cash prize and certificate</td></tr>
+        <tr><td>11</td><td>Rajat Chopra</td><td>Third</td><td>Poster making (Women's Day)</td><td>YMCAUST</td><td>Cash prize and certificate</td></tr>
+        <tr><td>12</td><td>Archna</td><td>Third</td><td>Slogan Writing (Women's Day)</td><td>YMCAUST</td><td>Cash prize and certificate</td></tr>
+        <tr><td>13</td><td>Deepali</td><td>Second</td><td>Slogan Writing (Women's Day)</td><td>YMCAUST</td><td>Cash prize and certificate</td></tr>
+        <tr><td>14</td><td>Rajat, Muskan, Nishtha</td><td>First</td><td>Wall Scrawl</td><td>YMCAUST</td><td>Cash prize and certificate</td></tr>
+        <tr><td>15</td><td>Lovika, Prerna, Priya, Satyam</td><td>Second</td><td>Wall Scrawl</td><td>YMCAUST</td><td>Cash prize and certificate</td></tr>
+        <tr><td>16</td><td>Rajat, Khushboo</td><td>First</td><td>T-shirt Painting</td><td>YMCAUST</td><td>Cash prize and certificate</td></tr>
+        <tr><td>17</td><td>Lovika Grover, Priya Sharma</td><td>Third</td><td>MakeOver Face Painting</td><td>YMCAUST</td><td>Cash prize and certificate</td></tr>
+        <tr><td>18</td><td>Twinkle, Neha</td><td>Second</td><td>Off Brush</td><td>YMCAUST</td><td>Cash prize and certificate</td></tr>
+        <tr><td>19</td><td>Paras, Pooja</td><td>Third</td><td>Off Brush</td><td>YMCAUST</td><td>Cash prize and certificate</td></tr>
+        <tr><td>20</td><td>Dipali, Vaishali</td><td>First</td><td>Off Brush</td><td>YMCAUST</td><td>Cash prize and certificate</td></tr>
+        <tr><td>21</td><td>Satyam Chandra</td><td>Second</td><td>2 Shades</td><td>IIT Delhi</td><td>Cash prize and certificate</td></tr>
+        <tr><td>22</td><td>Sushant Sharma, Sakshi Chandna</td><td>Second</td><td>Graphic-o-rama</td><td>IIT Delhi</td><td>Cash prize and certificate</td></tr>
+        <tr><td>23</td><td>Priya Sharma</td><td>Third</td><td>Logo Design</td><td>IIT Delhi</td><td>Certificate and goodies</td></tr>
+        <tr><td>24</td><td>Ayush Sinha</td><td>First</td><td>Poster making (Vigilance Week)</td><td>YMCAUST</td><td>Cash prize and certificate</td></tr>
+        <tr><td>25</td><td>Pankaj Bora</td><td>Second</td><td>Poster making (Vigilance Week)</td><td>YMCAUST</td><td>Cash prize and certificate</td></tr>
+        <tr><td>26</td><td>Parul</td><td>Third</td><td>Poster making (Vigilance Week)</td><td>YMCAUST</td><td>Cash prize and certificate</td></tr>
+        <tr><td>27</td><td>Inderjeet, Sakshi</td><td>First</td><td>Off Brush</td><td>PEC</td><td>Cash prize and certificate</td></tr>
+        <tr><td>28</td><td>Inderjeet, Nitin, Jayati</td><td>First</td><td>Graffiti Painting</td><td>PEC</td><td>Cash prize and certificate</td></tr>
+        <tr><td>29</td><td>Inderjeet, Nitin</td><td>First</td><td>Muzart</td><td>PEC</td><td>Cash prize and certificate</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+  <div class="container py-5">
+    <div class="cta-banner">
+      <h4>🎨 Want to express your creativity and passion for arts?</h4>
+      <p>Join Srijan today and be a part of YMCA’s finest art family. Auditions open every year in September/October!</p>
+      <a href="{{ url_for('process') }}" class="btn btn-light">Join the Club</a>
+    </div>
+  </div>
+
+ {% include 'footer.html' %}
+
+</body>
+</html>

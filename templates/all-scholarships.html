@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YMCA Scholarships</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #eef3f9;
+      color: #333;
+    }
+
+    header {
+      background: #001f3f;
+      color: #fff;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    }
+
+    .ribbon {
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      background: #0066cc;
+      color: #fff;
+      padding: 5px 10px;
+      font-size: 0.75rem;
+      border-radius: 0 0 6px 0;
+      font-weight: 600;
+    }
+
+    .card h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.2rem;
+      color: #003366;
+    }
+
+    .card p {
+      margin: 5px 0;
+      font-size: 0.95rem;
+    }
+
+    .highlight {
+      color: #006699;
+      font-weight: 600;
+    }
+
+    .note {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 1rem;
+      font-style: italic;
+      text-align: center;
+      background: #fff;
+      border-left: 4px solid #005580;
+      border-radius: 6px;
+    }
+
+    
+
+    @media (max-width: 768px) {
+      header {
+        font-size: 1.5rem;
+      }
+    }
+    .maindiv{
+      margin-top: 80px;
+    }
+  </style>
+</head>
+<body>
+{% include 'header.html' %}
+  <header class="maindiv">🎓 YMCA Scholarship Schemes</header>
+
+  <div class="container ">
+
+    <div class="card">
+      <div class="ribbon">Category: BC</div>
+      <h3>BC Scholarship</h3>
+      <p><span class="highlight">Amount:</span> ₹3,500 (Non-Hosteller), ₹7,500 (Hosteller)</p>
+      <p><span class="highlight">Income Limit:</span> ≤ ₹1 lakh/year</p>
+      <p><span class="highlight">Attendance:</span> Min. 75%</p>
+    </div>
+
+    <div class="card">
+      <div class="ribbon">Category: SC</div>
+      <h3>SC Post Matric Scholarship</h3>
+      <p><span class="highlight">Amount:</span> Full tuition & charges</p>
+      <p><span class="highlight">Income Limit:</span> ≤ ₹2.5 lakh/year</p>
+      <p><span class="highlight">Attendance:</span> Min. 75%</p>
+    </div>
+
+    <div class="card">
+      <div class="ribbon">Topper</div>
+      <h3>Governor/Chancellor's Gold Medal</h3>
+      <p><span class="highlight">Amount:</span> ₹75,000 + Medal + Certificate</p>
+      <p><span class="highlight">CGPA:</span> Highest in B.Tech Final Year</p>
+      <p><span class="highlight">Attendance:</span> Min. 85%</p>
+    </div>
+
+    <div class="card">
+      <div class="ribbon">Girls Only</div>
+      <h3>Chief Minister’s Gold Medal</h3>
+      <p><span class="highlight">Amount:</span> ₹65,000 + Medal + Certificate</p>
+      <p><span class="highlight">Gender:</span> Female</p>
+      <p><span class="highlight">CGPA:</span> Top girl in Final Year</p>
+      <p><span class="highlight">Attendance:</span> Min. 85%</p>
+    </div>
+
+    <div class="card">
+      <div class="ribbon">Merit</div>
+      <h3>Vice Chancellor’s Gold Medal</h3>
+      <p><span class="highlight">Amount:</span> ₹51,000 + Medal + Certificate</p>
+      <p><span class="highlight">Criteria:</span> Academic + Extracurricular</p>
+      <p><span class="highlight">Attendance:</span> Min. 85%</p>
+    </div>
+
+    <div class="card">
+      <div class="ribbon">Topper</div>
+      <h3>Dean’s Certificate</h3>
+      <p><span class="highlight">Amount:</span> ₹2,500 + Certificate</p>
+      <p><span class="highlight">Eligibility:</span> Branch-wise Semester Toppers</p>
+      <p><span class="highlight">Attendance:</span> Min. 80%</p>
+    </div>
+
+    <div class="card">
+      <div class="ribbon">Means + Merit</div>
+      <h3>Merit-Cum-Means Scholarship</h3>
+      <p><span class="highlight">Amount:</span> ₹750/month</p>
+      <p><span class="highlight">CGPA:</span> ≥ 7.75</p>
+      <p><span class="highlight">Income:</span> ≤ ₹4.5 lakh/year</p>
+      <p><span class="highlight">Attendance:</span> Min. 75%</p>
+    </div>
+
+    <div class="card">
+      <div class="ribbon">Girls Only</div>
+      <h3>Bharti Airtel Scholarship</h3>
+      <p><span class="highlight">Amount:</span> Up to ₹70,000/year</p>
+      <p><span class="highlight">Stream:</span> Arts & Humanities</p>
+      <p><span class="highlight">Eligibility:</span> Meritorious & Underprivileged</p>
+      <p><span class="highlight">Attendance:</span> Min. 75%</p>
+    </div>
+
+    <div class="card">
+      <div class="ribbon">Govt. Scheme</div>
+      <h3>AICTE J&K PMSSS Scheme</h3>
+      <p><span class="highlight">Amount:</span> Full Tuition + Charges</p>
+      <p><span class="highlight">Eligibility:</span> J&K Domicile</p>
+      <p><span class="highlight">Attendance:</span> Min. 75%</p>
+    </div>
+ 
+    <div class="card">
+      <div class="ribbon">PWD</div>
+      <h3>NHFDC Scholarship</h3>
+      <p><span class="highlight">Amount:</span> Tuition & Academic Charges</p>
+      <p><span class="highlight">Eligibility:</span> Students with Disabilities</p>
+      <p><span class="highlight">Attendance:</span> Min. 75%</p>
+    </div>
+
+    <div class="card">
+      <div class="ribbon">Corporate</div>
+      <h3>ONGC Scholarship</h3>
+      <p><span class="highlight">Amount:</span> Tuition & Academic Charges</p>
+      <p><span class="highlight">Eligibility:</span> As per ONGC norms</p>
+      <p><span class="highlight">Attendance:</span> Min. 75%</p>
+    </div>
+
+    <div class="card">
+      <div class="ribbon">Trust</div>
+      <h3>Guru Har Krishan Trust Scholarship</h3>
+      <p><span class="highlight">Amount:</span> Tuition & Academic Charges</p>
+      <p><span class="highlight">Eligibility:</span> As per Trust Criteria</p>
+      <p><span class="highlight">Attendance:</span> Min. 75%</p>
+    </div>
+
+    <div class="card">
+      <div class="ribbon">Stipend</div>
+      <h3>RKM Stipend</h3>
+      <p><span class="highlight">Amount:</span> ₹3,150/year</p>
+      <p><span class="highlight">Eligibility:</span> As per RKM Guidelines</p>
+      <p><span class="highlight">Attendance:</span> Min. 75%</p>
+    </div>
+
+    <div class="card">
+      <div class="ribbon">Mission</div>
+      <h3>MOB Scholarship (Vishwa Prakash Mission)</h3>
+      <p><span class="highlight">Amount:</span> As per Scheme</p>
+      <p><span class="highlight">Eligibility:</span> Underprivileged Students</p>
+      <p><span class="highlight">Attendance:</span> Min. 75%</p>
+    </div>
+
+  </div>
+
+  <div class="note">
+    📝 <strong>Note:</strong> Most scholarships require a minimum of 75% attendance. Some medals require ≥85% attendance. Always verify CGPA, income, gender, and category eligibility before applying.
+  </div>
+
+{% include 'footer.html' %}
+</body>
+</html>

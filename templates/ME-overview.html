@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mechanical Engineering Branch Overview - YMCA Faridabad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #003366;
+      --accent: #00aaff;
+      --light-bg: #f0f6fc;
+      --card-bg: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--light-bg);
+      color: #222;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      padding: 3rem 1rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .section {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 1.8rem 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      border-left: 6px solid var(--accent);
+    }
+
+    .section h2 {
+      margin-top: 0;
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .section p,
+    .section li {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .section ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+  
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .section h2 {
+        font-size: 1.3rem;
+      }
+    }
+    .maindiv{
+      margin-top: 80px;
+    }
+  </style>
+</head>
+<body>
+{% include 'header.html' %}
+  <header class="maindiv">
+    <h1>Mechanical Engineering Branch Overview</h1>
+    <p>B.Tech in Mechanical Engineering - YMCA Faridabad</p>
+  </header>
+
+  <div class="container">
+
+    <div class="section">
+      <h2>About the Department</h2>
+      <p>The Department of Mechanical Engineering at J.C. Bose University of Science and Technology, YMCA Faridabad, focuses on producing highly skilled mechanical engineers through a balanced curriculum of theory, hands-on labs, and project-based learning in thermal, design, manufacturing, and automation domains.</p>
+    </div>
+
+    <div class="section">
+      <h2>What You Will Learn</h2>
+      <ul>
+        <li>Engineering Mechanics, Strength of Materials</li>
+        <li>Thermodynamics and Heat Transfer</li>
+        <li>Fluid Mechanics and Hydraulic Machines</li>
+        <li>Theory of Machines and Machine Design</li>
+        <li>Manufacturing Technology and CNC</li>
+        <li>CAD/CAM, SolidWorks, AutoCAD, ANSYS</li>
+        <li>Refrigeration and Air Conditioning</li>
+        <li>Industrial Engineering and Robotics</li>
+        <li>Mechatronics, IoT in Mechanical Systems</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Laboratories and Facilities</h2>
+      <ul>
+        <li>Thermal Engineering Lab</li>
+        <li>Fluid Mechanics Lab</li>
+        <li>Strength of Materials Lab</li>
+        <li>Machine Design and Dynamics Lab</li>
+        <li>Manufacturing Lab with CNC</li>
+        <li>CAD/CAM & Simulation Lab</li>
+        <li>Robotics and Automation Lab</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Career Opportunities</h2>
+      <ul>
+        <li><strong>Core Industries:</strong> Manufacturing, Automotive, Aerospace, HVAC</li>
+        <li><strong>Design and R&D:</strong> Product design, SolidWorks, FEA/CFD (e.g., Mahindra, Tata, Ashok Leyland)</li>
+        <li><strong>Public Sector:</strong> BHEL, NTPC, GAIL, DRDO, ISRO, Indian Railways</li>
+        <li><strong>Higher Studies:</strong> M.Tech/MS in Thermal, Design, Robotics, etc.</li>
+        <li><strong>Automation & Industry 4.0:</strong> Robotics, IoT, Mechatronics roles</li>
+        <li><strong>Government Exams:</strong> IES, GATE, SSC JE, PSU recruitments</li>
+        <li><strong>Entrepreneurship:</strong> Manufacturing startups, 3D printing, consultancy</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Student Achievements & Events</h2>
+      <ul>
+        <li>Participation in SAE BAJA, Go-Kart, and drone competitions</li>
+        <li>Internships in Maruti Suzuki, BHEL, Hero MotoCorp, etc.</li>
+        <li>Workshops on 3D printing, ANSYS, AutoCAD, and Robotics</li>
+      </ul>
+    </div>
+
+  </div>
+
+  {% include 'footer.html' %}
+</body>
+</html>

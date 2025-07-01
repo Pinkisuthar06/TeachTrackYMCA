@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YMCA Faridabad Placement 2017–2018</title>
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: 'Varela Round', sans-serif; background: #f8f9fa; color: #333; }
+    h1, h3 { color: #ff0000; }
+    .section-card { background: #fff; border-radius:10px; padding:20px; margin-bottom:30px;
+                    box-shadow:0 2px 8px rgba(0,0,0,0.08); }
+    .stats-box { text-align:center; padding:20px; border-radius:8px; background:#f1f1f1;
+                 box-shadow:0 2px 6px rgba(0,0,0,0.1); margin-bottom:20px; }
+    .table thead { background:#0a3c5f; color:#fff; }
+    .maindiv { margin-top:100px; }
+  </style>
+</head>
+<body>
+  {% include 'header.html' %}
+  <div class="maindiv container">
+
+    <div class="text-center mb-4">
+      <h1>Placement Record 2017–2018</h1>
+      <p>J.C. BOSE YMCA</p>
+    </div>
+
+    <div class="section-card">
+      <h3 class="text-center">Overall Placement Statistics</h3>
+      <div class="row text-center">
+        <div class="col-md-4 col-6">
+          <div class="stats-box">
+            <h4 class="text-primary">715</h4><p>Total Students</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-6">
+          <div class="stats-box">
+            <h4 class="text-success">495</h4><p>Eligible</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-12">
+          <div class="stats-box">
+            <h4 class="text-warning">284</h4><p>No. of Offers</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-6">
+          <div class="stats-box">
+            <h4 class="text-info">49</h4><p>Double Offers</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-6">
+          <div class="stats-box">
+            <h4 class="text-secondary">39.72%</h4><p>Placement %</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-12">
+          <div class="stats-box">
+            <h4 class="text-danger">₹27 LPA</h4><p>Highest Package</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h3 class="text-center">Branch-wise Placement Statistics</h3>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Branch</th><th>Total</th><th>Eligible</th><th>Offers</th><th>Double</th>
+              <th>Visited</th><th>Placement %</th><th>Min (LPA)</th><th>Max (LPA)</th><th>Avg (LPA)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>B.Tech CE</td><td>76</td><td>59</td><td>49</td><td>16</td><td>42</td><td>83.05</td><td>3.5</td><td>27</td><td>15.25</td></tr>
+            <tr><td>B.Tech IT</td><td>73</td><td>55</td><td>54</td><td>30</td><td>45</td><td>98.18</td><td>3.5</td><td>27</td><td>15.25</td></tr>
+            <tr><td>B.Tech ECE</td><td>72</td><td>48</td><td>25</td><td>1</td><td>20</td><td>52.08</td><td>3.5</td><td>7.7</td><td>5.6</td></tr>
+            <tr><td>B.Tech EIC</td><td>65</td><td>25</td><td>18</td><td>0</td><td>15</td><td>72.00</td><td>3.5</td><td>5</td><td>4.25</td></tr>
+            <tr><td>B.Tech EL</td><td>72</td><td>30</td><td>16</td><td>0</td><td>15</td><td>53.33</td><td>3.5</td><td>7.25</td><td>5.375</td></tr>
+            <tr><td>B.Tech Mech.</td><td>145</td><td>111</td><td>66</td><td>0</td><td>24</td><td>59.46</td><td>3.5</td><td>10</td><td>6.75</td></tr>
+            <tr><td>MCA</td><td>34</td><td>32</td><td>8</td><td>2</td><td>14</td><td>25.00</td><td>3</td><td>5</td><td>4</td></tr>
+            <tr><td>M.Tech CE</td><td>15</td><td>15</td><td>8</td><td>0</td><td>6</td><td>53.33</td><td>3.5</td><td>4.75</td><td>4.125</td></tr>
+            <tr><td>M.Tech IT</td><td>14</td><td>10</td><td>1</td><td>0</td><td>5</td><td>10.00</td><td>3.5</td><td>3.5</td><td>3.5</td></tr>
+            <tr><td>M.Tech ECE</td><td>17</td><td>13</td><td>1</td><td>0</td><td>3</td><td>7.69</td><td>5</td><td>5</td><td>5</td></tr>
+            <tr><td>M.Tech VLSI</td><td>16</td><td>10</td><td>4</td><td>0</td><td>1</td><td>40.00</td><td>3.5</td><td>3.5</td><td>3.5</td></tr>
+            <tr><td>M.Tech MPSD</td><td>16</td><td>9</td><td>0</td><td>0</td><td>3</td><td>0.00</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><td>M.Tech E&I</td><td>16</td><td>12</td><td>4</td><td>0</td><td>3</td><td>33.33</td><td>3.5</td><td>5</td><td>4.25</td></tr>
+            <tr><td>M.Tech Mech.</td><td>13</td><td>12</td><td>0</td><td>0</td><td>1</td><td>0.00</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><td>M.Tech MNW</td><td>15</td><td>11</td><td>9</td><td>0</td><td>5</td><td>81.82</td><td>3.5</td><td>4.47</td><td>3.985</td></tr>
+            <tr><td>MBA</td><td>56</td><td>43</td><td>21</td><td>0</td><td>2</td><td>23.26</td><td>2.1</td><td>2.59</td><td>2.345</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="section-card text-center">
+          <h5>Placement % (B.Tech only)</h5>
+          <canvas id="placementChart"></canvas>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="section-card text-center">
+          <h5>Package Comparison (B.Tech Max vs Avg)</h5>
+          <canvas id="packageComparison"></canvas>
+        </div>
+      </div>
+    </div>
+ {% include 'logo1.html' %}
+  </div>
+  {% include 'footer.html' %}
+
+  <script>
+    const placementData = {
+      labels: ['CE','IT','ECE','EIC','EL','Mech.'],
+      datasets:[{
+        label:'Placement %',
+        data:[83.05,98.18,52.08,72.00,53.33,59.46],
+        backgroundColor:['#007bff','#28a745','#ffc107','#dc3545','#17a2b8','#6610f2']
+      }]
+    };
+    new Chart(document.getElementById('placementChart'),{type:'pie',data:placementData,options:{responsive:true,plugins:{legend:{position:'bottom'}}}});
+
+    const packageData = {
+      labels:['CE','IT','ECE','EIC','EL','Mech.'],
+      datasets:[
+        {label:'Max (LPA)',data:[27,27,7.7,5,7.25,10],backgroundColor:'#007bff'},
+        {label:'Avg (LPA)',data:[15.25,15.25,5.6,4.25,5.375,6.75],backgroundColor:'#ffc107'}
+      ]
+    };
+    new Chart(document.getElementById('packageComparison'),{type:'bar',data:packageData,options:{responsive:true,scales:{y:{beginAtZero:true,title:{display:true,text:'Package (LPA)'}}},plugins:{legend:{position:'bottom'}}}});
+  </script>
+</body>
+</html>

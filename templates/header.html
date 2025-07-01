@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Navbar</title>
+
+  <!-- Fonts & Bootstrap -->
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Varela Round', sans-serif;
+      margin: 0; /* Pre-header (40px) + Navbar (~72px) */
+    }
+
+
+    .navbar {
+      background-color: #ccd4d9;
+    }
+
+    .navbar-nav .nav-item .dropdown-menu {
+      background-color: #ffffff;
+      border: 1px solid #dee2e6;
+    }
+
+    .dropdown-menu a {
+      color: #343a40;
+      padding: 10px 20px;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #e9ecef;
+      color: #000;
+    }
+
+    .nav-link .arrow {
+      margin-left: 5px;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-item:hover .arrow {
+      transform: rotate(90deg);
+    }
+
+    .dropdown-submenu {
+      position: relative;
+    }
+
+    .dropdown-submenu .dropdown-menu {
+      top: 0;
+      left: 100%;
+      margin-top: -1px;
+      background-color: #ffffff;
+      border: 1px solid #dee2e6;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+      display: block;
+    }
+
+    /* Mobile Sidebar */
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: -300px;
+      width: 260px;
+      height: 100%;
+      background-color: #ffffff;
+      color: #343a40;
+      overflow-y: auto;
+      transition: all 0.3s ease;
+      z-index: 9999;
+      padding-top: 60px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-menu.open {
+      left: 0;
+    }
+
+    .mobile-menu .menu-panel {
+      display: none;
+      flex-direction: column;
+    }
+
+    .mobile-menu .menu-panel.active {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      color: #343a40;
+      padding: 12px 20px;
+      text-decoration: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .mobile-menu a:hover {
+      background-color: #e9ecef;
+    }
+
+    .back-btn {
+      background-color: #e9ecef;
+      font-weight: bold;
+    }
+
+    .arrow {
+      font-size: 14px;
+      transition: transform 0.3s ease;
+    }
+
+    .rotate {
+      transform: rotate(90deg);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+      color: #343a40;
+    }
+
+    @media (min-width: 992px) {
+      .mobile-menu {
+        display: none !important;
+      }
+
+      .mobile-toggler {
+        display: none !important;
+      }
+    }
+    .pre-header {
+      font-size: 14px;
+      padding: 5px 15px;
+    }
+    .theme-toggle i {
+      cursor: pointer;
+      font-size: 18px;
+      color: #ffc107;
+      transition: transform 0.3s;
+    }
+    .theme-toggle i:hover {
+      transform: scale(1.2);
+    }
+    .flashing-alert {
+      animation: flash 1s infinite;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    @keyframes flash {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    @media screen and (max-width: 600px) {
+      .flashing-alert {
+        display:none;
+      }}
+a.text-white i {
+  font-size: 16px;
+}
+/* You should already have something similar */
+.mobile-menu {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100%;
+  background: white;
+  z-index: 9999;
+  overflow-y: auto;
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+  </style>
+</head>
+
+
+<body class="bg-light text-dark">
+
+<!-- Pre-header -->
+<div class="fixed-top">
+<div class="pre-header bg-dark text-white d-flex justify-content-between align-items-center ">
+  <!-- Left: Theme Toggle (one icon only) -->
+  
+
+  <!-- Center: Flashing Alert -->
+  <div class="flashing-alert text-warning text-center flex-grow-1">
+    🎓 Admissions Open for 2025
+  </div>
+
+  <!-- Right: Social Media Icons -->
+ <!-- Right: Social Media Icons -->
+<div class="d-flex align-items-center pr-2">
+  <a href="https://www.facebook.com/JCBoseUST/" class="text-white mr-2"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://www.instagram.com/jcboseustofficial/" class="text-white mr-2"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.linkedin.com/school/jcboseust/posts/?feedView=all" class="text-white mr-2"><i class="fab fa-linkedin-in"></i></a>
+  <a href="https://www.youtube.com/@JCBoseUniversity" class="text-white"><i class="fab fa-youtube"></i></a>
+</div>
+
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg  px-3 ">
+ <a class="navbar-brand" href="/">
+  TechTrack@YMCA
+</a>
+  <!-- Mobile Hamburger -->
+  <button class="navbar-toggler mobile-toggler" type="button" onclick="toggleMenu()">
+    <span class="fa fa-bars fa-lg"></span>
+  </button>
+
+  <!-- Navbar content -->
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mx-auto text-center">
+
+
+
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="programsDropdown" role="button" data-toggle="dropdown">
+          Admissions</a>
+        <ul class="dropdown-menu" aria-labelledby="programsDropdown">
+          <li class="dropdown-submenu">
+            <a class="dropdown-item " href="{{ url_for('admission_process') }}">Admission Process</a>
+            
+          </li>
+          <li><a class="dropdown-item" href="{{ url_for('eligibility') }}">Eligibility Criteria</a></li>
+           <li><a class="dropdown-item" href="{{ url_for('choice_filling') }}">HSTES Choice filling</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('document_required') }}">counselling Document required</a></li>
+        </ul>
+      </li>
+<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="academicsDropdown" role="button" data-toggle="dropdown">Academics</a>
+        <ul class="dropdown-menu" aria-labelledby="academicsDropdown">
+          <li class="dropdown-submenu">
+            <a class="dropdown-item dropdown-toggle" href="#">Courses & Departments</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{{ url_for('CE_overview') }}">CE</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('CED_overview') }}">CE(Data Science)</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('IT_overview') }}">IT</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('ece_overview') }}">ECE</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('ENC_overview') }}">ENC</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('IOT_overview') }}">IOT</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('RAI_overview') }}">RAI</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('ee_overview') }}">EE</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('electrical_overview') }}">EL</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('ME_overview') }}">ME</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('civil_overview') }}">Civil</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('ENV_overview') }}">ENV</a></li>
+            
+            </ul>
+          </li>
+          <li class="dropdown-submenu">
+            <a class="dropdown-item " href="{{ url_for('syllabus') }}">Syllabus</a>
+           
+          </li>
+          <li><a class="dropdown-item" href="{{ url_for('Academic_Calendar') }}">Academic Calendar</a></li>
+          <li><a class="dropdown-item" href="{{ url_for('seat') }}">Branch-wise Seat Matrix</a></li>
+          <li><a class="dropdown-item" href="{{ url_for('ranking') }}">Ranking</a></li>
+        </ul>
+      </li>
+
+
+
+      <!-- Campus Life -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="campusDropdown" role="button" data-toggle="dropdown">Campus Life</a>
+        <ul class="dropdown-menu" aria-labelledby="campusDropdown">
+         
+           <li class="dropdown-submenu">
+            <a class="dropdown-item dropdown-toggle" href="#">Hostel & Mess</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{{ url_for('girls_hostel') }}">Girl Hostel</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('boys_hostel') }}">Boys Hostel</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('fee_hostel') }}">Girl Hostel Fee</a></li>
+                <li><a class="dropdown-item" href="{{ url_for('girls_hostel_info') }}">Girl Allotment Document</a></li>
+             
+            
+            </ul>
+          </li>
+        
+        
+            <li class="dropdown-submenu">
+            <a class="dropdown-item dropdown-toggle" href="#">Clubs & Societies</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{{ url_for('Manan_club') }}">Manan</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('IEEE_club') }}">IEEE</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('Microbird_club') }}">Microbird</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('Mechnext_club') }}">Mechnext</a></li>
+               <li><a class="dropdown-item" href="{{ url_for('Samarpan_club') }}">Samparpan</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('Srijan_club') }}">Srijian</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('Vividha_club') }}">Vividha</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('Jhalak_club') }}">Jhalak</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('Nataraja_club') }}">Nataraja</a></li>
+              <li><a class="dropdown-item" href="{{ url_for('Niramayam_club') }}">Niramayam</a></li>
+             
+            
+            </ul>
+          </li>
+          <li><a class="dropdown-item" href="{{ url_for('sports') }}">Sports & Gym</a></li>
+          <li><a class="dropdown-item" href="{{ url_for('event') }}">Events & Fests</a></li>
+          <li><a class="dropdown-item" href="{{ url_for('connectivity') }}">Connectivity</a></li>
+        </ul>
+      </li>
+
+      <!-- Placements -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="placementsDropdown" role="button" data-toggle="dropdown">Placements</a>
+        <ul class="dropdown-menu" aria-labelledby="placementsDropdown">
+           <li class="dropdown-submenu">
+            <a class="dropdown-item dropdown-toggle" href="#">Placement Stats</a>
+            <ul class="dropdown-menu">
+             <li><a class="dropdown-item" href="{{ url_for('placement2024') }}">2023-2024</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('placement2023') }}">2022-2023</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('placement2022') }}">2021-2022</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('placement2021') }}">2020-2021</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('placement2020') }}">2019-2020</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('placement2019') }}">2018-2019</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('placement2018') }}">2017-2018</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('placement2017') }}">2016-2017</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('placement2016') }}">2015-2016</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('placement2015') }}">2014-2015</a></li>
+
+            </ul> 
+          </li>
+          <li><a class="dropdown-item" href="{{ url_for('logo') }}">Top Recruiters</a></li>
+          <li><a class="dropdown-item" href="#">Internships</a></li>
+          <li><a class="dropdown-item" href="#">Training Programs</a></li>
+        </ul>
+      </li>
+
+      <!-- Alumni -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="alumniDropdown" role="button" data-toggle="dropdown">Alumni</a>
+        <ul class="dropdown-menu" aria-labelledby="alumniDropdown">
+          <li><a class="dropdown-item" href="{{ url_for('alumni') }}">Alumni Network</a></li>
+          <li><a class="dropdown-item" href="{{ url_for('story') }}">Success Stories</a></li>
+        </ul>
+      </li>
+
+      <!-- Student Corner -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="studentCornerDropdown" role="button" data-toggle="dropdown">Student Corner</a>
+        <ul class="dropdown-menu" aria-labelledby="studentCornerDropdown">
+          <li><a class="dropdown-item" href="{{ url_for('exam') }}">Exam Notices</a></li>
+          <li><a class="dropdown-item" href="{{ url_for('pyq') }}">PYQs</a></li>
+           <li><a class="dropdown-item" href="{{ url_for('payment') }}">Results & Fee</a></li>
+        
+          <li><a class="dropdown-item" href="{{ url_for('timetable') }}">Time Table</a></li>
+        </ul>
+      </li>
+
+      <!-- Fee & Scholarships -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="feeDropdown" role="button" data-toggle="dropdown">Fee & Scholarships</a>
+        <ul class="dropdown-menu" aria-labelledby="feeDropdown">
+          <li><a class="dropdown-item" href="{{ url_for('fee_structure') }}">UG/PG Fee Structure</a></li>
+          <li><a class="dropdown-item" href="{{ url_for('payment') }}">Payment Instructions</a></li>
+          <li><a class="dropdown-item" href="{{ url_for('all_scholarships') }}">Scholarship Schemes</a></li>
+        </ul>
+      </li>
+
+      <!-- Student Tools -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" role="button" data-toggle="dropdown">Student Tools</a>
+        <ul class="dropdown-menu" aria-labelledby="toolsDropdown">
+          <li><a class="dropdown-item" href="{{ url_for('rank_prediction') }}">Rank Predictor</a></li>
+          <li><a class="dropdown-item" href="{{ url_for('cutoff') }}">Cutoff Explorer</a></li>
+          <li><a class="dropdown-item" href="{{ url_for('camparsion') }}">2023 VS 2024</a></li>
+          <li><a class="dropdown-item" href="{{ url_for('NITKKR_VS_YMCA') }}">YMCA VS NIT KKR</a></li>
+          <li><a class="dropdown-item" href="{{ url_for('faq') }}">FAQ</a></li>
+        </ul>
+      </li>
+    </ul>
+
+  
+       
+
+<!-- Signup Modal -->
+
+    <!-- Working version that redirects to login.html and signup.html -->
+<a href="{{ url_for('login') }}" class="nav-link">Login</a>
+<a href="{{ url_for('signup') }}" class="btn btn-primary">Sign Up</a>
+
+    </div>
+  </nav>
+</div>
+
+<!-- ✅ Login Modal OUTSIDE NAV -->
+
+
+
+
+
+<!-- MOBILE SIDEBAR -->
+<div class="mobile-menu d-lg-none" id="mobileMenu">
+  <div class="close-btn" onclick="toggleMenu()">&times;</div>
+
+  <!-- MAIN MENU -->
+  <div class="menu-panel active" id="mainMenu">
+    <a href="{{ url_for('home') }}">Home</a>
+    <a href="#" onclick="openPanel('admissionsMenu', this)">Admissions <span class="arrow">&#9654;</span></a>
+    <a href="#" onclick="openPanel('academicsMenu', this)">Academics <span class="arrow">&#9654;</span></a>
+    <a href="#" onclick="openPanel('campusMenu', this)">Campus Life <span class="arrow">&#9654;</span></a>
+    <a href="#" onclick="openPanel('placementsMenu', this)">Placements <span class="arrow">&#9654;</span></a>
+    <a href="#" onclick="openPanel('alumniMenu', this)">Alumni <span class="arrow">&#9654;</span></a>
+    <a href="#" onclick="openPanel('studentCornerMenu', this)">Student Corner <span class="arrow">&#9654;</span></a>
+    <a href="#" onclick="openPanel('feeMenu', this)">Fee & Scholarships <span class="arrow">&#9654;</span></a>
+    <a href="#" onclick="openPanel('toolsMenu', this)">Student Tools <span class="arrow">&#9654;</span></a>
+    
+  </div>
+
+  <!-- ADMISSIONS MENU -->
+  <div class="menu-panel" id="admissionsMenu">
+    <a href="#" class="back-btn" onclick="backPanel('mainMenu')">&larr; Back</a>
+    <a href="{{ url_for('admission_process') }}">Admission Process</a>
+    <a href="{{ url_for('eligibility') }}">Eligibility Criteria</a>
+    <a href="{{ url_for('choice_filling') }}">HSTES Choice Filling</a>
+    <a href="{{ url_for('document_required') }}">Counselling Document Required</a>
+  </div>
+
+  <!-- ACADEMICS MENU -->
+  <div class="menu-panel" id="academicsMenu">
+    <a href="#" class="back-btn" onclick="backPanel('mainMenu')">&larr; Back</a>
+    <a href="#" onclick="openPanel('coursesMenu', this)">Courses & Departments <span class="arrow">&#9654;</span></a>
+    <a href="{{ url_for('syllabus') }}">Syllabus</a>
+    <a href="{{ url_for('Academic_Calendar') }}">Academic Calendar</a>
+    <a href="{{ url_for('seat') }}">Branch-wise Seat Matrix</a>
+    <a href="{{ url_for('ranking') }}">Ranking</a>
+  </div>
+
+  <div class="menu-panel" id="coursesMenu">
+    <a href="#" class="back-btn" onclick="backPanel('academicsMenu')">&larr; Back</a>
+    <a href="{{ url_for('CE_overview') }}">CE</a>
+    <a href="{{ url_for('CED_overview') }}">CE(Data Science)</a>
+    <a href="{{ url_for('IT_overview') }}">IT</a>
+    <a href="{{ url_for('ece_overview') }}">ECE</a>
+    <a href="{{ url_for('ENC_overview') }}">ENC</a>
+    <a href="{{ url_for('IOT_overview') }}">IOT</a>
+    <a href="{{ url_for('RAI_overview') }}">RAI</a>
+    <a href="{{ url_for('ee_overview') }}">EE</a>
+    <a href="{{ url_for('electrical_overview') }}">EL</a>
+    <a href="{{ url_for('ME_overview') }}">ME</a>
+    <a href="{{ url_for('civil_overview') }}">Civil</a>
+    <a href="{{ url_for('ENV_overview') }}">ENV</a>
+  </div>
+
+  <!-- CAMPUS MENU -->
+  <div class="menu-panel" id="campusMenu">
+    <a href="#" class="back-btn" onclick="backPanel('mainMenu')">&larr; Back</a>
+    <a href="#" onclick="openPanel('hostelMenu', this)">Hostel & Mess<span class="arrow">&#9654;</span></a>
+    <a href="#" onclick="openPanel('clubMenu', this)">Clubs & Society<span class="arrow">&#9654;</span></a>
+    <a href="{{ url_for('sports') }}">Sports & Gym</a>
+    <a href="{{ url_for('event') }}">Events & Fests</a>
+    <a href="{{ url_for('connectivity') }}">Connectivity</a>
+  </div>
+
+<div class="menu-panel" id="hostelMenu">
+    <a href="#" class="back-btn" onclick="backPanel('campusMenu')">&larr; Back</a>
+    <a href="{{ url_for('girls_hostel') }}">Girl Hostel</a>
+    <a href="{{ url_for('boys_hostel') }}">Boys Hostel</a>
+    <a href="{{ url_for('fee_hostel') }}">Girl Hostel Fee</a>
+    <a href="{{ url_for('girls_hostel_info') }}">Girl Allotment Document</a>
+  </div>
+
+  <div class="menu-panel" id="clubMenu">
+    <a href="#" class="back-btn" onclick="backPanel('campusMenu')">&larr; Back</a>
+    <a href="{{ url_for('Manan_club') }}">Manan</a>
+    <a href="{{ url_for('IEEE_club') }}">IEEE</a>
+    <a href="{{ url_for('Microbird_club') }}">Microbird</a>
+    <a href="{{ url_for('Mechnext_club') }}">Mechnext</a>
+    <a href="{{ url_for('Samarpan_club') }}">Samparpan</a>
+    <a href="{{ url_for('Srijan_club') }}">Srijian</a>
+    <a href="{{ url_for('Vividha_club') }}">Vividha</a>
+    <a href="{{ url_for('Jhalak_club') }}">Jhalak</a>
+    <a href="{{ url_for('Nataraja_club') }}">Nataraja</a>
+    <a href="{{ url_for('Niramayam_club') }}">Niramayam</a>
+  </div>
+
+  <!-- PLACEMENTS MENU -->
+  <div class="menu-panel" id="placementsMenu">
+    <a href="#" class="back-btn" onclick="backPanel('mainMenu')">&larr; Back</a>
+    <a href="#" onclick="openPanel('statsMenu', this)">Placement Stats <span class="arrow">&#9654;</span></a>
+    <a href="{{ url_for('logo') }}">Top Recruiters</a>
+  </div>
+
+  <div class="menu-panel" id="statsMenu">
+    <a href="#" class="back-btn" onclick="backPanel('placementsMenu')">&larr; Back</a>
+    <a href="{{ url_for('placement2024') }}">2023-2024</a>
+    <a href="{{ url_for('placement2023') }}">2022-2023</a>
+    <a href="{{ url_for('placement2022') }}">2021-2022</a>
+    <a href="{{ url_for('placement2021') }}">2020-2021</a>
+    <a href="{{ url_for('placement2020') }}">2019-2020</a>
+    <a href="{{ url_for('placement2019') }}">2018-2019</a>
+    <a href="{{ url_for('placement2018') }}">2017-2018</a>
+    <a href="{{ url_for('placement2017') }}">2016-2017</a>
+    <a href="{{ url_for('placement2016') }}">2015-2016</a>
+    <a href="{{ url_for('placement2015') }}">2014-2015</a>
+  </div>
+
+  <!-- ALUMNI MENU -->
+  <div class="menu-panel" id="alumniMenu">
+    <a href="#" class="back-btn" onclick="backPanel('mainMenu')">&larr; Back</a>
+    <a href="{{ url_for('alumni') }}">Alumni Network</a>
+    <a href="{{ url_for('story') }}">Success Stories</a>
+  </div>
+
+  <!-- STUDENT CORNER MENU -->
+  <div class="menu-panel" id="studentCornerMenu">
+    <a href="#" class="back-btn" onclick="backPanel('mainMenu')">&larr; Back</a>
+    <a href="{{ url_for('exam') }}">Exam Notices</a>
+    <a href="{{ url_for('pyq') }}">PYQs</a>
+     <a href="{{ url_for('payment') }}">Results & Fee</a>
+    <a href="{{ url_for('timetable') }}">Time Table</a>
+  </div>
+
+  <!-- FEE MENU -->
+  <div class="menu-panel" id="feeMenu">
+    <a href="#" class="back-btn" onclick="backPanel('mainMenu')">&larr; Back</a>
+    <a href="{{ url_for('fee_structure') }}">UG/PG Fee Structure</a>
+    <a href="{{ url_for('payment') }}">Payment Instructions</a>
+    <a href="{{ url_for('all_scholarships') }}">Scholarship Schemes</a>
+  </div>
+
+  <!-- STUDENT TOOLS MENU -->
+  <div class="menu-panel" id="toolsMenu">
+    <a href="#" class="back-btn" onclick="backPanel('mainMenu')">&larr; Back</a>
+    <a href="{{ url_for('rank_prediction') }}">Rank Predictor</a>
+    <a href="{{ url_for('cutoff') }}">Cutoff Explorer</a>
+    <a href="{{ url_for('seat') }}">Branch-wise Seat Matrix</a>
+    <a href="{{ url_for('NITKKR_VS_YMCA') }}">YMCA vs NIT KKR</a>
+    <a href="{{ url_for('camparsion') }}">2023 vs 2024</a>
+    <a href="{{ url_for('faq') }}">FAQ</a>
+  </div>
+</div>
+
+
+
+<!-- JS Section -->
+<!-- JS Section -->
+<script>
+ 
+
+ 
+
+  // ✅ ADDED: Toggle sidebar menu on mobile
+  function toggleMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.classList.toggle('open');
+  }
+
+  function openPanel(id, el) {
+    document.querySelectorAll('.menu-panel').forEach(panel => {
+      panel.classList.remove('active');
+    });
+    const panel = document.getElementById(id);
+    if (panel) panel.classList.add('active');
+  }
+
+  function backPanel(id) {
+    document.querySelectorAll('.menu-panel').forEach(panel => {
+      panel.classList.remove('active');
+    });
+    const panel = document.getElementById(id);
+    if (panel) panel.classList.add('active');
+  }
+</script>
+
+
+
+<!-- JS Libs -->
+
+<!-- Required JS Libraries for Bootstrap 4 Modals -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+</body>
+</html> 

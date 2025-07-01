@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Placement Records | YMCA</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .placement-section {
+      background: linear-gradient(to right, #003366, #0059b3);
+      color: white;
+      padding: 60px 0;
+    }
+
+    .section-title {
+      font-size: 2.8rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      opacity: 0.85;
+    }
+
+    .year-card {
+      background: white;
+      border-radius: 1rem;
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #003366;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    .year-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .year-card i {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      color: #0059b3;
+    }
+
+    .year-card h5 {
+      font-weight: 600;
+      font-size: 1.25rem;
+    }
+
+    .year-card p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+   
+
+    @media (max-width: 576px) {
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+    .maindiv{
+      margin-top: 80px;
+    }
+  </style>
+</head>
+
+<body>
+{% include 'header.html' %}
+  <section class="placement-section maindiv">
+    <div class="container">
+      <h2 class="section-title">📘 Placement Records (2014–2024)</h2>
+      <p class="section-subtitle">Click on any academic year to view detailed placement statistics</p>
+
+      <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 justify-content-center">
+
+        <!-- Flask url_for Links -->
+        <div class="col">
+          <a href="{{ url_for('placement2024') }}" class="text-decoration-none">
+            <div class="year-card">
+              <i class="fas fa-calendar-check"></i>
+              <h5>2023–24</h5>
+              <p>Explore Records</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="{{ url_for('placement2023') }}" class="text-decoration-none">
+            <div class="year-card">
+              <i class="fas fa-calendar-check"></i>
+              <h5>2022–23</h5>
+              <p>Explore Records</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="{{ url_for('placement2022') }}" class="text-decoration-none">
+            <div class="year-card">
+              <i class="fas fa-calendar-check"></i>
+              <h5>2021–22</h5>
+              <p>Explore Records</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="{{ url_for('placement2021') }}" class="text-decoration-none">
+            <div class="year-card">
+              <i class="fas fa-calendar-check"></i>
+              <h5>2020–21</h5>
+              <p>Explore Records</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="{{ url_for('placement2020') }}" class="text-decoration-none">
+            <div class="year-card">
+              <i class="fas fa-calendar-check"></i>
+              <h5>2019–20</h5>
+              <p>Explore Records</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="{{ url_for('placement2019') }}" class="text-decoration-none">
+            <div class="year-card">
+              <i class="fas fa-calendar-check"></i>
+              <h5>2018–19</h5>
+              <p>Explore Records</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="{{ url_for('placement2018') }}" class="text-decoration-none">
+            <div class="year-card">
+              <i class="fas fa-calendar-check"></i>
+              <h5>2017–18</h5>
+              <p>Explore Records</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="{{ url_for('placement2017') }}" class="text-decoration-none">
+            <div class="year-card">
+              <i class="fas fa-calendar-check"></i>
+              <h5>2016–17</h5>
+              <p>Explore Records</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="{{ url_for('placement2016') }}" class="text-decoration-none">
+            <div class="year-card">
+              <i class="fas fa-calendar-check"></i>
+              <h5>2015–16</h5>
+              <p>Explore Records</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col">
+          <a href="{{ url_for('placement2015') }}" class="text-decoration-none">
+            <div class="year-card">
+              <i class="fas fa-calendar-check"></i>
+              <h5>2014–15</h5>
+              <p>Explore Records</p>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {% include 'footer.html' %}
+
+</body>
+</html>

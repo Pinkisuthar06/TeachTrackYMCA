@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YMCA Faridabad – FAQ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --primary: #004080;
+      --secondary: #f1f5f9;
+      --accent: #00bcd4;
+      --text: #1e293b;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: var(--text);
+    }
+
+    .faq-wrapper {
+      max-width: 960px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .faq-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .faq-title h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .faq-title p {
+      color: #555;
+      font-size: 1.1rem;
+    }
+
+    .faq-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+      margin-bottom: 20px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border-left: 5px solid var(--primary);
+    }
+
+    .faq-card input {
+      display: none;
+    }
+
+    .faq-label {
+      display: block;
+      padding: 20px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      position: relative;
+      background-color: #ffffff;
+    }
+
+    .faq-label::after {
+      content: '+';
+      font-size: 24px;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      color: var(--primary);
+      transition: transform 0.2s ease;
+    }
+
+    .faq-card input:checked + .faq-label::after {
+      content: '−';
+    }
+
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 20px;
+      background-color: #f9fbfd;
+      transition: max-height 0.4s ease;
+    }
+
+    .faq-card input:checked ~ .faq-content {
+      max-height: 300px;
+      padding-bottom: 20px;
+    }
+
+    .faq-content p {
+      margin: 15px 0 0;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      .faq-title h1 {
+        font-size: 2rem;
+      }
+      .faq-label {
+        font-size: 1rem;
+      }
+    }
+    .maindiv{
+        margin-top: 100px;
+    }
+  </style>
+</head>
+<body>
+{% include 'header.html' %}
+  <div class="faq-wrapper maindiv">
+    <div class="faq-title">
+      <h1>Frequently Asked Questions</h1>
+      <p>Answers to common queries about YMCA Faridabad</p>
+    </div>
+
+    <!-- FAQ 1 -->
+    <div class="faq-card">
+      <input type="checkbox" id="q1">
+      <label for="q1" class="faq-label">What is the full name of YMCA Faridabad?</label>
+      <div class="faq-content">
+        <p>The full name is J.C. Bose University of Science and Technology, YMCA, Faridabad.</p>
+      </div>
+    </div>
+
+    <!-- FAQ 2 -->
+    <div class="faq-card">
+      <input type="checkbox" id="q2">
+      <label for="q2" class="faq-label">Is YMCA a government university?</label>
+      <div class="faq-content">
+        <p>Yes, it is a Haryana State Government University offering various undergraduate and postgraduate programs.</p>
+      </div>
+    </div>
+
+    <!-- FAQ 3 -->
+    <div class="faq-card">
+      <input type="checkbox" id="q3">
+      <label for="q3" class="faq-label">What courses are offered by YMCA Faridabad?</label>
+      <div class="faq-content">
+        <p>YMCA offers B.Tech, M.Tech, MBA, MCA, BBA, BCA, B.Sc, and Ph.D. programs in various disciplines.</p>
+      </div>
+    </div>
+
+    <!-- FAQ 4 -->
+    <div class="faq-card">
+      <input type="checkbox" id="q4">
+      <label for="q4" class="faq-label">Is YMCA Faridabad a Tier 2 college?</label>
+      <div class="faq-content">
+        <p>Yes, YMCA Faridabad is typically considered a Tier 2 engineering institute with good placements and a strong academic record.</p>
+      </div>
+    </div>
+
+    <!-- FAQ 5 -->
+    <div class="faq-card">
+      <input type="checkbox" id="q5">
+      <label for="q5" class="faq-label">Does YMCA provide hostel facilities?</label>
+      <div class="faq-content">
+        <p>Yes, the university facilities of hostel for only girls with essential amenities and mess facilities.</p>
+      </div>
+    </div>
+
+    <!-- FAQ 6 -->
+    <div class="faq-card">
+      <input type="checkbox" id="q6">
+      <label for="q6" class="faq-label">Where is YMCA Faridabad located?</label>
+      <div class="faq-content">
+        <p>YMCA is located at Sector 6, Mathura Road, Faridabad, Haryana – 121006.</p>
+      </div>
+    </div>
+
+    <!-- FAQ 7 -->
+    <div class="faq-card">
+      <input type="checkbox" id="q7">
+      <label for="q7" class="faq-label">How are the placements at YMCA?</label>
+      <div class="faq-content">
+        <p>YMCA has a strong placement record with companies like Infosys, TCS, Wipro, IBM, and many startups hiring from campus.</p>
+      </div>
+    </div>
+
+    <!-- FAQ 8 -->
+<div class="faq-card">
+  <input type="checkbox" id="q8">
+  <label for="q8" class="faq-label">Is YMCA Faridabad affiliated with any accreditation body?</label>
+  <div class="faq-content">
+    <p>Yes, YMCA Faridabad is approved by AICTE and accredited by NAAC with an ‘A’ grade. It also has NBA accreditation for various B.Tech programs.</p>
+  </div>
+</div>
+
+<!-- FAQ 9 -->
+<div class="faq-card">
+  <input type="checkbox" id="q9">
+  <label for="q9" class="faq-label">What is the mode of admission to B.Tech at YMCA?</label>
+  <div class="faq-content">
+    <p>Admission to B.Tech is based on JEE Main scores followed by Haryana State Technical Education Society (HSTES) counselling.</p>
+  </div>
+</div>
+
+<!-- FAQ 10 -->
+<div class="faq-card">
+  <input type="checkbox" id="q10">
+  <label for="q10" class="faq-label">Are there any scholarships available for students?</label>
+  <div class="faq-content">
+    <p>Yes, several merit-based and need-based scholarships are available, including state scholarships, AICTE schemes, and scholarships for reserved categories.</p>
+  </div>
+</div>
+
+<!-- FAQ 11 -->
+<div class="faq-card">
+  <input type="checkbox" id="q11">
+  <label for="q11" class="faq-label">Does YMCA offer internships or industrial training?</label>
+  <div class="faq-content">
+    <p>Yes, industrial training and internships are an integral part of the curriculum. The university helps students connect with industries through its training cell.</p>
+  </div>
+</div>
+
+<!-- FAQ 12 -->
+<div class="faq-card">
+  <input type="checkbox" id="q12">
+  <label for="q12" class="faq-label">Is there any cultural or technical fest at YMCA?</label>
+  <div class="faq-content">
+    <p>Yes. YMCA organizes multiple events like <strong>Culmyca</strong> (Cultural Fest), <strong>Elements</strong> (Tech Fest), and various departmental events throughout the year.</p>
+  </div>
+</div>
+
+<!-- FAQ 13 -->
+<div class="faq-card">
+  <input type="checkbox" id="q13">
+  <label for="q13" class="faq-label">What are the average placement packages?</label>
+  <div class="faq-content">
+    <p>The average package for B.Tech students ranges from ₹7-8 LPA, with some top companies offering up to ₹60 LPA depending on the branch and profile.</p>
+  </div>
+</div>
+
+<!-- FAQ 14 -->
+<div class="faq-card">
+  <input type="checkbox" id="q14">
+  <label for="q14" class="faq-label">Is there an Entrepreneurship Cell at YMCA?</label>
+  <div class="faq-content">
+    <p>Yes, YMCA has an active E-Cell that promotes innovation and startup culture through workshops, competitions, and mentorship programs.</p>
+  </div>
+</div>
+
+<!-- FAQ 15 -->
+<div class="faq-card">
+  <input type="checkbox" id="q15">
+  <label for="q15" class="faq-label">What facilities are available on campus?</label>
+  <div class="faq-content">
+    <p>The campus includes modern classrooms, computer labs, hostels, library, auditorium, sports complex, cafeteria, medical facilities, and Wi-Fi access.</p>
+  </div>
+</div>
+
+<!-- FAQ 16 -->
+<div class="faq-card">
+  <input type="checkbox" id="q16">
+  <label for="q16" class="faq-label">What is the dress code for students at YMCA?</label>
+  <div class="faq-content">
+    <p>There is no strict uniform for most courses, but students are expected to wear formal attire during labs, presentations, and placements.</p>
+  </div>
+</div>
+
+<!-- FAQ 17 -->
+<div class="faq-card">
+  <input type="checkbox" id="q17">
+  <label for="q17" class="faq-label">Is YMCA Faridabad safe for girls?</label>
+  <div class="faq-content">
+    <p>Yes. The university has a secure campus with 24x7 security, CCTV surveillance, dedicated girls' hostels, and a Women’s Grievance Redressal Cell.</p>
+  </div>
+</div>
+
+
+  </div>
+{% include 'footer.html' %}
+</body>
+</html>

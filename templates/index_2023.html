@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>YMCA 2023 Admission Rank Data</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #ffffff);
+      margin: 0;
+     
+      color: #333;
+    }
+
+    h2 {
+      text-align: center;
+      color: #006064;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .disclaimer {
+      text-align: center;
+      background-color: #e1f5fe;
+      padding: 10px 20px;
+      border-left: 5px solid #0288d1;
+      margin: 10px auto 20px;
+      max-width: 800px;
+      font-size: 0.95em;
+      color: #0277bd;
+    }
+
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 900px;
+      margin: 0 auto 30px;
+    }
+
+    select, button {
+      padding: 10px 15px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      min-width: 180px;
+      transition: all 0.3s ease;
+    }
+
+    select:focus {
+      outline: none;
+      border-color: #0097a7;
+      box-shadow: 0 0 5px rgba(0,151,167,0.4);
+    }
+
+    button {
+      background-color: #00838f;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    button:hover {
+      background-color: #006064;
+    }
+
+    .table-container {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      max-width: 100%;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 700px;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #e0f7fa;
+      color: #006064;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .no-results {
+      text-align: center;
+      margin-top: 30px;
+      font-weight: bold;
+      color: #d32f2f;
+    }
+
+    @media (max-width: 768px) {
+      form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      select, button {
+        width: 100%;
+      }
+
+      h2 {
+        font-size: 1.4em;
+      }
+    }
+    .maindiv{
+      margin-top: 150px;
+    }
+  </style>
+</head>
+<body>
+{% include 'header.html' %}
+  <h2 class="maindiv">YMCA 2023 Admission Rank Data (Verified)</h2>
+
+  <div class="disclaimer">
+    <strong>Note:</strong> This is <strong>100% real data</strong> based on actual students who studied at YMCA. You can trust it without any confusion.
+  </div>
+
+  <form method="POST">
+    <select name="branch">
+      <option value="">-- All Branches --</option>
+      {% for branch in branches %}
+        <option value="{{ branch }}" {% if branch == selected_branch %}selected{% endif %}>{{ branch }}</option>
+      {% endfor %}
+    </select>
+
+    <select name="category">
+      <option value="">-- All Categories --</option>
+      {% for cat in categories %}
+        <option value="{{ cat }}" {% if cat == selected_category %}selected{% endif %}>{{ cat }}</option>
+      {% endfor %}
+    </select>
+
+    <select name="gender">
+      <option value="">-- All Genders --</option>
+      {% for g in genders %}
+        <option value="{{ g }}" {% if g == selected_gender %}selected{% endif %}>{{ g }}</option>
+      {% endfor %}
+    </select>
+
+    <button type="submit">Search</button>
+  </form>
+
+  {% if data %}
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>Gender</th>
+            <th>Rank</th>
+            <th>Category</th>
+            <th>Branch</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in data %}
+            <tr>
+              <td>{{ loop.index }}</td>
+              <td>{{ row['Gender'] }}</td>
+              <td>{{ row['Rank'] }}</td>
+              <td>{{ row['Category'] }}</td>
+              <td>{{ row['Branch'] }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% elif selected_branch or selected_category or selected_gender %}
+    <p class="no-results">No data found for the selected filters.</p>
+  {% endif %}
+{% include 'footer.html' %}
+</body>
+</html>

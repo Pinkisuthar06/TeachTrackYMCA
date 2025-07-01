@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YMCA vs NIT Kurukshetra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f7fa;
+      color: #111;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #003566, #0077b6);
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .comparison-card {
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      margin-top: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 16px 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #0077b6;
+      color: #ffffff;
+      font-size: 1rem;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tr.highlight {
+      background-color: #e3f5e5;
+      font-weight: bold;
+    }
+
+    .extra-section {
+      background-color: #ffffff;
+      border-left: 5px solid #0077b6;
+      padding: 30px 25px;
+      border-radius: 10px;
+      margin-top: 40px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
+
+    .extra-section h2 {
+      font-size: 1.6rem;
+      color: #003566;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .extra-section h2::before {
+      content: "\f5ad";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      margin-right: 10px;
+      color: #0077b6;
+    }
+
+    .extra-section p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+      text-align: justify;
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      th, td {
+        padding: 12px 8px;
+        font-size: 14px;
+      }
+      header h1 {
+        font-size: 1.5rem;
+      }
+      .extra-section h2 {
+        font-size: 1.4rem;
+      }
+    }
+    #reviewForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+#reviewText {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+#reviewForm button {
+  width: fit-content;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #0077b6;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.review {
+  background: #f1f5f9;
+  border-left: 5px solid #0077b6;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  position: relative;
+}
+.review-actions {
+  margin-top: 10px;
+}
+.review-actions button {
+  margin-right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #003566;
+}
+.review-actions button:hover {
+  text-decoration: underline;
+}
+.maindiv{
+  margin-top: 80px;
+}
+
+  </style>
+</head>
+<body>
+  {% include 'header.html' %}
+  <header class="maindiv">
+    <h1>YMCA vs NIT Kurukshetra</h1>
+    <p>Why J.C. Bose YMCA Faridabad Might Be the Smarter Choice for Engineering Aspirants</p>
+  </header>
+
+  <div class="container">
+    <div class="comparison-card">
+      <table>
+        <thead>
+          <tr>
+            <th>Aspect</th>
+            <th>J.C. Bose YMCA, Faridabad</th>
+            <th>NIT Kurukshetra</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight">
+            <td>Modern Curriculum</td>
+            <td>Industry-relevant, frequently updated</td>
+            <td>More academic and research focused</td>
+          </tr>
+          <tr>
+            <td>Teaching Quality</td>
+            <td>Practical, project-based, mentor driven</td>
+            <td>More theoretical, traditional lectures</td>
+          </tr>
+          <tr class="highlight">
+            <td>Placements (CSE/IT)</td>
+            <td>Avg 8–10 LPA, Top 35+ LPA</td>
+            <td>Avg 10–12 LPA, Top 40+ LPA</td>
+          </tr>
+          <tr>
+            <td>Location Advantage</td>
+            <td>NCR: Near startups and industries</td>
+            <td>Far from metro industry hubs</td>
+          </tr>
+          <tr class="highlight">
+            <td>Student Culture</td>
+            <td>Coding culture, hackathons, active clubs</td>
+            <td>Research heavy, fewer live projects</td>
+          </tr>
+          <tr>
+            <td>Fee Structure</td>
+            <td>1 lakh/year</td>
+            <td>₹1.25L – ₹1.6L/year</td>
+          </tr>
+          <tr class="highlight">
+            <td>Internships</td>
+            <td>Corporate tie-ups, strong T&P cell</td>
+            <td>Via student initiative or off-campus</td>
+          </tr>
+          <tr>
+            <td>Campus Life</td>
+            <td>Urban, modern, better outreach</td>
+            <td>Rural setup, limited industry exposure</td>
+          </tr>
+          <tr class="highlight">
+            <td>Top Recruiters</td>
+            <td>Google, Amazon, Adobe, TCS, Infosys</td>
+            <td>Same, but limited seats</td>
+          </tr>
+          <tr>
+            <td>Branch Comparison</td>
+            <td>YMCA CSE/IT preferred over low NIT branches</td>
+            <td>Lower branches less placement value</td>
+          </tr>
+          <tr class="highlight">
+            <td>Overall Value</td>
+            <td>High ROI, better metro & industry exposure</td>
+            <td>Brand name but higher cost, rural limit</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="extra-section">
+      <h2>Why YMCA Faridabad is a Smart Choice</h2>
+      <p>J.C. Bose University of Science and Technology, YMCA Faridabad, is emerging as a leading tech institution in North India. Located strategically in the NCR region, it provides students access to tech giants, startups, and countless internship opportunities.</p>
+      <p>With a strong emphasis on practical learning, student-led innovation, and active placement assistance, YMCA stands out for its industry readiness. Recruiters like Google, Amazon, Adobe, ZS, and Infosys actively hire from the campus due to its talent-rich pool.</p>
+      <p>The university's modern curriculum, lower tuition fees, and dynamic tech ecosystem make it an ideal destination for students who value ROI, skills, and real-world learning over brand perception alone.</p>
+    </div>
+
+    <div class="extra-section">
+  <h2><i class="fas fa-comment-alt"></i> Share Your Review</h2>
+  <form id="reviewForm">
+    <textarea id="reviewText" placeholder="Write your review here..." required></textarea>
+    <button type="submit">Submit Review</button>
+  </form>
+
+  <div id="reviewsList"></div>
+</div>
+  </div>
+  {% include 'footer.html' %}
+<script>
+  let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+
+  const reviewForm = document.getElementById("reviewForm");
+  const reviewText = document.getElementById("reviewText");
+  const reviewsList = document.getElementById("reviewsList");
+
+  function saveReviews() {
+    localStorage.setItem("reviews", JSON.stringify(reviews));
+  }
+
+  function renderReviews() {
+    reviewsList.innerHTML = '';
+    reviews.forEach((review, index) => {
+      const div = document.createElement("div");
+      div.className = "review";
+      div.innerHTML = `
+        <p>${review.text}</p>
+        <div class="review-actions">
+          <button onclick="likeReview(${index})">👍 ${review.likes}</button>
+          <button onclick="dislikeReview(${index})">👎 ${review.dislikes}</button>
+        </div>
+      `;
+      reviewsList.appendChild(div);
+    });
+  }
+
+  reviewForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const text = reviewText.value.trim();
+    if (text) {
+      reviews.unshift({ text, likes: 0, dislikes: 0 });
+      saveReviews();
+      renderReviews();
+      reviewText.value = '';
+    }
+  });
+
+  function likeReview(index) {
+    reviews[index].likes++;
+    saveReviews();
+    renderReviews();
+  }
+
+  function dislikeReview(index) {
+    reviews[index].dislikes++;
+    saveReviews();
+    renderReviews();
+  }
+
+  // Initial render
+  renderReviews();
+</script>
+
+</body>
+</html>

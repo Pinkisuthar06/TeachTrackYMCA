@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clubs & Societies | YMCA</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome (Optional) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f7fa;
+    }
+
+    .clubs-section {
+      background: linear-gradient(to right, #003366, #0059b3);
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .clubs-section h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .club-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem 1rem;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+      height: 100%;
+    }
+
+    .club-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .club-card img {
+      max-width: 150px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
+    .club-card h5 {
+      color: #003366;
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+
+    .club-card p {
+      font-size: 0.9rem;
+      color: #555;
+      margin: 0.5rem 0 1rem;
+    }
+
+    .club-card a {
+      font-weight: 500;
+      color: #0059b3;
+      text-decoration: none;
+    }
+
+    .club-card a:hover {
+      text-decoration: underline;
+    }
+.club-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 3px solid #0059b3; /* optional decorative border */
+}
+
+    .maindiv{
+        margin-top:80px;
+    }
+  </style>
+</head>
+
+<body>
+    {% include"header.html" %}
+  <!-- Header Section -->
+  <section class="clubs-section maindiv">
+    <div class="container">
+      <h1>🎓 Clubs & Societies</h1>
+      <p class="mt-2">Discover vibrant student-led communities at YMCA Faridabad</p>
+    </div>
+  </section>
+
+  <!-- Clubs Grid -->
+  <div class="container my-5">
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4">
+
+      <!-- CLUB CARDS -->
+      <div class="col">
+        <div class="club-card">
+          <img src="https://media.licdn.com/dms/image/v2/C4E0BAQGj9mwvk3fv4A/company-logo_200_200/company-logo_200_200/0/1630641812078/manan_ymca_logo?e=1756944000&v=beta&t=ZKJcOrq-togOkBLCX5_WY6P605GHGtzfw_v_5hi97DE" alt="MANAN Logo" />
+          <h5>MANAN</h5>
+          <p>The official coding club promoting development, coding & innovation.</p>
+          <a href="{{ url_for('Manan_club') }}">Know More →</a>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="club-card">
+          <img src="https://media.licdn.com/dms/image/v2/C560BAQE53Ekkw1SNYA/company-logo_200_200/company-logo_200_200/0/1630667509262?e=1756944000&v=beta&t=ej-QVW0Xv7pf0-YIhByIcCaL9aw2r9Soc5NMczW8Wz4" alt="IEEE Logo" />
+          <h5>IEEE</h5>
+          <p>Technical society focused on electronics, innovation, and leadership.</p>
+          <a href="{{ url_for('IEEE_club') }}">Know More →</a>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="club-card">
+          <img src="https://ugc.production.linktr.ee/tsuE0XWrRtKim0Vtlo4J_60WOt2WFVMS34N5g?io=true&size=avatar-v3_0" alt="JHALAK Logo" />
+          <h5>JHALAK</h5>
+          <p>Cultural society organizing music, dance, theatre and fest events.</p>
+          <a href="{{ url_for('Jhalak_club') }}">Know More →</a>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="club-card">
+          <img src="https://media.licdn.com/dms/image/v2/C4E0BAQG2nCaf3jUDwA/company-logo_200_200/company-logo_200_200/0/1630637917917?e=1756944000&v=beta&t=C20cd5bb7K2ibNhcmTIDEQcMDI-z4Wmju3Eqiaw4j8U" alt="MICROBIRD Logo" />
+          <h5>MICROBIRD</h5>
+          <p>Electronics and robotics-based club with real-time tech projects.</p>
+          <a href="{{ url_for('Microbird_club') }}">Know More →</a>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="club-card">
+          <img src="https://media.licdn.com/dms/image/v2/C4E0BAQEC6Oe8i1j1RA/company-logo_200_200/company-logo_200_200/0/1630629808859/mechnext_club_logo?e=1756944000&v=beta&t=nMrPolAngRlgf9Z2Om0dw8j2lgWam_Rvw1Xvn1Jqazg" alt="MECHNEXT Logo" />
+          <h5>MECHNEXT</h5>
+          <p>Mechanical engineering students' innovation and project group.</p>
+          <a href="{{ url_for('Mechnext_club') }}">Know More →</a>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="club-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrR9L5qT1D401pvRzHIeT7rFlDjdDDnZ0Slw&s" alt="NATARAJA Logo" />
+          <h5>NATARAJA</h5>
+          <p>Dance club that brings rhythm and artistic expression to campus life.</p>
+          <a href="{{ url_for('Nataraja_club') }}">Know More →</a>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="club-card">
+          <img src="https://ugc.production.linktr.ee/Mo83EizvQaqI3JCKsGjs_s7rK4I34LOPp5cQI?io=true&size=avatar-v3_0" alt="NIRAMAYAM Logo" />
+          <h5>NIRAMAYAM</h5>
+          <p>Health & wellness club focusing on both physical and mental wellbeing.</p>
+          <a href="{{ url_for('Niramayam_club') }}">Know More →</a>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="club-card">
+          <img src="https://media.licdn.com/dms/image/v2/C4D0BAQFuh17MZhrtgw/company-logo_200_200/company-logo_200_200/0/1630532197149?e=1756944000&v=beta&t=5VpOez6LGbOF7jYD6K1h4lmr9RwEGhWjGDya1BwIbfg" alt="SAMARPAN Logo" />
+          <h5>SAMARPAN</h5>
+          <p>Social service society encouraging students to serve the community.</p>
+          <a href="{{ url_for('Samarpan_club') }}">Know More →</a>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="club-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuxA47TjIUzWHtLsPEJSUkrQ1ILZPXCIgjYw&s" alt="SRIJAN Logo" />
+          <h5>SRIJAN</h5>
+          <p>Creative arts and design club showcasing student artistic talents.</p>
+          <a href="{{ url_for('Srijan_club') }}">Know More →</a>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="club-card">
+          <img src="https://media.licdn.com/dms/image/v2/D560BAQFSxHPf-aPgdQ/img-crop_100/img-crop_100/0/1723101388743?e=1756944000&v=beta&t=xHQYnFCJ9mMtjz7cOUcvVA4kC_AYrifJoYRWWmIjQoA" alt="VIVIDHA Logo" />
+          <h5>VIVIDHA</h5>
+          <p>Diversity and inclusion club promoting unity through expression.</p>
+          <a href="{{ url_for('Vividha_club') }}">Know More →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% include"footer.html" %}
+
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YMCA Faridabad Placement 2023–2024</title>
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: 'Varela Round', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    h1, h2, h3 {
+      color: #ff0000;
+    }
+    .placement-hero img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .section-card {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+    .table thead {
+      background-color: #0a3c5f;
+      color: #fff;
+    }
+    .recruiters-list ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .recruiters-list li {
+      margin-bottom: 8px;
+    }
+    .recruiter-logo {
+      max-width: 100px;
+      max-height: 60px;
+      margin: 10px;
+      object-fit: contain;
+    }
+    .recruiter-logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+    .small-chart {
+      max-width: 300px;
+      margin: 0 auto;
+    }
+    .maindiv{
+      margin-top:100px;
+    }
+  </style>
+</head>
+<body>
+{% include 'header.html' %}
+<div class="maindiv container">
+  <div class="placement-hero text-center mx-4">
+    <h1>Placement Overview 2023–2024</h1>
+    <p>J.C. Bose University of Science & Technology, YMCA Faridabad</p>
+    
+  </div>
+
+  <div class="section-card">
+    <h3 class="text-center">Overall Placement Statistics</h3>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Total Eligible</th>
+            <th>Total Placed</th>
+            <th>Placement %</th>
+            <th>Avg Package (INR LPA)</th>
+            <th>Highest Package (INR LPA)</th>
+            <th>Total Offers</th>
+            <th>Total Recruiters</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>605</td>
+            <td>526</td>
+            <td>89%</td>
+            <td>6.54</td>
+            <td>47.00</td>
+            <td>900+</td>
+            <td>475+</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h3 class="text-center">Branch-wise Placement Data</h3>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Branch</th>
+            <th>Eligible</th>
+            <th>Placed</th>
+            <th>Placement %</th>
+            <th>Avg Package (LPA)</th>
+            <th>Highest Package (LPA)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>CE</td><td>133</td><td>128</td><td>96%</td><td>8.96</td><td>47</td></tr>
+          <tr><td>CE (DS)</td><td>63</td><td>58</td><td>92%</td><td>9.19</td><td>40.37</td></tr>
+          <tr><td>IT</td><td>73</td><td>71</td><td>97%</td><td>7.10</td><td>15.67</td></tr>
+          <tr><td>ECE</td><td>49</td><td>46</td><td>94%</td><td>6.76</td><td>14.00</td></tr>
+          <tr><td>IOT</td><td>46</td><td>33</td><td>72%</td><td>5.88</td><td>10.00</td></tr>
+          <tr><td>Electrical</td><td>46</td><td>39</td><td>85%</td><td>5.92</td><td>10.00</td></tr>
+          <tr><td>Mechanical</td><td>104</td><td>87</td><td>84%</td><td>5.90</td><td>8.50</td></tr>
+          <tr><td>Civil</td><td>38</td><td>15</td><td>39%</td><td>5.16</td><td>5.40</td></tr>
+          <tr><td>ENC</td><td>53</td><td>49</td><td>92%</td><td>9.72</td><td>47.00</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  
+
+<!-- Chart Row (unchanged) -->
+<div class="row">
+  <div class="col-md-5 mb-4">
+    <div class="section-card text-center">
+      <h5>Placement % by Branch</h5>
+      <canvas id="branchChart" class="small-chart"></canvas>
+    </div>
+  </div>
+  <div class="col-md-7 mb-4">
+    <div class="section-card text-center">
+      <h5>Package Comparison (Highest vs Average)</h5>
+      <canvas id="packageChart"></canvas>
+    </div>
+  </div>
+</div>
+
+<!-- ✅ Highest Package Achievers Section -->
+<div class="section-card">
+  <h3 class="text-center">Highest Package Achievers</h3>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Sr. No.</th>
+          <th>Company Name</th>
+          <th>Student Name</th>
+          <th>Roll Number</th>
+          <th>Branch & Department</th>
+          <th>CTC (LPA)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Adobe</td><td>Gunjan Choudhary</td><td>20001003042</td><td>B.Tech.(CE) – Computer Engineering</td><td>47.00</td></tr>
+        <tr><td>2</td><td>Adobe</td><td>Nandni</td><td>20001015041</td><td>B.Tech.(EC) ENC – Electronics & Computer Engineering</td><td>47.00</td></tr>
+        <tr><td>3</td><td>Cisco India</td><td>Komal Bhatia</td><td>20001016074</td><td>B.Tech.(CE-DS) – Computer Engineering with DS</td><td>40.37</td></tr>
+        <tr><td>4</td><td>Cisco India</td><td>Bhavya Sharma</td><td>20001016073</td><td>B.Tech.(CE-DS) – Computer Engineering with DS</td><td>24.73</td></tr>
+        <tr><td>5</td><td>Cisco India</td><td>Dhurv</td><td>20001015019</td><td>B.Tech.(EC) ENC – Electronics & Computer Engineering</td><td>24.73</td></tr>
+        <tr><td>6</td><td>The Goldman Sachs</td><td>Abhinav Kumar Sisodia</td><td>20001003001</td><td>B.Tech.(CE) – Computer Engineering</td><td>24.00</td></tr>
+        <tr><td>7</td><td>Media.Net</td><td>Keshav</td><td>20001011032</td><td>B.Tech.(IT) – Information Technology</td><td>15.67</td></tr>
+        <tr><td>8</td><td>Samsung</td><td>Yashawi Garg</td><td>20001003141</td><td>B.Tech.(CE) – Computer Engineering</td><td>15.50</td></tr>
+        <tr><td>9</td><td>Samsung</td><td>Shurbhi Sharma</td><td>20001016066</td><td>B.Tech.(CE-DS) – Computer Engineering with DS</td><td>15.50</td></tr>
+        <tr><td>10</td><td>Samsung</td><td>Anju Sharma</td><td>20001011010</td><td>B.Tech.(IT) – Information Technology</td><td>15.50</td></tr>
+        <tr><td>11</td><td>Omniful Technologies</td><td>Ashish Gupta</td><td>20001015013</td><td>B.Tech.(EC) ENC – Electronics & Computer Engineering</td><td>14.00</td></tr>
+        <tr><td>12</td><td>ION Group</td><td>Aman Pandey</td><td>20001008073</td><td>B.Tech.(ECE) – Electronics & Communication Engineering</td><td>14.00</td></tr>
+        <tr><td>13</td><td>Omniful Technologies</td><td>Tushar</td><td>20001011065</td><td>B.Tech.(IT) – Information Technology</td><td>14.00</td></tr>
+        <tr><td>14</td><td>Talent Serve</td><td>Sonu</td><td>20001008058</td><td>B.Tech.(ECE) – Electronics & Communication Engineering</td><td>12.00</td></tr>
+        <tr><td>15</td><td>Yamaha Motor Solutions India Ltd</td><td>Ajitesh K. Kanth</td><td>20001008005</td><td>B.Tech.(ECE) – Electronics & Communication Engineering</td><td>10.34</td></tr>
+        <tr><td>16</td><td>Hiremi</td><td>Tarun Kumar</td><td>20001017062</td><td>B.Tech. – Electronics Engineering (IOT)</td><td>10.00</td></tr>
+        <tr><td>17</td><td>Hiremi</td><td>Aarzoo Rose</td><td>20001007001</td><td>B.Tech.(EE) – Electrical Engineering</td><td>10.00</td></tr>
+        <tr><td>18</td><td>Havells India Ltd</td><td>Sunil Kumar</td><td>20001013119</td><td>B.Tech.(ME) – Mechanical Engineering</td><td>8.50</td></tr>
+        <tr><td>19</td><td>Collegm</td><td>Mohit Raj</td><td>20001013087</td><td>B.Tech.(ME) – Mechanical Engineering</td><td>8.00</td></tr>
+        <tr><td>20</td><td>Talent Serve</td><td>Prerna Priyamvada</td><td>20001017045</td><td>B.Tech. – Electronics Engineering (IOT)</td><td>7.50</td></tr>
+        <tr><td>21</td><td>Mcdermott</td><td>Rohan</td><td>20001007052</td><td>B.Tech.(EE) – Electrical Engineering</td><td>7.50</td></tr>
+        <tr><td>22</td><td>Mcdermott</td><td>Himanshi Verma</td><td>20001013050</td><td>B.Tech.(ME) – Mechanical Engineering</td><td>7.50</td></tr>
+        <tr><td>23</td><td>Planetspark</td><td>Ishan Sharma</td><td>20001007022</td><td>B.Tech.(EE) – Electrical Engineering</td><td>7.10</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="container my-5">
+  <h2 class="text-center mb-4">Placement Highlights (2023–2024)</h2>
+  <div class="row text-center">
+    <div class="col-md-3 col-6 mb-4">
+      <div class="p-4 bg-light shadow-sm rounded">
+        <h4 class="text-primary">₹47.00 LPA</h4>
+        <p class="mb-0">Highest Package</p>
+      </div>
+    </div>
+    <div class="col-md-3 col-6 mb-4">
+      <div class="p-4 bg-light shadow-sm rounded">
+        <h4 class="text-success">475+</h4>
+        <p class="mb-0">Recruiting Companies</p>
+      </div>
+    </div>
+    <div class="col-md-3 col-6 mb-4">
+      <div class="p-4 bg-light shadow-sm rounded">
+        <h4 class="text-warning">990+</h4>
+        <p class="mb-0">Internships Offered</p>
+      </div>
+    </div>
+    <div class="col-md-3 col-6 mb-4">
+      <div class="p-4 bg-light shadow-sm rounded">
+        <h4 class="text-danger">₹6.54 LPA</h4>
+        <p class="mb-0">Average Package</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Recruiters Section (unchanged after this) -->
+
+  <!-- <div class="section-card"> -->
+   
+    {% include 'logo1.html' %}
+  <!-- </div> -->
+
+  <div class="text-center my-4">
+    <a class="btn btn-primary btn-lg" href="https://jcboseust.ac.in/tpo/" target="_blank">📄 View Official Placement Report PDF</a>
+  </div>
+</div>
+{% include 'footer.html' %}
+<!-- Chart.js Script -->
+<script>
+  const ctx = document.getElementById('branchChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ['CE', 'CE (DS)', 'IT', 'ECE', 'IOT', 'Electrical', 'Mechanical', 'Civil', 'ENC'],
+      datasets: [{
+        label: 'Placement %',
+        data: [96, 92, 97, 94, 72, 85, 84, 39, 92],
+        backgroundColor: [
+          '#007bff', '#28a745', '#ffc107', '#dc3545', '#17a2b8',
+          '#6610f2', '#fd7e14', '#6c757d', '#20c997'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'bottom' }
+      }
+    }
+  });
+
+  const ctx2 = document.getElementById('packageChart').getContext('2d');
+  new Chart(ctx2, {
+    type: 'bar',
+    data: {
+      labels: ['CE', 'CE (DS)', 'IT', 'ECE', 'IOT', 'Electrical', 'Mechanical', 'Civil', 'ENC'],
+      datasets: [
+        {
+          label: 'Highest Package (LPA)',
+          data: [47, 40.37, 15.67, 14, 10, 10, 8.5, 5.4, 47],
+          backgroundColor: '#007bff'
+        },
+        {
+          label: 'Average Package (LPA)',
+          data: [8.96, 9.19, 7.1, 6.76, 5.88, 5.92, 5.9, 5.16, 9.72],
+          backgroundColor: '#ffc107'
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'Package (LPA)'
+          }
+        }
+      },
+      plugins: {
+        legend: { position: 'bottom' }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

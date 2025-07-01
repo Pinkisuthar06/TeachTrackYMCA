@@ -1,0 +1,1358 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pinki Suthar Portfolio</title>
+
+<!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- AOS Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #BDD4E2 0%, #BDD4E2 50%, #455579 50%, #455579 100%);
+    }
+
+@media (max-width: 768px) {
+  #profileOverlay {
+    left: 50% !important;
+    transform: translateX(-50%);
+    bottom: -60px !important;
+  }
+}
+
+    .navbar-nav .nav-link {
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+.typed-cursor {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #ffc107; /* Bootstrap warning color */
+}
+.animated-border {
+  background: linear-gradient(45deg, #ffcc00, #ff00cc, #00ccff, #00ff99);
+  background-size: 400% 400%;
+  animation: gradientMove 5s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -11px;
+  top: 5px;
+  width: 16px;
+  height: 16px;
+  background: #ffc107;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+    .vertical-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-align: center;
+  white-space: nowrap;
+}
+
+    .progress-bar {
+      width: 0;
+      height: 20px;
+      background-color: #DA911D;
+      transition: width 2s ease-in-out;
+    }
+
+    .progress {
+      background-color: #e0e0e0;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    [data-aos] {
+      opacity: 0;
+      transition-property: transform, opacity;
+    }
+
+    .aos-animate {
+      opacity: 1 !important;
+    }
+
+.glowing-wrapper {
+  animation: glow 6s ease-in-out infinite;
+  border-radius: 1.5rem;
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 193, 7, 0.9);
+  }
+}
+  .bg-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -60px;
+  }
+
+  /* Custom column for 5 items in a row on large screens */
+  @media (min-width: 992px) {
+    .col-lg-1-5 {
+      flex: 0 0 20%;
+      max-width: 20%;
+    }
+  }
+
+  /* Skill image styling */
+  .skills img {
+    max-width: 100%;
+    height: 100px;
+    object-fit: contain;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .skill-card:hover img {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+/* Outer glow container */
+.glow-wrapper {
+  background: linear-gradient(to right, #ffcc00, #ff2db9);
+  border-radius: 1.25rem;
+  padding: 3px;
+  transition: 0.3s ease-in-out;
+}
+
+/* On hover, add glow */
+.glow-wrapper:hover {
+  box-shadow: 0 0 15px rgba(255, 204, 0, 0.6), 0 0 25px rgba(255, 45, 185, 0.4);
+}
+
+/* Actual card inside */
+.service-card {
+  background: rgba(30, 42, 56, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  height: 100%;
+  transition: 0.3s ease;
+}
+
+/* Gradient heading */
+.text-gradient {
+  background: linear-gradient(to right, #ffcc00, #ff2db9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* Lottie container size */
+.lottie-icon, .lottie-box {
+  width: 60px;
+  height: 60px;
+}
+
+/* Colored heading inside service cards */
+.service-card h5 {
+  background: linear-gradient(45deg, #ffd700, #ff69b4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.certificate-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.certificate-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+.footer a {
+    color: #bbb;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  .footer a:hover {
+    color: #DA911D;
+  }
+  .social-icons a:hover {
+    color: #DA911D;
+    transform: scale(1.2);
+  }
+  .overlap-profile-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    left: 40px;
+    bottom: -60px;
+    z-index: 10;
+  }
+  </style>
+</head>
+
+<body>
+<!-- top section -->
+<div class="w-100 position-relative">
+  <img src="topimage.png" class="img-fluid w-100" alt="Top Banner Image">
+
+  <div class="position-absolute d-flex flex-column align-items-center"
+       style="left: 80px; bottom: -50px; z-index: 10;"
+       id="profileOverlay">
+
+    <img src="1-Photoroom.png" alt="Profile"
+         class="rounded-circle bg-dark border border-white shadow"
+         style="width: 120px; height: 120px; object-fit: cover;">
+
+    <div class="mt-0 fw-bold text-light bg-dark border border-2 border-dark rounded-pill px-3 py-1 small">
+      <a href="#" style="text-decoration: none; color:#DA911D;">IITIAN PINKI</a>
+    </div>
+  </div>
+</div>
+
+<!-- Responsive Bootstrap Navbar -->
+<nav class="navbar navbar-expand-md navbar-dark bg-info shadow-sm w-100">
+  <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+        <li class="nav-item mx-4">
+          <a class="nav-link active text-dark fw-medium" href="#">Home</a>
+        </li>
+        <li class="nav-item mx-4">
+          <a class="nav-link active text-dark fw-medium" href="#aboutme">About Me</a>
+        </li>
+        <li class="nav-item mx-4">
+          <a class="nav-link active text-dark fw-medium" href="#skills">Skills</a>
+        </li>
+        <li class="nav-item mx-4">
+          <a class="nav-link active text-dark fw-medium" href="#projects">Projects</a>
+        </li>
+        <li class="nav-item mx-4">
+          <a class="nav-link active text-dark fw-medium" href="#contact">Contact Me</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<!-- Hero Section -->
+<section class="hero py-5" style="background: linear-gradient(to right, #1e2a38, #0f1724); color: #fff;">
+  <div class="container">
+    <div class="row align-items-center justify-content-between g-5">
+
+      <!-- Intro Text -->
+      <div class="col-lg-6 text-center text-lg-start" data-aos="fade-right">
+        <h1 class="display-4 fw-bold mb-3">
+          I'm <span class="text-warning">Pinki Suthar</span>
+        </h1>
+        <h3 class="mb-3">
+          <span class="text-warning typed-text"></span>
+        </h3>
+        <p class="fs-5 text-light mb-4">
+          I love crafting user-centric experiences & building scalable web solutions.
+        </p>
+
+        <!-- CTA Button -->
+        <a href="#projects" class="btn btn-warning text-dark fw-semibold px-4 py-2 shadow">
+          View Projects
+        </a>
+      </div>
+
+      <!-- Profile Image with Background -->
+      <div class="col-lg-5 text-center" data-aos="fade-left">
+        <div class="position-relative mx-auto glowing-wrapper" style="max-width: 320px;">
+          <div class="bg-image p-2 rounded-4 shadow">
+            <img src="profileimg.png" alt="Profile Image"
+                 class="img-fluid rounded-4 shadow-lg"
+                 style="height: 400px; object-fit: cover;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- About Me Section -->
+<section class="about py-5 text-white" id="aboutme" style="background: linear-gradient(to right, #2e3d50, #1d2736);">
+  <div class="container">
+    <div class="row align-items-center g-5">
+
+      <!-- Profile Image -->
+      <div class="col-md-6 text-center" data-aos="fade-right">
+        <div class="animated-border p-2 mx-auto" style="width: 250px; height: 450px; border-radius: 2rem;">
+          <div class="overflow-hidden rounded-4 shadow" style="width: 100%; height: 100%;">
+            <img src="aboutimg.png" alt="About Image"
+                 class="img-fluid w-100 h-100 rounded-4" style="object-fit: cover;">
+          </div>
+        </div>
+      </div>
+
+      <!-- Text and Details -->
+      <div class="col-md-6" data-aos="fade-left">
+        <h1 class="display-5 fw-bold text-warning">
+          About <span class="border-bottom border-4 border-warning">Me</span>
+        </h1>
+
+        <p class="mt-4 fs-5 lh-lg text-light">
+          I’m an <span class="text-warning fw-bold">aspiring Software Engineer</span> and <span class="text-warning fw-bold">Full-Stack Developer</span> passionate about solving real-world problems through technology.
+        </p>
+
+        <ul class="fs-6 lh-lg ps-3">
+          <li><strong>B.Tech</strong> – ECE @ <span class="text-warning">JC Bose University, YMCA</span></li>
+          <li><strong>B.Sc</strong> – CSDA @ <span class="text-warning">IIT Patna</span></li>
+        </ul>
+
+        <p class="fs-6 mt-3 text-light">
+          I have solved over <span class="text-warning fw-bold">800+</span> coding problems on <strong>LeetCode</strong>, <strong>CodeChef</strong>, <strong>HackerRank</strong>, and <strong>InterviewBit</strong>.
+        </p>
+
+        <!-- Tags -->
+        <div class="mt-3">
+          <span class="badge bg-warning text-dark px-3 py-2 fs-6 rounded-pill shadow">
+            Fast Learner 🚀 | Problem Solver 💡 | Tech Enthusiast 💻
+          </span>
+        </div>
+
+        <!-- Buttons -->
+        <div class="mt-4 d-flex gap-3 flex-wrap">
+          <a href="PinkiSuthar_CV.pdf" class="btn btn-outline-warning px-4 py-2 fw-bold shadow" target="_blank">
+            <i class="fas fa-download me-2"></i>Download CV
+          </a>
+          <a href="https://www.linkedin.com/in/your-profile" target="_blank" class="btn btn-warning text-dark fw-bold shadow">
+            <i class="fab fa-linkedin me-2"></i>LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Animated Counters -->
+    <div class="row text-center mt-5" data-aos="fade-up">
+      <div class="col-6 col-md-3">
+        <h2 class="text-warning counter" data-count="20">0</h2>
+        <p>Projects Completed</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <h2 class="text-warning counter" data-count="15">0</h2>
+        <p>Skills Learned</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <h2 class="text-warning counter" data-count="10">0</h2>
+        <p>Certificates</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <h2 class="text-warning counter" data-count="3">0</h2>
+        <p>Hackathons</p>
+      </div>
+    </div>
+
+    <!-- Career Timeline -->
+    <div class="row mt-5" data-aos="fade-up">
+      <div class="col-12">
+        <h3 class="text-warning fw-bold mb-4 text-center">Career Timeline</h3>
+        <ul class="timeline list-unstyled position-relative ps-4 border-start border-warning border-3">
+          <li class="mb-4 position-relative">
+            <div class="ms-3">
+              <h6 class="text-warning mb-1">2020</h6>
+              <p class="mb-0">Class 10 – 9.8 GPA (Adarsh High School)</p>
+            </div>
+          </li>
+          <li class="mb-4 position-relative">
+            <div class="ms-3">
+              <h6 class="text-warning mb-1">2022</h6>
+              <p class="mb-0">Class 12 – 9.0 GPA (Govt Girls School)</p>
+            </div>
+          </li>
+          <li class="mb-4 position-relative">
+            <div class="ms-3">
+              <h6 class="text-warning mb-1">2023</h6>
+              <p class="mb-0">B.Tech @ YMCA, Faridabad</p>
+            </div>
+          </li>
+          <li class="mb-4 position-relative">
+            <div class="ms-3">
+              <h6 class="text-warning mb-1">2024</h6>
+              <p class="mb-0">B.Sc (CSDA) @ IIT Patna</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- Skills Section-->
+    <section class="skills py-5" id="skills">
+    <div class="container">
+        <h1 class="text-warning text-center mb-5 display-5" data-aos="fade-left">Skills</h1>
+        <div class="row g-4 justify-content-center d-none d-md-flex">
+        <!-- Repeat this block for each skill image -->
+        <div class="col-6 col-sm-4 col-md-3 col-lg-1-5 text-center" data-aos="zoom-in">
+            <div class="skill-card bg-white shadow rounded p-2" >
+            <img src="1.png" class="img-fluid" alt="Skill 1">
+            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-1-5 text-center" data-aos="zoom-in">
+            <div class="skill-card bg-white shadow rounded p-2">
+            <img src="2.png" class="img-fluid" alt="Skill 2">
+            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-1-5 text-center" data-aos="zoom-in">
+            <div class="skill-card bg-white shadow rounded p-2">
+            <img src="3.png" class="img-fluid" alt="Skill 3">
+            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-1-5 text-center" data-aos="zoom-in">
+            <div class="skill-card bg-white shadow rounded p-2">
+            <img src="4.png" class="img-fluid" alt="Skill 4">
+            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-1-5 text-center" data-aos="zoom-in">
+            <div class="skill-card bg-white shadow rounded p-2">
+            <img src="5.png" class="img-fluid" alt="Skill 5">
+            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-1-5 text-center" data-aos="zoom-in">
+            <div class="skill-card bg-white shadow rounded p-2">
+            <img src="6.png" class="img-fluid" alt="Skill 6">
+            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-1-5 text-center" data-aos="zoom-in">
+            <div class="skill-card bg-white shadow rounded p-2">
+            <img src="7.png" class="img-fluid" alt="Skill 7">
+            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-1-5 text-center" data-aos="zoom-in">
+            <div class="skill-card bg-white shadow rounded p-2">
+            <img src="8.png" class="img-fluid" alt="Skill 8">
+            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-1-5 text-center" data-aos="zoom-in">
+            <div class="skill-card bg-white shadow rounded p-2">
+            <img src="9.png" class="img-fluid" alt="Skill 9">
+            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-1-5 text-center" data-aos="zoom-in">
+            <div class="skill-card bg-white shadow rounded p-2">
+            <img src="10.png" class="img-fluid" alt="Skill 10">
+            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-1-5 text-center" data-aos="zoom-in">
+            <div class="skill-card bg-white shadow rounded p-2">
+            <img src="11.png" class="img-fluid" alt="Skill 11">
+            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-1-5 text-center" data-aos="zoom-in">
+            <div class="skill-card bg-white shadow rounded p-2">
+            <img src="12.png" class="img-fluid" alt="Skill 12">
+            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-1-5 text-center" data-aos="zoom-in">
+            <div class="skill-card bg-white shadow rounded p-2">
+            <img src="13.png" class="img-fluid" alt="Skill 13">
+            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-1-5 text-center" data-aos="zoom-in">
+            <div class="skill-card bg-white shadow rounded p-2">
+            <img src="14.png" class="img-fluid" alt="Skill 14">
+            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-1-5 text-center" data-aos="zoom-in">
+            <div class="skill-card bg-white shadow rounded p-2">
+            <img src="15.png" class="img-fluid" alt="Skill 15">
+            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-1-5 text-center" data-aos="zoom-in">
+            <div class="skill-card bg-white shadow rounded p-2">
+            <img src="16.png" class="img-fluid" alt="Skill 16">
+            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-1-5 text-center" data-aos="zoom-in">
+            <div class="skill-card bg-white shadow rounded p-2">
+            <img src="17.png" class="img-fluid" alt="Skill 17">
+            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-1-5 text-center" data-aos="zoom-in">
+            <div class="skill-card bg-white shadow rounded p-2">
+            <img src="18.png" class="img-fluid" alt="Skill 18">
+            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-1-5 text-center" data-aos="zoom-in">
+            <div class="skill-card bg-white shadow rounded p-2">
+            <img src="19.png" class="img-fluid" alt="Skill 19">
+            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-1-5 text-center" data-aos="zoom-in">
+            <div class="skill-card bg-white shadow rounded p-2">
+            <img src="20.png" class="img-fluid" alt="Skill 20">
+            </div>
+        </div>
+        </div>
+<!-- 📱 Carousel layout for mobile (2x2 grid per slide) -->
+    <div id="skillCarousel" class="carousel slide d-md-none" data-bs-ride="carousel" data-bs-interval="2000">
+      <div class="carousel-inner">
+
+        <!-- 🔁 Slide 1 -->
+        <div class="carousel-item active">
+          <div class="container">
+            <div class="row gx-3 gy-3">
+              <div class="col-6 text-center"><div class="skill-card bg-white shadow rounded p-2"><img src="1.png" class="img-fluid" alt="Skill 1"></div></div>
+              <div class="col-6 text-center"><div class="skill-card bg-white shadow rounded p-2"><img src="2.png" class="img-fluid" alt="Skill 2"></div></div>
+              <div class="col-6 text-center"><div class="skill-card bg-white shadow rounded p-2"><img src="3.png" class="img-fluid" alt="Skill 3"></div></div>
+              <div class="col-6 text-center"><div class="skill-card bg-white shadow rounded p-2"><img src="4.png" class="img-fluid" alt="Skill 4"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 🔁 Slide 2 -->
+        <div class="carousel-item">
+          <div class="container">
+            <div class="row gx-3 gy-3">
+              <div class="col-6 text-center"><div class="skill-card bg-white shadow rounded p-2"><img src="5.png" class="img-fluid" alt="Skill 5"></div></div>
+              <div class="col-6 text-center"><div class="skill-card bg-white shadow rounded p-2"><img src="6.png" class="img-fluid" alt="Skill 6"></div></div>
+              <div class="col-6 text-center"><div class="skill-card bg-white shadow rounded p-2"><img src="7.png" class="img-fluid" alt="Skill 7"></div></div>
+              <div class="col-6 text-center"><div class="skill-card bg-white shadow rounded p-2"><img src="8.png" class="img-fluid" alt="Skill 8"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 🔁 Repeat this pattern for all 20 skills -->
+        <!-- Slide 3 (skills 9–12) -->
+        <div class="carousel-item">
+          <div class="container">
+            <div class="row gx-3 gy-3">
+              <div class="col-6 text-center"><div class="skill-card bg-white shadow rounded p-2"><img src="9.png" class="img-fluid" alt="Skill 9"></div></div>
+              <div class="col-6 text-center"><div class="skill-card bg-white shadow rounded p-2"><img src="10.png" class="img-fluid" alt="Skill 10"></div></div>
+              <div class="col-6 text-center"><div class="skill-card bg-white shadow rounded p-2"><img src="11.png" class="img-fluid" alt="Skill 11"></div></div>
+              <div class="col-6 text-center"><div class="skill-card bg-white shadow rounded p-2"><img src="12.png" class="img-fluid" alt="Skill 12"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4 (skills 13–16) -->
+        <div class="carousel-item">
+          <div class="container">
+            <div class="row gx-3 gy-3">
+              <div class="col-6 text-center"><div class="skill-card bg-white shadow rounded p-2"><img src="13.png" class="img-fluid" alt="Skill 13"></div></div>
+              <div class="col-6 text-center"><div class="skill-card bg-white shadow rounded p-2"><img src="14.png" class="img-fluid" alt="Skill 14"></div></div>
+              <div class="col-6 text-center"><div class="skill-card bg-white shadow rounded p-2"><img src="15.png" class="img-fluid" alt="Skill 15"></div></div>
+              <div class="col-6 text-center"><div class="skill-card bg-white shadow rounded p-2"><img src="16.png" class="img-fluid" alt="Skill 16"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 5 (skills 17–20) -->
+        <div class="carousel-item">
+          <div class="container">
+            <div class="row gx-3 gy-3">
+              <div class="col-6 text-center"><div class="skill-card bg-white shadow rounded p-2"><img src="17.png" class="img-fluid" alt="Skill 17"></div></div>
+              <div class="col-6 text-center"><div class="skill-card bg-white shadow rounded p-2"><img src="18.png" class="img-fluid" alt="Skill 18"></div></div>
+              <div class="col-6 text-center"><div class="skill-card bg-white shadow rounded p-2"><img src="19.png" class="img-fluid" alt="Skill 19"></div></div>
+              <div class="col-6 text-center"><div class="skill-card bg-white shadow rounded p-2"><img src="20.png" class="img-fluid" alt="Skill 20"></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+    </section>
+
+<!-- Education Section -->
+<section class="education py-5" id="education" style="background: linear-gradient(to right, #BDD4E2 0%, #BDD4E2 50%, #455579 50%, #455579 100%);">
+  <div class="container">
+    <h1 class="text-center text-warning fw-bold display-4 mb-5 border-bottom border-4 border-warning pb-2" data-aos="fade-top">Education</h1>
+
+    <div class="row g-5">
+      <!-- School Education Column -->
+      <div class="col-12 col-lg-6">
+        <!-- X Class Card -->
+        <div class="card mb-4 shadow-lg border-0 rounded-4 overflow-hidden" data-aos="fade-right">
+          <div class="row g-0">
+            <div class="col-auto d-flex align-items-center justify-content-center px-4 bg-dark text-white" style="max-width: 50px;">
+              <div class="text-center fw-bold">
+                <h5 class="vertical-text mb-0">2019-2020</h5>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card-body bg-light p-4">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="badge bg-warning text-dark px-3 py-2 fs-6">X Class</span>
+                  <span class="fw-bold text-danger fs-6">Grade: 9.8/10</span>
+                </div>
+                <p class="text-dark mb-0">I completed my Class 10 (Secondary Education) from Adarsh High School, Mandi Adampur, Hisar, India, in March 2020, securing an outstanding GPA of 9.80/10.00. Throughout my schooling, I demonstrated a strong academic foundation, particularly excelling in Mathematics and Science, for which I was recognized with awards for academic excellence.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- XII Class Card -->
+        <div class="card shadow-lg border-0 rounded-4 overflow-hidden" data-aos="fade-right">
+          <div class="row g-0">
+            <div class="col-auto d-flex align-items-center rounded justify-content-center px-4 bg-success text-white" style="max-width: 50px;">
+              <div class="text-center fw-bold">
+                <h5 class="vertical-text mb-0">2021-2022</h5>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card-body bg-light p-4">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="badge bg-primary px-3 py-2 fs-6">XII Class</span>
+                  <span class="fw-bold text-danger fs-6">Grade: 9.0/10</span>
+                </div>
+                <p class="text-dark mb-0">I completed my Class 12 (Senior Secondary Education) from Government Girls Senior Secondary School, Mandi Adampur, Hisar, India, in March 2022, achieving an impressive GPA of 9.0/10.00. With a strong focus on Mathematics and Science, I developed a deep understanding of analytical concepts and problem-solving techniques.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- College Education Column -->
+      <div class="col-12 col-lg-6">
+        <!-- B.Tech Card -->
+        <div class="card mb-2 shadow-lg border-0 rounded-4 overflow-hidden" data-aos="fade-left">
+          <div class="row g-0">
+            <div class="col-auto d-flex align-items-center justify-content-center px-2 py-0 rounded-start" style="background-color: #ff2db9; color: white; max-width: 50px; border-radius: 12px 0 0 12px;">
+              <div class="text-center fw-bold">
+                <h5 class="vertical-text mb-0">2023-2027</h5>
+              </div>
+            </div> 
+            <div class="col">
+              <div class="card-body bg-light">
+                <div class="d-flex align-items-center">
+                  <img src="jcboselogo.png" alt="YMCA Logo" class="me-3" height="40">
+                  <strong class="text-dark">JC Bose University Of Science And Technology, YMCA Faridabad (Haryana)</strong>
+                </div>
+                <p><strong class="text-danger">B.Tech: Electronics and Communication Engineering</strong><br>I am pursuing a BTech in Electronics and Communication Engineering (ECE) at JC Bose University of Science and Technology, YMCA, Faridabad (2023-2027). With a CGPA of 6.6, I am passionate about exploring cutting-edge technologies and enhancing my technical expertise in the field.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- B.Sc. Card -->
+        <div class="card shadow-lg border-0 rounded-4 overflow-hidden" data-aos="fade-left">
+          <div class="row g-0">
+            <div class="col-auto d-flex align-items-center justify-content-center px-2 py-0 rounded-start" style="background-color: #ff2db9; color: white; max-width: 50px; border-radius: 12px 0 0 12px;">
+              <div class="text-center fw-bold">
+                <h5 class="vertical-text mb-0">2024-2027</h5>
+              </div>
+            </div>  
+
+            <div class="col">
+              <div class="card-body bg-light">
+                <div class="d-flex align-items-center">
+                  <img src="iitpatnalogo.png" alt="IIT Patna Logo" class="me-3" height="40">
+                  <strong class="text-dark">Indian Institute of Science and Technology Patna (India)</strong>
+                </div>
+                <p><strong class="text-danger">B.Sc: Computer Science and Data Analytics (CSDA)</strong><br>I am pursuing a BSc in Computer Science and Data Analytics (CSDA) at IIT Patna (2024-2027), where I have maintained a strong academic record with a CGPA of 8.56. Passionate about technology and data-driven solutions, I am eager to apply my skills to real-world challenges.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Projects Section -->
+<section class="projects-section py-5" id="projects" style="background: linear-gradient(to right, #bdd4e2 50%, #455579 50%);">
+  <div class="container">
+    <h1 class="projects-title text-center text-warning mb-5 border-bottom border-warning pb-2" data-aos="fade-up">My Projects</h1>
+
+    <!-- Project 1 -->
+    <div class="row align-items-center mb-5 g-4">
+      <div class="col-lg-7" data-aos="fade-right">
+        <img src="amazon.png" class="img-fluid rounded shadow border border-primary border-4" alt="Amazon Clone Project Screenshot">
+      </div>
+      <div class="col-lg-5 text-white" data-aos="fade-left">
+        <h2 class="text-warning">Amazon Clone</h2>
+        <p><strong class="text-danger">Description:</strong> A fully responsive Amazon clone with intuitive UI, seamless navigation, and core eCommerce functionalities, showcasing frontend and backend development skills.</p>
+        <div class="d-flex flex-wrap align-items-center gap-2">
+          <img src="html.png" alt="HTML" height="30">
+          <img src="css.png" alt="CSS" height="30">
+          <img src="bootstrap.png" alt="Bootstrap" height="30">
+          <img src="react.png" alt="ReactJS" height="30">
+          <img src="js.png" alt="JavaScript" height="30">
+        </div>
+        <div class="mt-3">
+          <a href="#" class="btn btn-warning me-2">➜</a>
+          <a href="#" class="btn btn-warning">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="row align-items-center mb-5 g-4 flex-lg-row-reverse">
+      <div class="col-lg-7" data-aos="fade-left">
+        <img src="bistro.png" class="img-fluid rounded shadow border border-primary border-4" alt="Food Website Screenshot">
+      </div>
+      <div class="col-lg-5" data-aos="fade-right">
+        <h2 class="text-warning">Food Website</h2>
+        <p><strong class="text-danger">Description:</strong> A fully responsive food website with intuitive UI, seamless navigation, and core eCommerce functionalities, showcasing frontend and backend development skills.</p>
+        <div class="d-flex flex-wrap align-items-center gap-2">
+          <img src="html.png" alt="HTML" height="30">
+          <img src="css.png" alt="CSS" height="30">
+          <img src="bootstrap.png" alt="Bootstrap" height="30">
+          <img src="react.png" alt="ReactJS" height="30">
+          <img src="js.png" alt="JavaScript" height="30">
+        </div>
+        <div class="mt-3">
+          <a href="#" class="btn btn-warning me-2">➜</a>
+          <a href="#" class="btn btn-warning">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="row align-items-center mb-5 g-4">
+      <div class="col-lg-7" data-aos="fade-right">
+        <img src="mschandan.png" class="img-fluid rounded shadow border border-primary border-4" alt="MS Chandan Handicraft Screenshot">
+      </div>
+      <div class="col-lg-5 text-white" data-aos="fade-left">
+        <h2 class="text-warning">MS Chandan Handicraft</h2>
+        <p><strong class="text-danger">Description:</strong> A fully responsive handicraft website for showcasing traditional products with modern web practices and performance optimization.</p>
+        <div class="d-flex flex-wrap align-items-center gap-2">
+          <img src="html.png" alt="HTML" height="30">
+          <img src="css.png" alt="CSS" height="30">
+          <img src="bootstrap.png" alt="Bootstrap" height="30">
+          <img src="react.png" alt="ReactJS" height="30">
+          <img src="js.png" alt="JavaScript" height="30">
+        </div>
+        <div class="mt-3">
+          <a href="#" class="btn btn-warning me-2">➜</a>
+          <a href="#" class="btn btn-warning">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="row align-items-center mb-5 g-4 flex-lg-row-reverse">
+      <div class="col-lg-7" data-aos="fade-left">
+        <img src="carerpoint.png" class="img-fluid rounded shadow border border-primary border-4" alt="Care Point Screenshot">
+      </div>
+      <div class="col-lg-5" data-aos="fade-right">
+        <h2 class="text-warning">Care Point</h2>
+        <p><strong class="text-danger">Description:</strong> A modern healthcare website with appointment booking, services overview, and responsive design principles implemented.</p>
+        <div class="d-flex flex-wrap align-items-center gap-2">
+          <img src="html.png" alt="HTML" height="30">
+          <img src="css.png" alt="CSS" height="30">
+          <img src="bootstrap.png" alt="Bootstrap" height="30">
+          <img src="react.png" alt="ReactJS" height="30">
+          <img src="js.png" alt="JavaScript" height="30">
+        </div>
+        <div class="mt-3">
+          <a href="#" class="btn btn-warning me-2">➜</a>
+          <a href="#" class="btn btn-warning">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Experience Section -->
+    <section class="experience-section py-5" id="experience">
+    <div class="container">
+        <h1 class="text-center text-warning fw-bold display-4 mb-5 border-bottom border-4 border-warning pb-2">Experiences</h1>
+        <div class="position-relative">
+        <!-- Vertical line -->
+        <div class="position-absolute top-0 start-50 translate-middle-x bg-dark" style="width: 6px; height: 100%; z-index: 0;"></div>
+
+        <div class="row gy-5">
+            <!-- Item 1 -->
+            <div class="col-md-6 offset-md-6 position-relative">
+            <div class="position-absolute top-0 start-0 translate-middle bg-danger rounded-circle" style="width: 20px; height: 20px; z-index: 1;"></div>
+            <div class="bg-light p-4 rounded-3 shadow pink" data-aos="fade-right">
+                <h4 class="fw-bold text-warning">Coding Club – Coding Maffia</h4>
+                <strong>Duration: February 3, 2025 – August 3, 2025</strong>
+                <p class="mt-2">I joined the Coding Club at Coding Maffia to deepen my knowledge in web development, DSA, Python, and machine learning. Solved 800+ DSA questions and completed 5 solid projects in real-world applications.</p>
+            </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="col-md-6 position-relative" data-aos="fade-left">
+            <div class="position-absolute top-0 start-100 translate-middle bg-warning rounded-circle" style="width: 20px; height: 20px; z-index: 1;"></div>
+            <div class="bg-light p-4 rounded-3 shadow beige">
+                <h4 class="fw-bold">Internship At <span class="text-primary">INTERNSHALA</span> Date:-12-05-2024</h4>
+                <p class="mt-2">As an Internshala Student Partner, I promoted internship programs, engaged with peers, and developed communication and outreach skills by guiding students toward valuable resources.</p>
+            </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="col-md-6 offset-md-6 position-relative" data-aos="fade-right">
+            <div class="position-absolute top-0 start-0 translate-middle bg-success rounded-circle" style="width: 20px; height: 20px; z-index: 1;"></div>
+            <div class="bg-light p-4 rounded-3 shadow greenbg">
+                <h4 class="fw-bold text-warning">Care Point – Capstone Project (IIT Patna)</h4>
+                <strong>Presentation: July 2025</strong>
+                <p class="mt-2">Developed a hospital website for appointment and patient management, integrating modern web practices. Scheduled for July 2025 presentation at IIT Patna.</p>
+            </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="col-md-6 position-relative" data-aos="fade-left">
+            <div class="position-absolute top-0 start-100 translate-middle bg-purple rounded-circle" style="width: 20px; height: 20px; z-index: 1;"></div>
+            <div class="bg-light p-4 rounded-3 shadow">
+                <h4 class="fw-bold text-warning">Kodu – 3 Month Programming Course</h4>
+                <strong>Date:-15-05-2024 to 31-07-2024</strong>
+                <p class="mt-2">Learned C, C++, and Java. Completed various object-oriented projects, GUI applications, and solved logic-based problems.</p>
+            </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="col-md-6 offset-md-6 position-relative" data-aos="fade-right">
+            <div class="position-absolute top-0 start-0 translate-middle bg-warning rounded-circle" style="width: 20px; height: 20px; z-index: 1;"></div>
+            <div class="bg-light p-4 rounded-3 shadow lightbeige">
+                <h4 class="fw-bold text-orange">Intern at EARTH5R</h4>
+                <strong>Date:-13-06-2024 to 13-07-2024</strong>
+                <p class="mt-2">Worked on sustainability content writing. Improved my communication skills and built awareness in environmental reporting during a 1-month internship.</p>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+<!-- My Services Section -->
+<section class="service py-5" id="services">
+  <div class="container">
+    <h1 class="text-center text-warning fw-bold mb-5 border-bottom border-4 border-warning pb-2" data-aos="fade-up">
+      My Services
+    </h1>
+
+    <div class="row g-4 justify-content-center">
+      <!-- CARD 1 -->
+      <div class="col-12 col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card text-center h-100 service-card shadow-lg border-0 rounded-4 p-4">
+          <div class="lottie-wrapper" data-animation="https://lottie.host/6f54cb2c-e202-4d5c-aad3-60d2f79d8823/vuvGplSzdL.json">
+            <div class="lottie-box mb-3 mx-auto"></div>
+            <img src="web.png" class="fallback-img d-none mb-3" width="60" height="60" alt="Web Dev">
+          </div>
+          <h5 class="fw-bold text-white">Web Development</h5>
+          <p class="text-light small">Blogs, Portfolios, and E-commerce Sites</p>
+        </div>
+      </div>
+
+            <!-- CARD 2 -->
+      <div class="col-12 col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card text-center h-100 service-card shadow-lg border-0 rounded-4 p-4">
+          <div class="lottie-wrapper" data-animation="https://lottie.host/6f54cb2c-e202-4d5c-aad3-60d2f79d8823/vuvGplSzdL.json">
+            <div class="lottie-box mb-3 mx-auto"></div>
+            <img src="figma 2.png" class="fallback-img d-none mb-3" width="60" height="60" alt="Web Dev">
+          </div>
+          <h5 class="fw-bold text-white">UI/UX Design</h5>
+          <p class="text-light small">Figma, Prototyping, and Wireframing</p>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="col-12 col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="card text-center h-100 service-card shadow-lg border-0 rounded-4 p-4">
+          <div class="lottie-wrapper" data-animation="https://lottie.host/3c727bc6-78d2-43be-a29b-4d225b038f83/WGoNbsQYXW.json">
+            <div class="lottie-box mb-3 mx-auto"></div>
+            <img src="app design.png" class="fallback-img d-none mb-3" width="60" height="60" alt="App Design">
+          </div>
+          <h5 class="fw-bold text-white">App Design</h5>
+          <p class="text-light small">Mobile-first Design Interfaces</p>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="col-12 col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="250">
+        <div class="card text-center h-100 service-card shadow-lg border-0 rounded-4 p-4">
+          <div class="lottie-wrapper" data-animation="https://lottie.host/99c722b2-2720-468d-b7bb-4e0c29993de3/o0xKHwAoBP.json">
+            <div class="lottie-box mb-3 mx-auto"></div>
+            <img src="api 2.png" class="fallback-img d-none mb-3" width="60" height="60" alt="API">
+          </div>
+          <h5 class="fw-bold text-white">API Integration</h5>
+          <p class="text-light small">REST APIs & Third-Party Integrations</p>
+        </div>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="col-12 col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="card text-center h-100 service-card shadow-lg border-0 rounded-4 p-4">
+          <div class="lottie-wrapper" data-animation="https://lottie.host/c84b4d3f-fb99-4192-a4fc-c19c6d671509/XO3AKXMBXb.json">
+            <div class="lottie-box mb-3 mx-auto"></div>
+            <img src="server 1.png" class="fallback-img d-none mb-3" width="60" height="60" alt="Hosting">
+          </div>
+          <h5 class="fw-bold text-white">Server & Hosting</h5>
+          <p class="text-light small">Deployment on Netlify, Vercel & Render</p>
+        </div>
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="col-12 col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="350">
+        <div class="card text-center h-100 service-card shadow-lg border-0 rounded-4 p-4">
+          <div class="lottie-wrapper" data-animation="https://lottie.host/0db2a250-d9c0-40fc-8d0d-0f2879ac65ee/NooU4BKNpJ.json">
+            <div class="lottie-box mb-3 mx-auto"></div>
+            <img src="animate 1.png" class="fallback-img d-none mb-3" width="60" height="60" alt="Animation">
+          </div>
+          <h5 class="fw-bold text-white">Animation Libraries</h5>
+          <p class="text-light small">GSAP, AOS, Lottie & More</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hire Me Button -->
+    <div class="text-center mt-5" data-aos="fade-up">
+      <a href="#contact" class="btn btn-warning text-dark fw-semibold px-4 py-2 rounded-pill shadow">
+        <i class="fas fa-paper-plane me-2"></i>Hire Me
+      </a>
+    </div>
+  </div>
+</section>
+
+
+    <!-- My Expertise Section -->
+    <section class="expertise py-5 bg-light" id="expertise">
+    <div class="container">
+        <h1 class="text-center text-warning fw-bold mb-5 border-bottom border-4 border-warning pb-2">My Expertise</h1>
+        <div class="row g-4 justify-content-center">
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card text-center shadow-sm p-4">
+            <div class="range mb-3">
+                <h2 class="text-warning">95%</h2>
+                <div class="progress-container bg-secondary rounded-pill overflow-hidden">
+                <div class="progress-bar bg-warning" data-width="95%" style="height:10px"></div>
+                </div>
+            </div>
+            <h5 class="fw-bold">Web Development</h5>
+            <p class="text-muted">HTML5, CSS3, JS, Bootstrap, Tailwind, React.js, Node.js, Express.js, PHP</p>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card text-center shadow-sm p-4">
+            <div class="range mb-3">
+                <h2 class="text-warning">85%</h2>
+                <div class="progress-container bg-secondary rounded-pill overflow-hidden">
+                <div class="progress-bar bg-warning" data-width="85%" style="height: 10px;"></div>
+                </div>
+            </div>
+            <h5 class="fw-bold">Programming Languages</h5>
+            <p class="text-muted">C, C++, Java, Python, SQL</p>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card text-center shadow-sm p-4">
+            <div class="range mb-3">
+                <h2 class="text-warning">80%</h2>
+                <div class="progress-container bg-secondary rounded-pill overflow-hidden">
+                <div class="progress-bar bg-warning" data-width="80%" style="height: 10px;"></div>
+                </div>
+            </div>
+            <h5 class="fw-bold">Data Management</h5>
+            <p class="text-muted">MySQL, MongoDB</p>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card text-center shadow-sm p-4">
+            <div class="range mb-3">
+                <h2 class="text-warning">90%</h2>
+                <div class="progress-container bg-secondary rounded-pill overflow-hidden">
+                <div class="progress-bar bg-warning" data-width="90%" style="height: 10px;"></div>
+                </div>
+            </div>
+            <h5 class="fw-bold">Cloud & DevOps</h5>
+            <p class="text-muted">Firebase, AWS, Git & GitHub</p>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card text-center shadow-sm p-4">
+            <div class="range mb-3">
+                <h2 class="text-warning">80%</h2>
+                <div class="progress-container bg-secondary rounded-pill overflow-hidden">
+                <div class="progress-bar bg-warning" data-width="80%" style="height: 10px;"></div>
+                </div>
+            </div>
+            <h5 class="fw-bold">API & Tools</h5>
+            <p class="text-muted">RESTful APIs, Postman, VS Code</p>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card text-center shadow-sm p-4">
+            <div class="range mb-3">
+                <h2 class="text-warning">85%</h2>
+                <div class="progress-container bg-secondary rounded-pill overflow-hidden">
+                <div class="progress-bar bg-warning" data-width="85%" style="height: 10px;"></div>
+                </div>
+            </div>
+            <h5 class="fw-bold">UI/UX Design</h5>
+            <p class="text-muted">Figma</p>
+            </div>
+        </div>
+
+        </div>
+    </div>
+    </section>
+
+
+<!-- Contact Section -->
+<section class="contact py-5 bg-white" id="contact">
+  <div class="container">
+    <h1 class="text-center text-warning fw-bold mb-5 border-bottom border-4 border-warning pb-2">Contact Me</h1>
+    <div class="row justify-content-center align-items-center g-4">
+
+      <div class="col-12 col-md-6 text-center">
+        <img src="3.jpg" alt="Contact Image" class="img-fluid rounded shadow" style="max-height: 500px; object-fit: cover;">
+      </div>
+
+      <div class="col-12 col-md-6">
+        <form id="contactForm" onsubmit="return validateForm()" class="bg-white shadow p-4 rounded">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="phone" class="form-label">Mobile Number</label>
+            <input type="text" class="form-control" id="phone" placeholder="Enter your mobile number" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="5" placeholder="Write your message here..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-warning w-100 fw-bold">Send Message</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- My Certificates Section -->
+<section class="certificates py-5 bg-light text-center" id="certificates">
+  <div class="container">
+    <h1 class="text-warning fw-bold mb-5 border-bottom border-4 border-warning d-inline-block pb-2" data-aos="fade-up">
+      My Certificates
+    </h1>
+
+    <div class="row g-4 justify-content-center">
+      <!-- Certificate 1 -->
+      <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" onclick="openLightbox('kodu.png')">
+        <div class="certificate-card shadow-sm border border-2 border-secondary rounded overflow-hidden">
+          <img src="kodu.png" alt="Certificate 1" class="img-fluid w-100">
+        </div>
+      </div>
+
+      <!-- Certificate 2 -->
+      <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" onclick="openLightbox('internshala.jpg')">
+        <div class="certificate-card shadow-sm border border-2 border-secondary rounded overflow-hidden">
+          <img src="internshala.jpg" alt="Certificate 2" class="img-fluid w-100">
+        </div>
+      </div>
+
+      <!-- Certificate 3 -->
+      <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" onclick="openLightbox('inteernshala1.png')">
+        <div class="certificate-card shadow-sm border border-2 border-secondary rounded overflow-hidden">
+          <img src="inteernshala1.png" alt="Certificate 3" class="img-fluid w-100">
+        </div>
+      </div>
+
+      <!-- Certificate 4 -->
+      <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" onclick="openLightbox('internshala2.png')">
+        <div class="certificate-card shadow-sm border border-2 border-secondary rounded overflow-hidden">
+          <img src="internshala2.png" alt="Certificate 4" class="img-fluid w-100">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox Viewer -->
+<div id="certificate-lightbox" class="d-none position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-75 d-flex align-items-center justify-content-center z-1050">
+  <span class="position-absolute top-0 end-0 text-white fs-1 p-3" role="button" onclick="closeLightbox()">×</span>
+  <img id="lightbox-img" class="img-fluid shadow-lg rounded" style="max-height: 90vh;" src="" alt="Certificate View">
+</div>
+
+<!-- Footer Section -->
+<footer class="footer bg-dark text-light pt-5 pb-3 mt-5">
+  <div class="container">
+    <div class="row footer-content g-4">
+      <div class="col-md-4">
+        <h2 class="text-warning">Pinki Suthar</h2>
+        <p>Thank you for visiting my portfolio. I'm passionate about development and design. Let's connect and build something amazing!</p>
+      </div>
+
+      <div class="col-md-4 footer-links">
+        <div class="footer-column">
+          <h4 class="text-warning">Quick Links</h4>
+          <ul class="list-unstyled">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-2 footer-links">
+        <div class="footer-column">
+          <h4 class="text-warning">Services</h4>
+          <ul class="list-unstyled">
+            <li><a href="#services">Web Development</a></li>
+            <li><a href="#services">UI/UX Design</a></li>
+            <li><a href="#services">API Integration</a></li>
+            <li><a href="#services">Hosting & Server</a></li>
+            <li><a href="#services">App Design</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-2 footer-social">
+        <h4 class="text-warning">Follow Me</h4>
+        <div class="d-flex social-icons">
+          <a href="#" class="text-light me-3 fs-5"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-light me-3 fs-5"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="text-light me-3 fs-5"><i class="fab fa-github"></i></a>
+          <a href="#" class="text-light fs-5"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom text-center mt-4 pt-3 border-top border-secondary">
+      <p class="text-muted mb-0">&copy; 2025 Pinki Suthar. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to Top Button -->
+<button id="scrollTopBtn" title="Go to top" class="btn btn-warning position-fixed bottom-0 end-0 m-4 rounded-circle d-none">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+
+
+  <!-- Bootstrap Bundle JS -->
+   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('.lottie-wrapper').forEach(wrapper => {
+      const lottieBox = wrapper.querySelector('.lottie-box');
+      const fallbackImg = wrapper.querySelector('.fallback-img');
+      const animationURL = wrapper.getAttribute('data-animation');
+
+      const player = document.createElement('lottie-player');
+      player.setAttribute('src', animationURL);
+      player.setAttribute('background', 'transparent');
+      player.setAttribute('speed', '1');
+      player.setAttribute('loop', '');
+      player.setAttribute('autoplay', '');
+      player.style.width = "60px";
+      player.style.height = "60px";
+
+      // Fallback if fails
+      player.addEventListener('error', () => {
+        fallbackImg.classList.remove('d-none');
+        lottieBox.remove();
+      });
+
+      lottieBox.appendChild(player);
+    });
+  });
+</script>
+<script>
+  document.querySelectorAll('.lottie-wrapper').forEach(wrapper => {
+    const lottieBox = wrapper.querySelector('.lottie-box');
+    const fallbackImg = wrapper.querySelector('.fallback-img');
+    const animationURL = wrapper.getAttribute('data-animation');
+
+    // Create and append lottie-player
+    const player = document.createElement('lottie-player');
+    player.setAttribute('src', animationURL);
+    player.setAttribute('background', 'transparent');
+    player.setAttribute('speed', '1');
+    player.setAttribute('loop', '');
+    player.setAttribute('autoplay', '');
+    player.style.width = "60px";
+    player.style.height = "60px";
+
+    // On error, show fallback image
+    player.addEventListener('error', () => {
+      fallbackImg.classList.remove('d-none');
+      lottieBox.remove();
+    });
+
+    lottieBox.appendChild(player);
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    new Typed(".typed-text", {
+      strings: [
+  "Full-Stack Developer",
+  "Creative Problem Solver",
+  "Tech Enthusiast 💻",
+  "UI/UX Designer 🎨",
+  "Fast Learner 🚀",
+  "Competitive Programmer",
+  "Frontend Specialist",
+  "Backend Developer",
+  "Passionate Coder ❤",
+  "JavaScript Ninja ⚡",
+  "Database Explorer 🗃",
+  "Open Source Contributor 🌍"
+],
+      typeSpeed: 70,
+      backSpeed: 40,
+      loop: true
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll(".counter");
+    const speed = 200; // lower is faster
+
+    const animate = () => {
+      counters.forEach(counter => {
+        const updateCount = () => {
+          const target = +counter.getAttribute("data-count");
+          const count = +counter.innerText;
+          const inc = Math.ceil(target / speed);
+
+          if (count < target) {
+            counter.innerText = count + inc;
+            setTimeout(updateCount, 30);
+          } else {
+            counter.innerText = target;
+          }
+        };
+        if (isInViewport(counter)) updateCount();
+      });
+    };
+
+    const isInViewport = el => {
+      const rect = el.getBoundingClientRect();
+      return rect.top < window.innerHeight && rect.bottom > 0;
+    };
+
+    window.addEventListener("scroll", animate);
+    animate();
+  });
+AOS.init({ duration: 1000, once: true })
+  AOS.init({ duration: 1000, once: false });
+
+  function isElementPartiallyInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top < window.innerHeight && rect.bottom > 0
+    );
+  }
+
+  function animateProgressBars() {
+    document.querySelectorAll('.progress-bar').forEach(bar => {
+      if (isElementPartiallyInViewport(bar) && !bar.classList.contains('animated')) {
+        const width = bar.getAttribute('data-width');
+        bar.style.width = width;
+        bar.classList.add('animated');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', animateProgressBars);
+  window.addEventListener('load', animateProgressBars);
+</script>
+    <script>
+function openLightbox(src) {
+    document.getElementById("lightbox-img").src = src;
+    document.getElementById("certificate-lightbox").classList.remove("d-none");
+  }
+
+  function closeLightbox() {
+    document.getElementById("certificate-lightbox").classList.add("d-none");
+  }
+
+  // Close lightbox on ESC key
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeLightbox();
+  });
+
+
+    // Contact form validation
+    function validateForm() {
+        const name = document.getElementById("name");
+        const email = document.getElementById("email");
+        const phone = document.getElementById("phone");
+        const message = document.getElementById("message");
+
+        if (!name.value || !email.value || !phone.value || !message.value) {
+        alert("Please fill in all the fields.");
+        return false;
+        }
+
+        const mailtoLink = `mailto:pinkisuthar929@gmail.com?subject=Contact From Portfolio&body=
+        Name: ${name.value}%0A
+        Email: ${email.value}%0A
+        Mobile: ${phone.value}%0A
+        Message: ${message.value}`;
+
+        window.location.href = mailtoLink;
+        return false; // Prevent default form submission
+    }
+
+  // Scroll to Top button
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+  window.onscroll = function () {
+    scrollTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+  };
+  scrollTopBtn.onclick = function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+    </script>
+</body>
+</html>

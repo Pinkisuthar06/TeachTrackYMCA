@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>J.C. Bose UST – B.Tech Reporting Documents</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+      color: #2c3e50;
+     
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #00695c;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .category {
+      background: #ffffff;
+      border-left: 6px solid #00796b;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      padding: 20px 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+      transition: transform 0.2s ease;
+    }
+
+    .category:hover {
+      transform: translateY(-3px);
+    }
+
+    .category h2 {
+      font-size: 1.4rem;
+      color: #004d40;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+
+    .download-links {
+      margin-top: 12px;
+    }
+
+    .download-btn {
+      display: inline-block;
+      background-color: #00796b;
+      color: #fff;
+      padding: 8px 14px;
+      margin: 5px 5px 0 0;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background-color: #004d40;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      .category {
+        padding: 15px;
+      }
+
+      .category h2 {
+        font-size: 1.2rem;
+      }
+    }
+    .maindiv {
+      margin-top: 100px;
+    }
+  </style>
+</head>
+<body>
+{% include 'header.html' %}
+  <header class="maindiv">
+    <h1>B.Tech Physical Reporting – Required Documents</h1>
+  </header>
+
+  <div class="container">
+
+    <div class="category">
+      <h2>Common Documents for All Students</h2>
+      <ul>
+        <li>Seat Allotment Letter</li>
+        <li>10+2/Diploma Marksheet or Provisional Certificate</li>
+        <li>Matriculation/High School Certificates</li>
+        <li>Character Certificate or Gap Year Affidavit</li>
+        <li>Medical Fitness Certificate (Annexure XIII)</li>
+        <li>Two Passport Size Colour Photographs</li>
+        <li>Anti Ragging Affidavits (Annexure XI & XII)</li>
+        <li>Aadhar Card Copy</li>
+        <li>Demand Draft in favour of “Registrar, J.C. Bose, UST Faridabad”</li>
+      </ul>
+      <div class="download-links">
+        <a class="download-btn" href="{{ url_for('static', filename='download/ANNEXURE_XIII.pdf') }}" download>Download Medical (XIII)</a>
+        <a class="download-btn" href="{{ url_for('static', filename='download/ANNEXURE_XI.pdf') }}" download>Annexure XI (Student)</a>
+        <a class="download-btn" href="{{ url_for('static', filename='download/ANNEXURE_XII.pdf') }}" download>Annexure XII (Parent)</a>
+      </div>
+    </div>
+
+    <div class="category">
+      <h2>RoHC Category</h2>
+      <ul>
+        <li>Domicile/Residence Certificate of Other State or Proof of 10+2 Outside Haryana</li>
+        <li>Undertaking on ₹10 Stamp Paper (Not Resident of Haryana, 10+2 Outside Haryana, No Admission Benefit Taken)</li>
+      </ul>
+    </div>
+
+    <div class="category">
+      <h2>HOGC Category</h2>
+      <ul>
+        <li>Haryana Domicile Certificate (if 10+2 done outside Haryana)</li>
+      </ul>
+    </div>
+
+    <div class="category">
+      <h2>SC Category</h2>
+      <ul>
+        <li>Haryana Domicile Certificate</li>
+        <li>SC Certificate (Annexure IV)</li>
+      </ul>
+      <div class="download-links">
+        <a class="download-btn" href="{{ url_for('static', filename='download/ANNEXURE_IV.pdf') }}" download>Download Annexure IV</a>
+      </div>
+    </div>
+
+    <div class="category">
+      <h2>BC-A/BC-B Category</h2>
+      <ul>
+        <li>Haryana Domicile Certificate</li>
+        <li>BC-A/B Certificate (Annexure V)</li>
+        <li>Affidavits of Mother and Father (Annexure VI)</li>
+        <li>Annual Family Income Certificate</li>
+      </ul>
+      <div class="download-links">
+        <a class="download-btn" href="{{ url_for('static', filename='download/ANNEXURE_V.pdf') }}" download>Download Annexure V</a>
+        <a class="download-btn" href="{{ url_for('static', filename='download/ANNEXURE_VI.pdf') }}" download>Download Annexure VI</a>
+      </div>
+    </div>
+
+    <div class="category">
+      <h2>PH Category</h2>
+      <ul>
+        <li>Haryana Domicile Certificate</li>
+        <li>PH Certificate (Annexure VII)</li>
+      </ul>
+      <div class="download-links">
+        <a class="download-btn" href="{{ url_for('static', filename='download/ANNEXURE_VII.pdf') }}" download>Download Annexure VII</a>
+      </div>
+    </div>
+
+    <div class="category">
+      <h2>EWS Category</h2>
+      <ul>
+        <li>Haryana Domicile Certificate</li>
+        <li>EWS Income and Asset Certificate (Annexure XIV)</li>
+      </ul>
+      <div class="download-links">
+        <a class="download-btn" href="{{ url_for('static', filename='download/ANNEXURE_XIV.pdf') }}" download>Download Annexure XIV</a>
+      </div>
+    </div>
+
+    <div class="category">
+      <h2>TFW Category</h2>
+      <ul>
+        <li>Haryana Domicile Certificate</li>
+        <li>Income Certificate (Annual income &lt; ₹8 Lakh)</li>
+      </ul>
+    </div>
+
+    <div class="category">
+      <h2>HOGC-ESM/FF</h2>
+      <ul>
+        <li>Haryana Domicile Certificate</li>
+        <li>Ex-Serviceman or Freedom Fighter Certificate (Annexure IX/X or VIII)</li>
+      </ul>
+      <div class="download-links">
+        <a class="download-btn" href="{{ url_for('static', filename='download/ANNEXURE_VIII.pdf') }}" download>Annexure VIII</a>
+        <a class="download-btn" href="{{ url_for('static', filename='download/ANNEXURE_IX.pdf') }}" download>Annexure IX</a>
+        <a class="download-btn" href="{{ url_for('static', filename='download/ANNEXURE_X.pdf') }}" download>Annexure X</a>
+      </div>
+    </div>
+
+    <div class="category">
+      <h2>SC-ESM/FF</h2>
+      <ul>
+        <li>Haryana Domicile Certificate</li>
+        <li>SC Certificate (Annexure IV)</li>
+        <li>Ex-Serviceman or Freedom Fighter Certificate</li>
+      </ul>
+    </div>
+
+    <div class="category">
+      <h2>BC-A/BC-B (ESM/FF)</h2>
+      <ul>
+        <li>Haryana Domicile Certificate</li>
+        <li>BC-A/B Certificate (Annexure V)</li>
+        <li>Affidavits of Parents (Annexure VI)</li>
+        <li>Annual Family Income Certificate</li>
+        <li>Ex-Serviceman or Freedom Fighter Certificate</li>
+      </ul>
+    </div>
+
+  </div>
+  {% include 'footer.html' %}
+</body>
+</html>

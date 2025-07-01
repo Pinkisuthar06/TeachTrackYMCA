@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IEEE YMCA SB - YMCA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+   :root {
+  --primary: #6a1b9a;
+  --card-bg: rgba(255, 255, 255, 0.2);
+  --dark-purple: #4a148c;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background: linear-gradient(to bottom right, #ede7f6, #d1c4e9);
+  color: #333;
+  margin: 0;
+}
+
+.header {
+  background: linear-gradient(to right, var(--primary), var(--dark-purple));
+  color: white;
+  text-align: center;
+  padding: 4rem 1rem 2rem;
+  position: relative;
+}
+
+.header img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid white;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.header h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  margin-top: 1.5rem;
+}
+
+.section-title {
+  font-weight: bold;
+  color: var(--primary);
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+.btn-primary-custom {
+  background-color: var(--primary);
+  color: white;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background 0.3s ease;
+}
+
+.btn-primary-custom i {
+  font-size: 1.5rem;
+}
+
+.btn-primary-custom:hover {
+  background-color: #38006b;
+}
+
+.cta-banner {
+  background: linear-gradient(90deg, var(--primary), #ab47bc);
+  color: white;
+  border-radius: 15px;
+  padding: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.gallery img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+.maindiv {
+  margin-top: 90px;
+}
+
+/* ✅ Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .header img {
+    width: 70px;
+    height: 70px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .header h1 {
+    font-size: 1.75rem;
+    margin-top: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .gallery img {
+    height: 180px;
+  }
+
+  .btn-primary-custom {
+    width: 42px;
+    height: 42px;
+  }
+
+  .btn-primary-custom i {
+    font-size: 1.2rem;
+  }
+
+  .cta-banner h4 {
+    font-size: 1.25rem;
+  }
+
+  .cta-banner p {
+    font-size: 1rem;
+  }
+}
+  </style>
+</head>
+<body>
+
+
+  {% include 'header.html' %}
+  <div class="header maindiv">
+    <img src="https://media.licdn.com/dms/image/v2/C560BAQE53Ekkw1SNYA/company-logo_200_200/company-logo_200_200/0/1630667509262?e=1756944000&v=beta&t=ej-QVW0Xv7pf0-YIhByIcCaL9aw2r9Soc5NMczW8Wz4" alt="IEEE Logo">
+    <h1>IEEE YMCA SB</h1>
+    <p>he IEEE Student Branch of J.C. Bose University of Science and Technology, YMCA</p>
+  </div>
+
+  <div class="container py-4">
+    <h3 class="section-title">About Us</h3>
+    <p>
+      IEEE YMCA SB is a student branch of renowned International technical and professional organisation IEEE. The YMCA Student Branch was founded in 2016 with the objective of providing students the exposure and knowledge about various technologies and opportunities to work, learn and grow.
+    </p>
+    <p>
+      Its main target is to try and test the new technologies and improve them. We have completed many projects so far and participated in various events and competitions at state and national levels. Some of them are hackathons, ideathons, and robotics competitions organized by IEEE branches of other institutions.
+    </p>
+    <div class="d-flex justify-content-center gap-3 mt-3">
+      <a href="#" target="_blank" class="btn btn-primary-custom" title="Instagram">
+        <i class="fab fa-instagram fa-lg"></i>
+      </a>
+      <a href="#" target="_blank" class="btn btn-primary-custom" title="LinkedIn">
+        <i class="fab fa-linkedin fa-lg"></i>
+      </a>
+    
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <h3 class="section-title">Our Team</h3>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="glass-card p-4 text-center">
+          <h5>Coordinators</h5>
+          <p>Dr. Ved Pal<br>Dr. Mamta Kathuria</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="glass-card p-4 text-center">
+          <h5>Secretaries</h5>
+          <p>Saikat<br>Sahil<br>Sumit<br>Nand Kishor<br>Shubham</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="glass-card p-4 text-center">
+          <h5>Joint Secretaries</h5>
+          <p>Kriti<br>Rohit<br>Lamha<br>Anurag</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <h3 class="section-title">Gallery</h3>
+    <div class="row gallery g-4">
+      <div class="col-md-4">
+        <img src="https://jcboseust.ac.in/dsw/assets/uploads/media/ieee_1.jpg" alt="IEEE Image 1">
+      </div>
+      <div class="col-md-4">
+        <img src="https://jcboseust.ac.in/dsw/assets/uploads/media/ieee_2.jpg" alt="IEEE Image 2">
+      </div>
+      <div class="col-md-4">
+        <img src="https://jcboseust.ac.in/dsw/assets/uploads/media/ieee_3.jpg" alt="IEEE Image 3">
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <div class="cta-banner">
+      <h4>🚀 Passionate about Technology and Innovation?</h4>
+      <p>Join IEEE YMCA SB and explore cutting-edge tech, build projects, and grow your network with like-minded innovators!</p>
+      <a href="{{ url_for('process') }}" class="btn btn-light">Join IEEE YMCA SB</a>
+    </div>
+  </div>
+
+ 
+{% include 'footer.html' %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

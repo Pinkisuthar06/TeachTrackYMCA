@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nataraja Club - YMCA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+  :root {
+  --primary: #e91e63;
+  --card-bg: rgba(255, 255, 255, 0.2);
+  --dark-pink: #c2185b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background: linear-gradient(to bottom right, #ffe6ef, #f8d0e1);
+  color: #333;
+  margin: 0;
+}
+
+.header {
+  background: linear-gradient(to right, var(--primary), var(--dark-pink));
+  color: white;
+  text-align: center;
+  padding: 4rem 1rem 2rem;
+  position: relative;
+}
+
+.header img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid white;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.header h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  margin-top: 1.5rem;
+}
+
+.section-title {
+  font-weight: bold;
+  color: var(--primary);
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary-custom {
+  background-color: var(--primary);
+  color: white;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+  background-color: #ad1457;
+}
+
+.btn-primary-custom i {
+  font-size: 1.5rem;
+}
+
+.cta-banner {
+  background: linear-gradient(90deg, var(--primary), #f06292);
+  color: white;
+  border-radius: 15px;
+  padding: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.gallery img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+.maindiv {
+  margin-top: 90px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header img {
+    width: 70px;
+    height: 70px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .header h1 {
+    font-size: 1.75rem;
+    margin-top: 2.5rem;
+  }
+
+  .gallery img {
+    height: 180px;
+  }
+
+  .cta-banner h4 {
+    font-size: 1.2rem;
+  }
+
+  .cta-banner p {
+    font-size: 1rem;
+  }
+}
+
+/* Optional AOS Animations */
+[data-aos] {
+  opacity: 0;
+  transition-property: opacity, transform;
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+{% include 'header.html' %}
+  <div class="header maindiv">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrR9L5qT1D401pvRzHIeT7rFlDjdDDnZ0Slw&s" alt="Nataraja Logo">
+    <h1>NATARAAJA</h1>
+    <p>The Dancing Society of J.C. Bose University of Science and Technology, YMCA</p>
+  </div>
+
+  <div class="container py-4">
+    <h3 class="section-title">About Us</h3>
+    <p>
+      <strong>Nataraja</strong>, the official dance society of JCBUST, YMCA Faridabad, was founded to help students overcome stage fright and develop confidence in public performances. It includes three vibrant dance forms – <strong>Bhangra</strong>, <strong>Western</strong>, and <strong>Haryanvi</strong>.
+    </p>
+    <p>
+      The society actively choreographs and organizes performances for a range of college events such as <em>Elements Culmyca</em>, <em>Reizo</em> (freshers), and other cultural occasions. From classical to hip-hop, Nataraja continues to grow each year, offering students creative opportunities inside and outside the campus.
+    </p>
+    <div class="text-center mt-3">
+      <div class="d-flex justify-content-center gap-3 mt-3">
+  <a href="https://www.instagram.com/nataraja.ymcaust/" target="_blank" class="btn btn-primary-custom" title="Instagram">
+    <i class="fab fa-instagram fa-lg"></i>
+  </a>
+ 
+</div>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <h3 class="section-title">Our Team</h3>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="glass-card p-4 text-center">
+          <h5>Coordinators</h5>
+          <p>Dr. Rashmi Popli<br>Ms. Raveena Aggarwal</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="glass-card p-4 text-center">
+          <h5>Secretaries</h5>
+          <p>Diljeet<br>Ritika<br>Eiti<br>Princy<br>Sidharth<br>Shweta<br>Astha</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="glass-card p-4 text-center">
+          <h5>Joint Secretaries</h5>
+          <p>Sunny<br>Jaikant<br>Ankesh<br>Laxmi<br>Bhawna<br>Anuj<br>Himanshu<br>Prateek<br>Renu</p>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="container py-5">
+    <h3 class="section-title">Gallery</h3>
+    <div class="row gallery g-4">
+      <div class="col-md-4">
+        <img src="https://jcboseust.ac.in/dsw/assets/uploads/media/natraj_1.jpg" alt="Nataraja Art 1">
+      </div>
+      <div class="col-md-4">
+        <img src="https://jcboseust.ac.in/dsw/assets/uploads/media/natraj_2.jpg" alt="Nataraja Art 2">
+      </div>
+      <div class="col-md-4">
+        <img src="https://jcboseust.ac.in/dsw/assets/uploads/media/natraj_3.jpg" alt="Nataraja Art 3">
+      </div>
+    </div>
+  </div>
+  <div class="container py-5">
+    <div class="cta-banner">
+      <h4>💃 Passionate about Dance?</h4>
+      <p>Be a part of YMCA’s dynamic dance community. Explore, express, and evolve with Nataraja!</p>
+      <a href="{{ url_for('process') }}" class="btn btn-light">Join Nataraja</a>
+    </div>
+  </div>
+
+ 
+{% include 'footer.html' %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

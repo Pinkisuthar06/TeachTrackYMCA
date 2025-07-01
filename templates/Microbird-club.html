@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Microbird - The Techno Club</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ <style>
+  :root {
+  --primary: #00695c;
+  --card-bg: rgba(255, 255, 255, 0.2);
+  --dark-green: #004d40;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background: linear-gradient(to bottom right, #e0f2f1, #b2dfdb);
+  color: #333;
+  margin: 0;
+}
+
+.header {
+  background: linear-gradient(to right, var(--primary), var(--dark-green));
+  color: white;
+  text-align: center;
+  padding: 4rem 1rem 2rem;
+  position: relative;
+}
+
+.header img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid white;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.header h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  margin-top: 1.5rem;
+}
+
+.section-title {
+  font-weight: bold;
+  color: var(--primary);
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary-custom {
+  background-color: var(--primary);
+  color: white;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.btn-primary-custom:hover {
+  background-color: #003d33;
+}
+
+.btn-primary-custom i {
+  font-size: 1.5rem;
+}
+
+.cta-banner {
+  background: linear-gradient(90deg, var(--primary), #26a69a);
+  color: white;
+  border-radius: 15px;
+  padding: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.gallery img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+.maindiv {
+  margin-top: 90px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header img {
+    width: 70px;
+    height: 70px;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .header h1 {
+    font-size: 1.75rem;
+    margin-top: 2.5rem;
+  }
+
+  .gallery img {
+    height: 180px;
+  }
+
+  .glass-card {
+    padding: 1.2rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .cta-banner h4 {
+    font-size: 1.25rem;
+  }
+
+  .cta-banner p {
+    font-size: 1rem;
+  }
+
+  .btn-primary-custom {
+    width: 44px;
+    height: 44px;
+  }
+
+  .btn-primary-custom i {
+    font-size: 1.2rem;
+  }
+}
+</style>
+</head>
+<body>
+{% include 'header.html' %}
+  <div class="header maindiv">
+    <img src="https://media.licdn.com/dms/image/v2/C4E0BAQG2nCaf3jUDwA/company-logo_200_200/company-logo_200_200/0/1630637917917?e=1756944000&v=beta&t=C20cd5bb7K2ibNhcmTIDEQcMDI-z4Wmju3Eqiaw4j8U" alt="Microbird Logo">
+    <h1>Microbird</h1>
+    <p>The Techno Club of J.C. Bose University of Science and Technology, YMCA</p>
+  </div>
+
+  <div class="container py-4">
+    <h3 class="section-title">About Us</h3>
+    <p>
+      Microbird, the techno club, was established in 2010 to promote technical awareness in the field of electronics. We have been taking open sessions on various topics related to our learning so as to let people grow technically.
+    </p>
+    <p>
+      Our enormous participation in various zonal, national, and international events has helped us climb the ladder each year. We give students a chance to evolve technically while also providing them with hands-on experience.
+    </p>
+    <div class="text-center mt-3">
+      <div class="d-flex justify-content-center gap-3 mt-3">
+        <a href="https://www.instagram.com/microbirdymca/?hl=en" target="_blank" class="btn btn-primary-custom" title="Instagram">
+          <i class="fab fa-instagram fa-lg"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <h3 class="section-title">Our Team</h3>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="glass-card p-4 text-center">
+          <h5>Coordinators</h5>
+          <p>Mr. Mukesh Kumar<br>Ms. Poulami Jana</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="glass-card p-4 text-center">
+          <h5>Secretaries</h5>
+          <p>Shivam<br>Daksh<br>Khush<br>Ankita<br>Priya</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="glass-card p-4 text-center">
+          <h5>Joint Secretaries</h5>
+          <p>Anusha<br>Pragati<br>Dilpreet<br>Shubham<br>Dhiren</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <h3 class="section-title">Gallery</h3>
+    <div class="row gallery g-4">
+      <div class="col-md-4">
+        <img src="https://jcboseust.ac.in/dsw/assets/uploads/media/mb_1.jpg" alt="Microbird Image 1">
+      </div>
+      <div class="col-md-4">
+        <img src="https://jcboseust.ac.in/dsw/assets/uploads/media/mb_2.jpg" alt="Microbird Image 2">
+      </div>
+      <div class="col-md-4">
+        <img src="https://jcboseust.ac.in/dsw/assets/uploads/media/mb_3.jpg" alt="Microbird Image 3">
+      </div>
+    </div>
+  </div>
+
+  <div class="container py-5">
+    <div class="cta-banner">
+      <h4>⚙️ Passionate About Electronics?</h4>
+      <p>Join Microbird and grow your skills with hands-on learning, sessions, and technical events!</p>
+      <a href="{{ url_for('process') }}" class="btn btn-light">Join Microbird</a>
+    </div>
+  </div>
+
+  
+{% include 'footer.html' %}
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

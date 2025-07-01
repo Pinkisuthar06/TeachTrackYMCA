@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All Rank Submissions</title>
+</head>
+<body>
+  <h2>Submitted Rank Entries</h2>
+  <table border="1" cellpadding="8">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Rank</th>
+        <th>Branch</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for entry in entries %}
+      <tr>
+        <td>{{ entry.id }}</td>
+        <td>{{ entry.rank }}</td>
+        <td>{{ entry.branch }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <br><a href="{{ url_for('index') }}">Submit Another</a>
+</body>
+</html>

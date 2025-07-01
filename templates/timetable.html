@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JC Bose UST Time Table</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Rubik', sans-serif;
+      background: linear-gradient(to right, #dfe9f3, #ffffff);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      flex: 1;
+    }
+
+    .tt-header {
+      background-color: #2e3d59;
+      width: 100%;
+      text-align: center;
+      padding: 20px;
+      color: #fff;
+      font-size: 1.8rem;
+      font-weight: 600;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      margin-bottom: 30px;
+      max-width: 900px;
+    }
+
+    .tt-glass-box {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 900px;
+      text-align: center;
+    }
+
+    .tt-glass-box p {
+      font-size: 1rem;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    .tt-iframe {
+      width: 100%;
+      height: 70vh;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+
+    .tt-download-btn {
+      margin-top: 25px;
+      padding: 12px 30px;
+      background: #2e3d59;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: background 0.3s ease;
+      display: inline-block;
+    }
+
+    .tt-download-btn:hover {
+      background: #1c273b;
+    }
+
+    @media (max-width: 768px) {
+      .tt-iframe {
+        height: 60vh;
+      }
+      .tt-header {
+        font-size: 1.5rem;
+      }
+    }
+
+    .tt-maindiv {
+      margin-top: 80px;
+    }
+
+    footer {
+      background-color: #2e3d59;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      width: 100%;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Include your shared header -->
+  {% include 'header.html' %}
+
+  <!-- Main page content -->
+  <div class="main-content">
+    <div class="tt-header tt-maindiv">
+      JC Bose UST Time Table (w.e.f. 21 Jan 2025)
+    </div>
+
+    <div class="tt-glass-box">
+      <p>You can preview or download the official university timetable using the options below.</p>
+      <iframe class="tt-iframe" src="https://jcboseust.ac.in/assets/files/Time_Table_w.e.f._21_Jan_2025.pdf">
+        Your browser does not support PDF viewing.
+      </iframe>
+      <a class="tt-download-btn" href="https://jcboseust.ac.in/assets/files/Time_Table_w.e.f._21_Jan_2025.pdf" download>
+        📥 Download PDF
+      </a>
+    </div>
+  </div>
+
+  <!-- Full-width footer -->
+  {% include 'footer.html' %}
+
+</body>
+</html>

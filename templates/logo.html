@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Top Recruiter Companies</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+    }
+    .logo-item {
+      background: #fff;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .logo-item img {
+      width: 100%;
+      max-height: 60px;
+      object-fit: contain;
+    }
+    .logo-item {
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+
+  /* Flexbox centering */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px; /* Optional fixed height for consistent appearance */
+}
+
+.logo-item img {
+  max-height: 60px;
+  max-width: 100%;
+  object-fit: contain;
+}
+.maindiv{
+  margin-top: 80px;
+}
+.padding{
+  padding: 20px;
+}
+  </style>
+</head>
+
+<body>
+  {% include 'header.html' %}
+  <div class="padding">
+  <h1 class="maindiv">Top Recruiter Companies</h1>
+  <div class="logo-grid" id="logoContainer"></div>
+  </div>
+ {% include 'footer.html' %}
+  <script>
+    const container = document.getElementById("logoContainer");
+
+    for (let i = 1; i <= 104; i++) {
+      let extension = "";
+
+      if (i <= 28) {
+        extension = "svg";
+      } else if (i <= 77) {
+        extension = "png";
+      } else {
+        extension = "jpeg";
+      }
+
+      const fileName = `${i}.${extension}`;
+      const div = document.createElement("div");
+      div.className = "logo-item";
+      div.innerHTML = `<img src="/static/logos/${fileName}" alt="Logo ${i}" loading="lazy">`;
+      container.appendChild(div);
+    }
+  </script>
+</body>
+</html>

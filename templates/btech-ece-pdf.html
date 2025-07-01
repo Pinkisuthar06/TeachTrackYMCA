@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>B.Tech ECE (2018 Batch) - Syllabus up to 8th Sem</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+   .ece-syllabus-page {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+.ece-syllabus-page header {
+  background-color:#0a3c5f;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.ece-syllabus-page .ece-syllabus-container {
+  max-width: 1140px;
+  margin: 40px auto;
+  padding: 30px 20px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.ece-syllabus-page .ece-syllabus-container h2,
+.ece-syllabus-page .ece-syllabus-container h3 {
+  text-align: center;
+  color: #004080;
+  margin-bottom: 20px;
+}
+
+.ece-syllabus-page .ece-info-box {
+  background: #bfdcff;
+  border-left: 5px solid #007bff;
+  color: black;
+  padding: 15px 25px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.ece-syllabus-page .ece-info-box p {
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+.ece-syllabus-page .semester-title {
+  background-color: #c0c7d1;
+  padding: 10px;
+  font-weight: 600;
+  margin: 20px 0 10px;
+  border-left: 5px solid #004080;
+  text-align: center;
+}
+
+.ece-syllabus-page .table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 90%;
+}
+
+@media (min-width: 768px) {
+  .ece-syllabus-page .table-responsive {
+    width: 80%;
+  }
+}
+@media (min-width: 992px) {
+  .ece-syllabus-page .table-responsive {
+    width: 70%;
+  }
+}
+
+.ece-syllabus-page table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  min-width: 600px;
+}
+
+.ece-syllabus-page th,
+.ece-syllabus-page td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+  font-size: 0.95rem;
+  word-wrap: break-word;
+}
+
+.ece-syllabus-page th {
+  background-color: #007bff;
+  color: white;
+}
+
+.ece-syllabus-page tr:nth-child(even) {
+  background-color: #c0c7d1;
+}
+
+.ece-syllabus-page .pdf-container {
+  position: relative;
+  padding-top: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.ece-syllabus-page .pdf-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.ece-syllabus-page .ece-last-updated {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.ece-syllabus-page .back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ece-syllabus-page .back-to-top:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .ece-syllabus-page body {
+    font-size: 14px;
+  }
+
+  .ece-syllabus-page header {
+    font-size: 1.3rem;
+    padding: 15px;
+  }
+
+  .ece-syllabus-page .ece-syllabus-container {
+    padding: 20px 10px;
+    margin: 20px auto;
+  }
+
+  .ece-syllabus-page th,
+  .ece-syllabus-page td {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .ece-syllabus-page .ece-info-box {
+    padding: 10px 15px;
+  }
+
+  .ece-syllabus-page .ece-syllabus-container h2,
+  .ece-syllabus-page .ece-syllabus-container h3 {
+    font-size: 1.2rem;
+  }
+
+  .ece-syllabus-page .semester-title {
+    font-size: 1rem;
+  }
+
+  .ece-syllabus-page .ece-info-box p {
+    font-size: 0.9rem;
+  }
+
+  .ece-syllabus-page .pdf-container {
+    height: 300px;
+  }
+  .ece-syllabus-container .pdf-container{
+    height: 500px;
+  }
+}
+.maindiv{
+  margin-top: 80px;
+}
+
+   .text{
+    text-align: center;
+   }  
+  </style>
+</head>
+<body>  
+{% include 'header.html' %}
+<div class="ece-syllabus-page maindiv">
+<header class="ece-syllabus-header ece-margin-top">
+  J.C. Bose University of Science and Technology, YMCA - Faridabad
+</header>
+
+<div class="ece-syllabus-container">
+  <h2>B.Tech ECE (2018 Batch) - Syllabus up to 8th Semester</h2>
+
+  <div class="ece-info-box">
+    <p><strong>Department:</strong> Electronics and Communication Engineering (ECE)</p>
+    <p><strong>Batch:</strong> 2018</p>
+    <p><strong>Document Type:</strong> Complete Syllabus (Semester 1 to 8)</p>
+  </div>
+ <h3>📄 View Official Syllabus PDF</h3>
+  <div class="pdf-container">
+    <iframe src="https://jcboseust.ac.in/assets/uploads/media/btech_ece_2018_upto4sem_14082018.pdf"></iframe>
+  </div>
+
+  
+
+  <div class="ece-last-updated">
+    🔄 Last Updated: 14 August 2018
+  </div>
+</div>
+
+  <h3 class="text">📘 Semester-wise Subject Details</h3>
+
+  <!-- SEMESTER-WISE DATA FROM 1 TO 8 -->
+  <!-- Replace this line with your full 1 to 8 semester table blocks -->
+  <!-- Make sure each table is wrapped inside <div class="table-responsive"> ... </div> -->
+
+  <!-- 🎓 Semester 1 -->
+  <div class="semester-title">Semester 1</div>
+  <div class="table-responsive">
+    <table>
+      <tr><th>Subject Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+      <tr><td>MA-101</td><td>Engineering Mathematics-I</td><td>Theory</td><td>4</td></tr>
+      <tr><td>PH-101</td><td>Engineering Physics</td><td>Theory</td><td>4</td></tr>
+      <tr><td>EE-101</td><td>Basic Electrical Engineering</td><td>Theory</td><td>4</td></tr>
+      <tr><td>ME-101</td><td>Engineering Graphics & Design</td><td>Theory</td><td>3</td></tr>
+      <tr><td>PH-102</td><td>Physics Lab</td><td>Lab</td><td>1</td></tr>
+      <tr><td>EE-102</td><td>Electrical Lab</td><td>Lab</td><td>1</td></tr>
+      <tr><td>ME-102</td><td>Graphics Lab</td><td>Lab</td><td>1</td></tr>
+      <tr><td>MC-101</td><td>Environmental Science</td><td>Mandatory</td><td>0</td></tr>
+    </table>
+  </div>
+
+  <!-- 🧪 Semester 2 -->
+  <div class="semester-title">Semester 2</div>
+  <div class="table-responsive">
+    <table>
+      <tr><th>Subject Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+      <tr><td>MA-102</td><td>Engineering Mathematics-II</td><td>Theory</td><td>4</td></tr>
+      <tr><td>CH-101</td><td>Engineering Chemistry</td><td>Theory</td><td>4</td></tr>
+      <tr><td>EC-101</td><td>Basic Electronics Engineering</td><td>Theory</td><td>3</td></tr>
+      <tr><td>CS-101</td><td>Programming in C</td><td>Theory</td><td>3</td></tr>
+      <tr><td>CH-102</td><td>Chemistry Lab</td><td>Lab</td><td>1</td></tr>
+      <tr><td>EC-102</td><td>Electronics Lab</td><td>Lab</td><td>1</td></tr>
+      <tr><td>CS-102</td><td>C Programming Lab</td><td>Lab</td><td>1</td></tr>
+      <tr><td>MC-102</td><td>Indian Constitution</td><td>Mandatory</td><td>0</td></tr>
+    </table>
+  </div>
+<div class="semester-title">Semester 3</div>
+<div class="table-responsive">
+  <table>
+    <tr><th>Subject Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+    <tr><td>MA-201</td><td>Mathematics-III</td><td>Theory</td><td>4</td></tr>
+    <tr><td>EC-201</td><td>Network Theory</td><td>Theory</td><td>4</td></tr>
+    <tr><td>EC-202</td><td>Electronic Devices</td><td>Theory</td><td>4</td></tr>
+    <tr><td>EC-203</td><td>Digital Electronics</td><td>Theory</td><td>4</td></tr>
+    <tr><td>EC-204</td><td>Signals and Systems</td><td>Theory</td><td>4</td></tr>
+    <tr><td>EC-205</td><td>Electronic Devices Lab</td><td>Lab</td><td>1</td></tr>
+    <tr><td>EC-206</td><td>Digital Electronics Lab</td><td>Lab</td><td>1</td></tr>
+    <tr><td>MC-201</td><td>Soft Skills</td><td>Mandatory</td><td>0</td></tr>
+  </table>
+</div>
+
+<div class="semester-title">Semester 4</div>
+<div class="table-responsive">
+  <table>
+    <tr><th>Subject Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+    <tr><td>EC-207</td><td>Analog Circuits</td><td>Theory</td><td>4</td></tr>
+    <tr><td>EC-208</td><td>Microprocessors and Microcontrollers</td><td>Theory</td><td>4</td></tr>
+    <tr><td>EC-209</td><td>Control Systems</td><td>Theory</td><td>4</td></tr>
+    <tr><td>EC-210</td><td>Probability & Random Processes</td><td>Theory</td><td>4</td></tr>
+    <tr><td>EC-211</td><td>Microcontroller Lab</td><td>Lab</td><td>1</td></tr>
+    <tr><td>EC-212</td><td>Analog Circuits Lab</td><td>Lab</td><td>1</td></tr>
+    <tr><td>EC-213</td><td>Control System Lab</td><td>Lab</td><td>1</td></tr>
+    <tr><td>MC-202</td><td>Innovation & Entrepreneurship</td><td>Mandatory</td><td>0</td></tr>
+  </table>
+</div>
+
+<div class="semester-title">Semester 5</div>
+<div class="table-responsive">
+  <table>
+    <tr><th>Subject Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+    <tr><td>EC-301</td><td>Communication Systems</td><td>Theory</td><td>4</td></tr>
+    <tr><td>EC-302</td><td>Electromagnetic Waves</td><td>Theory</td><td>4</td></tr>
+    <tr><td>EC-303</td><td>VLSI Design</td><td>Theory</td><td>4</td></tr>
+    <tr><td>EC-304</td><td>Computer Organization</td><td>Theory</td><td>3</td></tr>
+    <tr><td>EC-305</td><td>VLSI Lab</td><td>Lab</td><td>1</td></tr>
+    <tr><td>EC-306</td><td>Communication Lab</td><td>Lab</td><td>1</td></tr>
+    <tr><td>EC-307</td><td>EM Waves Lab</td><td>Lab</td><td>1</td></tr>
+    <tr><td>MC-301</td><td>Gender Equality</td><td>Mandatory</td><td>0</td></tr>
+  </table>
+</div>
+
+<div class="semester-title">Semester 6</div>
+<div class="table-responsive">
+  <table>
+    <tr><th>Subject Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+    <tr><td>EC-308</td><td>Digital Signal Processing</td><td>Theory</td><td>4</td></tr>
+    <tr><td>EC-309</td><td>Microwave Engineering</td><td>Theory</td><td>4</td></tr>
+    <tr><td>EC-310</td><td>Embedded Systems</td><td>Theory</td><td>3</td></tr>
+    <tr><td>EC-311</td><td>DSP Lab</td><td>Lab</td><td>1</td></tr>
+    <tr><td>EC-312</td><td>Microwave Lab</td><td>Lab</td><td>1</td></tr>
+    <tr><td>EC-313</td><td>Embedded Systems Lab</td><td>Lab</td><td>1</td></tr>
+    <tr><td>EC-314</td><td>Minor Project</td><td>Project</td><td>2</td></tr>
+  </table>
+</div>
+
+<div class="semester-title">Semester 7</div>
+<div class="table-responsive">
+  <table>
+    <tr><th>Subject Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+    <tr><td>EC-401</td><td>Wireless Communication</td><td>Theory</td><td>4</td></tr>
+    <tr><td>EC-402</td><td>Optical Communication</td><td>Theory</td><td>3</td></tr>
+    <tr><td>EC-403</td><td>Elective-I</td><td>Theory</td><td>3</td></tr>
+    <tr><td>EC-404</td><td>Elective-II</td><td>Theory</td><td>3</td></tr>
+    <tr><td>EC-405</td><td>Wireless Lab</td><td>Lab</td><td>1</td></tr>
+    <tr><td>EC-406</td><td>Optical Comm Lab</td><td>Lab</td><td>1</td></tr>
+    <tr><td>EC-407</td><td>Major Project Phase-I</td><td>Project</td><td>2</td></tr>
+  </table>
+</div>
+
+<div class="semester-title">Semester 8</div>
+<div class="table-responsive">
+  <table>
+    <tr><th>Subject Code</th><th>Subject Name</th><th>Type</th><th>Credits</th></tr>
+    <tr><td>EC-408</td><td>Elective-III</td><td>Theory</td><td>3</td></tr>
+    <tr><td>EC-409</td><td>Elective-IV</td><td>Theory</td><td>3</td></tr>
+    <tr><td>EC-410</td><td>Project Phase-II</td><td>Project</td><td>6</td></tr>
+    <tr><td>EC-411</td><td>Internship / Seminar</td><td>Seminar</td><td>2</td></tr>
+  </table>
+</div>
+</div>
+  <!-- 🧠 Paste your Semester 3 to Semester 8 table blocks here (already provided in your original message) -->
+  <!-- Make sure each table is wrapped inside <div class="table-responsive"> ... </div> -->
+
+  <!-- 👇 Continue with rest of semester blocks here (3 to 8)... -->
+  <!-- If you'd like me to insert all of them here again, just say “continue with semester 3 to 8 now” -->
+
+  <!-- PDF Section -->
+ {% include 'footer.html' %}
+
+
+
+</body>
+</html>

@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>B.Tech PYQs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html, body {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #003566, #0077b6);
+    color: white;
+  }
+  .section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  @media (max-width: 576px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  .box {
+    background: white;
+    color: #003566;
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    word-break: break-word;
+  }
+  .box:hover {
+    transform: translateY(-6px);
+    background: #e0ecff;
+  }
+  .hidden {
+    display: none;
+  }
+  .back-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: white;
+    color: #003566;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .back-btn:hover {
+    background: #d0eaff;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+</style>
+
+</head>
+<body>
+  <div class="section">
+    <h1 id="main-title">B.Tech PYQs - Choose Branch</h1>
+    <div class="grid" id="branch-grid"></div>
+    <div class="grid hidden" id="sem-grid"></div>
+    <div class="grid hidden" id="subject-grid"></div>
+    <div class="grid hidden" id="link-grid"></div>
+    <p id="no-data" class="hidden">⚠ No data available for the selected option.</p>
+    <button class="back-btn hidden" id="backBtn" onclick="goBack()">← Back</button>
+  </div>
+
+  <script>
+    const pyqData = {
+        CSE: {
+          "4th Sem": {
+            "OB": "https://drive.google.com/drive/folders/1TSpQcJgmPew0gX367votiHMFEP0HWwpm?usp=drive_link",
+            "OS": "https://drive.google.com/drive/folders/11ve58Xqmx7FTlQ9xPc5gdpU6A_v8Qsgp?usp=drive_link",
+            "EVS": "https://drive.google.com/drive/folders/1cVHPdqgnn6xlKKHil-WJBjmPA_7ctdEu?usp=drive_link",
+            "EFE": "https://drive.google.com/drive/folders/1rOXETClv-ySIT4Rdl-EK3T0me3qVyoJc?usp=drive_link",
+            "DM": "https://drive.google.com/drive/folders/1pL5dj4JtcUYvJ5sXszDTBNqfllx7JRLH?usp=drive_link",
+            "DAA": "https://drive.google.com/drive/folders/1aUBGJ8u8UDxtq0fSBFPPxJ3xsgFbqLEz?usp=drive_link",
+            "COA": "https://drive.google.com/drive/folders/19vZKv47_TW4HLpfQKTetaUDSm2wHWCWC?usp=drive_link"
+          },
+          "6th Sem": {
+            "SE": "https://drive.google.com/drive/folders/14jCGJLYY9C08lT0kJkrJQ8r72geo7Hbp?usp=drive_link",
+            "SSIC": "https://drive.google.com/drive/folders/1-_4xSMV_YPetN_m5Ra7bbxBk3HqSKX2D?usp=drive_link",
+            "OR": "https://drive.google.com/drive/folders/1jy0CJ6k6y-MsjZWqRSwOnr9omHKo1JA4?usp=drive_link",
+            "MBG": "https://drive.google.com/drive/folders/1pVlmh3KH3XrHEZ7nTaw68wIgCxjPjqXJ?usp=drive_link",
+            "IS": "https://drive.google.com/drive/folders/1V2G3Yw76gnp8bsFLlQ9HYqx8WmQ37pIL?usp=drive_link",
+            "IPR": "https://drive.google.com/drive/folders/1yHPSSajxCBi-5llbpa5M64x_vXjlYale?usp=drive_link",
+            "ICTD": "https://drive.google.com/drive/folders/1Pmd7z6fni1aRlB_SeYXzCHf_IkIUunjd?usp=drive_link",
+            "HRM": "https://drive.google.com/drive/folders/1lZO4cAySWlWVwcyJLcoy4anjgt8WF8Sx?usp=drive_link",
+            "ES": "https://drive.google.com/drive/folders/10TQ5BKc1o7x4a4BNrJNPVxVFnH8BXXQK?usp=drive_link",
+            "DS": "https://drive.google.com/drive/folders/1nmKVhBzDkm3kB_UnodUphaRz9tq7OOIV?usp=drive_link",
+            "DMG": "https://drive.google.com/drive/folders/1OPiNUvLhQnAuw2Oa8ujnMyClMSeB_dws?usp=drive_link",
+            "DAP": "https://drive.google.com/drive/folders/16Mwzk1mQC809ckseOU6adQ3D8TTRG-r0?usp=drive_link",
+            "CLE": "https://drive.google.com/drive/folders/1DMYbw7mqS8NZvqkKoLj_6nzcyvU5cgpm?usp=drive_link",
+            "CN": "https://drive.google.com/drive/folders/1LHMmXUq0lJQGzQj8UZOzb65KjbSZJyxW?usp=drive_link",
+            "CD": "https://drive.google.com/drive/folders/1Sixb825sLumLkiZJVOtB55PQJhlheAj5?usp=drive_link"
+          }
+        },
+        ECE: {
+          "3rd Sem": {
+            "NT": "https://drive.google.com/drive/folders/1VKE0EeHX1C59b6Dq0AQPSI9vzIlVFgVz?usp=drive_link",
+            "Math-III": "https://drive.google.com/drive/folders/1LggxluEYOKBupHWcQjiPvZBZu8NHpr3S?usp=drive_link",
+            "IC": "https://drive.google.com/drive/folders/1U2GlcCRxHBP8ReOxN8A2JHXb7tRfFI-L?usp=drive_link",
+            "EM": "https://drive.google.com/drive/folders/1sWaJePo4EcA1y7kNCpKc3gPx-wDx8mzj?usp=drive_link",
+            "ED": "https://drive.google.com/drive/folders/16ejyB2l_yUOjOJsQVTHY4Oe_Irvb7EDF?usp=drive_link",
+            "DSD": "https://drive.google.com/drive/folders/16VnYVuCuE7tFjOWvI6sGRODU8vE091FW?usp=drive_link",
+            "Misc": "https://drive.google.com/drive/folders/1hxRVbq_JyVLiiHKO7tJ1Wi3Z33CiBMJn?usp=drive_link"
+          },
+          "4th Sem": {
+            "SS": "https://drive.google.com/drive/folders/140PZTWGuzDgxnTvFjCSvNWjLSgdp64wO?usp=drive_link",
+            "MPMC": "https://drive.google.com/drive/folders/1lWWiznpfddQQDdaJEAneQ7iGD5HGA4-e?usp=drive_link",
+            "ETC": "https://drive.google.com/drive/folders/1wXeGtn3eheVm1ayx_G2WAbhsa5UuWP3O?usp=drive_link",
+            "CA": "https://drive.google.com/drive/folders/1fC_fcrhE_cfDYGrbhAPkAl0vgCH48hp9?usp=drive_link",
+            "Bio": "https://drive.google.com/drive/folders/1z3EF7PZhUOiLYunaoYH5EiyxpqVN5gDl?usp=drive_link",
+            "ADC": "https://drive.google.com/drive/folders/16VnYVuCuE7tFjOWvI6sGRODU8vE091FW?usp=drive_link",
+            "AC": "https://drive.google.com/drive/folders/17zPjdjjpfL64WV1PwhcchNhTcRxOClFV?usp=drive_link",
+            "Misc": "https://drive.google.com/drive/folders/1Y8_h0xZnvosGksNTeMq7XILrCcIZOA88?usp=drive_link"
+          },
+          "5th Sem": {
+            "SS": "https://drive.google.com/drive/folders/1I70Vru8ZJ-Qsur-96VPOoDo_Jax1Uhec?usp=drive_link",
+            "MPMC": "https://drive.google.com/drive/folders/1GGOLKxIDi3TI8Nk_zEAQDYTTCUTZ7jFB?usp=drive_link",
+            "IC": "https://drive.google.com/drive/folders/1U2GlcCRxHBP8ReOxN8A2JHXb7tRfFI-L?usp=drive_link",
+            "EM": "https://drive.google.com/drive/folders/1sWaJePo4EcA1y7kNCpKc3gPx-wDx8mzj?usp=drive_link",
+            "ED": "https://drive.google.com/drive/folders/16ejyB2l_yUOjOJsQVTHY4Oe_Irvb7EDF?usp=drive_link",
+            "DSD": "https://drive.google.com/drive/folders/16VnYVuCuE7tFjOWvI6sGRODU8vE091FW?usp=drive_link",
+            "Misc": "https://drive.google.com/drive/folders/1hxRVbq_JyVLiiHKO7tJ1Wi3Z33CiBMJn?usp=drive_link"
+          },
+          "6th Sem": {
+            "WSN": "https://drive.google.com/drive/folders/1ua4yqAkdbLDrBWBYSMB6qeTxiBlbmI-N?usp=drive_link",
+            "VID": "https://drive.google.com/drive/folders/1NJ_5zJJ8b0swTK9GTZEhUT_1Y1lBvvCB?usp=drive_link",
+            "SAP": "https://drive.google.com/drive/folders/1WY1YB2TYF88uhz--PtUYoJqkL5uSbZWO?usp=drive_link",
+            "SC": "https://drive.google.com/drive/folders/18wpUez_c3r8f9bKSDHN8DZQhPPsaWRcb?usp=drive_link",
+            "QM": "https://drive.google.com/drive/folders/1-sRqJoQQr6uGMkJaUIVxO1d4pbnfp4_z?usp=drive_link",
+            "MCN": "https://drive.google.com/drive/folders/1pt8Zcr_v73riqCAvfsTcz24c3khX4eml?usp=drive_link",
+            "MTT": "https://drive.google.com/drive/folders/12hNxC2GLKY5-JZOb8hqU8fa1v19ngn9c?usp=drive_link",
+            "ITC": "https://drive.google.com/drive/folders/1HIOlPiA5kpA3u3M9-PIjtUxZg4r-3mZI?usp=drive_link",
+            "DVIP": "https://drive.google.com/drive/folders/1hXuBEazj8I9z__mpSc9Vxph1iuvcjJrd?usp=drive_link",
+            "DS": "https://drive.google.com/drive/folders/1NTfIXBzrLMjCl4sRsGFBsQb8t3nbzqf-?usp=drive_link",
+            "CLS": "https://drive.google.com/drive/folders/1GoabWsScStTIyrxUgAfsMUxMP5_Qkzv3?usp=drive_link",
+            "CS": "https://drive.google.com/drive/folders/1BgZ5KDCZUMjCbZirkK8vlqs8sbFjNiqQ?usp=drive_link",
+            "CN": "https://drive.google.com/drive/folders/1zisCnE771Cj--QyFz6JWgx9uMIq4O2NQ?usp=drive_link",
+            "BME": "https://drive.google.com/drive/folders/17TeRf_KhJpbB6VdZED_DvV1ci_NlRN-m?usp=drive_link"
+          },
+          "7th Sem": {
+            "NT": "https://drive.google.com/drive/folders/1VKE0EeHX1C59b6Dq0AQPSI9vzIlVFgVz?usp=drive_link",
+            "Math-III": "https://drive.google.com/drive/folders/1LggxluEYOKBupHWcQjiPvZBZu8NHpr3S?usp=drive_link",
+            "IC": "https://drive.google.com/drive/folders/1U2GlcCRxHBP8ReOxN8A2JHXb7tRfFI-L?usp=drive_link",
+            "EM": "https://drive.google.com/drive/folders/1sWaJePo4EcA1y7kNCpKc3gPx-wDx8mzj?usp=drive_link",
+            "ED": "https://drive.google.com/drive/folders/16ejyB2l_yUOjOJsQVTHY4Oe_Irvb7EDF?usp=drive_link",
+            "DSD": "https://drive.google.com/drive/folders/16VnYVuCuE7tFjOWvI6sGRODU8vE091FW?usp=drive_link",
+            "Misc": "https://drive.google.com/drive/folders/1hxRVbq_JyVLiiHKO7tJ1Wi3Z33CiBMJn?usp=drive_link"
+          }
+        },
+        RAI: {
+          "Sem 3": {
+            "NT": "https://drive.google.com/drive/folders/1VKE0EeHX1C59b6Dq0AQPSI9vzIlVFgVz?usp=drive_link",
+            "Math-III": "https://drive.google.com/drive/folders/1LggxluEYOKBupHWcQjiPvZBZu8NHpr3S?usp=drive_link",
+            "IC": "https://drive.google.com/drive/folders/1U2GlcCRxHBP8ReOxN8A2JHXb7tRfFI-L?usp=drive_link",
+            "EM": "https://drive.google.com/drive/folders/1sWaJePo4EcA1y7kNCpKc3gPx-wDx8mzj?usp=drive_link",
+            "ED": "https://drive.google.com/drive/folders/16ejyB2l_yUOjOJsQVTHY4Oe_Irvb7EDF?usp=drive_link",
+            "DSD": "https://drive.google.com/drive/folders/16VnYVuCuE7tFjOWvI6sGRODU8vE091FW?usp=drive_link",
+            "Misc": "https://drive.google.com/drive/folders/1hxRVbq_JyVLiiHKO7tJ1Wi3Z33CiBMJn?usp=drive_link"
+          },
+          "Sem 4": {
+            "NRBC": "https://drive.google.com/drive/folders/17Sdw74-ufxGjZqFLrtZozgjL8gntjZ9m?usp=drive_link",
+            "MPMC": "https://drive.google.com/drive/folders/1Ba842jVgInagTxvnfemPHCEmOPNRtoY9?usp=drive_link",
+            "MSD": "https://drive.google.com/drive/folders/1dEqkDtB88fP3C1Q10wguR9jSEUcIAXuW?usp=drive_link",
+            "KR": "https://drive.google.com/drive/folders/1sF7gXKZYDpbtM42mOtw0JbydM6D2tKMR?usp=drive_link",
+            "EITK": "https://drive.google.com/drive/folders/17DKxVA4DenAnVdzCzy73k6NyApkemtB9?usp=drive_link",
+            "DoME": "https://drive.google.com/drive/folders/11eMhm8m5dgCpxQz8IEr4ysrqaaRDJE5N?usp=drive_link",
+            "AI": "https://drive.google.com/drive/folders/1EjqT-Ot0j79_pYRt-Wc98sDy5-WcUe-t?usp=drive_link"
+          },
+          "Sem 5": {
+            "S&S": "https://drive.google.com/drive/folders/1I70Vru8ZJ-Qsur-96VPOoDo_Jax1Uhec?usp=drive_link",
+            "MPMC": "https://drive.google.com/drive/folders/1GGOLKxIDi3TI8Nk_zEAQDYTTCUTZ7jFB?usp=drive_link",
+            "IC": "https://drive.google.com/drive/folders/1U2GlcCRxHBP8ReOxN8A2JHXb7tRfFI-L?usp=drive_link",
+            "EM": "https://drive.google.com/drive/folders/1sWaJePo4EcA1y7kNCpKc3gPx-wDx8mzj?usp=drive_link",
+            "ED": "https://drive.google.com/drive/folders/16ejyB2l_yUOjOJsQVTHY4Oe_Irvb7EDF?usp=drive_link",
+            "DSD": "https://drive.google.com/drive/folders/16VnYVuCuE7tFjOWvI6sGRODU8vE091FW?usp=drive_link",
+            "Misc": "https://drive.google.com/drive/folders/1D00VEdFKbxlw2V7Q7fG16pPnDGPlSF57?usp=drive_link"
+          },
+          "Sem 6": {
+            "SC": "https://drive.google.com/drive/folders/1iUQDqDwRFDRxfMQhGPXehEfnUO_Mx9Wz?usp=drive_link",
+            "MCN": "https://drive.google.com/drive/folders/15I09hWJlfJZAUxIC0EdNVi4hZUkpj6Px?usp=drive_link",
+            "IOT": "https://drive.google.com/drive/folders/1LC7DCU4qo-LB92aW6wbxXmWYIhiVASm_?usp=drive_link",
+            "CS": "https://drive.google.com/drive/folders/1iR-F8vs4rCrb-LdnNwE7TRn4Vm-295GM?usp=drive_link",
+            "CC": "https://drive.google.com/drive/folders/1FqvKxJmHhrlGaQ_F70cVNVmWbTht8flx?usp=drive_link",
+            "Misc": "https://drive.google.com/drive/folders/1eIJH3T2suR2-QRP0SnFxqsSPNuo8onOI?usp=drive_link"
+          },
+          "Sem 7": {
+            "NT": "https://drive.google.com/drive/folders/1VKE0EeHX1C59b6Dq0AQPSI9vzIlVFgVz?usp=drive_link",
+            "Math-III": "https://drive.google.com/drive/folders/1LggxluEYOKBupHWcQjiPvZBZu8NHpr3S?usp=drive_link",
+            "IC": "https://drive.google.com/drive/folders/1U2GlcCRxHBP8ReOxN8A2JHXb7tRfFI-L?usp=drive_link",
+            "EM": "https://drive.google.com/drive/folders/1sWaJePo4EcA1y7kNCpKc3gPx-wDx8mzj?usp=drive_link",
+            "ED": "https://drive.google.com/drive/folders/16ejyB2l_yUOjOJsQVTHY4Oe_Irvb7EDF?usp=drive_link",
+            "DSD": "https://drive.google.com/drive/folders/16VnYVuCuE7tFjOWvI6sGRODU8vE091FW?usp=drive_link",
+            "Misc": "https://drive.google.com/drive/folders/1hxRVbq_JyVLiiHKO7tJ1Wi3Z33CiBMJn?usp=drive_link"
+          }
+        },
+        ME: {
+  "Sem 3": {
+    "NT": "https://drive.google.com/drive/folders/1VKE0EeHX1C59b6Dq0AQPSI9vzIlVFgVz?usp=drive_link",
+    "Math-III": "https://drive.google.com/drive/folders/1LggxluEYOKBupHWcQjiPvZBZu8NHpr3S?usp=drive_link",
+    "IC": "https://drive.google.com/drive/folders/1U2GlcCRxHBP8ReOxN8A2JHXb7tRfFI-L?usp=drive_link",
+    "EM": "https://drive.google.com/drive/folders/1sWaJePo4EcA1y7kNCpKc3gPx-wDx8mzj?usp=drive_link",
+    "ED": "https://drive.google.com/drive/folders/16ejyB2l_yUOjOJsQVTHY4Oe_Irvb7EDF?usp=drive_link",
+    "DSD": "https://drive.google.com/drive/folders/16VnYVuCuE7tFjOWvI6sGRODU8vE091FW?usp=drive_link",
+    "Misc": "https://drive.google.com/drive/folders/1hxRVbq_JyVLiiHKO7tJ1Wi3Z33CiBMJn?usp=drive_link"
+  },
+  "Sem 4": {
+    "SOM-II": "https://drive.google.com/drive/folders/1JOTnZUZOzudJrqG_rZGZCJqAKWZbNBlN?usp=drive_link",
+    "NRBC": "https://drive.google.com/drive/folders/17UpO-PDIZM-6Dn025ahIKq2Sf0ipr4H5?usp=drive_link",
+    "MT": "https://drive.google.com/drive/folders/1HCWjddB0UmuXIo62wzUlEp9yw2queMPM?usp=drive_link",
+    "MTP": "https://drive.google.com/drive/folders/132X5u7Gar4vMORtA-L_jzOfZ57T91B_7?usp=drive_link",
+    "KOM": "https://drive.google.com/drive/folders/1Jy0Kwg0W-z0FxqwN2UIIjTzOghaDOftP?usp=drive_link",
+    "EVS": "https://drive.google.com/drive/folders/1qzCjz15kV83DW3VChtYzTZxSwqIE9G6p?usp=drive_link",
+    "ATD": "https://drive.google.com/drive/folders/1Fmk2hT-LzD-pWKZvcgzDxJjZIJdE93sb?usp=drive_link",
+    "Misc": "https://drive.google.com/drive/folders/1fpoO4wW6wLCGdJzOMGMFJfd724mFclIR?usp=drive_link"
+  },
+  "Sem 5": {
+    "S&S": "https://drive.google.com/drive/folders/1I70Vru8ZJ-Qsur-96VPOoDo_Jax1Uhec?usp=drive_link",
+    "MPMC": "https://drive.google.com/drive/folders/1GGOLKxIDi3TI8Nk_zEAQDYTTCUTZ7jFB?usp=drive_link",
+    "IC": "https://drive.google.com/drive/folders/1U2GlcCRxHBP8ReOxN8A2JHXb7tRfFI-L?usp=drive_link",
+    "EM": "https://drive.google.com/drive/folders/1sWaJePo4EcA1y7kNCpKc3gPx-wDx8mzj?usp=drive_link",
+    "ED": "https://drive.google.com/drive/folders/16ejyB2l_yUOjOJsQVTHY4Oe_Irvb7EDF?usp=drive_link",
+    "DSD": "https://drive.google.com/drive/folders/16VnYVuCuE7tFjOWvI6sGRODU8vE091FW?usp=drive_link",
+    "Misc": "https://drive.google.com/drive/folders/1D00VEdFKbxlw2V7Q7fG16pPnDGPlSF57?usp=drive_link"
+  },
+  "Sem 6": {
+    "WT": "https://drive.google.com/drive/folders/1EF22B8Xw2Es_cHxz-_xQj0P-rxHMtQlU?usp=drive_link",
+    "VLM": "https://drive.google.com/drive/folders/1GEGq6EbvkXBc-llecpdp1SbOQQnmJm5H?usp=drive_link",
+    "POM": "https://drive.google.com/drive/folders/1RqOfrUv7onpij8NgZ7unIzMFrX8mFh_B?usp=drive_link",
+    "NCM": "https://drive.google.com/drive/folders/1SsqG8TLIOexX9tlMSz06m_GMisLWz7Ef?usp=drive_link",
+    "MS": "https://drive.google.com/drive/folders/1zZeP9mQDnZ1rI3zOqaAD5oDMsp2q34Gk?usp=drive_link",
+    "MFT": "https://drive.google.com/drive/folders/1QFKEiXjl-dc67IfjbVmJn8WOo4wnbHEV?usp=drive_link",
+    "ICE": "https://drive.google.com/drive/folders/1Jt5y_vjYf6qC9AFfF6iD-t3Z4eRY2l_K?usp=drive_link",
+    "IC": "https://drive.google.com/drive/folders/1qYpKMPfhlDHmBMCV7SiS_fzpLGdS5Loc?usp=drive_link",
+    "FMS": "https://drive.google.com/drive/folders/1nGqpRBkfp2eRxFaMDRwxYyxMHsS_DoTK?usp=drive_link",
+    "EPWM&S": "https://drive.google.com/drive/folders/1KFAfN2qBrBEHYuUlNK7rw7PZzwMPMypm?usp=drive_link",
+    "EHV": "https://drive.google.com/drive/folders/1Ip4cV2C8JBW0gqmB4o67R1zKhPClEa8h?usp=drive_link",
+    "DoME-II": "https://drive.google.com/drive/folders/11MOR0NC61RMGztkPqwX3Y8HNvw9VVc7o?usp=drive_link",
+    "DCN": "https://drive.google.com/drive/folders/1s3dO8N9nJi2R0lzmx0o0G7x2biJHdQGD?usp=drive_link",
+    "CS": "https://drive.google.com/drive/folders/1LQ1jhoxnvVROIhL2HrX_ky5qaPUas1LY?usp=drive_link",
+    "CAD/CAM": "https://drive.google.com/drive/folders/1ds2myOg35inxv0esJMXzavFwBF2IhMYB?usp=drive_link",
+    "AT": "https://drive.google.com/drive/folders/1Ws2kRdkwHl9tXgGO2YT1Ci3GfQhMdA5W?usp=drive_link"
+  },
+  "Sem 7": {
+    "NT": "https://drive.google.com/drive/folders/1VKE0EeHX1C59b6Dq0AQPSI9vzIlVFgVz?usp=drive_link",
+    "Math-III": "https://drive.google.com/drive/folders/1LggxluEYOKBupHWcQjiPvZBZu8NHpr3S?usp=drive_link",
+    "IC": "https://drive.google.com/drive/folders/1U2GlcCRxHBP8ReOxN8A2JHXb7tRfFI-L?usp=drive_link",
+    "EM": "https://drive.google.com/drive/folders/1sWaJePo4EcA1y7kNCpKc3gPx-wDx8mzj?usp=drive_link",
+    "ED": "https://drive.google.com/drive/folders/16ejyB2l_yUOjOJsQVTHY4Oe_Irvb7EDF?usp=drive_link",
+    "DSD": "https://drive.google.com/drive/folders/16VnYVuCuE7tFjOWvI6sGRODU8vE091FW?usp=drive_link",
+    "Misc": "https://drive.google.com/drive/folders/1hxRVbq_JyVLiiHKO7tJ1Wi3Z33CiBMJn?usp=drive_link"
+  }
+},
+        IT: {
+  "Sem3": {
+    "NT": "https://drive.google.com/drive/folders/1VKE0EeHX1C59b6Dq0AQPSI9vzIlVFgVz?usp=drive_link",
+    "Maths-III": "https://drive.google.com/drive/folders/1LggxluEYOKBupHWcQjiPvZBZu8NHpr3S?usp=drive_link",
+    "IC": "https://drive.google.com/drive/folders/1U2GlcCRxHBP8ReOxN8A2JHXb7tRfFI-L?usp=drive_link",
+    "EM": "https://drive.google.com/drive/folders/1sWaJePo4EcA1y7kNCpKc3gPx-wDx8mzj?usp=drive_link",
+    "ED": "https://drive.google.com/drive/folders/16ejyB2l_yUOjOJsQVTHY4Oe_Irvb7EDF?usp=drive_link",
+    "DSD": "https://drive.google.com/drive/folders/16VnYVuCuE7tFjOWvI6sGRODU8vE091FW?usp=drive_link",
+    "Misc": "https://drive.google.com/drive/folders/1hxRVbq_JyVLiiHKO7tJ1Wi3Z33CiBMJn?usp=drive_link"
+  },
+  "Sem4": {
+    "OB": "https://drive.google.com/drive/folders/1oaPVZdueP2nzuv7t7jhjfVHImxKZ8u8r?usp=drive_link",
+    "OS": "https://drive.google.com/drive/folders/1uTW3dublksN4wycwb2Xr4Rz6dfsoUYdW?usp=drive_link",
+    "DM": "https://drive.google.com/drive/folders/1B3J-KqiEkEc3OSdjrFsm0k6K_JDgbc3j?usp=drive_link",
+    "DAA": "https://drive.google.com/drive/folders/1CyWv8JsU8HEM3mPDN5b8d4tpeaJFWFQf?usp=drive_link",
+    "COA": "https://drive.google.com/drive/folders/1MzSzHHh4ic8gg-XyI9HReSBgih2mPj0T?usp=drive_link",
+    "Bio": "https://drive.google.com/drive/folders/1k1ueCGx6SG0E20UnldhOkXVIn5Ql8Od1?usp=drive_link"
+  },
+  "Sem5": {
+    "SS": "https://drive.google.com/drive/folders/1I70Vru8ZJ-Qsur-96VPOoDo_Jax1Uhec?usp=drive_link",
+    "MPMC": "https://drive.google.com/drive/folders/1GGOLKxIDi3TI8Nk_zEAQDYTTCUTZ7jFB?usp=drive_link",
+    "IC": "https://drive.google.com/drive/folders/1U2GlcCRxHBP8ReOxN8A2JHXb7tRfFI-L?usp=drive_link",
+    "EM": "https://drive.google.com/drive/folders/1sWaJePo4EcA1y7kNCpKc3gPx-wDx8mzj?usp=drive_link",
+    "ED": "https://drive.google.com/drive/folders/16ejyB2l_yUOjOJsQVTHY4Oe_Irvb7EDF?usp=drive_link",
+    "DSD": "https://drive.google.com/drive/folders/16VnYVuCuE7tFjOWvI6sGRODU8vE091FW?usp=drive_link",
+    "Misc": "https://drive.google.com/drive/folders/1D00VEdFKbxlw2V7Q7fG16pPnDGPlSF57?usp=drive_link"
+  },
+  "Sem6": {
+    "SSIC": "https://drive.google.com/drive/folders/14E4H2sfIa50s7aoaOFT2Ef4R8IWVpW__?usp=drive_link",
+    "SC": "https://drive.google.com/drive/folders/14k027ivuYse2C0VC2B69_3c4edm9hTWF?usp=drive_link",
+    "OR": "https://drive.google.com/drive/folders/1lLddo0a0KT9JFAvluiYBQf8vmn4qgbho?usp=drive_link",
+    "MBG": "https://drive.google.com/drive/folders/14bDW_6mvvf-u66BWiHbtU_rwbrROi2Wv?usp=drive_link",
+    "IS": "https://drive.google.com/drive/folders/1q77aextVOBzqMNzDs4pGFaYJiGcGtR_X?usp=drive_link",
+    "IPR": "https://drive.google.com/drive/folders/1RW3iXNRA6KQSA1Tg8chTIXtZHfKacwhH?usp=drive_link",
+    "ICTD": "https://drive.google.com/drive/folders/1ARe3dTpVRhDbtWXumVRJJ4eTqdwPLLQV?usp=drive_link",
+    "HRM": "https://drive.google.com/drive/folders/1IXDcrQ5LGrrJl34ZDoQFD1PPmUAwJHoE?usp=drive_link",
+    "DM": "https://drive.google.com/drive/folders/1TiAwnfcKBmBgBPl5QRsXYnzLIEx-QfeI?usp=drive_link",
+    "DAP": "https://drive.google.com/drive/folders/15wSv9-yayY6cmK3ULLZcQkZixBv9dIbo?usp=drive_link",
+    "CLE": "https://drive.google.com/drive/folders/1oVe-BGSDZo6phO1wN9KWzmPs7SiBGLQx?usp=drive_link"
+  },
+  "Sem7": {
+    "NT": "https://drive.google.com/drive/folders/1VKE0EeHX1C59b6Dq0AQPSI9vzIlVFgVz?usp=drive_link",
+    "Maths-III": "https://drive.google.com/drive/folders/1LggxluEYOKBupHWcQjiPvZBZu8NHpr3S?usp=drive_link",
+    "IC": "https://drive.google.com/drive/folders/1U2GlcCRxHBP8ReOxN8A2JHXb7tRfFI-L?usp=drive_link",
+    "EM": "https://drive.google.com/drive/folders/1sWaJePo4EcA1y7kNCpKc3gPx-wDx8mzj?usp=drive_link",
+    "ED": "https://drive.google.com/drive/folders/16ejyB2l_yUOjOJsQVTHY4Oe_Irvb7EDF?usp=drive_link",
+    "DSD": "https://drive.google.com/drive/folders/16VnYVuCuE7tFjOWvI6sGRODU8vE091FW?usp=drive_link",
+    "Misc": "https://drive.google.com/drive/folders/1hxRVbq_JyVLiiHKO7tJ1Wi3Z33CiBMJn?usp=drive_link"
+  }
+},
+      Elect_Comp: {
+  "Sem3": {
+    "NT": "https://drive.google.com/drive/folders/1VKE0EeHX1C59b6Dq0AQPSI9vzIlVFgVz?usp=drive_link",
+    "Maths-III": "https://drive.google.com/drive/folders/1LggxluEYOKBupHWcQjiPvZBZu8NHpr3S?usp=drive_link",
+    "IC": "https://drive.google.com/drive/folders/1U2GlcCRxHBP8ReOxN8A2JHXb7tRfFI-L?usp=drive_link",
+    "EM": "https://drive.google.com/drive/folders/1sWaJePo4EcA1y7kNCpKc3gPx-wDx8mzj?usp=drive_link",
+    "ED": "https://drive.google.com/drive/folders/16ejyB2l_yUOjOJsQVTHY4Oe_Irvb7EDF?usp=drive_link",
+    "DSD": "https://drive.google.com/drive/folders/16VnYVuCuE7tFjOWvI6sGRODU8vE091FW?usp=drive_link",
+    "Misc": "https://drive.google.com/drive/folders/1hxRVbq_JyVLiiHKO7tJ1Wi3Z33CiBMJn?usp=drive_link"
+  },
+  "Sem4": {
+    "TSS": "https://drive.google.com/drive/folders/1zFGcXODMNsCOsZ8agSawbt89dNF6eVHp?usp=drive_link",
+    "MPA": "https://drive.google.com/drive/folders/1oksZ9t_SqX5NPZAszRdvA2xSlffjwCwB?usp=drive_link",
+    "DSDA": "https://drive.google.com/drive/folders/1QWf1sslUabDAfn0ZiusNhjtd3VW6JRHa?usp=drive_link",
+    "DC": "https://drive.google.com/drive/folders/1jV4yRxZE1aQe9HKhJIhbpaUX2GV1SjWZ?usp=drive_link",
+    "DSPy": "https://drive.google.com/drive/folders/1MnMxajkrvbELapO2TYQEUX0yelLTPs5T?usp=drive_link",
+    "Bio": "https://drive.google.com/drive/folders/1v3O94tp6pqcJ-DD2r1ng2lEC3umOLTbu?usp=drive_link",
+    "AEC": "https://drive.google.com/drive/folders/12U73safFtvg14VnFNPpS2_shwPDeTXaJ?usp=drive_link"
+  },
+  "Sem5": {
+    "SS": "https://drive.google.com/drive/folders/1I70Vru8ZJ-Qsur-96VPOoDo_Jax1Uhec?usp=drive_link",
+    "MPMC": "https://drive.google.com/drive/folders/1GGOLKxIDi3TI8Nk_zEAQDYTTCUTZ7jFB?usp=drive_link",
+    "IC": "https://drive.google.com/drive/folders/1U2GlcCRxHBP8ReOxN8A2JHXb7tRfFI-L?usp=drive_link",
+    "EM": "https://drive.google.com/drive/folders/1sWaJePo4EcA1y7kNCpKc3gPx-wDx8mzj?usp=drive_link",
+    "ED": "https://drive.google.com/drive/folders/16ejyB2l_yUOjOJsQVTHY4Oe_Irvb7EDF?usp=drive_link",
+    "DSD": "https://drive.google.com/drive/folders/16VnYVuCuE7tFjOWvI6sGRODU8vE091FW?usp=drive_link",
+    "Misc": "https://drive.google.com/drive/folders/1D00VEdFKbxlw2V7Q7fG16pPnDGPlSF57?usp=drive_link"
+  },
+  "Sem6": {
+    "VID": "https://drive.google.com/drive/folders/1h71Hqxncv4rS-NU1jIbI4rccwg2bxce1?usp=drive_link",
+    "SE": "https://drive.google.com/drive/folders/14C9dPeHHA9doO3NIh-s662mb9JPTBm9A?usp=drive_link",
+    "SSIC": "https://drive.google.com/drive/folders/1c9DPXG99AwqIr1lhppWG-dqlN2txhhA0?usp=drive_link",
+    "MBG": "https://drive.google.com/drive/folders/1W5mOk8BIyLUh81IqiRCphrKIU63CvV8A?usp=drive_link",
+    "MC": "https://drive.google.com/drive/folders/1o1XqEYF3WMZr3s4NFQI3z4HHaPyS7Sta?usp=drive_link",
+    "IoT": "https://drive.google.com/drive/folders/1RXPpKXybd0vE5oo-piBJ4Pj75oRPFkwd?usp=drive_link",
+    "IS": "https://drive.google.com/drive/folders/1PN-yIzFSdMmrLMsXh2XjRiYYKbSetAnb?usp=drive_link",
+    "DSP": "https://drive.google.com/drive/folders/1w_eTBbe32TxgfrdLA9brPmsLlle6bmit?usp=drive_link",
+    "DM": "https://drive.google.com/drive/folders/1RWALniPeIZY2yv7nodmCfAZVlcBxs1tF?usp=drive_link",
+    "CN": "https://drive.google.com/drive/folders/1CtTE8GG0KHEGNvhjDS-aIcCf6Uwu7EeA?usp=drive_link"
+  },
+  "Sem7": {
+    "NT": "https://drive.google.com/drive/folders/1VKE0EeHX1C59b6Dq0AQPSI9vzIlVFgVz?usp=drive_link",
+    "Maths-III": "https://drive.google.com/drive/folders/1LggxluEYOKBupHWcQjiPvZBZu8NHpr3S?usp=drive_link",
+    "IC": "https://drive.google.com/drive/folders/1U2GlcCRxHBP8ReOxN8A2JHXb7tRfFI-L?usp=drive_link",
+    "EM": "https://drive.google.com/drive/folders/1sWaJePo4EcA1y7kNCpKc3gPx-wDx8mzj?usp=drive_link",
+    "ED": "https://drive.google.com/drive/folders/16ejyB2l_yUOjOJsQVTHY4Oe_Irvb7EDF?usp=drive_link",
+    "DSD": "https://drive.google.com/drive/folders/16VnYVuCuE7tFjOWvI6sGRODU8vE091FW?usp=drive_link",
+    "Misc": "https://drive.google.com/drive/folders/1hxRVbq_JyVLiiHKO7tJ1Wi3Z33CiBMJn?usp=drive_link"
+  }
+},
+      EEE: {
+  "Sem3": {
+    "NT": "https://drive.google.com/drive/folders/1VKE0EeHX1C59b6Dq0AQPSI9vzIlVFgVz?usp=drive_link",
+    "Maths-III": "https://drive.google.com/drive/folders/1LggxluEYOKBupHWcQjiPvZBZu8NHpr3S?usp=drive_link",
+    "IC": "https://drive.google.com/drive/folders/1U2GlcCRxHBP8ReOxN8A2JHXb7tRfFI-L?usp=drive_link",
+    "EM": "https://drive.google.com/drive/folders/1sWaJePo4EcA1y7kNCpKc3gPx-wDx8mzj?usp=drive_link",
+    "ED": "https://drive.google.com/drive/folders/16ejyB2l_yUOjOJsQVTHY4Oe_Irvb7EDF?usp=drive_link",
+    "DSD": "https://drive.google.com/drive/folders/16VnYVuCuE7tFjOWvI6sGRODU8vE091FW?usp=drive_link",
+    "Misc": "https://drive.google.com/drive/folders/1hxRVbq_JyVLiiHKO7tJ1Wi3Z33CiBMJn?usp=drive_link"
+  },
+  "Sem4": {
+    "SS": "https://drive.google.com/drive/folders/1b_QNpYSa8yCzLX5awici3hnFQk3CXRtp?usp=drive_link",
+    "EVS": "https://drive.google.com/drive/folders/1oEV3oGZuQDWBZ9EEQDZ03O4PRhJhoJs0?usp=drive_link",
+    "EMach": "https://drive.google.com/drive/folders/1kv3PuwgAZ4846UyYaU6lTLDOwJZF4zCk?usp=drive_link",
+    "DE": "https://drive.google.com/drive/folders/1vvDUvtsFQXavapW_WczYp9O6np0biJO3?usp=drive_link"
+  },
+  "Sem5": {
+    "SS": "https://drive.google.com/drive/folders/1I70Vru8ZJ-Qsur-96VPOoDo_Jax1Uhec?usp=drive_link",
+    "MPMC": "https://drive.google.com/drive/folders/1GGOLKxIDi3TI8Nk_zEAQDYTTCUTZ7jFB?usp=drive_link",
+    "IC": "https://drive.google.com/drive/folders/1U2GlcCRxHBP8ReOxN8A2JHXb7tRfFI-L?usp=drive_link",
+    "EM": "https://drive.google.com/drive/folders/1sWaJePo4EcA1y7kNCpKc3gPx-wDx8mzj?usp=drive_link",
+    "ED": "https://drive.google.com/drive/folders/16ejyB2l_yUOjOJsQVTHY4Oe_Irvb7EDF?usp=drive_link",
+    "DSD": "https://drive.google.com/drive/folders/16VnYVuCuE7tFjOWvI6sGRODU8vE091FW?usp=drive_link",
+    "Misc": "https://drive.google.com/drive/folders/1D00VEdFKbxlw2V7Q7fG16pPnDGPlSF57?usp=drive_link"
+  },
+  "Sem6": {
+    "WSES": "https://drive.google.com/drive/folders/14gRvFjK6b5CdHAk72liTX0LSC3B2OEQp?usp=drive_link",
+    "PPE": "https://drive.google.com/drive/folders/1mrB6c4bACJtLc6wppocjqqgI87tWzrG4?usp=drive_link",
+    "EDrv": "https://drive.google.com/drive/folders/1WCCL2n_pYxXjkOw0rufWkF-jo0iQCXBW?usp=drive_link"
+  },
+  "Sem7": {
+    "NT": "https://drive.google.com/drive/folders/1VKE0EeHX1C59b6Dq0AQPSI9vzIlVFgVz?usp=drive_link",
+    "Maths-III": "https://drive.google.com/drive/folders/1LggxluEYOKBupHWcQjiPvZBZu8NHpr3S?usp=drive_link",
+    "IC": "https://drive.google.com/drive/folders/1U2GlcCRxHBP8ReOxN8A2JHXb7tRfFI-L?usp=drive_link",
+    "EM": "https://drive.google.com/drive/folders/1sWaJePo4EcA1y7kNCpKc3gPx-wDx8mzj?usp=drive_link",
+    "ED": "https://drive.google.com/drive/folders/16ejyB2l_yUOjOJsQVTHY4Oe_Irvb7EDF?usp=drive_link",
+    "DSD": "https://drive.google.com/drive/folders/16VnYVuCuE7tFjOWvI6sGRODU8vE091FW?usp=drive_link",
+    "Misc": "https://drive.google.com/drive/folders/1hxRVbq_JyVLiiHKO7tJ1Wi3Z33CiBMJn?usp=drive_link"
+  }
+},
+      EE: {
+  "Sem3": {
+    "NT": "https://drive.google.com/drive/folders/1VKE0EeHX1C59b6Dq0AQPSI9vzIlVFgVz?usp=drive_link",
+    "Maths-III": "https://drive.google.com/drive/folders/1LggxluEYOKBupHWcQjiPvZBZu8NHpr3S?usp=drive_link",
+    "IC": "https://drive.google.com/drive/folders/1U2GlcCRxHBP8ReOxN8A2JHXb7tRfFI-L?usp=drive_link",
+    "EM": "https://drive.google.com/drive/folders/1sWaJePo4EcA1y7kNCpKc3gPx-wDx8mzj?usp=drive_link",
+    "ED": "https://drive.google.com/drive/folders/16ejyB2l_yUOjOJsQVTHY4Oe_Irvb7EDF?usp=drive_link",
+    "DSD": "https://drive.google.com/drive/folders/16VnYVuCuE7tFjOWvI6sGRODU8vE091FW?usp=drive_link",
+    "Misc": "https://drive.google.com/drive/folders/1hxRVbq_JyVLiiHKO7tJ1Wi3Z33CiBMJn?usp=drive_link"
+  },
+  "Sem4": {
+    "SS": "https://drive.google.com/drive/folders/1dwGh0zvpqK5H1S04Ujax4abTVjbNIOor?usp=drive_link",
+    "PE": "https://drive.google.com/drive/folders/1AhfnOJ8KobtMZOcC-aqAX9LhKpvJUlQm?usp=drive_link",
+    "IES": "https://drive.google.com/drive/folders/1HLSM88VFfp4kzaEZhe8-BX7t2ywCcyCv?usp=drive_link",
+    "EVS": "https://drive.google.com/drive/folders/1vyu8qTpy56CbbLHiQrVc2QFVYXb3quVE?usp=drive_link",
+    "EMach": "https://drive.google.com/drive/folders/1fjSEViv2fRfA3q0fY09hgw4LqR0_976M?usp=drive_link",
+    "EECA": "https://drive.google.com/drive/folders/1c3iWlW31m0S-2tRGDX6hKSxB1ta1SYw_?usp=drive_link",
+    "DE": "https://drive.google.com/drive/folders/1m9jNbyp3652eNyMpkEp7xeWMVEOvLMnB?usp=drive_link"
+  },
+  "Sem5": {
+    "SS": "https://drive.google.com/drive/folders/1I70Vru8ZJ-Qsur-96VPOoDo_Jax1Uhec?usp=drive_link",
+    "MPMC": "https://drive.google.com/drive/folders/1GGOLKxIDi3TI8Nk_zEAQDYTTCUTZ7jFB?usp=drive_link",
+    "IC": "https://drive.google.com/drive/folders/1U2GlcCRxHBP8ReOxN8A2JHXb7tRfFI-L?usp=drive_link",
+    "EM": "https://drive.google.com/drive/folders/1sWaJePo4EcA1y7kNCpKc3gPx-wDx8mzj?usp=drive_link",
+    "ED": "https://drive.google.com/drive/folders/16ejyB2l_yUOjOJsQVTHY4Oe_Irvb7EDF?usp=drive_link",
+    "DSD": "https://drive.google.com/drive/folders/16VnYVuCuE7tFjOWvI6sGRODU8vE091FW?usp=drive_link",
+    "Misc": "https://drive.google.com/drive/folders/1D00VEdFKbxlw2V7Q7fG16pPnDGPlSF57?usp=drive_link"
+  },
+  "Sem6": {
+    "WSES": "https://drive.google.com/drive/folders/1KLHcGbQGjLe3qM7fJy8BSnIhNwL7J3Kr?usp=drive_link",
+    "PS2": "https://drive.google.com/drive/folders/1bNdGvU6i-7RaGdObIbKoh1K9ZaVS-JpU?usp=drive_link",
+    "PPE": "https://drive.google.com/drive/folders/16hbbVJW-d-irKgRB243jbmIXIYu6qEJp?usp=drive_link",
+    "ED2": "https://drive.google.com/drive/folders/1sQMTDx3O_KlvfbdwEHjcYDVWC81bzzBh?usp=drive_link",
+    "ED": "https://drive.google.com/drive/folders/1rGDguBGlVSPH2hDysC1ZBvSKssKGQmjp?usp=drive_link",
+    "EMI": "https://drive.google.com/drive/folders/1Uol0BIoK_UqBqIEEKNx7GtlL39cpMw_6?usp=drive_link",
+    "EDrv": "https://drive.google.com/drive/folders/1MUOG6F0mbbA8UbtrFhpIebAnXl0aMA1c?usp=drive_link",
+    "DSA": "https://drive.google.com/drive/folders/1cFpPqfeAUMgr3nYuZvJDh6B0-X0IHZUN?usp=drive_link",
+    "AI": "https://drive.google.com/drive/folders/145OF8Smq2heQRT-mm8KwopL037T3BYAN?usp=drive_link",
+    "IoT": "https://drive.google.com/file/d/10Kt6J4Yx45v9Qt-QCSU-dtoVcNFLqPgX/view?usp=drive_link",
+    "E-IoT": "https://drive.google.com/file/d/1wHN4bwlmP1y2mOPF4n0rP1IfMoLxCc1H/view?usp=drive_link"
+  },
+  "Sem7": {
+    "NT": "https://drive.google.com/drive/folders/1VKE0EeHX1C59b6Dq0AQPSI9vzIlVFgVz?usp=drive_link",
+    "Maths-III": "https://drive.google.com/drive/folders/1LggxluEYOKBupHWcQjiPvZBZu8NHpr3S?usp=drive_link",
+    "IC": "https://drive.google.com/drive/folders/1U2GlcCRxHBP8ReOxN8A2JHXb7tRfFI-L?usp=drive_link",
+    "EM": "https://drive.google.com/drive/folders/1sWaJePo4EcA1y7kNCpKc3gPx-wDx8mzj?usp=drive_link",
+    "ED": "https://drive.google.com/drive/folders/16ejyB2l_yUOjOJsQVTHY4Oe_Irvb7EDF?usp=drive_link",
+    "DSD": "https://drive.google.com/drive/folders/16VnYVuCuE7tFjOWvI6sGRODU8vE091FW?usp=drive_link",
+    "Misc": "https://drive.google.com/drive/folders/1hxRVbq_JyVLiiHKO7tJ1Wi3Z33CiBMJn?usp=drive_link"
+  }
+},
+      CE: {
+  "Sem3": {
+    "Maths-III": "https://drive.google.com/drive/folders/1RHrJxHNXm3PA1LMu3Z4ctcjsgGMOfuyr?usp=drive_link",
+    "ETC": "https://drive.google.com/drive/folders/1XcVXLFz794L4tNZn4r1LxEvqzU-pPmk2?usp=drive_link",
+    "DE": "https://drive.google.com/drive/folders/1dNjJD_n-V0OHFbAQNvadEeL9Tk_i2dDw?usp=drive_link",
+    "DSA": "https://drive.google.com/drive/folders/1vR9rCf3yO00Hy324NNBk_n4a14wrtme8?usp=drive_link",
+    "AEC": "https://drive.google.com/drive/folders/1OJwvzqzA7GG-tjQ2c_Tzh-YjtYjB4ZK6?usp=drive_link"
+  },
+  "Sem4": {
+    "OS": "https://drive.google.com/drive/folders/1pDgVmhpIICt_HtvQ5QxL2mosygTHijKI?usp=drive_link",
+    "EVS": "https://drive.google.com/drive/folders/1aVuY0QdMMJoGtzoZA7-0V1av0kK1iTHI?usp=drive_link",
+    "EFE": "https://drive.google.com/drive/folders/1zoKyz77sZ6dotf8T6CA7j00L3I4Vou_1?usp=drive_link",
+    "DM": "https://drive.google.com/drive/folders/1HiynCnHITRpv_5k3TuAW8eSh2c6rigju?usp=drive_link",
+    "DAA": "https://drive.google.com/drive/folders/1NheWADPy5zIbVzM0hxpJwxZNK71-3IaB?usp=drive_link",
+    "COA": "https://drive.google.com/drive/folders/1NIt-AcEN-PN1IflGzEmXEnkOgzqCGUAQ?usp=drive_link"
+  },
+  "Sem5": {
+    "SS": "https://drive.google.com/drive/folders/1rsJq92ZMZrlGa0xokkUTo150C6PGV9Uy?usp=drive_link",
+    "OOP": "https://drive.google.com/drive/folders/1bRRyhUBkV_Pu-8R-YZgwJ8IRkjiwKGc1?usp=drive_link",
+    "FLAC": "https://drive.google.com/drive/folders/1jkM_AHNmBdMFRnDacXPhVzdu-t8HaNyZ?usp=drive_link",
+    "Elec-I": "https://drive.google.com/drive/folders/1n0Jptb2GC5XhyG2KJwS9SZbGCJ0OFnwT?usp=drive_link",
+    "DBMS": "https://drive.google.com/drive/folders/1-Dffhvmj9X-DBrpegIyN-WyrHgYt3Bw7?usp=drive_link",
+    "IC": "https://drive.google.com/drive/folders/1pwSwpk10PU5rwLfm0zABeGiYWok1zeaC?usp=drive_link",
+    "Bio": "https://drive.google.com/drive/folders/1GnzhYtLXUVZEtntxwubbCjpOpkoHzAi1?usp=drive_link"
+  },
+  "Sem6": {
+    "SE": "https://drive.google.com/drive/folders/1aWOW_-vr2CLduji2zNRN-UwHkm7UyqDs?usp=drive_link",
+    "SSIC": "https://drive.google.com/drive/folders/1u8NICBTbj27SfHoBjcWpMTNE9I499nUx?usp=drive_link",
+    "SC": "https://drive.google.com/drive/folders/1Iq8b2iIIIokS-YBqateDCZJ9H0b1jk17?usp=drive_link",
+    "MBG": "https://drive.google.com/drive/folders/1aoI0RYPYQ6ankQUSEhHViC1tI4COtO3N?usp=drive_link",
+    "IS": "https://drive.google.com/drive/folders/1JejE1W66sg8wCVgqvCgAyYxldZx-D2qz?usp=drive_link",
+    "IPR": "https://drive.google.com/drive/folders/1NVX8CwvC-gFJEw2heRrzhn_NMPuWAA6W?usp=drive_link",
+    "ICTD": "https://drive.google.com/drive/folders/15Hay9CurbZxdMn8GpdSSI4lDf8adCUJA?usp=drive_link",
+    "HRM": "https://drive.google.com/drive/folders/1W1w7-LFGEwBCEJqmhVRApIsbzHHeHwWt?usp=drive_link",
+    "ES": "https://drive.google.com/drive/folders/16kFBtZKAmAIIpHUjN8gGZbSVQQxHVk46?usp=drive_link",
+    "DAP": "https://drive.google.com/drive/folders/1Qh0JA4swpPTLvuUPG8vWbX3Pz9N5LGgn?usp=drive_link",
+    "CN": "https://drive.google.com/drive/folders/1ZsOWuW2jVr3H4UNimhiPz2aqxRI2727g?usp=drive_link"
+  },
+  "Sem7": {
+    "OBFA": "https://drive.google.com/drive/folders/1BR1WL_DQkO5bPQY4zgGh_oIIJOmnUNfj?usp=drive_link",
+    "OE-IV": "https://drive.google.com/drive/folders/130d-il8vRcgytw3JQp_DjbhtOJ6RtZE_?usp=drive_link",
+    "OE-III": "https://drive.google.com/drive/folders/1_2rmv9EJ8vn9rIDXRIrhgnpUZ7RBhm_J?usp=drive_link",
+    "Elec-VI": "https://drive.google.com/drive/folders/12fXCMVi5nw5iWXmHxCQQrbb4OWw_FuF3?usp=drive_link",
+    "Elec-V": "https://drive.google.com/drive/folders/17hdYyPwL5e_szfsPZY0z8LsAHwjhBlQE?usp=drive_link",
+    "Elec-IV": "https://drive.google.com/drive/folders/1YLVWmVLwa9Xrsy80uDIw78zcaFtBeAH0?usp=drive_link"
+  }
+},
+      CIVIL: {
+  "Sem3": {
+    "NT": "https://drive.google.com/drive/folders/1VKE0EeHX1C59b6Dq0AQPSI9vzIlVFgVz?usp=drive_link",
+    "Maths-III": "https://drive.google.com/drive/folders/1LggxluEYOKBupHWcQjiPvZBZu8NHpr3S?usp=drive_link",
+    "IC": "https://drive.google.com/drive/folders/1U2GlcCRxHBP8ReOxN8A2JHXb7tRfFI-L?usp=drive_link",
+    "EM": "https://drive.google.com/drive/folders/1sWaJePo4EcA1y7kNCpKc3gPx-wDx8mzj?usp=drive_link",
+    "ED": "https://drive.google.com/drive/folders/16ejyB2l_yUOjOJsQVTHY4Oe_Irvb7EDF?usp=drive_link",
+    "DSD": "https://drive.google.com/drive/folders/16VnYVuCuE7tFjOWvI6sGRODU8vE091FW?usp=drive_link",
+    "Misc": "https://drive.google.com/drive/folders/1hxRVbq_JyVLiiHKO7tJ1Wi3Z33CiBMJn?usp=drive_link"
+  },
+  "Sem4": {
+    "UHV-II": "https://drive.google.com/drive/folders/1odIuxtvo4fBBMnRZ8tsxdpxDEwAE9hNZ?usp=drive_link",
+    "St Mat": "https://drive.google.com/drive/folders/1s3P6q9Ua01n7febFgbIap4uFGrga_kge?usp=drive_link",
+    "Sl Mech": "https://drive.google.com/drive/folders/12w4bGHmr8GRQq1sVmd2kVzUgRlSbYr79?usp=drive_link",
+    "Maths-III (Alt)": "https://drive.google.com/drive/folders/1DFVqWvO5Wvppk7bTiwfbh7vyMS_nrHdC?usp=drive_link",
+    "HW Engg": "https://drive.google.com/drive/folders/1L4qC7gYY5w5u-PimMs-uPsqoVWbuCAXw?usp=drive_link",
+    "EVS": "https://drive.google.com/drive/folders/1WQK7mzFfVQxB6mHa5ReAJMdk9usPRqVO?usp=drive_link",
+    "Env Engg": "https://drive.google.com/drive/folders/16yF9PfwM5HCuxyUsNw-wYJinpIX7NjQF?usp=drive_link",
+    "Engg Geo": "https://drive.google.com/drive/folders/1oZ5YldsDRTKz_JUr6445gaemyuD0yWqO?usp=drive_link",
+    "Bio": "https://drive.google.com/drive/folders/1u5PAIv2SNVzamRsh4fyjOErjnMpMUum9?usp=drive_link",
+    "AC-II BG": "https://drive.google.com/drive/folders/16o6OOm1m7rENUTcS6DtXG8t0XLHzAU6s?usp=drive_link"
+  },
+  "Sem5": {
+    "SS": "https://drive.google.com/drive/folders/1I70Vru8ZJ-Qsur-96VPOoDo_Jax1Uhec?usp=drive_link",
+    "MPMC": "https://drive.google.com/drive/folders/1GGOLKxIDi3TI8Nk_zEAQDYTTCUTZ7jFB?usp=drive_link",
+    "IC": "https://drive.google.com/drive/folders/1U2GlcCRxHBP8ReOxN8A2JHXb7tRfFI-L?usp=drive_link",
+    "EM": "https://drive.google.com/drive/folders/1sWaJePo4EcA1y7kNCpKc3gPx-wDx8mzj?usp=drive_link",
+    "ED": "https://drive.google.com/drive/folders/16ejyB2l_yUOjOJsQVTHY4Oe_Irvb7EDF?usp=drive_link",
+    "DSD": "https://drive.google.com/drive/folders/16VnYVuCuE7tFjOWvI6sGRODU8vE091FW?usp=drive_link",
+    "Misc": "https://drive.google.com/drive/folders/1D00VEdFKbxlw2V7Q7fG16pPnDGPlSF57?usp=drive_link"
+  },
+  "Sem6": {
+    "TA & TP": "https://drive.google.com/drive/folders/19wr6x8X4CTDq-T9G34V2YcTUTZ5-GTuA?usp=drive_link",
+    "SCP": "https://drive.google.com/drive/folders/1o6M3xzM0GIrMi64Wg-NSo-QSuucoN8TP?usp=drive_link",
+    "SHWM": "https://drive.google.com/drive/folders/1n0T__OwVuOnmlFEGO9BRCBP0feH4CQ15?usp=drive_link",
+    "R & IPR": "https://drive.google.com/drive/folders/1FgnC5uyrmDqS8Tv4GIepFo6VzE79CMWI?usp=drive_link",
+    "RW Engg": "https://drive.google.com/drive/folders/1zYOE8cJpxkoHbLQH3U7jSxVRTB0_5Xtd?usp=drive_link",
+    "MTE": "https://drive.google.com/drive/folders/1XBodTHUxqVAHh57AcGV0Z5OPiXgVUR7C?usp=drive_link",
+    "IC": "https://drive.google.com/drive/folders/1TT61Q9TY4OzcSs0wFqg_hhzJuh3vXC5h?usp=drive_link",
+    "H & WRM": "https://drive.google.com/drive/folders/1RrormPtuoZKA4rEtf4P1FnaX7mIcjIkc?usp=drive_link",
+    "HE": "https://drive.google.com/drive/folders/12JfIBw_kqeJ3qVON2lJqfdaZfbTVLhpj?usp=drive_link",
+    "HRM": "https://drive.google.com/drive/folders/1oaoVD2IA3eTOjPeon_4usFRrYNLD5Leo?usp=drive_link",
+    "HW & Mgmt": "https://drive.google.com/drive/folders/1OwB_hYxQ-aPvPlYmp1CamJ0q2setAfGi?usp=drive_link",
+    "GI": "https://drive.google.com/drive/folders/1tZ-dpJK3bMlbviblFOqGog6w8JhJASFT?usp=drive_link",
+    "GEE": "https://drive.google.com/drive/folders/1NmbSdkkXK8HAHmz50HrI5-u0k8TRWUTM?usp=drive_link",
+    "FE": "https://drive.google.com/drive/folders/1NnCI4214_ZuxCWzhkEWXWKyo9rXLv2fH?usp=drive_link",
+    "EIA": "https://drive.google.com/drive/folders/1TeCAKPOgIYSKYU0RKo8WXe2pu45Cu9wy?usp=drive_link",
+    "Eng Hyd": "https://drive.google.com/drive/folders/1_DjFfqg6EQv2chJdfS0UbPPgVd5uH7B3?usp=drive_link",
+    "Engg Eco": "https://drive.google.com/drive/folders/10eiqYLmstX5kdl0B8uEAhOCEN0b1hnuV?usp=drive_link",
+    "ERS": "https://drive.google.com/drive/folders/1S__nElzvF452TwedbPvyvz0xfGeWj1Mj?usp=drive_link",
+    "Dsg RS": "https://drive.google.com/drive/folders/1QaY4MHQ3ksfScUZMhrl8qggUUVbB4esX?usp=drive_link",
+    "Dsg PS": "https://drive.google.com/drive/folders/1eXoVRFj8iEIZS0jOKSmgT5NIlfoETN_T?usp=drive_link",
+    "Dsg CS": "https://drive.google.com/drive/folders/1JE9RuC4bCDSc-uCEoEsFbASmHeS7jNra?usp=drive_link",
+    "ANP": "https://drive.google.com/drive/folders/12nic_3SUb5Kt1RJKZWP7-uSyZwDVj91I?usp=drive_link",
+    "AFE": "https://drive.google.com/drive/folders/1laCgX5o4MlpGQPpCEg37o-VP0jUJvi7B?usp=drive_link"
+  },
+  "Sem7": {
+    "NT": "https://drive.google.com/drive/folders/1VKE0EeHX1C59b6Dq0AQPSI9vzIlVFgVz?usp=drive_link",
+    "Maths-III": "https://drive.google.com/drive/folders/1LggxluEYOKBupHWcQjiPvZBZu8NHpr3S?usp=drive_link",
+    "IC": "https://drive.google.com/drive/folders/1U2GlcCRxHBP8ReOxN8A2JHXb7tRfFI-L?usp=drive_link",
+    "EM": "https://drive.google.com/drive/folders/1sWaJePo4EcA1y7kNCpKc3gPx-wDx8mzj?usp=drive_link",
+    "ED": "https://drive.google.com/drive/folders/16ejyB2l_yUOjOJsQVTHY4Oe_Irvb7EDF?usp=drive_link",
+    "DSD": "https://drive.google.com/drive/folders/16VnYVuCuE7tFjOWvI6sGRODU8vE091FW?usp=drive_link",
+    "Misc": "https://drive.google.com/drive/folders/1hxRVbq_JyVLiiHKO7tJ1Wi3Z33CiBMJn?usp=drive_link"
+  }
+}
+    };
+
+   const branchGrid = document.getElementById('branch-grid');
+const semGrid = document.getElementById('sem-grid');
+const subjectGrid = document.getElementById('subject-grid');
+const linkGrid = document.getElementById('link-grid');
+const noData = document.getElementById('no-data');
+const title = document.getElementById('main-title');
+const backBtn = document.getElementById('backBtn');
+
+let currentStep = 'branch';
+let currentBranch = '';
+let currentSem = '';
+
+// Load branches
+Object.keys(pyqData).forEach(branch => {
+  const div = document.createElement('div');
+  div.className = 'box';
+  div.textContent = branch;
+  div.onclick = () => showSemesters(branch);
+  branchGrid.appendChild(div);
+});
+
+function showSemesters(branch) {
+  currentStep = 'sem';
+  currentBranch = branch;
+  title.textContent = `${branch} - Choose Semester`;
+  branchGrid.classList.add('hidden');
+  semGrid.classList.remove('hidden');
+  backBtn.classList.remove('hidden');
+  semGrid.innerHTML = '';
+  noData.classList.add('hidden');
+
+  const availableSems = Object.keys(pyqData[branch] || {});
+  if (availableSems.length === 0) {
+    noData.classList.remove('hidden');
+    return;
+  }
+
+  availableSems.forEach(sem => {
+    const div = document.createElement('div');
+    div.className = 'box';
+    div.textContent = sem;
+    div.onclick = () => showSubjects(sem);
+    semGrid.appendChild(div);
+  });
+}
+
+function showSubjects(sem) {
+  currentStep = 'subject';
+  currentSem = sem;
+  title.textContent = `${sem} - Choose Subject`;
+  semGrid.classList.add('hidden');
+  subjectGrid.classList.remove('hidden');
+  subjectGrid.innerHTML = '';
+  noData.classList.add('hidden');
+
+  const subjects = Object.keys(pyqData[currentBranch]?.[sem] || {});
+  if (subjects.length === 0) {
+    noData.classList.remove('hidden');
+    return;
+  }
+
+  subjects.forEach(subject => {
+    const div = document.createElement('div');
+    div.className = 'box';
+    div.textContent = subject;
+    div.onclick = () => showLink(subject);
+    subjectGrid.appendChild(div);
+  });
+}
+
+function showLink(subject) {
+  currentStep = 'link';
+  title.textContent = `${subject} - Paper Link`;
+  subjectGrid.classList.add('hidden');
+  linkGrid.classList.remove('hidden');
+  linkGrid.innerHTML = '';
+  const link = pyqData[currentBranch]?.[currentSem]?.[subject];
+  if (!link) {
+    noData.classList.remove('hidden');
+    return;
+  }
+
+  const div = document.createElement('div');
+  div.className = 'box';
+  div.innerHTML = `<a href="${link}" target="_self">View PDF</a>`;
+  linkGrid.appendChild(div);
+}
+
+function goBack() {
+  noData.classList.add('hidden');
+
+  if (currentStep === 'link') {
+    currentStep = 'subject';
+    title.textContent = `${currentSem} - Choose Subject`;
+    linkGrid.classList.add('hidden');
+    subjectGrid.classList.remove('hidden');
+
+  } else if (currentStep === 'subject') {
+    currentStep = 'sem';
+    title.textContent = `${currentBranch} - Choose Semester`;
+    subjectGrid.classList.add('hidden');
+    semGrid.classList.remove('hidden');
+
+  } else if (currentStep === 'sem') {
+    currentStep = 'branch';
+    title.textContent = 'B.Tech PYQs - Choose Branch';
+    semGrid.classList.add('hidden');
+    branchGrid.classList.remove('hidden');
+    backBtn.classList.add('hidden');
+  }
+}
+
+  </script>
+</body>
+</html>

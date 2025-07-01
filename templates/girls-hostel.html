@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Girls Hostel - YMCA Faridabad</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fcefee, #f4f9fd);
+      color: #333;
+    }
+    main {
+      flex: 1;
+    }
+
+    .gh-header {
+      background-color: #d63384;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .gh-section-title {
+      text-align: center;
+      color: #d63384;
+      font-weight: bold;
+      margin-top: 40px;
+    }
+
+    .gh-content-section {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 30px;
+      margin: 30px 0;
+    }
+
+    .gh-video-title {
+      font-weight: 600;
+      margin: 15px 0 5px;
+      color: #d63384;
+      text-align: center;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+  
+  </style>
+</head>
+<body>
+
+  {% include 'header.html' %}
+
+  <main>
+    <header class="gh-header">
+      YMCA Girls Hostel - Faridabad
+    </header>
+
+    <div class="container">
+      <h2 class="gh-section-title">Girls Hostel Facilities and Rules</h2>
+      <div class="gh-content-section">
+        <p>Located near the main administrative offices of the University, Girls’ Hostel is an affordable, homely and safe accommodation with following facilities:</p>
+        <ul>
+          <li>Mess Facility with hygienic food, inspected regularly, and police-verified staff</li>
+          <li>Well-ventilated and spacious rooms</li>
+          <li>Reading room, Common room with LED TV, Visitor room, and Guest room</li>
+          <li>Modern gym for physical & mental wellness</li>
+          <li>24x7 RO water, ambulance and first-aid</li>
+          <li>Sports courts (Badminton & Basketball)</li>
+          <li>CCTV surveillance and security personnel</li>
+          <li>Biometric & manual attendance system</li>
+          <li>Sanitary Napkin Vending Machines and Incinerators</li>
+          <li>Hot water, cooktops, sandwich makers, newspapers, magazines</li>
+          <li>Wi-Fi in all wings and power backup</li>
+          <li>Fire safety, pest control and fumigation regularly conducted</li>
+          <li>Awareness lectures on hygiene and wellness</li>
+          <li>Programs: Self-defense, Anti-ragging, Career counseling, Yoga</li>
+          <li>Annual fresher party to foster bonding</li>
+          <li>Discipline rules with strict timings and ragging prohibition</li>
+          <li>Feedback, complaint registers, and suggestion box</li>
+          <li>Inspection and cleanliness reports maintained</li>
+        </ul>
+      </div>
+
+      <h2 class="gh-section-title">Glimpses of Facilities</h2>
+      <div class="row g-4">
+        {% set videos = [
+          ('Fresher girls  hostel in YMCA Faridabad ..mp4', 'Fresher Girls Hostel'),
+          ('1st and 2nd year girl hostel room in YMCA Faridabad.mp4', '1st & 2nd Year Hostel Room'),
+          ('Gym of YMCA Faridabad.mp4', 'Gym Facility'),
+          ('mess food in YMCA Faridabad.mp4', 'Mess Food'),
+          ('Mess of YMCA Faridabad.mp4', 'Mess Area'),
+          ('New girls hostel in YMCA Faridabad.mp4', 'New Girls Hostel'),
+          ('new girls hostel in YMCA Faridabad.mp4', 'New Hostel (Interior)'),
+          ('senior girls hostel room in YMCA Faridabad.mp4', 'Senior Girls Hostel Room')
+        ] %}
+        {% for video, title in videos %}
+        <div class="col-md-6 col-lg-4">
+          <video controls>
+            <source src="{{ url_for('static', filename='videos/' ~ video) }}" type="video/mp4">
+          </video>
+          <div class="gh-video-title">{{ title }}</div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <h2 class="gh-section-title">Mess and Hostel Rules</h2>
+      <div class="gh-content-section">
+        <p>The hostel mess is contract-based and managed by mess committees formed from the residents. Mess rules include:</p>
+        <ul>
+          <li>Residents must carry hostel I-cards to the mess</li>
+          <li>Cooking in rooms is prohibited</li>
+          <li>Meals are served only in the dining hall during specified hours</li>
+          <li>Students must dress decently in the mess</li>
+          <li>Fine applicable for delay in monthly mess bill payment</li>
+          <li>Utensils must not be taken outside dining area</li>
+          <li>No outsider or proxy meal-taking allowed</li>
+          <li>Minimum of 25 days' mess bill payment is mandatory</li>
+          <li>Clearance required before leaving hostel after exams</li>
+          <li>Permission process defined for extracurricular events participation</li>
+        </ul>
+        <p><strong>Meal Timings:</strong></p>
+        <ul>
+          <li><strong>Breakfast:</strong> 07:30 am – 09:30 am</li>
+          <li><strong>Lunch:</strong> 12:30 pm – 02:15 pm</li>
+          <li><strong>Dinner:</strong> 08:00 pm – 09:30 pm</li>
+        </ul>
+      </div>
+
+      <h2 class="gh-section-title">Mess Menu (YMCA Girls Hostel)</h2>
+      <div class="gh-content-section">
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped text-center">
+            <thead class="table-secondary">
+              <tr>
+                <th>Day</th>
+                <th>Breakfast</th>
+                <th>Lunch</th>
+                <th>Dinner</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Monday</td><td>Poha + Milk + Banana</td><td>Udad Channa Dal + Rice + Jeera Raita + Salad</td><td>Seasonal Veg + Moong Sabut Dal + Salad</td></tr>
+              <tr><td>Tuesday</td><td>Methi/Palak Parathe + Achar + Tea</td><td>Rajma Rice + Mix Raita + Salad</td><td>Moong+Masoor Dal + Black Chana/Mix Veg + Halwa + Salad</td></tr>
+              <tr><td>Wednesday</td><td>Macroni + Milk</td><td>White Chole + Fried Rice + Bundi Raita + Salad</td><td>Dum Aloo + Sabut Masoor Dal + Salad + Gulab Jamun/Rasgulla</td></tr>
+              <tr><td>Thursday</td><td>Onion Paratha + Tea + Butter</td><td>Sambar + Rice + Jeera Raita + Salad</td><td>Shahi Paneer + Sabut Udad Dal + Veg Cutlet + Salad</td></tr>
+              <tr><td>Friday</td><td>Aloo Puri + Tea</td><td>Rajma Rice + Bundi Raita + Salad</td><td>Moong Dhuli + Seasonal Veg + Salad</td></tr>
+              <tr><td>Saturday</td><td>Aloo Paratha + Curd + Tea</td><td>Black Chane + Rice + Mix Raita + Salad</td><td>Aloo Gobhi/French Beans + Arhar Dal + Salad</td></tr>
+              <tr><td>Sunday</td><td>Idli Sambhar + Chutney + Milk</td><td>Chhole Bhature + Lassi + Salad</td><td>Moong Masoor + Soyabean + Salad</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+ {% include 'footer.html' %} 
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

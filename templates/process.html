@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Club Membership Drive 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(120deg, #f1f9ff, #e6f0ff);
+      color: #333;
+    }
+
+    .header {
+      background: linear-gradient(to right, #0074e4, #002f6c);
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .header h1 {
+      font-weight: 700;
+      font-size: 2.5rem;
+    }
+
+    .section-title {
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: #004aad;
+      margin-top: 2rem;
+    }
+
+    .step-card {
+      border-left: 5px solid #0074e4;
+      background: #ffffffdd;
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .btn-register {
+      background: #004aad;
+      color: white;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1.5rem;
+    }
+
+    .btn-register:hover {
+      background: #003b85;
+      color: white;
+    }
+
+    .contact {
+      background: #f5faff;
+      border-radius: 10px;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    
+
+    .insta-link {
+      color: #e1306c;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .insta-link:hover {
+      text-decoration: underline;
+    }
+    .maindiv{
+      margin-top: 80px;
+    }
+  </style>
+</head>
+<body>
+{% include 'header.html' %}
+  <div class="header maindiv">
+    <h1>‼ CLUB MEMBERSHIP DRIVE 2025 ‼</h1>
+    <p>Join a vibrant, creative, and passionate community on campus!</p>
+  </div>
+
+  <div class="container py-4">
+    <h2 class="section-title">Selection Process</h2>
+
+    <div class="step-card">
+      <h5>🔹 ROUND 1: Initial Assessment</h5>
+      <p>
+        The first step involves a short assessment to understand your aptitude and interests. It may include:
+        <ul>
+          <li>Logical reasoning, problem-solving, or creativity tasks</li>
+          <li>Domain-based basic questions</li>
+          <li>Short answers or multiple choice</li>
+        </ul>
+        <strong>Duration:</strong> ~30 minutes
+      </p>
+    </div>
+
+    <div class="step-card">
+      <h5>🔹 ROUND 2: Task or Presentation</h5>
+      <p>
+        Demonstrate your skills or share your ideas via:
+        <ul>
+          <li>A mini project or relevant performance</li>
+          <li>Presentation of past work or a new concept</li>
+          <li>Optional: live demo or slides (PPT/Canva)</li>
+        </ul>
+        <strong>Time Limit:</strong> 5–7 minutes
+      </p>
+    </div>
+
+    <div class="step-card">
+      <h5>🔹 ROUND 3: Personal Interaction</h5>
+      <p>
+        In this round, we’d like to learn more about:
+        <ul>
+          <li>Your motivation to join the club</li>
+          <li>Your strengths, teamwork, and passion</li>
+          <li>Your vision and learning mindset</li>
+        </ul>
+        Just be yourself!
+      </p>
+    </div>
+
+    <div class="text-center">
+      <a href="https://forms.gle/YOUR_FORM_LINK" class="btn-register" onclick="showAlert()" target="_blank">🔗 Register Now</a>
+    </div>
+
+    <div class="contact mt-5">
+      <h5>📞 Contact Us</h5>
+      <p>
+        Member 1: +91 XXXXX XXXXX<br>
+        Member 2: +91 XXXXX XXXXX<br>
+        Member 3: +91 XXXXX XXXXX
+      </p>
+    </div>
+
+    <div class="mt-4 text-center">
+      📲 For latest updates:<br>
+      <a href="#" class="insta-link" target="_blank">@clubname.ymca</a>
+    </div>
+  </div>
+{% include 'footer.html' %}
+  
+
+  <script>
+    function showAlert() {
+      alert("As the Auditions open! You'll now be redirected to the registration form.");
+    }
+  </script>
+
+</body>
+</html>

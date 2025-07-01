@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Electronics Engineering - YMCA Faridabad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #003366;
+      --accent: #00aaff;
+      --light-bg: #f0f6fc;
+      --card-bg: #ffffff;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--light-bg);
+      color: #222;
+    }
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      padding: 3rem 1rem 2rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .section {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 1.8rem 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      border-left: 6px solid var(--accent);
+    }
+    .section h2 {
+      margin-top: 0;
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .section ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+    .section p, .section li {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+   
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .section h2 {
+        font-size: 1.3rem;
+      }
+    }
+    .maindiv {
+      margin-top: 80px;
+    }
+  </style>
+</head>
+<body>
+{% include 'header.html' %}
+  <header class="maindiv">
+    <h1>Electronics Engineering</h1>
+    <p>B.Tech in Electronics Engineering - YMCA Faridabad</p>
+  </header>
+
+  <div class="container">
+
+    <div class="section">
+      <h2>About the Department</h2>
+      <p>The Electronics Engineering department at YMCA Faridabad provides in-depth knowledge of electronic circuits, embedded systems, semiconductors, and signal processing. The curriculum blends theory with VLSI, IoT, and communication technologies to meet industry demand.</p>
+    </div>
+
+    <div class="section">
+      <h2>What You Will Learn</h2>
+      <ul>
+        <li>Analog and Digital Circuit Design</li>
+        <li>Microprocessors & Embedded Systems</li>
+        <li>Signal Processing (DSP) & Communication Systems</li>
+        <li>VLSI, HDL & FPGA Programming</li>
+        <li>IoT, Sensors, and System Integration</li>
+        <li>Electronic Measurement & Instrumentation</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Laboratories and Facilities</h2>
+      <ul>
+        <li>VLSI & Digital Design Lab</li>
+        <li>Embedded Systems Lab (Arduino, ARM, IoT Kits)</li>
+        <li>Analog & Digital Communication Lab</li>
+        <li>PCB Design & Fabrication Lab</li>
+        <li>DSP Lab with MATLAB/Simulink</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Career Opportunities</h2>
+      <ul>
+        <li>Semiconductor & Electronics Companies: Intel, NXP, Qualcomm</li>
+        <li>Embedded Systems, Robotics & IoT</li>
+        <li>Defense R&D Labs: DRDO, ISRO, BEL</li>
+        <li>Communication & Signal Processing: Airtel, Ericsson, Nokia</li>
+        <li>Higher Education or Research in VLSI, Embedded, or AI/ML</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Student Highlights</h2>
+      <ul>
+        <li>Projects on smart devices, IoT & wireless systems</li>
+        <li>Internships at STMicroelectronics, DRDO, and BEL</li>
+        <li>Tech fests and IEEE paper presentations</li>
+      </ul>
+    </div>
+
+  </div>
+
+
+{% include 'footer.html' %}
+</body>
+</html>

@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YMCA Alumni Network</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .alumni-section {
+      padding: 80px 20px;
+      background: linear-gradient(to right, #f9f9f9, #eef1f6);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 60px;
+      color: #2c3e50;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      width: 100px;
+      height: 4px;
+      background: #3498db;
+      display: block;
+      margin: 10px auto 0;
+      border-radius: 5px;
+    }
+
+    .alumni-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .alumni-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    .alumni-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid #e1eaff;
+      margin-bottom: 20px;
+    }
+
+    .alumni-info h5 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #2c3e50;
+    }
+
+    .alumni-info p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 5px;
+    }
+
+    .linkedin-btn {
+      margin-top: 12px;
+      display: inline-block;
+      background: linear-gradient(to right, #0077b5, #005b8a);
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s ease;
+    }
+
+    .linkedin-btn:hover {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 2.2rem;
+      }
+
+      .alumni-img {
+        width: 140px;
+        height: 140px;
+      }
+    }
+    .maindiv{
+      margin-top: 80px;
+    }
+  </style>
+</head>
+<body>
+{% include 'header.html' %}
+  <section class="alumni-section maindiv">
+    <h2 class="section-title">Top Alumni - Placed in Leading Companies</h2>
+    <div class="container">
+      <div class="row g-4 justify-content-center">
+
+        <!-- Alumni Card 1 -->
+        <div class="col-md-6 col-lg-3 ">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQHYlqSl-gkvUA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1731395179897?e=1756339200&v=beta&t=iE-mWg8M_G7IjvQhJz2ZHOl0zuIK21DTO3xOhcfpUAU" class="alumni-img" alt="Shubham Puhal">
+            <div class="alumni-info">
+              <h5>Shubham Puhal</h5>
+              <p><strong>Branch:</strong> CE | <strong>Year:</strong> 2022-2026</p>
+              <p><strong>Company:</strong> Google</p>
+              <a href="https://www.linkedin.com/in/shubhampuhal/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Alumni Card 2 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQEJnkAqZ4S1zw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1723048832371?e=1756339200&v=beta&t=ixie8mCFIHufgjhu4Nss3_Jr6RVR5P4zr4Xztlijneg" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Kshitiz Jaiswal</h5>
+              <p><strong>Branch:</strong> Computer Engineering (Specialization in Data Science)  | <strong>Year:</strong> 2020-2024</p>
+              <p><strong>Company:</strong>Google ,Ex-Amazon, GoldmanSachs</p>
+              <a href="https://www.linkedin.com/in/kshitizjaiswal/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+<!-- 3 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/C5603AQHobJQJCeL4Ow/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1621096374867?e=1756339200&v=beta&t=f7GHUg_6_H863AQfN4J1sl2szfakyy4mfGG8biUbZN4" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Shirin K.</h5>
+              <p><strong>Branch:</strong> IT| <strong>Year:</strong> 2019-2023</p>
+              <p><strong>Company:</strong>Google</p>
+              <a href="https://www.linkedin.com/in/shirin-k-3612b5208/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/C5103AQG--4Qp58qN7Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1574046925850?e=1756339200&v=beta&t=OJg6MS45631nn1whyV0VT9VfrloDaUAQZpVNJJlVTlU" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Sarthak Grover</h5>
+              <p><strong>Branch:</strong> --| <strong>Year:</strong> 2013-2017</p>
+              <p><strong>Company:</strong>SDE-2 at Microsoft I Ex-Paytm</p>
+              <a href="https://www.linkedin.com/in/sarthak-grover-a637a4141/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+  <!-- 5 -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQEf9zHsruL9ww/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1727694880622?e=1756339200&v=beta&t=hh7J-j0NLj4Idv9BKBtlsW6mN-d7nu-fikd_xHvts8I" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Pooja Sethi </h5>
+              <p><strong>Branch:</strong> IT| <strong>Year:</strong> 2016-2020</p>
+              <p><strong>Company:</strong>Microsoft</p>
+              <a href="https://www.linkedin.com/in/pooja-sethi-409117170/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+     <!-- 6 -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQEMmPGDxnKZGQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1706898999793?e=1756339200&v=beta&t=f9honoRFJrmhM_ZI0jxinipAmeT0A3RkHFASsFiQ0Gs" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Anshul Aggarwal  </h5>
+              <p><strong>Branch:</strong> ENC| <strong>Year:</strong> 2020-2024</p>
+              <p><strong>Company:</strong>SDE @Amazon | Ex SDE @ION | Ex SDE Intern @Amazon</p>
+              <a href="https://www.linkedin.com/in/anshul-aggarwal-13a057243/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+     <!-- 7 -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/C4D03AQFUuulgRtToPw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1663655570775?e=1756339200&v=beta&t=66UK81Djflv7U4TAq4X_NsjxLGaQiTVBVMmr4I4HFhE" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Srishti Verma  </h5>
+              <p><strong>Branch:</strong> IT| <strong>Year:</strong> 2021-2025</p>
+              <p><strong>Company:</strong>SDE Intern @Amazon'25 </p>
+              <a href="https://www.linkedin.com/in/srishtiv424/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+         <!-- 8 -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQEPcWE1a-UE5A/profile-displayphoto-shrink_400_400/B56ZQe0shyGsAg-/0/1735683920063?e=1756339200&v=beta&t=nYEiJlcWSAkyjd0-CqI2Y_PiH6TTv8-PHfgukXzDVhY" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Kannu Prieya   </h5>
+              <p><strong>Branch:</strong> ECE| <strong>Year:</strong> 2018-2022</p>
+              <p><strong>Company:</strong>SDE 2 - Amazon || Top 10 - BNY Code Divas'21 || AIR 7 @TechGig Godess'21 </p>
+              <a href="https://www.linkedin.com/in/kannu-prieya/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+             <!-- 9 -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQGA4JK543uUDw/profile-displayphoto-shrink_400_400/B56ZP5YFdEHoAg-/0/1735055662699?e=1756339200&v=beta&t=rYguGyID2zUl5n2yPgKXITSriRwUpu-9ncCONmnjU60" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>SANDHYA JHA   </h5>
+              <p><strong>Branch:</strong> CE| <strong>Year:</strong> 2020-2024</p>
+              <p><strong>Company:</strong>SDE 1 At Flipkart</p>
+              <a href="https://www.linkedin.com/in/sandhyajha0207/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10 -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQG_YkyMTn-ibQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1733082331673?e=1756339200&v=beta&t=hGIpsFpqbAaaHexTxcf32rsjWV-1SjTWFjlENmYWEfM" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Khushi Antil    </h5>
+              <p><strong>Branch:</strong> ECE| <strong>Year:</strong> 2021-2025</p>
+              <p><strong>Company:</strong>Neev Intern- Flipkart</p>
+              <a href="https://www.linkedin.com/in/khushi-antil-3b7912242/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+          <!-- 11 -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQFW2YZlu0ST-g/profile-displayphoto-shrink_400_400/B56ZSK1M_.HoAg-/0/1737495990888?e=1756339200&v=beta&t=JTTCY2m39aQfNrse1kLQzazDPVh1ZxcqLAeUC9DKpHg" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Smriti Srivastava   </h5>
+              <p><strong>Branch:</strong> Computer Engineering (Specialization in Data Science) | <strong>Year:</strong> 2020-2024</p>
+              <p><strong>Company:</strong>SDE-1 @Flipkart | Amazon ML Summer School'22 | Microsoft Engage'22</p>
+              <a href="https://www.linkedin.com/in/smriti-srivastava1311/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+           <!-- 12 -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQEZVy9BaeVimA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1710475595760?e=1756339200&v=beta&t=k3kUhTDxsW7iig4mJXAzrdahJhvVvTuPs_RYb-AOnw8" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Gaurav Anand  </h5>
+              <p><strong>Branch:</strong> ME | <strong>Year:</strong> 2017-2021</p>
+              <p><strong>Company:</strong>Manager at flipkart ||Grocery-CT ||Mechanical Engineer</p>
+              <a href="https://www.linkedin.com/in/smriti-srivastava1311/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+          <!-- 13 -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D4D03AQEfv9PbCUYT0Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1684336105430?e=1756339200&v=beta&t=HUOtcHp366HEK0NGNStJkDgRLZA-MFlA7c3_Spv9ekE" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Nandini M.  </h5>
+              <p><strong>Branch:</strong> ENC | <strong>Year:</strong> 2020-2024</p>
+              <p><strong>Company:</strong>MTS-1@Adobe || Former Product Engineer Intern @Adobe</p>
+              <a href="https://www.linkedin.com/in/smriti-srivastava1311/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+          <!-- 14 -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D4E03AQGYIid0xx-t0A/profile-displayphoto-shrink_400_400/B4EZZJasIEHgAg-/0/1744988456203?e=1756339200&v=beta&t=BIVwzcQVD856UWtO6xpCJ8nQhtqDogFPckNkS3cyh8A" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Aditi Utreja  </h5>
+              <p><strong>Branch:</strong> ECE | <strong>Year:</strong> 2017-2021</p>
+              <p><strong>Company:</strong>Tech• Writing• MTS2@ Adobe• Ex-Samsung• Ex-TFI Volunteer</p>
+              <a href="https://www.linkedin.com/in/aditi-utreja-045461171/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+          <!-- 14 -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D4D03AQGESPtXLNYX7A/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1688035629866?e=1756339200&v=beta&t=mL4T9ocOAPiVZYhV3TxFPizt9-MX21hs3rmqrz6_0Bw" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Gunjan Chaudhary  </h5>
+              <p><strong>Branch:</strong> CE | <strong>Year:</strong> 2020-2024</p>
+              <p><strong>Company:</strong>MTS @ Adobe</p>
+              <a href="https://www.linkedin.com/in/gunjanchaudhary13/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+          <!-- 15 -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Ananya Garg  </h5>
+              <p><strong>Branch:</strong> CE | <strong>Year:</strong> 2020-2024</p>
+              <p><strong>Company:</strong>SWE @Ciena | Former Product Intern @Adobe</p>
+              <a href="https://www.linkedin.com/in/ananya-garg-b23729208/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+          <!-- 15 -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQFKhnlLoafHCg/profile-displayphoto-shrink_400_400/B56ZcTGyRoHoAg-/0/1748372238031?e=1756339200&v=beta&t=fbnrrG3_KZwiTxmWGR3guqeNro04lyufx2hDLK8S1Dc" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Bhumika Verma   </h5>
+              <p><strong>Branch:</strong> CE | <strong>Year:</strong> 2020-2024</p>
+              <p><strong>Company:</strong>Software Engineer (IC2) at ServiceNow || Ex-Samsung </p>
+              <a href="https://www.linkedin.com/in/bhumika-verma-414141170/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+          <!-- 16 -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/C5603AQGw-OCjENZa5Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1628088035494?e=1756339200&v=beta&t=HmuKuU5cr9WoxJU_jpjWGi14alxKeSqgkDCCLh4Pbaw" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Rahul Pal</h5>
+              <p><strong>Branch:</strong> IT | <strong>Year:</strong> 2019-2023</p>
+              <p><strong>Company:</strong>SDE @Samsung </p>
+              <a href="https://www.linkedin.com/in/rahul-pal-32771820b/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+        
+          <!-- 17 -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D5635AQHT4aPyCyefWg/profile-framedphoto-shrink_400_400/B56ZbIrI0OGoAc-/0/1747123474016?e=1751619600&v=beta&t=_XzyOU1znslIG1PBk9ivgR_cUV9xxcZzHEZXYDSJwLE" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Kushagra Sharma</h5>
+              <p><strong>Branch:</strong> CE | <strong>Year:</strong> 2019-2023</p>
+              <p><strong>Company:</strong>SDE @Samsung </p>
+              <a href="https://www.linkedin.com/in/kushagra-sharma-8a4246179/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+
+         <!-- 18 -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/C4D03AQE6Zj2uFq-z7A/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1594747176570?e=1756339200&v=beta&t=B5a768YydJhIDtxjZSZmy8MCHyq49psHpzuQWuUg_oA" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Rimika Gupta </h5>
+              <p><strong>Branch:</strong> ECE | <strong>Year:</strong> 2017-2021</p>
+              <p><strong>Company:</strong>Senior Hardware Engineer at Qualcomm </p>
+              <a href="https://www.linkedin.com/in/kushagra-sharma-8a4246179/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+        
+         <!-- 19 -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/C4E03AQGkLN3ONhfpuw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1608055849119?e=1756339200&v=beta&t=xkFLBVbDLideMZLY8kfTjNuh6scuDudry-PdGoQvX4w" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Abhishek </h5>
+              <p><strong>Branch:</strong> CE | <strong>Year:</strong> 2016-2020</p>
+              <p><strong>Company:</strong>Software Engineer II @ Uber </p>
+              <a href="https://www.linkedin.com/in/abhishek3n/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+           <!-- 20 -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/C5603AQGie6fzzV33YQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1644655782698?e=1756339200&v=beta&t=IiYowdO41tH9BqRHG8qN9XZtDQLt0nwOkMT0I2wjH-I" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Ritik Gupta  </h5>
+              <p><strong>Branch:</strong> CE | <strong>Year:</strong> 2018-2022</p>
+              <p><strong>Company:</strong>Software Engineer 2 at Uber | ex - Zenon </p>
+              <a href="https://www.linkedin.com/in/abhishek3n/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+         <!-- 21 -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQEmIzKtlIpSmQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1688566447406?e=1756339200&v=beta&t=EIPeB3xiwgH9xsCjHBdy2I1nlKf-WpPjWgCzyOWYhzY" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Neha maggo  </h5>
+              <p><strong>Branch:</strong> CE | <strong>Year:</strong> 2014-2018</p>
+              <p><strong>Company:</strong>Software Engineer II at Uber </p>
+              <a href="https://www.linkedin.com/in/neha-maggo/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+           <!-- 21 -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D4E03AQFq2_EHfn_EWg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1731558431039?e=1756339200&v=beta&t=40qnvOOzdbmUcc3soFzZwJujR_9qHIjtg-c6Dbq__Bs" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Abhay Parashar  </h5>
+              <p><strong>Branch:</strong> Civil | <strong>Year:</strong> 2018-2022</p>
+              <p><strong>Company:</strong>Associate @Zomato </p>
+              <a href="https://www.linkedin.com/in/abhay-parashar-04b88b17b/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+           <!-- 22 -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQFBMy2K-zayOA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1704475308345?e=1756339200&v=beta&t=F_5Birv9ROgmh7xnhhaQCQZTzdknm3kNGXNEr0WkYSA" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Bhavye Goel  </h5>
+              <p><strong>Branch:</strong> CE | <strong>Year:</strong> 2020-2024</p>
+              <p><strong>Company:</strong>SDE 1 @Swiggy | Ex - Omniful </p>
+              <a href="https://www.linkedin.com/in/bhavyegoel/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+          <!-- 23 -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQEJRgEqksNQRQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1703349271628?e=1756339200&v=beta&t=-HAYHqvTaVCU0FKKJblWIgk1nJsBgVb06Lcy8fwAoTI" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Harshit Chauhan   </h5>
+              <p><strong>Branch:</strong> EEE | <strong>Year:</strong> 2020-2024</p>
+              <p><strong>Company:</strong>Android @Swiggy</p>
+              <a href="https://www.linkedin.com/in/harshitchauhanad/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+             <!-- 24 -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D4D35AQEkOXcXKPydvQ/profile-framedphoto-shrink_400_400/B4DZaCMOqmHwAk-/0/1745940966508?e=1751623200&v=beta&t=Npo50v8Vffavc_IWwA_RXeLgPxeRDF-DBLxNRArT9I8" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Shweta Sharma    </h5>
+              <p><strong>Branch:</strong> IT | <strong>Year:</strong> 2017-2021</p>
+              <p><strong>Company:</strong>SDE-2 @Blinkit Zomato | ex-SDE @Expedia Group| ex-Intern @Samsung R&D</p>
+              <a href="https://www.linkedin.com/in/shweta-sharma-595768151/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+              <!-- 25 -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D5635AQF9Hf8CrsksEg/profile-framedphoto-shrink_400_400/B56Zb4oTWlGsAk-/0/1747928037100?e=1751623200&v=beta&t=LRSYV7tg0vrJuLSR1pCWmB4XciCDoDOa2babVrdaa5k" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Diya Chaudhary</h5>
+              <p><strong>Branch:</strong> CE | <strong>Year:</strong> 2020-2024</p>
+              <p><strong>Company:</strong>SDE-2 @ Walmart</p>
+              <a href="https://www.linkedin.com/in/diya-chaudhary-933411202/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+                <!-- 26s -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQH7utbX2t3JfQ/profile-displayphoto-shrink_400_400/B56ZNaFs3cHYAo-/0/1732383264725?e=1756339200&v=beta&t=eQYDD_Bfa-N9f7ms6uoO8rMFaHw6BsFWXREuC-HZOeI" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Diya Chaudhary</h5>
+              <p><strong>Branch:</strong> ME | <strong>Year:</strong> 2020-2024</p>
+              <p><strong>Company:</strong>Mechanical Design Intern @ Ripple Healthcare</p>
+              <a href="https://www.linkedin.com/in/abhikrishan/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+              <!-- 27s -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D5635AQHB5nDPunf08Q/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1730677800595?e=1751623200&v=beta&t=qpBFOCEhsJCGzYEa7uG5THJ_MgR7jCzcdDTf8kwSxHE" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Utkarsh Solanki </h5>
+              <p><strong>Branch:</strong> CE | <strong>Year:</strong> 2020-2024</p>
+              <p><strong>Company:</strong>SDE @Meesho </p>
+              <a href="https://www.linkedin.com/in/utkarsh-solanki-48667a208/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+
+             <!-- 28s -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D4D03AQGuq7Zpk4rSag/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1669977890257?e=1756339200&v=beta&t=8jVoAd2jiQcZyt-eU6D9v_F_2CgMfapcz9Iwrwzxqhk" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Raman Yadav </h5>
+              <p><strong>Branch:</strong> IT | <strong>Year:</strong> 2011-2015</p>
+              <p><strong>Company:</strong>Technology lead @Infosys || X -Reliance Jio </p>
+              <a href="https://www.linkedin.com/in/ramanyadav9/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+        
+
+             <!-- 29s -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQE-qdQfXi1SHQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1674133251755?e=1756339200&v=beta&t=b3bbKmNcKF40AcAvLW6cAWWBJTvq73MMGIp-9GJSMLE" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Sachin Arya</h5>
+              <p><strong>Branch:</strong> --| <strong>Year:</strong> 2016-2020</p>
+              <p><strong>Company:</strong>UX Design @ Jio | Ex - GE Healthcare | NID | IISc</p>
+              <a href="https://www.linkedin.com/in/sachinarya02/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+             <!-- 30s -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D4D03AQEOvSe8662dCQ/profile-displayphoto-shrink_400_400/B4DZXYxjAKHkAo-/0/1743098623177?e=1756339200&v=beta&t=MTqxRaET10lA4yIwD4Mn7N_826GRvLlpUC9EhNtnJCo" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Ram K</h5>
+              <p><strong>Branch:</strong> Electrical| <strong>Year:</strong> 2019-2023</p>
+              <p><strong>Company:</strong>Assistant System Engineer @ TCS</p>
+              <a href="https://www.linkedin.com/in/ram-k-4b30aa193/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+        
+             <!-- 31s -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQHgsNfSB8iucQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1707052394651?e=1756339200&v=beta&t=OtfGCjfn6Fd5yOgoN8bwwMtLhT0B1X7xZ_vpTDsH7og" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Chitransh Khanna</h5>
+              <p><strong>Branch:</strong> Electrical| <strong>Year:</strong> 2020-2024</p>
+              <p><strong>Company:</strong>Linux | AWS | Python | Jenkins | Ansible |Terraform</p>
+              <a href="https://www.linkedin.com/in/chitranshkhanna/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+           <!-- 32s -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D4D03AQHNVXpABJZCfg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1678811907024?e=1756339200&v=beta&t=Sis2Bv20-A_Q-qlmDo3EXXqA4K_-k3FYtei3ZfNcDEM" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Narender Chaudhary </h5>
+              <p><strong>Branch:</strong> ME| <strong>Year:</strong> 2020-2024</p>
+              <p><strong>Company:</strong>System Administrator at TCS</p>
+              <a href="https://www.linkedin.com/in/narender-chaudhary-478245244/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+           <!-- 33s -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQHOLwoAYIaufA/profile-displayphoto-shrink_400_400/B56ZTrEQV2HsAg-/0/1739110554850?e=1756339200&v=beta&t=fZw83TEMlDw8eN0eIODYNEkXrf5Vo4C3NkDWIYjC6lI" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Khushi Jhawar </h5>
+              <p><strong>Branch:</strong> ENC| <strong>Year:</strong> 2019-2023</p>
+              <p><strong>Company:</strong>Analyst at Goldman Sachs | Amazon</p>
+              <a href="https://www.linkedin.com/in/khushijhawar/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+          <!-- 34s -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/C4E03AQHptIWT1bpECg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1659410498810?e=1756339200&v=beta&t=gr-pNqg0Xu-WkjKjtmbbydCO9kkaXN_14lHAETpcteE" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Mansi Sharma </h5>
+              <p><strong>Branch:</strong>CE| <strong>Year:</strong> 2021-2025</p>
+              <p><strong>Company:</strong>GET@Yamaha || Former Summer Analyst @Goldman Sachs</p>
+              <a href="https://www.linkedin.com/in/mansi-sharma-89703b247/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+            <!-- 35s -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQEJnkAqZ4S1zw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1723048832371?e=1756339200&v=beta&t=ixie8mCFIHufgjhu4Nss3_Jr6RVR5P4zr4Xztlijneg" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Kshitiz Jaiswal  </h5>
+              <p><strong>Branch:</strong> Computer Engineering (Specialization in Data Science) | <strong>Year:</strong> 2020-2024</p>
+              <p><strong>Company:</strong>SWE @Google | Candidate Master @Codeforces | Ex-Amazon, GoldmanSachs</p>
+              <a href="https://www.linkedin.com/in/kshitizjaiswal/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+        
+            <!-- 36s -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQGEiwhKwGxoWg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718719047802?e=1756339200&v=beta&t=4SVUeFuhy-i2M1i4Dz__-3Ra_8HlhgEL5_JgaVl4gAU" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Sagar Shiwach  </h5>
+              <p><strong>Branch:</strong> ME | <strong>Year:</strong> 2018-2022</p>
+              <p><strong>Company:</strong>@ Airtel Ex Tecumseh # Ex Intern JBM</p>
+              <a href="https://www.linkedin.com/in/sagar-shiwach-8a44361a9/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+          <!-- 37s -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQGAsyTuZCRchQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1689828230718?e=1756339200&v=beta&t=87YqSfUBk0DgRqdzwT4182guJyv5pVCoRpKZyQSZoCU" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Abhishek Tomar  </h5>
+              <p><strong>Branch:</strong> CE | <strong>Year:</strong> 2019-2023</p>
+              <p><strong>Company:</strong>Software engineer at HCL Tech</p>
+              <a href="https://www.linkedin.com/in/abhishektomar/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+          <!-- 38s -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQGAsyTuZCRchQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1689828230718?e=1756339200&v=beta&t=87YqSfUBk0DgRqdzwT4182guJyv5pVCoRpKZyQSZoCU" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Akshay khanna  </h5>
+              <p><strong>Branch:</strong> IT | <strong>Year:</strong> 2018-2022</p>
+              <p><strong>Company:</strong>HCL</p>
+              <a href="https://www.linkedin.com/in/akshay-khanna-76b946154/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+            <!-- 39s -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQGTXE0olx-kUg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1713607554281?e=1756339200&v=beta&t=2q-6Vw2mA-nu25Crj1dzMQVtSVFbNJtaLo7anLunurQ" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Bhavya Sharma  </h5>
+              <p><strong>Branch:</strong> CE | <strong>Year:</strong> 2020-2024</p>
+              <p><strong>Company:</strong>Software Engineer @Cisco | Ex Technical Intern @Cisco </p>
+              <a href="https://www.linkedin.com/in/bhavya-sharma-58b324216/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+             <!-- 40s -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQGsD9ZqpNTgGw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1712427117027?e=1756339200&v=beta&t=BXH50Z-Ir7yv6efLZ-Y4eTVaOxdoMvLQH4cxwGzpKSs" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Ayush Srivastava  </h5>
+              <p><strong>Branch:</strong> ME | <strong>Year:</strong> 2020-2024</p>
+              <p><strong>Company:</strong>Blue Star Limited | Summer Intern at Escorts Kubota </p>
+              <a href="https://www.linkedin.com/in/ayush-srivastava-4b59b4284/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+              <!-- 40s -->
+         <div class="col-md-6 col-lg-3">
+          <div class="alumni-card">
+            <img src="https://media.licdn.com/dms/image/v2/C4D03AQFznGnPJ_Mh5Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1630511806898?e=1756339200&v=beta&t=pHiirvKtNBjKN2kXGsdfeLjBO3SmAg-4rcjxL0HYrbc" class="alumni-img" alt="Priya Sharma">
+            <div class="alumni-info">
+              <h5>Naman Jain </h5>
+              <p><strong>Branch:</strong> CE | <strong>Year:</strong> 2018-2022</p>
+              <p><strong>Company:</strong>Media.net | Ex - Goldman Sachs </p>
+              <a href="https://www.linkedin.com/in/ayush-srivastava-4b59b4284/" target="_blank" class="linkedin-btn">
+                <i class="fab fa-linkedin"></i> View LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add more alumni cards as needed -->
+
+      </div>
+    </div>
+
+  </section>
+         {% include 'footer.html' %}
+  
+</body>
+</html>

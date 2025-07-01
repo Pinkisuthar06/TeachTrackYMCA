@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Internet of Things - YMCA Faridabad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #003366;
+      --accent: #00aaff;
+      --light-bg: #f0f6fc;
+      --card-bg: #ffffff;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--light-bg);
+      color: #222;
+    }
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      padding: 3rem 1rem 2rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .section {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 1.8rem 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      border-left: 6px solid var(--accent);
+    }
+    .section h2 {
+      margin-top: 0;
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .section ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+    .section p, .section li {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .section h2 {
+        font-size: 1.3rem;
+      }
+    }
+    .maindiv{
+      margin-top: 80px;
+    }
+  </style>
+</head>
+<body>
+{% include 'header.html' %}
+  <header class="maindiv"> 
+    <h1>Internet of Things (IoT)</h1>
+    <p>B.Tech in IoT - YMCA Faridabad</p>
+  </header>
+
+  <div class="container">
+
+    <div class="section">
+      <h2>About the Department</h2>
+      <p>The IoT branch at YMCA Faridabad blends electronics, networking, embedded systems, and cloud computing to train students in building intelligent connected systems for smart cities, homes, industries, and health tech.</p>
+    </div>
+
+    <div class="section">
+      <h2>What You Will Learn</h2>
+      <ul>
+        <li>IoT Architecture and Protocols</li>
+        <li>Microcontrollers (Arduino, ESP32, Raspberry Pi)</li>
+        <li>Wireless Technologies (Wi-Fi, BLE, Zigbee, LoRa)</li>
+        <li>Cloud Computing and Firebase Integration</li>
+        <li>Real-Time Data Acquisition and Analytics</li>
+        <li>Cybersecurity in IoT Systems</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Laboratories and Facilities</h2>
+      <ul>
+        <li>IoT Development Lab with sensors & kits</li>
+        <li>Networking & Protocol Simulation Lab</li>
+        <li>Cloud & Firebase Integration Lab</li>
+        <li>Smart Home Simulation Lab</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Career Opportunities</h2>
+      <ul>
+        <li>IoT Engineer (hardware & firmware)</li>
+        <li>Embedded System Developer</li>
+        <li>Smart Infrastructure & Home Automation</li>
+        <li>Connected Vehicle Systems & Industry 4.0</li>
+        <li>Cloud Architect (IoT platforms: AWS, Azure)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Student Highlights</h2>
+      <ul>
+        <li>Projects on smart homes, wearables, health monitors</li>
+        <li>Internships at Bosch, Honeywell, Cisco IoT labs</li>
+        <li>Workshops on Firebase, NodeMCU, and MQTT</li>
+      </ul>
+    </div>
+
+  </div>
+
+
+{% include 'footer.html' %}
+</body>
+</html>

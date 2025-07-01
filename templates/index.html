@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JC Bose University</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    .maindiv {
+      margin-top: 80px;
+    }
+    .carousel-caption {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 1rem;
+      border-radius: 8px;
+    }
+     .carousel-inner {
+    height: 400px; /* default height for medium screens */
+  }
+
+  .carousel-img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .carousel-inner {
+      height: 180px; /* smaller height for mobile screens */
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .carousel-inner {
+      height: 550px; /* taller on large desktops */
+    }
+  }
+   .custom-carousel .carousel-inner {
+    display: flex;
+    overflow: hidden;
+  }
+
+  .custom-carousel .carousel-item {
+    flex: 0 0 80%; /* 80% width to leave 20% as preview */
+    margin-right: 20px;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .custom-carousel .carousel-item img {
+    height: 400px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .custom-carousel .carousel-item {
+      flex: 0 0 90%;
+    }
+  }
+  </style>
+</head>
+<body>
+
+  {% include 'header.html' %}
+
+<div id="carouselExampleDark" class="carousel carousel-dark slide maindiv"
+     data-bs-ride="carousel"
+     data-bs-wrap="true"
+     data-bs-pause="false"
+     data-bs-interval="5000">
+
+  <!-- Carousel Indicators -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5" aria-label="Slide 6"></button>
+  </div>
+
+  <!-- Carousel Items -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://www.jcboseust.ac.in/assets/slider/President-03.jpg" class="d-block w-100" alt="Campus">
+      <div class="carousel-caption d-none d-md-block text-white">
+        <h5>Welcome to JC Bose University</h5>
+        <p>Innovation, Excellence, and Progress.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.jcboseust.ac.in/assets/slider/Picture4.jpg" class="d-block w-100" alt="Library">
+      <div class="carousel-caption d-none d-md-block text-white">
+        <h5>Modern Infrastructure</h5>
+        <p>State-of-the-art labs and research facilities.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.jcboseust.ac.in/assets/slider/A-Legacy-to-Lead-Social-Media-Banner-08-05-2025-Website.jpg" class="d-block w-100" alt="Students">
+      <div class="carousel-caption d-none d-md-block text-white">
+        <h5>Vibrant Campus Life</h5>
+        <p>Join a thriving student community and achieve your dreams.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.jcboseust.ac.in/assets/slider/1969-73_1.jpg" class="d-block w-100" alt="History">
+      <div class="carousel-caption d-none d-md-block text-white">
+        <h5>A Legacy Since 1969</h5>
+        <p>Decades of excellence in education and innovation.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.ncrpages.in/images/article/5284-ymca-university.jpg" class="d-block w-100" alt="History">
+      <div class="carousel-caption d-none d-md-block text-white">
+        <h5>A Legacy Since 1969</h5>
+        <p>Decades of excellence in education and innovation.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+  <video src="https://www.jcboseust.ac.in/static/website/Video/Video.mp4"
+         class="d-block w-100"
+         autoplay muted loop playsinline></video>
+  <div class="carousel-caption d-none d-md-block text-white">
+    <h5>A Legacy Since 1969</h5>
+    <p>Decades of excellence in education and innovation.</p>
+  </div>
+</div>
+
+
+
+
+
+   
+  </div>
+
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<section id="about" class="py-5 text-dark" style="background: linear-gradient(to right, #f8f9fa, #e9ecef);">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Get to Know JC Bose University</h2>
+      <p class="lead">Innovation • Excellence • Empowerment</p>
+    </div>
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <img src="https://i0.wp.com/www.socialnews.xyz/wp-content/uploads/2024/08/21/20240821105-scaled.jpg?fit=1779%2C2560&quality=80&zoom=1&ssl=1?v=1724238236" class="img-fluid rounded shadow" alt="JC Bose University Campus">
+      </div>
+      <div class="col-lg-6 mt-4 mt-lg-0">
+        <h4 class="fw-bold">A Legacy of Excellence</h4>
+        <p>
+          Established in 1969, JC Bose University of Science and Technology, YMCA Faridabad, stands as a beacon of learning and innovation. With deep roots in technical education and a progressive mindset, we prepare students to lead in a rapidly evolving world.
+        </p>
+        <div class="row mt-4">
+          <div class="col-6 mb-3">
+            <i class="fas fa-flask fa-2x text-primary"></i>
+            <h6 class="mt-2 fw-semibold">Cutting-edge Research</h6>
+            <p class="small">Advancing knowledge across science, tech, and engineering.</p>
+          </div>
+          <div class="col-6 mb-3">
+            <i class="fas fa-user-graduate fa-2x text-success"></i>
+            <h6 class="mt-2 fw-semibold">Student Empowerment</h6>
+            <p class="small">Holistic development through academics and co-curriculars.</p>
+          </div>
+          <div class="col-6 mb-3">
+            <i class="fas fa-network-wired fa-2x text-info"></i>
+            <h6 class="mt-2 fw-semibold">Industry Collaboration</h6>
+            <p class="small">Strong partnerships with industry for internships and placements.</p>
+          </div>
+          <div class="col-6 mb-3">
+            <i class="fas fa-globe-asia fa-2x text-warning"></i>
+            <h6 class="mt-2 fw-semibold">Global Outlook</h6>
+            <p class="small">Preparing students for success on the global stage.</p>
+          </div>
+        </div>
+        <a href="{{ url_for('branch_info') }}" class="btn btn-outline-primary mt-3">Explore Our Programs</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Our Mission & Vision</h2>
+      <p class="text-muted">What drives JC Bose University forward</p>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-6">
+        <i class="fas fa-bullseye fa-3x text-danger mb-3"></i>
+        <h5 class="fw-semibold">Mission</h5>
+        <p>To foster excellence in teaching, research, and innovation, and to develop socially responsible professionals for the global community.</p>
+      </div>
+      <div class="col-md-6">
+        <i class="fas fa-eye fa-3x text-primary mb-3"></i>
+        <h5 class="fw-semibold">Vision</h5>
+        <p>To be a globally recognized institution that nurtures talent, inspires creativity, and leads through innovation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="py-5 bg-light text-center">
+  <div class="container">
+    <h2 class="fw-bold mb-4">JC Bose University at a Glance</h2>
+    <div class="row">
+      <div class="col-md-3 mb-4">
+        <h3 class="display-5 fw-bold text-primary">50+</h3>
+        <p class="mb-0">Years of Excellence</p>
+      </div>
+      <div class="col-md-3 mb-4">
+        <h3 class="display-5 fw-bold text-success">30+</h3>
+        <p class="mb-0">UG & PG Programs</p>
+      </div>
+      <div class="col-md-3 mb-4">
+        <h3 class="display-5 fw-bold text-warning">100+</h3>
+        <p class="mb-0">Recruiters Every Year</p>
+      </div>
+      <div class="col-md-3 mb-4">
+        <h3 class="display-5 fw-bold text-danger">20k+</h3>
+        <p class="mb-0">Alumni Worldwide</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="py-5 bg-light" id="alumni">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Notable Alumni</h2>
+      <p class="text-muted">Inspiring leaders from JC Bose University</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="bg-white p-4 rounded shadow text-center">
+          <img src="https://www.jcboseust.ac.in/assets/achievement/images/Mr._Anoop_Ballaney.jpg" class="rounded-circle mb-3" width="100" alt="Alumnus">
+          <h5 class="fw-semibold">Anoop Ballaney</h5>
+          <p class="small ">Co-owner of CANI Marketing Limited Pvt Ltd.</p>
+         
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="bg-white p-4 rounded shadow text-center">
+          <img src="https://www.jcboseust.ac.in/assets/achievement/images/Rakesh_Bharti_Mittal_Alumi.jpeg" class="rounded-circle mb-3" width="100" alt="Alumna">
+          <h5 class="fw-semibold">Rakesh Bharti</h5>
+          
+          <p class="small">Vice-Chairman and Managing Director of</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="bg-white p-4 rounded shadow text-center">
+          <img src="https://www.jcboseust.ac.in/assets/achievement/images/Mohit-Vohra.jpg" class="rounded-circle mb-3" width="100" alt="Alumnus">
+          <h5 class="fw-semibold">Mohit Vohra</h5>
+        
+          <p class="small">Founder & Managing Director at MV</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="bg-white p-4 rounded shadow text-center">
+          <img src="https://www.jcboseust.ac.in/assets/achievement/images/Mr._Anil_Bareja_1.jpg" class="rounded-circle mb-3" width="100" alt="Alumnus">
+          <h5 class="fw-semibold">Arun Bhatia</h5>
+          <p class="small ">Managing Director, South Asia Pacific</p>
+         
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+</section>
+
+
+<section class="py-5 bg-white" id="placement">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Placement Highlights</h2>
+      <p class="text-muted">Our students are placed in top companies with exceptional salary packages.</p>
+    </div>
+
+    <!-- Stats Row -->
+    <div class="row text-center mb-5">
+      <div class="col-md-4 mb-4">
+        <div class="p-4 bg-light rounded shadow-sm h-100">
+          <h3 class="text-success fw-bold">₹47 LPA</h3>
+          <p class="mb-0">Highest Package</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="p-4 bg-light rounded shadow-sm h-100">
+          <h3 class="text-primary fw-bold">₹6.5 LPA</h3>
+          <p class="mb-0">Average Package</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="p-4 bg-light rounded shadow-sm h-100">
+          <h3 class="text-warning fw-bold">475+</h3>
+          <p class="mb-0">Recruiters in 2024</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Top Recruiters Carousel or Grid -->
+   {% include 'logo1.html' %}
+
+    <!-- CTA -->
+    <div class="text-center">
+      <a href="#apply" class="btn btn-outline-primary btn-lg">Explore Placement Cell</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">Contact Us</h2>
+      <p class="text-muted">We’re here to help. Reach out to us anytime.</p>
+    </div>
+
+    <div class="row">
+      <!-- Contact Details -->
+      <div class="col-md-5 mb-4">
+        <div class="bg-white shadow p-4 rounded">
+          <h5 class="mb-3"><i class="fas fa-map-marker-alt me-2 text-primary"></i> Address</h5>
+          <p>JC Bose University of Science and Technology, YMCA<br>
+            NH-2, Sector 6, Faridabad, Haryana - 121006, India</p>
+
+          <h5 class="mt-4 mb-3"><i class="fas fa-phone me-2 text-success"></i> Phone</h5>
+          <p>+91-129-2310126<br>+91-129-2310122</p>
+
+          <h5 class="mt-4 mb-3"><i class="fas fa-envelope me-2 text-danger"></i> Email</h5>
+          <p><a href="mailto:info@jcboseust.ac.in">info@jcboseust.ac.in</a></p>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="col-md-7 mb-4">
+        <div class="bg-white shadow p-4 rounded">
+          <h5 class="mb-4">Send Us a Message</h5>
+          <form>
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="mb-3">
+              <input type="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Embedded Google Map -->
+    
+    </div>
+  </div>
+</section>
+<div class="mt-5">
+      <h5 class="text-center mb-3 fw-bold">Our Location on Map</h5>
+      <div class="ratio ratio-16x9">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14020.011991412938!2d77.30105309999999!3d28.36998825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cdbdc87e98f4d%3A0x55a582eeac9c6d56!2sJ.C.%20Bose%20University%20of%20Science%20and%20Technology%2C%20YMCA!5e0!3m2!1sen!2sin!4v1687438215553!5m2!1sen!2sin"
+          width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      {% include 'footer.html' %}
+  <!-- Bootstrap 5 JS Bundle -->
+
+  <script>
+  const myCarousel = document.querySelector('#carouselExampleDark');
+  const carousel = new bootstrap.Carousel(myCarousel, {
+    interval: 5000,
+    wrap: true,
+    pause: false
+  });
+</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

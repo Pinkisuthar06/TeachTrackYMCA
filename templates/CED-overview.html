@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Computer Engineering (Data Science) - YMCA Faridabad</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #003366;
+      --accent: #00aaff;
+      --light-bg: #f0f6fc;
+      --card-bg: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--light-bg);
+      color: #222;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      padding: 3rem 1rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .section {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 1.8rem 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      border-left: 6px solid var(--accent);
+    }
+
+    .section h2 {
+      margin-top: 0;
+      color: var(--primary);
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .section ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    .section p, .section li {
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .section h2 {
+        font-size: 1.3rem;
+      }
+    }
+
+    .maindiv {
+      margin-top: 80px;
+    }
+  </style>
+</head>
+<body>
+{% include 'header.html' %}
+  <header class="maindiv">
+    <h1>Computer Engineering (Data Science)</h1>
+    <p>Specialization in Data Science - YMCA Faridabad</p>
+  </header>
+
+  <div class="container">
+
+    <div class="section">
+      <h2>About the Specialization</h2>
+      <p>
+        The Data Science specialization under the B.Tech in Computer Engineering at J.C. Bose University of Science and Technology, YMCA, equips students with in-demand skills in data analytics, machine learning, artificial intelligence, and big data technologies.
+      </p>
+      <p>
+        This program blends core computer science principles with data-driven decision making to address real-world problems through predictive models, deep learning, and business intelligence.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>What You Will Learn</h2>
+      <ul>
+        <li>Data Analysis using Python, R, and SQL</li>
+        <li>Statistics, Linear Algebra, and Probability for Data Science</li>
+        <li>Machine Learning & Deep Learning (TensorFlow, PyTorch)</li>
+        <li>Big Data Tools: Hadoop, Spark, Hive</li>
+        <li>Data Visualization using Tableau, Power BI, Matplotlib, Seaborn</li>
+        <li>Natural Language Processing and Computer Vision</li>
+        <li>Cloud Data Platforms: AWS, GCP, Azure</li>
+        <li>Data Ethics, Privacy, and Governance</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Laboratories and Tools</h2>
+      <ul>
+        <li>Data Science and Analytics Lab with GPU support</li>
+        <li>JupyterHub, RStudio, Anaconda, VS Code environments</li>
+        <li>Cloud-integrated platforms (AWS Educate, Google Colab)</li>
+        <li>Real-time dashboards and visualization labs</li>
+        <li>IoT-enabled datasets and sensor integration for projects</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Industry Collaboration</h2>
+      <ul>
+        <li>MoUs with Google Cloud, TCS iON, and IBM Data Science Academy</li>
+        <li>Live projects with industry mentors</li>
+        <li>Hackathons and datathons at national/international levels</li>
+        <li>Workshops and bootcamps on AI, ML, and Data Engineering</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Career Opportunities</h2>
+      <ul>
+        <li>Data Scientist / Data Analyst / Data Engineer</li>
+        <li>Machine Learning Engineer / AI Researcher</li>
+        <li>BI Analyst / Data Visualization Expert</li>
+        <li>Cloud Data Architect / Database Administrator</li>
+        <li>Quantitative Analyst / Product Analyst</li>
+        <li>Research in Data Science or pursue M.S./Ph.D. programs</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Student Highlights</h2>
+      <ul>
+        <li>Top 1% performers in Kaggle competitions</li>
+        <li>Internships at Adobe, Fractal Analytics, ZS Associates</li>
+        <li>GSoC selections and international research collaborations</li>
+        <li>Winning teams at Smart India Hackathon (ML track)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Admission and Eligibility</h2>
+      <ul>
+        <li>Admission through JEE Main counseling via HSTES</li>
+        <li>Strong mathematics background and interest in analytics</li>
+        <li>12th PCM with 75% aggregate (as per AICTE norms)</li>
+        <li>Prior exposure to Python or statistics recommended</li>
+      </ul>
+    </div>
+
+  </div>
+{% include 'footer.html' %}
+</body>
+</html>
