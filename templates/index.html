@@ -77,7 +77,7 @@
      data-bs-ride="carousel"
      data-bs-wrap="true"
      data-bs-pause="false"
-     data-bs-interval="5000">
+     >
 
   <!-- Carousel Indicators -->
   <div class="carousel-indicators">
@@ -91,42 +91,42 @@
 
   <!-- Carousel Items -->
   <div class="carousel-inner">
-    <div class="carousel-item active">
+    <div class="carousel-item active" data-bs-interval="5000">
       <img src="https://www.jcboseust.ac.in/assets/slider/President-03.jpg" class="d-block w-100" alt="Campus">
       <div class="carousel-caption d-none d-md-block text-white">
         <h5>Welcome to JC Bose University</h5>
         <p>Innovation, Excellence, and Progress.</p>
       </div>
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item" data-bs-interval="5000">
       <img src="https://www.jcboseust.ac.in/assets/slider/Picture4.jpg" class="d-block w-100" alt="Library">
       <div class="carousel-caption d-none d-md-block text-white">
         <h5>Modern Infrastructure</h5>
         <p>State-of-the-art labs and research facilities.</p>
       </div>
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item" data-bs-interval="5000">
       <img src="https://www.jcboseust.ac.in/assets/slider/A-Legacy-to-Lead-Social-Media-Banner-08-05-2025-Website.jpg" class="d-block w-100" alt="Students">
       <div class="carousel-caption d-none d-md-block text-white">
         <h5>Vibrant Campus Life</h5>
         <p>Join a thriving student community and achieve your dreams.</p>
       </div>
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item" data-bs-interval="5000">
       <img src="https://www.jcboseust.ac.in/assets/slider/1969-73_1.jpg" class="d-block w-100" alt="History">
       <div class="carousel-caption d-none d-md-block text-white">
         <h5>A Legacy Since 1969</h5>
         <p>Decades of excellence in education and innovation.</p>
       </div>
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item" data-bs-interval="5000">
       <img src="https://www.ncrpages.in/images/article/5284-ymca-university.jpg" class="d-block w-100" alt="History">
       <div class="carousel-caption d-none d-md-block text-white">
         <h5>A Legacy Since 1969</h5>
         <p>Decades of excellence in education and innovation.</p>
       </div>
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item" data-bs-interval="video">
   <video src="https://www.jcboseust.ac.in/static/website/Video/Video.mp4"
          class="d-block w-100"
          autoplay muted loop playsinline></video>
@@ -319,7 +319,7 @@
 
     <!-- CTA -->
     <div class="text-center">
-      <a href="#apply" class="btn btn-outline-primary btn-lg">Explore Placement Cell</a>
+      <a href="{{ url_for('placement') }}" class="btn btn-outline-primary btn-lg">Explore Placement Cell</a>
     </div>
   </div>
 </section>
@@ -340,7 +340,7 @@
             NH-2, Sector 6, Faridabad, Haryana - 121006, India</p>
 
           <h5 class="mt-4 mb-3"><i class="fas fa-phone me-2 text-success"></i> Phone</h5>
-          <p>+91-129-2310126<br>+91-129-2310122</p>
+          <p>+91-129-2310160<br>+91-129-2310126</p>
 
           <h5 class="mt-4 mb-3"><i class="fas fa-envelope me-2 text-danger"></i> Email</h5>
           <p><a href="mailto:info@jcboseust.ac.in">info@jcboseust.ac.in</a></p>
@@ -382,12 +382,45 @@
       {% include 'footer.html' %}
   <!-- Bootstrap 5 JS Bundle -->
 
-  <script>
-  const myCarousel = document.querySelector('#carouselExampleDark');
-  const carousel = new bootstrap.Carousel(myCarousel, {
-    interval: 5000,
-    wrap: true,
-    pause: false
+ 
+<script>
+  const carousel = document.querySelector('#carouselExampleDark');
+  const bsCarousel = bootstrap.Carousel.getOrCreateInstance(carousel, {
+    interval: false, // turn off auto
+    pause: false,
+    ride: false,
+    wrap: true
+  });
+
+  const items = carousel.querySelectorAll('.carousel-item');
+
+  function setSlideInterval() {
+    const activeItem = carousel.querySelector('.carousel-item.active');
+    const interval = activeItem.getAttribute('data-interval');
+
+    let delay = 5000; // default 5s
+
+    if (interval === 'video') {
+      const video = activeItem.querySelector('video');
+      if (video) {
+        delay = (video.duration || 10) * 1000; // fallback to 10s if unknown
+        video.play(); // ensure it starts
+      }
+    } else if (!isNaN(interval)) {
+      delay = parseInt(interval);
+    }
+
+    setTimeout(() => {
+      bsCarousel.next();
+    }, delay);
+  }
+
+  // On carousel slide complete, set the new interval
+  carousel.addEventListener('slid.bs.carousel', setSlideInterval);
+
+  // Initial call after page load
+  window.addEventListener('load', () => {
+    setSlideInterval();
   });
 </script>
 
