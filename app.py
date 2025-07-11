@@ -206,6 +206,53 @@ branches = [
 categories = sorted(df['Category'].dropna().unique())
 genders = sorted(df['Gender'].dropna().unique())
 
+@app.route('/cutoff2025', methods=['GET', 'POST'])
+def cutoff2025():
+    # Load the 2025 data that includes multiple rounds
+    df_2025 = pd.read_excel("Formatted_Rank_Data_2025_Round1.xlsx")
+
+    # Strip and clean all relevant columns
+    df_2025['Round'] = df_2025['Round'].astype(str).str.strip()
+    df_2025['Branch'] = df_2025['Branch'].astype(str).str.strip()
+    df_2025['Category'] = df_2025['Category'].astype(str).str.strip()
+    df_2025['Gender'] = df_2025['Gender'].astype(str).str.strip()
+
+    # Get form selections
+    selected_round = request.form.get('round') if request.method == 'POST' else None
+    selected_branch = request.form.get('branch') if request.method == 'POST' else None
+    selected_category = request.form.get('category') if request.method == 'POST' else None
+    selected_gender = request.form.get('gender') if request.method == 'POST' else None
+
+    # Apply filters
+    filtered_df = df_2025.copy()
+    if selected_round:
+        filtered_df = filtered_df[filtered_df['Round'].str.lower() == selected_round.lower()]
+    if selected_branch:
+        filtered_df = filtered_df[filtered_df['Branch'].str.lower() == selected_branch.lower()]
+    if selected_category:
+        filtered_df = filtered_df[filtered_df['Category'].str.lower() == selected_category.lower()]
+    if selected_gender:
+        filtered_df = filtered_df[filtered_df['Gender'].str.lower() == selected_gender.lower()]
+
+    # Convert filtered results to list of dicts
+    filtered_data = filtered_df.to_dict(orient='records') if request.method == 'POST' else []
+
+    # Render the template with all necessary dropdown values and data
+    return render_template(
+        'index_2025.html',
+        rounds=sorted(df_2025['Round'].dropna().unique()),
+        branches=sorted(df_2025['Branch'].dropna().unique()),
+        categories=sorted(df_2025['Category'].dropna().unique()),
+        genders=sorted(df_2025['Gender'].dropna().unique()),
+        data=filtered_data,
+        selected_round=selected_round,
+        selected_branch=selected_branch,
+        selected_category=selected_category,
+        selected_gender=selected_gender
+    )
+
+
+
 @app.route('/cutoff2024', methods=['GET', 'POST'])
 def cutoff2024():
     selected_branch = None
